@@ -20,207 +20,285 @@ import Data.StrMap as StrMap
 import AWS.Request as Request
 import AWS.Request.Types as Types
 
-serviceName = "WorkDocs" :: String
-
 
 -- | <p>Aborts the upload of the specified document version that was previously initiated by <a>InitiateDocumentVersionUpload</a>. The client should make this call only when it no longer intends to upload the document version, or fails to do so.</p>
 abortDocumentVersionUpload :: forall eff. AbortDocumentVersionUploadRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-abortDocumentVersionUpload = Request.request serviceName "abortDocumentVersionUpload" 
+abortDocumentVersionUpload = Request.request service method  where
+    service = Request.ServiceName "WorkDocs"
+    method = Request.MethodName "abortDocumentVersionUpload"
 
 
 -- | <p>Activates the specified user. Only active users can access Amazon WorkDocs.</p>
 activateUser :: forall eff. ActivateUserRequest -> Aff (exception :: EXCEPTION | eff) ActivateUserResponse
-activateUser = Request.request serviceName "activateUser" 
+activateUser = Request.request service method  where
+    service = Request.ServiceName "WorkDocs"
+    method = Request.MethodName "activateUser"
 
 
 -- | <p>Creates a set of permissions for the specified folder or document. The resource permissions are overwritten if the principals already have different permissions.</p>
 addResourcePermissions :: forall eff. AddResourcePermissionsRequest -> Aff (exception :: EXCEPTION | eff) AddResourcePermissionsResponse
-addResourcePermissions = Request.request serviceName "addResourcePermissions" 
+addResourcePermissions = Request.request service method  where
+    service = Request.ServiceName "WorkDocs"
+    method = Request.MethodName "addResourcePermissions"
 
 
 -- | <p>Adds a new comment to the specified document version.</p>
 createComment :: forall eff. CreateCommentRequest -> Aff (exception :: EXCEPTION | eff) CreateCommentResponse
-createComment = Request.request serviceName "createComment" 
+createComment = Request.request service method  where
+    service = Request.ServiceName "WorkDocs"
+    method = Request.MethodName "createComment"
 
 
 -- | <p>Adds one or more custom properties to the specified resource (a folder, document, or version).</p>
 createCustomMetadata :: forall eff. CreateCustomMetadataRequest -> Aff (exception :: EXCEPTION | eff) CreateCustomMetadataResponse
-createCustomMetadata = Request.request serviceName "createCustomMetadata" 
+createCustomMetadata = Request.request service method  where
+    service = Request.ServiceName "WorkDocs"
+    method = Request.MethodName "createCustomMetadata"
 
 
 -- | <p>Creates a folder with the specified name and parent folder.</p>
 createFolder :: forall eff. CreateFolderRequest -> Aff (exception :: EXCEPTION | eff) CreateFolderResponse
-createFolder = Request.request serviceName "createFolder" 
+createFolder = Request.request service method  where
+    service = Request.ServiceName "WorkDocs"
+    method = Request.MethodName "createFolder"
 
 
 -- | <p>Adds the specified list of labels to the given resource (a document or folder)</p>
 createLabels :: forall eff. CreateLabelsRequest -> Aff (exception :: EXCEPTION | eff) CreateLabelsResponse
-createLabels = Request.request serviceName "createLabels" 
+createLabels = Request.request service method  where
+    service = Request.ServiceName "WorkDocs"
+    method = Request.MethodName "createLabels"
 
 
 -- | <p>Configure WorkDocs to use Amazon SNS notifications.</p> <p>The endpoint receives a confirmation message, and must confirm the subscription. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SendMessageToHttp.html#SendMessageToHttp.confirm">Confirm the Subscription</a> in the <i>Amazon Simple Notification Service Developer Guide</i>.</p>
 createNotificationSubscription :: forall eff. CreateNotificationSubscriptionRequest -> Aff (exception :: EXCEPTION | eff) CreateNotificationSubscriptionResponse
-createNotificationSubscription = Request.request serviceName "createNotificationSubscription" 
+createNotificationSubscription = Request.request service method  where
+    service = Request.ServiceName "WorkDocs"
+    method = Request.MethodName "createNotificationSubscription"
 
 
 -- | <p>Creates a user in a Simple AD or Microsoft AD directory. The status of a newly created user is "ACTIVE". New users can access Amazon WorkDocs.</p>
 createUser :: forall eff. CreateUserRequest -> Aff (exception :: EXCEPTION | eff) CreateUserResponse
-createUser = Request.request serviceName "createUser" 
+createUser = Request.request service method  where
+    service = Request.ServiceName "WorkDocs"
+    method = Request.MethodName "createUser"
 
 
 -- | <p>Deactivates the specified user, which revokes the user's access to Amazon WorkDocs.</p>
 deactivateUser :: forall eff. DeactivateUserRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-deactivateUser = Request.request serviceName "deactivateUser" 
+deactivateUser = Request.request service method  where
+    service = Request.ServiceName "WorkDocs"
+    method = Request.MethodName "deactivateUser"
 
 
 -- | <p>Deletes the specified comment from the document version.</p>
 deleteComment :: forall eff. DeleteCommentRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-deleteComment = Request.request serviceName "deleteComment" 
+deleteComment = Request.request service method  where
+    service = Request.ServiceName "WorkDocs"
+    method = Request.MethodName "deleteComment"
 
 
 -- | <p>Deletes custom metadata from the specified resource.</p>
 deleteCustomMetadata :: forall eff. DeleteCustomMetadataRequest -> Aff (exception :: EXCEPTION | eff) DeleteCustomMetadataResponse
-deleteCustomMetadata = Request.request serviceName "deleteCustomMetadata" 
+deleteCustomMetadata = Request.request service method  where
+    service = Request.ServiceName "WorkDocs"
+    method = Request.MethodName "deleteCustomMetadata"
 
 
 -- | <p>Permanently deletes the specified document and its associated metadata.</p>
 deleteDocument :: forall eff. DeleteDocumentRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-deleteDocument = Request.request serviceName "deleteDocument" 
+deleteDocument = Request.request service method  where
+    service = Request.ServiceName "WorkDocs"
+    method = Request.MethodName "deleteDocument"
 
 
 -- | <p>Permanently deletes the specified folder and its contents.</p>
 deleteFolder :: forall eff. DeleteFolderRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-deleteFolder = Request.request serviceName "deleteFolder" 
+deleteFolder = Request.request service method  where
+    service = Request.ServiceName "WorkDocs"
+    method = Request.MethodName "deleteFolder"
 
 
 -- | <p>Deletes the contents of the specified folder.</p>
 deleteFolderContents :: forall eff. DeleteFolderContentsRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-deleteFolderContents = Request.request serviceName "deleteFolderContents" 
+deleteFolderContents = Request.request service method  where
+    service = Request.ServiceName "WorkDocs"
+    method = Request.MethodName "deleteFolderContents"
 
 
 -- | <p>Deletes the specified list of labels from a resource.</p>
 deleteLabels :: forall eff. DeleteLabelsRequest -> Aff (exception :: EXCEPTION | eff) DeleteLabelsResponse
-deleteLabels = Request.request serviceName "deleteLabels" 
+deleteLabels = Request.request service method  where
+    service = Request.ServiceName "WorkDocs"
+    method = Request.MethodName "deleteLabels"
 
 
 -- | <p>Deletes the specified subscription from the specified organization.</p>
 deleteNotificationSubscription :: forall eff. DeleteNotificationSubscriptionRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-deleteNotificationSubscription = Request.request serviceName "deleteNotificationSubscription" 
+deleteNotificationSubscription = Request.request service method  where
+    service = Request.ServiceName "WorkDocs"
+    method = Request.MethodName "deleteNotificationSubscription"
 
 
 -- | <p>Deletes the specified user from a Simple AD or Microsoft AD directory.</p>
 deleteUser :: forall eff. DeleteUserRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-deleteUser = Request.request serviceName "deleteUser" 
+deleteUser = Request.request service method  where
+    service = Request.ServiceName "WorkDocs"
+    method = Request.MethodName "deleteUser"
 
 
 -- | <p>Describes the user activities in a specified time period.</p>
 describeActivities :: forall eff. DescribeActivitiesRequest -> Aff (exception :: EXCEPTION | eff) DescribeActivitiesResponse
-describeActivities = Request.request serviceName "describeActivities" 
+describeActivities = Request.request service method  where
+    service = Request.ServiceName "WorkDocs"
+    method = Request.MethodName "describeActivities"
 
 
 -- | <p>List all the comments for the specified document version.</p>
 describeComments :: forall eff. DescribeCommentsRequest -> Aff (exception :: EXCEPTION | eff) DescribeCommentsResponse
-describeComments = Request.request serviceName "describeComments" 
+describeComments = Request.request service method  where
+    service = Request.ServiceName "WorkDocs"
+    method = Request.MethodName "describeComments"
 
 
 -- | <p>Retrieves the document versions for the specified document.</p> <p>By default, only active versions are returned.</p>
 describeDocumentVersions :: forall eff. DescribeDocumentVersionsRequest -> Aff (exception :: EXCEPTION | eff) DescribeDocumentVersionsResponse
-describeDocumentVersions = Request.request serviceName "describeDocumentVersions" 
+describeDocumentVersions = Request.request service method  where
+    service = Request.ServiceName "WorkDocs"
+    method = Request.MethodName "describeDocumentVersions"
 
 
 -- | <p>Describes the contents of the specified folder, including its documents and subfolders.</p> <p>By default, Amazon WorkDocs returns the first 100 active document and folder metadata items. If there are more results, the response includes a marker that you can use to request the next set of results. You can also request initialized documents.</p>
 describeFolderContents :: forall eff. DescribeFolderContentsRequest -> Aff (exception :: EXCEPTION | eff) DescribeFolderContentsResponse
-describeFolderContents = Request.request serviceName "describeFolderContents" 
+describeFolderContents = Request.request service method  where
+    service = Request.ServiceName "WorkDocs"
+    method = Request.MethodName "describeFolderContents"
 
 
 -- | <p>Describes the groups specified by query.</p>
 describeGroups :: forall eff. DescribeGroupsRequest -> Aff (exception :: EXCEPTION | eff) DescribeGroupsResponse
-describeGroups = Request.request serviceName "describeGroups" 
+describeGroups = Request.request service method  where
+    service = Request.ServiceName "WorkDocs"
+    method = Request.MethodName "describeGroups"
 
 
 -- | <p>Lists the specified notification subscriptions.</p>
 describeNotificationSubscriptions :: forall eff. DescribeNotificationSubscriptionsRequest -> Aff (exception :: EXCEPTION | eff) DescribeNotificationSubscriptionsResponse
-describeNotificationSubscriptions = Request.request serviceName "describeNotificationSubscriptions" 
+describeNotificationSubscriptions = Request.request service method  where
+    service = Request.ServiceName "WorkDocs"
+    method = Request.MethodName "describeNotificationSubscriptions"
 
 
 -- | <p>Describes the permissions of a specified resource.</p>
 describeResourcePermissions :: forall eff. DescribeResourcePermissionsRequest -> Aff (exception :: EXCEPTION | eff) DescribeResourcePermissionsResponse
-describeResourcePermissions = Request.request serviceName "describeResourcePermissions" 
+describeResourcePermissions = Request.request service method  where
+    service = Request.ServiceName "WorkDocs"
+    method = Request.MethodName "describeResourcePermissions"
 
 
 -- | <p>Describes the current user's special folders; the <code>RootFolder</code> and the <code>RecycleBin</code>. <code>RootFolder</code> is the root of user's files and folders and <code>RecycleBin</code> is the root of recycled items. This is not a valid action for SigV4 (administrative API) clients.</p>
 describeRootFolders :: forall eff. DescribeRootFoldersRequest -> Aff (exception :: EXCEPTION | eff) DescribeRootFoldersResponse
-describeRootFolders = Request.request serviceName "describeRootFolders" 
+describeRootFolders = Request.request service method  where
+    service = Request.ServiceName "WorkDocs"
+    method = Request.MethodName "describeRootFolders"
 
 
 -- | <p>Describes the specified users. You can describe all users or filter the results (for example, by status or organization).</p> <p>By default, Amazon WorkDocs returns the first 24 active or pending users. If there are more results, the response includes a marker that you can use to request the next set of results.</p>
 describeUsers :: forall eff. DescribeUsersRequest -> Aff (exception :: EXCEPTION | eff) DescribeUsersResponse
-describeUsers = Request.request serviceName "describeUsers" 
+describeUsers = Request.request service method  where
+    service = Request.ServiceName "WorkDocs"
+    method = Request.MethodName "describeUsers"
 
 
 -- | <p>Retrieves details of the current user for whom the authentication token was generated. This is not a valid action for SigV4 (administrative API) clients.</p>
 getCurrentUser :: forall eff. GetCurrentUserRequest -> Aff (exception :: EXCEPTION | eff) GetCurrentUserResponse
-getCurrentUser = Request.request serviceName "getCurrentUser" 
+getCurrentUser = Request.request service method  where
+    service = Request.ServiceName "WorkDocs"
+    method = Request.MethodName "getCurrentUser"
 
 
 -- | <p>Retrieves details of a document.</p>
 getDocument :: forall eff. GetDocumentRequest -> Aff (exception :: EXCEPTION | eff) GetDocumentResponse
-getDocument = Request.request serviceName "getDocument" 
+getDocument = Request.request service method  where
+    service = Request.ServiceName "WorkDocs"
+    method = Request.MethodName "getDocument"
 
 
 -- | <p>Retrieves the path information (the hierarchy from the root folder) for the requested document.</p> <p>By default, Amazon WorkDocs returns a maximum of 100 levels upwards from the requested document and only includes the IDs of the parent folders in the path. You can limit the maximum number of levels. You can also request the names of the parent folders.</p>
 getDocumentPath :: forall eff. GetDocumentPathRequest -> Aff (exception :: EXCEPTION | eff) GetDocumentPathResponse
-getDocumentPath = Request.request serviceName "getDocumentPath" 
+getDocumentPath = Request.request service method  where
+    service = Request.ServiceName "WorkDocs"
+    method = Request.MethodName "getDocumentPath"
 
 
 -- | <p>Retrieves version metadata for the specified document.</p>
 getDocumentVersion :: forall eff. GetDocumentVersionRequest -> Aff (exception :: EXCEPTION | eff) GetDocumentVersionResponse
-getDocumentVersion = Request.request serviceName "getDocumentVersion" 
+getDocumentVersion = Request.request service method  where
+    service = Request.ServiceName "WorkDocs"
+    method = Request.MethodName "getDocumentVersion"
 
 
 -- | <p>Retrieves the metadata of the specified folder.</p>
 getFolder :: forall eff. GetFolderRequest -> Aff (exception :: EXCEPTION | eff) GetFolderResponse
-getFolder = Request.request serviceName "getFolder" 
+getFolder = Request.request service method  where
+    service = Request.ServiceName "WorkDocs"
+    method = Request.MethodName "getFolder"
 
 
 -- | <p>Retrieves the path information (the hierarchy from the root folder) for the specified folder.</p> <p>By default, Amazon WorkDocs returns a maximum of 100 levels upwards from the requested folder and only includes the IDs of the parent folders in the path. You can limit the maximum number of levels. You can also request the parent folder names.</p>
 getFolderPath :: forall eff. GetFolderPathRequest -> Aff (exception :: EXCEPTION | eff) GetFolderPathResponse
-getFolderPath = Request.request serviceName "getFolderPath" 
+getFolderPath = Request.request service method  where
+    service = Request.ServiceName "WorkDocs"
+    method = Request.MethodName "getFolderPath"
 
 
 -- | <p>Creates a new document object and version object.</p> <p>The client specifies the parent folder ID and name of the document to upload. The ID is optionally specified when creating a new version of an existing document. This is the first step to upload a document. Next, upload the document to the URL returned from the call, and then call <a>UpdateDocumentVersion</a>.</p> <p>To cancel the document upload, call <a>AbortDocumentVersionUpload</a>.</p>
 initiateDocumentVersionUpload :: forall eff. InitiateDocumentVersionUploadRequest -> Aff (exception :: EXCEPTION | eff) InitiateDocumentVersionUploadResponse
-initiateDocumentVersionUpload = Request.request serviceName "initiateDocumentVersionUpload" 
+initiateDocumentVersionUpload = Request.request service method  where
+    service = Request.ServiceName "WorkDocs"
+    method = Request.MethodName "initiateDocumentVersionUpload"
 
 
 -- | <p>Removes all the permissions from the specified resource.</p>
 removeAllResourcePermissions :: forall eff. RemoveAllResourcePermissionsRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-removeAllResourcePermissions = Request.request serviceName "removeAllResourcePermissions" 
+removeAllResourcePermissions = Request.request service method  where
+    service = Request.ServiceName "WorkDocs"
+    method = Request.MethodName "removeAllResourcePermissions"
 
 
 -- | <p>Removes the permission for the specified principal from the specified resource.</p>
 removeResourcePermission :: forall eff. RemoveResourcePermissionRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-removeResourcePermission = Request.request serviceName "removeResourcePermission" 
+removeResourcePermission = Request.request service method  where
+    service = Request.ServiceName "WorkDocs"
+    method = Request.MethodName "removeResourcePermission"
 
 
 -- | <p>Updates the specified attributes of a document. The user must have access to both the document and its parent folder, if applicable.</p>
 updateDocument :: forall eff. UpdateDocumentRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-updateDocument = Request.request serviceName "updateDocument" 
+updateDocument = Request.request service method  where
+    service = Request.ServiceName "WorkDocs"
+    method = Request.MethodName "updateDocument"
 
 
 -- | <p>Changes the status of the document version to ACTIVE. </p> <p>Amazon WorkDocs also sets its document container to ACTIVE. This is the last step in a document upload, after the client uploads the document to an S3-presigned URL returned by <a>InitiateDocumentVersionUpload</a>. </p>
 updateDocumentVersion :: forall eff. UpdateDocumentVersionRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-updateDocumentVersion = Request.request serviceName "updateDocumentVersion" 
+updateDocumentVersion = Request.request service method  where
+    service = Request.ServiceName "WorkDocs"
+    method = Request.MethodName "updateDocumentVersion"
 
 
 -- | <p>Updates the specified attributes of the specified folder. The user must have access to both the folder and its parent folder, if applicable.</p>
 updateFolder :: forall eff. UpdateFolderRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-updateFolder = Request.request serviceName "updateFolder" 
+updateFolder = Request.request service method  where
+    service = Request.ServiceName "WorkDocs"
+    method = Request.MethodName "updateFolder"
 
 
 -- | <p>Updates the specified attributes of the specified user, and grants or revokes administrative privileges to the Amazon WorkDocs site.</p>
 updateUser :: forall eff. UpdateUserRequest -> Aff (exception :: EXCEPTION | eff) UpdateUserResponse
-updateUser = Request.request serviceName "updateUser" 
+updateUser = Request.request service method  where
+    service = Request.ServiceName "WorkDocs"
+    method = Request.MethodName "updateUser"
 
 
 newtype AbortDocumentVersionUploadRequest = AbortDocumentVersionUploadRequest 
