@@ -13,7 +13,7 @@ import AWS.WorkDocs.Types as WorkDocsTypes
 
 
 -- | <p>Aborts the upload of the specified document version that was previously initiated by <a>InitiateDocumentVersionUpload</a>. The client should make this call only when it no longer intends to upload the document version, or fails to do so.</p>
-abortDocumentVersionUpload :: forall eff. WorkDocs.Service -> WorkDocsTypes.AbortDocumentVersionUploadRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+abortDocumentVersionUpload :: forall eff. WorkDocs.Service -> WorkDocsTypes.AbortDocumentVersionUploadRequest -> Aff (exception :: EXCEPTION | eff) Unit
 abortDocumentVersionUpload (WorkDocs.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "abortDocumentVersionUpload"
 
@@ -67,13 +67,13 @@ createUser (WorkDocs.Service serviceImpl) = AWS.request serviceImpl method  wher
 
 
 -- | <p>Deactivates the specified user, which revokes the user's access to Amazon WorkDocs.</p>
-deactivateUser :: forall eff. WorkDocs.Service -> WorkDocsTypes.DeactivateUserRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+deactivateUser :: forall eff. WorkDocs.Service -> WorkDocsTypes.DeactivateUserRequest -> Aff (exception :: EXCEPTION | eff) Unit
 deactivateUser (WorkDocs.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "deactivateUser"
 
 
 -- | <p>Deletes the specified comment from the document version.</p>
-deleteComment :: forall eff. WorkDocs.Service -> WorkDocsTypes.DeleteCommentRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+deleteComment :: forall eff. WorkDocs.Service -> WorkDocsTypes.DeleteCommentRequest -> Aff (exception :: EXCEPTION | eff) Unit
 deleteComment (WorkDocs.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "deleteComment"
 
@@ -85,19 +85,19 @@ deleteCustomMetadata (WorkDocs.Service serviceImpl) = AWS.request serviceImpl me
 
 
 -- | <p>Permanently deletes the specified document and its associated metadata.</p>
-deleteDocument :: forall eff. WorkDocs.Service -> WorkDocsTypes.DeleteDocumentRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+deleteDocument :: forall eff. WorkDocs.Service -> WorkDocsTypes.DeleteDocumentRequest -> Aff (exception :: EXCEPTION | eff) Unit
 deleteDocument (WorkDocs.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "deleteDocument"
 
 
 -- | <p>Permanently deletes the specified folder and its contents.</p>
-deleteFolder :: forall eff. WorkDocs.Service -> WorkDocsTypes.DeleteFolderRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+deleteFolder :: forall eff. WorkDocs.Service -> WorkDocsTypes.DeleteFolderRequest -> Aff (exception :: EXCEPTION | eff) Unit
 deleteFolder (WorkDocs.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "deleteFolder"
 
 
 -- | <p>Deletes the contents of the specified folder.</p>
-deleteFolderContents :: forall eff. WorkDocs.Service -> WorkDocsTypes.DeleteFolderContentsRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+deleteFolderContents :: forall eff. WorkDocs.Service -> WorkDocsTypes.DeleteFolderContentsRequest -> Aff (exception :: EXCEPTION | eff) Unit
 deleteFolderContents (WorkDocs.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "deleteFolderContents"
 
@@ -109,13 +109,13 @@ deleteLabels (WorkDocs.Service serviceImpl) = AWS.request serviceImpl method  wh
 
 
 -- | <p>Deletes the specified subscription from the specified organization.</p>
-deleteNotificationSubscription :: forall eff. WorkDocs.Service -> WorkDocsTypes.DeleteNotificationSubscriptionRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+deleteNotificationSubscription :: forall eff. WorkDocs.Service -> WorkDocsTypes.DeleteNotificationSubscriptionRequest -> Aff (exception :: EXCEPTION | eff) Unit
 deleteNotificationSubscription (WorkDocs.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "deleteNotificationSubscription"
 
 
 -- | <p>Deletes the specified user from a Simple AD or Microsoft AD directory.</p>
-deleteUser :: forall eff. WorkDocs.Service -> WorkDocsTypes.DeleteUserRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+deleteUser :: forall eff. WorkDocs.Service -> WorkDocsTypes.DeleteUserRequest -> Aff (exception :: EXCEPTION | eff) Unit
 deleteUser (WorkDocs.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "deleteUser"
 
@@ -217,31 +217,31 @@ initiateDocumentVersionUpload (WorkDocs.Service serviceImpl) = AWS.request servi
 
 
 -- | <p>Removes all the permissions from the specified resource.</p>
-removeAllResourcePermissions :: forall eff. WorkDocs.Service -> WorkDocsTypes.RemoveAllResourcePermissionsRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+removeAllResourcePermissions :: forall eff. WorkDocs.Service -> WorkDocsTypes.RemoveAllResourcePermissionsRequest -> Aff (exception :: EXCEPTION | eff) Unit
 removeAllResourcePermissions (WorkDocs.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "removeAllResourcePermissions"
 
 
 -- | <p>Removes the permission for the specified principal from the specified resource.</p>
-removeResourcePermission :: forall eff. WorkDocs.Service -> WorkDocsTypes.RemoveResourcePermissionRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+removeResourcePermission :: forall eff. WorkDocs.Service -> WorkDocsTypes.RemoveResourcePermissionRequest -> Aff (exception :: EXCEPTION | eff) Unit
 removeResourcePermission (WorkDocs.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "removeResourcePermission"
 
 
 -- | <p>Updates the specified attributes of a document. The user must have access to both the document and its parent folder, if applicable.</p>
-updateDocument :: forall eff. WorkDocs.Service -> WorkDocsTypes.UpdateDocumentRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+updateDocument :: forall eff. WorkDocs.Service -> WorkDocsTypes.UpdateDocumentRequest -> Aff (exception :: EXCEPTION | eff) Unit
 updateDocument (WorkDocs.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "updateDocument"
 
 
 -- | <p>Changes the status of the document version to ACTIVE. </p> <p>Amazon WorkDocs also sets its document container to ACTIVE. This is the last step in a document upload, after the client uploads the document to an S3-presigned URL returned by <a>InitiateDocumentVersionUpload</a>. </p>
-updateDocumentVersion :: forall eff. WorkDocs.Service -> WorkDocsTypes.UpdateDocumentVersionRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+updateDocumentVersion :: forall eff. WorkDocs.Service -> WorkDocsTypes.UpdateDocumentVersionRequest -> Aff (exception :: EXCEPTION | eff) Unit
 updateDocumentVersion (WorkDocs.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "updateDocumentVersion"
 
 
 -- | <p>Updates the specified attributes of the specified folder. The user must have access to both the folder and its parent folder, if applicable.</p>
-updateFolder :: forall eff. WorkDocs.Service -> WorkDocsTypes.UpdateFolderRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+updateFolder :: forall eff. WorkDocs.Service -> WorkDocsTypes.UpdateFolderRequest -> Aff (exception :: EXCEPTION | eff) Unit
 updateFolder (WorkDocs.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "updateFolder"
 

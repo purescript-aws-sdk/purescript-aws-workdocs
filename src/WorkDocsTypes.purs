@@ -5,7 +5,6 @@ import Prelude
 import Data.Foreign.Class (class Decode, class Encode)
 import Data.Foreign.Generic (defaultOptions, genericDecode, genericEncode)
 import Data.Foreign.Generic.Types (Options)
-import Data.Foreign.NullOrUndefined (NullOrUndefined(..))
 import Data.Generic.Rep (class Generic)
 import Data.Generic.Rep.Show (genericShow)
 import Data.Maybe (Maybe(..))
@@ -19,7 +18,7 @@ options = defaultOptions { unwrapSingleConstructors = true }
 
 
 newtype AbortDocumentVersionUploadRequest = AbortDocumentVersionUploadRequest 
-  { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType)
+  { "AuthenticationToken" :: Maybe (AuthenticationHeaderType)
   , "DocumentId" :: (ResourceIdType)
   , "VersionId" :: (DocumentVersionIdType)
   }
@@ -31,18 +30,18 @@ instance encodeAbortDocumentVersionUploadRequest :: Encode AbortDocumentVersionU
 
 -- | Constructs AbortDocumentVersionUploadRequest from required parameters
 newAbortDocumentVersionUploadRequest :: ResourceIdType -> DocumentVersionIdType -> AbortDocumentVersionUploadRequest
-newAbortDocumentVersionUploadRequest _DocumentId _VersionId = AbortDocumentVersionUploadRequest { "DocumentId": _DocumentId, "VersionId": _VersionId, "AuthenticationToken": (NullOrUndefined Nothing) }
+newAbortDocumentVersionUploadRequest _DocumentId _VersionId = AbortDocumentVersionUploadRequest { "DocumentId": _DocumentId, "VersionId": _VersionId, "AuthenticationToken": Nothing }
 
 -- | Constructs AbortDocumentVersionUploadRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAbortDocumentVersionUploadRequest' :: ResourceIdType -> DocumentVersionIdType -> ( { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "DocumentId" :: (ResourceIdType) , "VersionId" :: (DocumentVersionIdType) } -> {"AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "DocumentId" :: (ResourceIdType) , "VersionId" :: (DocumentVersionIdType) } ) -> AbortDocumentVersionUploadRequest
-newAbortDocumentVersionUploadRequest' _DocumentId _VersionId customize = (AbortDocumentVersionUploadRequest <<< customize) { "DocumentId": _DocumentId, "VersionId": _VersionId, "AuthenticationToken": (NullOrUndefined Nothing) }
+newAbortDocumentVersionUploadRequest' :: ResourceIdType -> DocumentVersionIdType -> ( { "AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "DocumentId" :: (ResourceIdType) , "VersionId" :: (DocumentVersionIdType) } -> {"AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "DocumentId" :: (ResourceIdType) , "VersionId" :: (DocumentVersionIdType) } ) -> AbortDocumentVersionUploadRequest
+newAbortDocumentVersionUploadRequest' _DocumentId _VersionId customize = (AbortDocumentVersionUploadRequest <<< customize) { "DocumentId": _DocumentId, "VersionId": _VersionId, "AuthenticationToken": Nothing }
 
 
 
 newtype ActivateUserRequest = ActivateUserRequest 
   { "UserId" :: (IdType)
-  , "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType)
+  , "AuthenticationToken" :: Maybe (AuthenticationHeaderType)
   }
 derive instance newtypeActivateUserRequest :: Newtype ActivateUserRequest _
 derive instance repGenericActivateUserRequest :: Generic ActivateUserRequest _
@@ -52,17 +51,17 @@ instance encodeActivateUserRequest :: Encode ActivateUserRequest where encode = 
 
 -- | Constructs ActivateUserRequest from required parameters
 newActivateUserRequest :: IdType -> ActivateUserRequest
-newActivateUserRequest _UserId = ActivateUserRequest { "UserId": _UserId, "AuthenticationToken": (NullOrUndefined Nothing) }
+newActivateUserRequest _UserId = ActivateUserRequest { "UserId": _UserId, "AuthenticationToken": Nothing }
 
 -- | Constructs ActivateUserRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newActivateUserRequest' :: IdType -> ( { "UserId" :: (IdType) , "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) } -> {"UserId" :: (IdType) , "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) } ) -> ActivateUserRequest
-newActivateUserRequest' _UserId customize = (ActivateUserRequest <<< customize) { "UserId": _UserId, "AuthenticationToken": (NullOrUndefined Nothing) }
+newActivateUserRequest' :: IdType -> ( { "UserId" :: (IdType) , "AuthenticationToken" :: Maybe (AuthenticationHeaderType) } -> {"UserId" :: (IdType) , "AuthenticationToken" :: Maybe (AuthenticationHeaderType) } ) -> ActivateUserRequest
+newActivateUserRequest' _UserId customize = (ActivateUserRequest <<< customize) { "UserId": _UserId, "AuthenticationToken": Nothing }
 
 
 
 newtype ActivateUserResponse = ActivateUserResponse 
-  { "User" :: NullOrUndefined (User)
+  { "User" :: Maybe (User)
   }
 derive instance newtypeActivateUserResponse :: Newtype ActivateUserResponse _
 derive instance repGenericActivateUserResponse :: Generic ActivateUserResponse _
@@ -72,25 +71,25 @@ instance encodeActivateUserResponse :: Encode ActivateUserResponse where encode 
 
 -- | Constructs ActivateUserResponse from required parameters
 newActivateUserResponse :: ActivateUserResponse
-newActivateUserResponse  = ActivateUserResponse { "User": (NullOrUndefined Nothing) }
+newActivateUserResponse  = ActivateUserResponse { "User": Nothing }
 
 -- | Constructs ActivateUserResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newActivateUserResponse' :: ( { "User" :: NullOrUndefined (User) } -> {"User" :: NullOrUndefined (User) } ) -> ActivateUserResponse
-newActivateUserResponse'  customize = (ActivateUserResponse <<< customize) { "User": (NullOrUndefined Nothing) }
+newActivateUserResponse' :: ( { "User" :: Maybe (User) } -> {"User" :: Maybe (User) } ) -> ActivateUserResponse
+newActivateUserResponse'  customize = (ActivateUserResponse <<< customize) { "User": Nothing }
 
 
 
 -- | <p>Describes the activity information.</p>
 newtype Activity = Activity 
-  { "Type" :: NullOrUndefined (ActivityType)
-  , "TimeStamp" :: NullOrUndefined (TimestampType)
-  , "OrganizationId" :: NullOrUndefined (IdType)
-  , "Initiator" :: NullOrUndefined (UserMetadata)
-  , "Participants" :: NullOrUndefined (Participants)
-  , "ResourceMetadata" :: NullOrUndefined (ResourceMetadata)
-  , "OriginalParent" :: NullOrUndefined (ResourceMetadata)
-  , "CommentMetadata" :: NullOrUndefined (CommentMetadata)
+  { "Type" :: Maybe (ActivityType)
+  , "TimeStamp" :: Maybe (TimestampType)
+  , "OrganizationId" :: Maybe (IdType)
+  , "Initiator" :: Maybe (UserMetadata)
+  , "Participants" :: Maybe (Participants)
+  , "ResourceMetadata" :: Maybe (ResourceMetadata)
+  , "OriginalParent" :: Maybe (ResourceMetadata)
+  , "CommentMetadata" :: Maybe (CommentMetadata)
   }
 derive instance newtypeActivity :: Newtype Activity _
 derive instance repGenericActivity :: Generic Activity _
@@ -100,12 +99,12 @@ instance encodeActivity :: Encode Activity where encode = genericEncode options
 
 -- | Constructs Activity from required parameters
 newActivity :: Activity
-newActivity  = Activity { "CommentMetadata": (NullOrUndefined Nothing), "Initiator": (NullOrUndefined Nothing), "OrganizationId": (NullOrUndefined Nothing), "OriginalParent": (NullOrUndefined Nothing), "Participants": (NullOrUndefined Nothing), "ResourceMetadata": (NullOrUndefined Nothing), "TimeStamp": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
+newActivity  = Activity { "CommentMetadata": Nothing, "Initiator": Nothing, "OrganizationId": Nothing, "OriginalParent": Nothing, "Participants": Nothing, "ResourceMetadata": Nothing, "TimeStamp": Nothing, "Type": Nothing }
 
 -- | Constructs Activity's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newActivity' :: ( { "Type" :: NullOrUndefined (ActivityType) , "TimeStamp" :: NullOrUndefined (TimestampType) , "OrganizationId" :: NullOrUndefined (IdType) , "Initiator" :: NullOrUndefined (UserMetadata) , "Participants" :: NullOrUndefined (Participants) , "ResourceMetadata" :: NullOrUndefined (ResourceMetadata) , "OriginalParent" :: NullOrUndefined (ResourceMetadata) , "CommentMetadata" :: NullOrUndefined (CommentMetadata) } -> {"Type" :: NullOrUndefined (ActivityType) , "TimeStamp" :: NullOrUndefined (TimestampType) , "OrganizationId" :: NullOrUndefined (IdType) , "Initiator" :: NullOrUndefined (UserMetadata) , "Participants" :: NullOrUndefined (Participants) , "ResourceMetadata" :: NullOrUndefined (ResourceMetadata) , "OriginalParent" :: NullOrUndefined (ResourceMetadata) , "CommentMetadata" :: NullOrUndefined (CommentMetadata) } ) -> Activity
-newActivity'  customize = (Activity <<< customize) { "CommentMetadata": (NullOrUndefined Nothing), "Initiator": (NullOrUndefined Nothing), "OrganizationId": (NullOrUndefined Nothing), "OriginalParent": (NullOrUndefined Nothing), "Participants": (NullOrUndefined Nothing), "ResourceMetadata": (NullOrUndefined Nothing), "TimeStamp": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
+newActivity' :: ( { "Type" :: Maybe (ActivityType) , "TimeStamp" :: Maybe (TimestampType) , "OrganizationId" :: Maybe (IdType) , "Initiator" :: Maybe (UserMetadata) , "Participants" :: Maybe (Participants) , "ResourceMetadata" :: Maybe (ResourceMetadata) , "OriginalParent" :: Maybe (ResourceMetadata) , "CommentMetadata" :: Maybe (CommentMetadata) } -> {"Type" :: Maybe (ActivityType) , "TimeStamp" :: Maybe (TimestampType) , "OrganizationId" :: Maybe (IdType) , "Initiator" :: Maybe (UserMetadata) , "Participants" :: Maybe (Participants) , "ResourceMetadata" :: Maybe (ResourceMetadata) , "OriginalParent" :: Maybe (ResourceMetadata) , "CommentMetadata" :: Maybe (CommentMetadata) } ) -> Activity
+newActivity'  customize = (Activity <<< customize) { "CommentMetadata": Nothing, "Initiator": Nothing, "OrganizationId": Nothing, "OriginalParent": Nothing, "Participants": Nothing, "ResourceMetadata": Nothing, "TimeStamp": Nothing, "Type": Nothing }
 
 
 
@@ -119,10 +118,10 @@ instance encodeActivityType :: Encode ActivityType where encode = genericEncode 
 
 
 newtype AddResourcePermissionsRequest = AddResourcePermissionsRequest 
-  { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType)
+  { "AuthenticationToken" :: Maybe (AuthenticationHeaderType)
   , "ResourceId" :: (ResourceIdType)
   , "Principals" :: (SharePrincipalList)
-  , "NotificationOptions" :: NullOrUndefined (NotificationOptions)
+  , "NotificationOptions" :: Maybe (NotificationOptions)
   }
 derive instance newtypeAddResourcePermissionsRequest :: Newtype AddResourcePermissionsRequest _
 derive instance repGenericAddResourcePermissionsRequest :: Generic AddResourcePermissionsRequest _
@@ -132,17 +131,17 @@ instance encodeAddResourcePermissionsRequest :: Encode AddResourcePermissionsReq
 
 -- | Constructs AddResourcePermissionsRequest from required parameters
 newAddResourcePermissionsRequest :: SharePrincipalList -> ResourceIdType -> AddResourcePermissionsRequest
-newAddResourcePermissionsRequest _Principals _ResourceId = AddResourcePermissionsRequest { "Principals": _Principals, "ResourceId": _ResourceId, "AuthenticationToken": (NullOrUndefined Nothing), "NotificationOptions": (NullOrUndefined Nothing) }
+newAddResourcePermissionsRequest _Principals _ResourceId = AddResourcePermissionsRequest { "Principals": _Principals, "ResourceId": _ResourceId, "AuthenticationToken": Nothing, "NotificationOptions": Nothing }
 
 -- | Constructs AddResourcePermissionsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAddResourcePermissionsRequest' :: SharePrincipalList -> ResourceIdType -> ( { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "ResourceId" :: (ResourceIdType) , "Principals" :: (SharePrincipalList) , "NotificationOptions" :: NullOrUndefined (NotificationOptions) } -> {"AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "ResourceId" :: (ResourceIdType) , "Principals" :: (SharePrincipalList) , "NotificationOptions" :: NullOrUndefined (NotificationOptions) } ) -> AddResourcePermissionsRequest
-newAddResourcePermissionsRequest' _Principals _ResourceId customize = (AddResourcePermissionsRequest <<< customize) { "Principals": _Principals, "ResourceId": _ResourceId, "AuthenticationToken": (NullOrUndefined Nothing), "NotificationOptions": (NullOrUndefined Nothing) }
+newAddResourcePermissionsRequest' :: SharePrincipalList -> ResourceIdType -> ( { "AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "ResourceId" :: (ResourceIdType) , "Principals" :: (SharePrincipalList) , "NotificationOptions" :: Maybe (NotificationOptions) } -> {"AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "ResourceId" :: (ResourceIdType) , "Principals" :: (SharePrincipalList) , "NotificationOptions" :: Maybe (NotificationOptions) } ) -> AddResourcePermissionsRequest
+newAddResourcePermissionsRequest' _Principals _ResourceId customize = (AddResourcePermissionsRequest <<< customize) { "Principals": _Principals, "ResourceId": _ResourceId, "AuthenticationToken": Nothing, "NotificationOptions": Nothing }
 
 
 
 newtype AddResourcePermissionsResponse = AddResourcePermissionsResponse 
-  { "ShareResults" :: NullOrUndefined (ShareResultsList)
+  { "ShareResults" :: Maybe (ShareResultsList)
   }
 derive instance newtypeAddResourcePermissionsResponse :: Newtype AddResourcePermissionsResponse _
 derive instance repGenericAddResourcePermissionsResponse :: Generic AddResourcePermissionsResponse _
@@ -152,12 +151,12 @@ instance encodeAddResourcePermissionsResponse :: Encode AddResourcePermissionsRe
 
 -- | Constructs AddResourcePermissionsResponse from required parameters
 newAddResourcePermissionsResponse :: AddResourcePermissionsResponse
-newAddResourcePermissionsResponse  = AddResourcePermissionsResponse { "ShareResults": (NullOrUndefined Nothing) }
+newAddResourcePermissionsResponse  = AddResourcePermissionsResponse { "ShareResults": Nothing }
 
 -- | Constructs AddResourcePermissionsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAddResourcePermissionsResponse' :: ( { "ShareResults" :: NullOrUndefined (ShareResultsList) } -> {"ShareResults" :: NullOrUndefined (ShareResultsList) } ) -> AddResourcePermissionsResponse
-newAddResourcePermissionsResponse'  customize = (AddResourcePermissionsResponse <<< customize) { "ShareResults": (NullOrUndefined Nothing) }
+newAddResourcePermissionsResponse' :: ( { "ShareResults" :: Maybe (ShareResultsList) } -> {"ShareResults" :: Maybe (ShareResultsList) } ) -> AddResourcePermissionsResponse
+newAddResourcePermissionsResponse'  customize = (AddResourcePermissionsResponse <<< customize) { "ShareResults": Nothing }
 
 
 
@@ -191,14 +190,14 @@ instance encodeBooleanType :: Encode BooleanType where encode = genericEncode op
 -- | <p>Describes a comment.</p>
 newtype Comment = Comment 
   { "CommentId" :: (CommentIdType)
-  , "ParentId" :: NullOrUndefined (CommentIdType)
-  , "ThreadId" :: NullOrUndefined (CommentIdType)
-  , "Text" :: NullOrUndefined (CommentTextType)
-  , "Contributor" :: NullOrUndefined (User)
-  , "CreatedTimestamp" :: NullOrUndefined (TimestampType)
-  , "Status" :: NullOrUndefined (CommentStatusType)
-  , "Visibility" :: NullOrUndefined (CommentVisibilityType)
-  , "RecipientId" :: NullOrUndefined (IdType)
+  , "ParentId" :: Maybe (CommentIdType)
+  , "ThreadId" :: Maybe (CommentIdType)
+  , "Text" :: Maybe (CommentTextType)
+  , "Contributor" :: Maybe (User)
+  , "CreatedTimestamp" :: Maybe (TimestampType)
+  , "Status" :: Maybe (CommentStatusType)
+  , "Visibility" :: Maybe (CommentVisibilityType)
+  , "RecipientId" :: Maybe (IdType)
   }
 derive instance newtypeComment :: Newtype Comment _
 derive instance repGenericComment :: Generic Comment _
@@ -208,12 +207,12 @@ instance encodeComment :: Encode Comment where encode = genericEncode options
 
 -- | Constructs Comment from required parameters
 newComment :: CommentIdType -> Comment
-newComment _CommentId = Comment { "CommentId": _CommentId, "Contributor": (NullOrUndefined Nothing), "CreatedTimestamp": (NullOrUndefined Nothing), "ParentId": (NullOrUndefined Nothing), "RecipientId": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "Text": (NullOrUndefined Nothing), "ThreadId": (NullOrUndefined Nothing), "Visibility": (NullOrUndefined Nothing) }
+newComment _CommentId = Comment { "CommentId": _CommentId, "Contributor": Nothing, "CreatedTimestamp": Nothing, "ParentId": Nothing, "RecipientId": Nothing, "Status": Nothing, "Text": Nothing, "ThreadId": Nothing, "Visibility": Nothing }
 
 -- | Constructs Comment's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newComment' :: CommentIdType -> ( { "CommentId" :: (CommentIdType) , "ParentId" :: NullOrUndefined (CommentIdType) , "ThreadId" :: NullOrUndefined (CommentIdType) , "Text" :: NullOrUndefined (CommentTextType) , "Contributor" :: NullOrUndefined (User) , "CreatedTimestamp" :: NullOrUndefined (TimestampType) , "Status" :: NullOrUndefined (CommentStatusType) , "Visibility" :: NullOrUndefined (CommentVisibilityType) , "RecipientId" :: NullOrUndefined (IdType) } -> {"CommentId" :: (CommentIdType) , "ParentId" :: NullOrUndefined (CommentIdType) , "ThreadId" :: NullOrUndefined (CommentIdType) , "Text" :: NullOrUndefined (CommentTextType) , "Contributor" :: NullOrUndefined (User) , "CreatedTimestamp" :: NullOrUndefined (TimestampType) , "Status" :: NullOrUndefined (CommentStatusType) , "Visibility" :: NullOrUndefined (CommentVisibilityType) , "RecipientId" :: NullOrUndefined (IdType) } ) -> Comment
-newComment' _CommentId customize = (Comment <<< customize) { "CommentId": _CommentId, "Contributor": (NullOrUndefined Nothing), "CreatedTimestamp": (NullOrUndefined Nothing), "ParentId": (NullOrUndefined Nothing), "RecipientId": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "Text": (NullOrUndefined Nothing), "ThreadId": (NullOrUndefined Nothing), "Visibility": (NullOrUndefined Nothing) }
+newComment' :: CommentIdType -> ( { "CommentId" :: (CommentIdType) , "ParentId" :: Maybe (CommentIdType) , "ThreadId" :: Maybe (CommentIdType) , "Text" :: Maybe (CommentTextType) , "Contributor" :: Maybe (User) , "CreatedTimestamp" :: Maybe (TimestampType) , "Status" :: Maybe (CommentStatusType) , "Visibility" :: Maybe (CommentVisibilityType) , "RecipientId" :: Maybe (IdType) } -> {"CommentId" :: (CommentIdType) , "ParentId" :: Maybe (CommentIdType) , "ThreadId" :: Maybe (CommentIdType) , "Text" :: Maybe (CommentTextType) , "Contributor" :: Maybe (User) , "CreatedTimestamp" :: Maybe (TimestampType) , "Status" :: Maybe (CommentStatusType) , "Visibility" :: Maybe (CommentVisibilityType) , "RecipientId" :: Maybe (IdType) } ) -> Comment
+newComment' _CommentId customize = (Comment <<< customize) { "CommentId": _CommentId, "Contributor": Nothing, "CreatedTimestamp": Nothing, "ParentId": Nothing, "RecipientId": Nothing, "Status": Nothing, "Text": Nothing, "ThreadId": Nothing, "Visibility": Nothing }
 
 
 
@@ -237,11 +236,11 @@ instance encodeCommentList :: Encode CommentList where encode = genericEncode op
 
 -- | <p>Describes the metadata of a comment.</p>
 newtype CommentMetadata = CommentMetadata 
-  { "CommentId" :: NullOrUndefined (CommentIdType)
-  , "Contributor" :: NullOrUndefined (User)
-  , "CreatedTimestamp" :: NullOrUndefined (TimestampType)
-  , "CommentStatus" :: NullOrUndefined (CommentStatusType)
-  , "RecipientId" :: NullOrUndefined (IdType)
+  { "CommentId" :: Maybe (CommentIdType)
+  , "Contributor" :: Maybe (User)
+  , "CreatedTimestamp" :: Maybe (TimestampType)
+  , "CommentStatus" :: Maybe (CommentStatusType)
+  , "RecipientId" :: Maybe (IdType)
   }
 derive instance newtypeCommentMetadata :: Newtype CommentMetadata _
 derive instance repGenericCommentMetadata :: Generic CommentMetadata _
@@ -251,12 +250,12 @@ instance encodeCommentMetadata :: Encode CommentMetadata where encode = genericE
 
 -- | Constructs CommentMetadata from required parameters
 newCommentMetadata :: CommentMetadata
-newCommentMetadata  = CommentMetadata { "CommentId": (NullOrUndefined Nothing), "CommentStatus": (NullOrUndefined Nothing), "Contributor": (NullOrUndefined Nothing), "CreatedTimestamp": (NullOrUndefined Nothing), "RecipientId": (NullOrUndefined Nothing) }
+newCommentMetadata  = CommentMetadata { "CommentId": Nothing, "CommentStatus": Nothing, "Contributor": Nothing, "CreatedTimestamp": Nothing, "RecipientId": Nothing }
 
 -- | Constructs CommentMetadata's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCommentMetadata' :: ( { "CommentId" :: NullOrUndefined (CommentIdType) , "Contributor" :: NullOrUndefined (User) , "CreatedTimestamp" :: NullOrUndefined (TimestampType) , "CommentStatus" :: NullOrUndefined (CommentStatusType) , "RecipientId" :: NullOrUndefined (IdType) } -> {"CommentId" :: NullOrUndefined (CommentIdType) , "Contributor" :: NullOrUndefined (User) , "CreatedTimestamp" :: NullOrUndefined (TimestampType) , "CommentStatus" :: NullOrUndefined (CommentStatusType) , "RecipientId" :: NullOrUndefined (IdType) } ) -> CommentMetadata
-newCommentMetadata'  customize = (CommentMetadata <<< customize) { "CommentId": (NullOrUndefined Nothing), "CommentStatus": (NullOrUndefined Nothing), "Contributor": (NullOrUndefined Nothing), "CreatedTimestamp": (NullOrUndefined Nothing), "RecipientId": (NullOrUndefined Nothing) }
+newCommentMetadata' :: ( { "CommentId" :: Maybe (CommentIdType) , "Contributor" :: Maybe (User) , "CreatedTimestamp" :: Maybe (TimestampType) , "CommentStatus" :: Maybe (CommentStatusType) , "RecipientId" :: Maybe (IdType) } -> {"CommentId" :: Maybe (CommentIdType) , "Contributor" :: Maybe (User) , "CreatedTimestamp" :: Maybe (TimestampType) , "CommentStatus" :: Maybe (CommentStatusType) , "RecipientId" :: Maybe (IdType) } ) -> CommentMetadata
+newCommentMetadata'  customize = (CommentMetadata <<< customize) { "CommentId": Nothing, "CommentStatus": Nothing, "Contributor": Nothing, "CreatedTimestamp": Nothing, "RecipientId": Nothing }
 
 
 
@@ -289,7 +288,7 @@ instance encodeCommentVisibilityType :: Encode CommentVisibilityType where encod
 
 -- | <p>The resource hierarchy is changing.</p>
 newtype ConcurrentModificationException = ConcurrentModificationException 
-  { "Message" :: NullOrUndefined (ErrorMessageType)
+  { "Message" :: Maybe (ErrorMessageType)
   }
 derive instance newtypeConcurrentModificationException :: Newtype ConcurrentModificationException _
 derive instance repGenericConcurrentModificationException :: Generic ConcurrentModificationException _
@@ -299,24 +298,24 @@ instance encodeConcurrentModificationException :: Encode ConcurrentModificationE
 
 -- | Constructs ConcurrentModificationException from required parameters
 newConcurrentModificationException :: ConcurrentModificationException
-newConcurrentModificationException  = ConcurrentModificationException { "Message": (NullOrUndefined Nothing) }
+newConcurrentModificationException  = ConcurrentModificationException { "Message": Nothing }
 
 -- | Constructs ConcurrentModificationException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newConcurrentModificationException' :: ( { "Message" :: NullOrUndefined (ErrorMessageType) } -> {"Message" :: NullOrUndefined (ErrorMessageType) } ) -> ConcurrentModificationException
-newConcurrentModificationException'  customize = (ConcurrentModificationException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newConcurrentModificationException' :: ( { "Message" :: Maybe (ErrorMessageType) } -> {"Message" :: Maybe (ErrorMessageType) } ) -> ConcurrentModificationException
+newConcurrentModificationException'  customize = (ConcurrentModificationException <<< customize) { "Message": Nothing }
 
 
 
 newtype CreateCommentRequest = CreateCommentRequest 
-  { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType)
+  { "AuthenticationToken" :: Maybe (AuthenticationHeaderType)
   , "DocumentId" :: (ResourceIdType)
   , "VersionId" :: (DocumentVersionIdType)
-  , "ParentId" :: NullOrUndefined (CommentIdType)
-  , "ThreadId" :: NullOrUndefined (CommentIdType)
+  , "ParentId" :: Maybe (CommentIdType)
+  , "ThreadId" :: Maybe (CommentIdType)
   , "Text" :: (CommentTextType)
-  , "Visibility" :: NullOrUndefined (CommentVisibilityType)
-  , "NotifyCollaborators" :: NullOrUndefined (BooleanType)
+  , "Visibility" :: Maybe (CommentVisibilityType)
+  , "NotifyCollaborators" :: Maybe (BooleanType)
   }
 derive instance newtypeCreateCommentRequest :: Newtype CreateCommentRequest _
 derive instance repGenericCreateCommentRequest :: Generic CreateCommentRequest _
@@ -326,17 +325,17 @@ instance encodeCreateCommentRequest :: Encode CreateCommentRequest where encode 
 
 -- | Constructs CreateCommentRequest from required parameters
 newCreateCommentRequest :: ResourceIdType -> CommentTextType -> DocumentVersionIdType -> CreateCommentRequest
-newCreateCommentRequest _DocumentId _Text _VersionId = CreateCommentRequest { "DocumentId": _DocumentId, "Text": _Text, "VersionId": _VersionId, "AuthenticationToken": (NullOrUndefined Nothing), "NotifyCollaborators": (NullOrUndefined Nothing), "ParentId": (NullOrUndefined Nothing), "ThreadId": (NullOrUndefined Nothing), "Visibility": (NullOrUndefined Nothing) }
+newCreateCommentRequest _DocumentId _Text _VersionId = CreateCommentRequest { "DocumentId": _DocumentId, "Text": _Text, "VersionId": _VersionId, "AuthenticationToken": Nothing, "NotifyCollaborators": Nothing, "ParentId": Nothing, "ThreadId": Nothing, "Visibility": Nothing }
 
 -- | Constructs CreateCommentRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateCommentRequest' :: ResourceIdType -> CommentTextType -> DocumentVersionIdType -> ( { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "DocumentId" :: (ResourceIdType) , "VersionId" :: (DocumentVersionIdType) , "ParentId" :: NullOrUndefined (CommentIdType) , "ThreadId" :: NullOrUndefined (CommentIdType) , "Text" :: (CommentTextType) , "Visibility" :: NullOrUndefined (CommentVisibilityType) , "NotifyCollaborators" :: NullOrUndefined (BooleanType) } -> {"AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "DocumentId" :: (ResourceIdType) , "VersionId" :: (DocumentVersionIdType) , "ParentId" :: NullOrUndefined (CommentIdType) , "ThreadId" :: NullOrUndefined (CommentIdType) , "Text" :: (CommentTextType) , "Visibility" :: NullOrUndefined (CommentVisibilityType) , "NotifyCollaborators" :: NullOrUndefined (BooleanType) } ) -> CreateCommentRequest
-newCreateCommentRequest' _DocumentId _Text _VersionId customize = (CreateCommentRequest <<< customize) { "DocumentId": _DocumentId, "Text": _Text, "VersionId": _VersionId, "AuthenticationToken": (NullOrUndefined Nothing), "NotifyCollaborators": (NullOrUndefined Nothing), "ParentId": (NullOrUndefined Nothing), "ThreadId": (NullOrUndefined Nothing), "Visibility": (NullOrUndefined Nothing) }
+newCreateCommentRequest' :: ResourceIdType -> CommentTextType -> DocumentVersionIdType -> ( { "AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "DocumentId" :: (ResourceIdType) , "VersionId" :: (DocumentVersionIdType) , "ParentId" :: Maybe (CommentIdType) , "ThreadId" :: Maybe (CommentIdType) , "Text" :: (CommentTextType) , "Visibility" :: Maybe (CommentVisibilityType) , "NotifyCollaborators" :: Maybe (BooleanType) } -> {"AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "DocumentId" :: (ResourceIdType) , "VersionId" :: (DocumentVersionIdType) , "ParentId" :: Maybe (CommentIdType) , "ThreadId" :: Maybe (CommentIdType) , "Text" :: (CommentTextType) , "Visibility" :: Maybe (CommentVisibilityType) , "NotifyCollaborators" :: Maybe (BooleanType) } ) -> CreateCommentRequest
+newCreateCommentRequest' _DocumentId _Text _VersionId customize = (CreateCommentRequest <<< customize) { "DocumentId": _DocumentId, "Text": _Text, "VersionId": _VersionId, "AuthenticationToken": Nothing, "NotifyCollaborators": Nothing, "ParentId": Nothing, "ThreadId": Nothing, "Visibility": Nothing }
 
 
 
 newtype CreateCommentResponse = CreateCommentResponse 
-  { "Comment" :: NullOrUndefined (Comment)
+  { "Comment" :: Maybe (Comment)
   }
 derive instance newtypeCreateCommentResponse :: Newtype CreateCommentResponse _
 derive instance repGenericCreateCommentResponse :: Generic CreateCommentResponse _
@@ -346,19 +345,19 @@ instance encodeCreateCommentResponse :: Encode CreateCommentResponse where encod
 
 -- | Constructs CreateCommentResponse from required parameters
 newCreateCommentResponse :: CreateCommentResponse
-newCreateCommentResponse  = CreateCommentResponse { "Comment": (NullOrUndefined Nothing) }
+newCreateCommentResponse  = CreateCommentResponse { "Comment": Nothing }
 
 -- | Constructs CreateCommentResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateCommentResponse' :: ( { "Comment" :: NullOrUndefined (Comment) } -> {"Comment" :: NullOrUndefined (Comment) } ) -> CreateCommentResponse
-newCreateCommentResponse'  customize = (CreateCommentResponse <<< customize) { "Comment": (NullOrUndefined Nothing) }
+newCreateCommentResponse' :: ( { "Comment" :: Maybe (Comment) } -> {"Comment" :: Maybe (Comment) } ) -> CreateCommentResponse
+newCreateCommentResponse'  customize = (CreateCommentResponse <<< customize) { "Comment": Nothing }
 
 
 
 newtype CreateCustomMetadataRequest = CreateCustomMetadataRequest 
-  { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType)
+  { "AuthenticationToken" :: Maybe (AuthenticationHeaderType)
   , "ResourceId" :: (ResourceIdType)
-  , "VersionId" :: NullOrUndefined (DocumentVersionIdType)
+  , "VersionId" :: Maybe (DocumentVersionIdType)
   , "CustomMetadata" :: (CustomMetadataMap)
   }
 derive instance newtypeCreateCustomMetadataRequest :: Newtype CreateCustomMetadataRequest _
@@ -369,12 +368,12 @@ instance encodeCreateCustomMetadataRequest :: Encode CreateCustomMetadataRequest
 
 -- | Constructs CreateCustomMetadataRequest from required parameters
 newCreateCustomMetadataRequest :: CustomMetadataMap -> ResourceIdType -> CreateCustomMetadataRequest
-newCreateCustomMetadataRequest _CustomMetadata _ResourceId = CreateCustomMetadataRequest { "CustomMetadata": _CustomMetadata, "ResourceId": _ResourceId, "AuthenticationToken": (NullOrUndefined Nothing), "VersionId": (NullOrUndefined Nothing) }
+newCreateCustomMetadataRequest _CustomMetadata _ResourceId = CreateCustomMetadataRequest { "CustomMetadata": _CustomMetadata, "ResourceId": _ResourceId, "AuthenticationToken": Nothing, "VersionId": Nothing }
 
 -- | Constructs CreateCustomMetadataRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateCustomMetadataRequest' :: CustomMetadataMap -> ResourceIdType -> ( { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "ResourceId" :: (ResourceIdType) , "VersionId" :: NullOrUndefined (DocumentVersionIdType) , "CustomMetadata" :: (CustomMetadataMap) } -> {"AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "ResourceId" :: (ResourceIdType) , "VersionId" :: NullOrUndefined (DocumentVersionIdType) , "CustomMetadata" :: (CustomMetadataMap) } ) -> CreateCustomMetadataRequest
-newCreateCustomMetadataRequest' _CustomMetadata _ResourceId customize = (CreateCustomMetadataRequest <<< customize) { "CustomMetadata": _CustomMetadata, "ResourceId": _ResourceId, "AuthenticationToken": (NullOrUndefined Nothing), "VersionId": (NullOrUndefined Nothing) }
+newCreateCustomMetadataRequest' :: CustomMetadataMap -> ResourceIdType -> ( { "AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "ResourceId" :: (ResourceIdType) , "VersionId" :: Maybe (DocumentVersionIdType) , "CustomMetadata" :: (CustomMetadataMap) } -> {"AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "ResourceId" :: (ResourceIdType) , "VersionId" :: Maybe (DocumentVersionIdType) , "CustomMetadata" :: (CustomMetadataMap) } ) -> CreateCustomMetadataRequest
+newCreateCustomMetadataRequest' _CustomMetadata _ResourceId customize = (CreateCustomMetadataRequest <<< customize) { "CustomMetadata": _CustomMetadata, "ResourceId": _ResourceId, "AuthenticationToken": Nothing, "VersionId": Nothing }
 
 
 
@@ -388,8 +387,8 @@ instance encodeCreateCustomMetadataResponse :: Encode CreateCustomMetadataRespon
 
 
 newtype CreateFolderRequest = CreateFolderRequest 
-  { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType)
-  , "Name" :: NullOrUndefined (ResourceNameType)
+  { "AuthenticationToken" :: Maybe (AuthenticationHeaderType)
+  , "Name" :: Maybe (ResourceNameType)
   , "ParentFolderId" :: (ResourceIdType)
   }
 derive instance newtypeCreateFolderRequest :: Newtype CreateFolderRequest _
@@ -400,17 +399,17 @@ instance encodeCreateFolderRequest :: Encode CreateFolderRequest where encode = 
 
 -- | Constructs CreateFolderRequest from required parameters
 newCreateFolderRequest :: ResourceIdType -> CreateFolderRequest
-newCreateFolderRequest _ParentFolderId = CreateFolderRequest { "ParentFolderId": _ParentFolderId, "AuthenticationToken": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing) }
+newCreateFolderRequest _ParentFolderId = CreateFolderRequest { "ParentFolderId": _ParentFolderId, "AuthenticationToken": Nothing, "Name": Nothing }
 
 -- | Constructs CreateFolderRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateFolderRequest' :: ResourceIdType -> ( { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "Name" :: NullOrUndefined (ResourceNameType) , "ParentFolderId" :: (ResourceIdType) } -> {"AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "Name" :: NullOrUndefined (ResourceNameType) , "ParentFolderId" :: (ResourceIdType) } ) -> CreateFolderRequest
-newCreateFolderRequest' _ParentFolderId customize = (CreateFolderRequest <<< customize) { "ParentFolderId": _ParentFolderId, "AuthenticationToken": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing) }
+newCreateFolderRequest' :: ResourceIdType -> ( { "AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "Name" :: Maybe (ResourceNameType) , "ParentFolderId" :: (ResourceIdType) } -> {"AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "Name" :: Maybe (ResourceNameType) , "ParentFolderId" :: (ResourceIdType) } ) -> CreateFolderRequest
+newCreateFolderRequest' _ParentFolderId customize = (CreateFolderRequest <<< customize) { "ParentFolderId": _ParentFolderId, "AuthenticationToken": Nothing, "Name": Nothing }
 
 
 
 newtype CreateFolderResponse = CreateFolderResponse 
-  { "Metadata" :: NullOrUndefined (FolderMetadata)
+  { "Metadata" :: Maybe (FolderMetadata)
   }
 derive instance newtypeCreateFolderResponse :: Newtype CreateFolderResponse _
 derive instance repGenericCreateFolderResponse :: Generic CreateFolderResponse _
@@ -420,19 +419,19 @@ instance encodeCreateFolderResponse :: Encode CreateFolderResponse where encode 
 
 -- | Constructs CreateFolderResponse from required parameters
 newCreateFolderResponse :: CreateFolderResponse
-newCreateFolderResponse  = CreateFolderResponse { "Metadata": (NullOrUndefined Nothing) }
+newCreateFolderResponse  = CreateFolderResponse { "Metadata": Nothing }
 
 -- | Constructs CreateFolderResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateFolderResponse' :: ( { "Metadata" :: NullOrUndefined (FolderMetadata) } -> {"Metadata" :: NullOrUndefined (FolderMetadata) } ) -> CreateFolderResponse
-newCreateFolderResponse'  customize = (CreateFolderResponse <<< customize) { "Metadata": (NullOrUndefined Nothing) }
+newCreateFolderResponse' :: ( { "Metadata" :: Maybe (FolderMetadata) } -> {"Metadata" :: Maybe (FolderMetadata) } ) -> CreateFolderResponse
+newCreateFolderResponse'  customize = (CreateFolderResponse <<< customize) { "Metadata": Nothing }
 
 
 
 newtype CreateLabelsRequest = CreateLabelsRequest 
   { "ResourceId" :: (ResourceIdType)
   , "Labels" :: (SharedLabels)
-  , "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType)
+  , "AuthenticationToken" :: Maybe (AuthenticationHeaderType)
   }
 derive instance newtypeCreateLabelsRequest :: Newtype CreateLabelsRequest _
 derive instance repGenericCreateLabelsRequest :: Generic CreateLabelsRequest _
@@ -442,12 +441,12 @@ instance encodeCreateLabelsRequest :: Encode CreateLabelsRequest where encode = 
 
 -- | Constructs CreateLabelsRequest from required parameters
 newCreateLabelsRequest :: SharedLabels -> ResourceIdType -> CreateLabelsRequest
-newCreateLabelsRequest _Labels _ResourceId = CreateLabelsRequest { "Labels": _Labels, "ResourceId": _ResourceId, "AuthenticationToken": (NullOrUndefined Nothing) }
+newCreateLabelsRequest _Labels _ResourceId = CreateLabelsRequest { "Labels": _Labels, "ResourceId": _ResourceId, "AuthenticationToken": Nothing }
 
 -- | Constructs CreateLabelsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateLabelsRequest' :: SharedLabels -> ResourceIdType -> ( { "ResourceId" :: (ResourceIdType) , "Labels" :: (SharedLabels) , "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) } -> {"ResourceId" :: (ResourceIdType) , "Labels" :: (SharedLabels) , "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) } ) -> CreateLabelsRequest
-newCreateLabelsRequest' _Labels _ResourceId customize = (CreateLabelsRequest <<< customize) { "Labels": _Labels, "ResourceId": _ResourceId, "AuthenticationToken": (NullOrUndefined Nothing) }
+newCreateLabelsRequest' :: SharedLabels -> ResourceIdType -> ( { "ResourceId" :: (ResourceIdType) , "Labels" :: (SharedLabels) , "AuthenticationToken" :: Maybe (AuthenticationHeaderType) } -> {"ResourceId" :: (ResourceIdType) , "Labels" :: (SharedLabels) , "AuthenticationToken" :: Maybe (AuthenticationHeaderType) } ) -> CreateLabelsRequest
+newCreateLabelsRequest' _Labels _ResourceId customize = (CreateLabelsRequest <<< customize) { "Labels": _Labels, "ResourceId": _ResourceId, "AuthenticationToken": Nothing }
 
 
 
@@ -484,7 +483,7 @@ newCreateNotificationSubscriptionRequest' _Endpoint _OrganizationId _Protocol _S
 
 
 newtype CreateNotificationSubscriptionResponse = CreateNotificationSubscriptionResponse 
-  { "Subscription" :: NullOrUndefined (Subscription)
+  { "Subscription" :: Maybe (Subscription)
   }
 derive instance newtypeCreateNotificationSubscriptionResponse :: Newtype CreateNotificationSubscriptionResponse _
 derive instance repGenericCreateNotificationSubscriptionResponse :: Generic CreateNotificationSubscriptionResponse _
@@ -494,25 +493,25 @@ instance encodeCreateNotificationSubscriptionResponse :: Encode CreateNotificati
 
 -- | Constructs CreateNotificationSubscriptionResponse from required parameters
 newCreateNotificationSubscriptionResponse :: CreateNotificationSubscriptionResponse
-newCreateNotificationSubscriptionResponse  = CreateNotificationSubscriptionResponse { "Subscription": (NullOrUndefined Nothing) }
+newCreateNotificationSubscriptionResponse  = CreateNotificationSubscriptionResponse { "Subscription": Nothing }
 
 -- | Constructs CreateNotificationSubscriptionResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateNotificationSubscriptionResponse' :: ( { "Subscription" :: NullOrUndefined (Subscription) } -> {"Subscription" :: NullOrUndefined (Subscription) } ) -> CreateNotificationSubscriptionResponse
-newCreateNotificationSubscriptionResponse'  customize = (CreateNotificationSubscriptionResponse <<< customize) { "Subscription": (NullOrUndefined Nothing) }
+newCreateNotificationSubscriptionResponse' :: ( { "Subscription" :: Maybe (Subscription) } -> {"Subscription" :: Maybe (Subscription) } ) -> CreateNotificationSubscriptionResponse
+newCreateNotificationSubscriptionResponse'  customize = (CreateNotificationSubscriptionResponse <<< customize) { "Subscription": Nothing }
 
 
 
 newtype CreateUserRequest = CreateUserRequest 
-  { "OrganizationId" :: NullOrUndefined (IdType)
+  { "OrganizationId" :: Maybe (IdType)
   , "Username" :: (UsernameType)
-  , "EmailAddress" :: NullOrUndefined (EmailAddressType)
+  , "EmailAddress" :: Maybe (EmailAddressType)
   , "GivenName" :: (UserAttributeValueType)
   , "Surname" :: (UserAttributeValueType)
   , "Password" :: (PasswordType)
-  , "TimeZoneId" :: NullOrUndefined (TimeZoneIdType)
-  , "StorageRule" :: NullOrUndefined (StorageRuleType)
-  , "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType)
+  , "TimeZoneId" :: Maybe (TimeZoneIdType)
+  , "StorageRule" :: Maybe (StorageRuleType)
+  , "AuthenticationToken" :: Maybe (AuthenticationHeaderType)
   }
 derive instance newtypeCreateUserRequest :: Newtype CreateUserRequest _
 derive instance repGenericCreateUserRequest :: Generic CreateUserRequest _
@@ -522,17 +521,17 @@ instance encodeCreateUserRequest :: Encode CreateUserRequest where encode = gene
 
 -- | Constructs CreateUserRequest from required parameters
 newCreateUserRequest :: UserAttributeValueType -> PasswordType -> UserAttributeValueType -> UsernameType -> CreateUserRequest
-newCreateUserRequest _GivenName _Password _Surname _Username = CreateUserRequest { "GivenName": _GivenName, "Password": _Password, "Surname": _Surname, "Username": _Username, "AuthenticationToken": (NullOrUndefined Nothing), "EmailAddress": (NullOrUndefined Nothing), "OrganizationId": (NullOrUndefined Nothing), "StorageRule": (NullOrUndefined Nothing), "TimeZoneId": (NullOrUndefined Nothing) }
+newCreateUserRequest _GivenName _Password _Surname _Username = CreateUserRequest { "GivenName": _GivenName, "Password": _Password, "Surname": _Surname, "Username": _Username, "AuthenticationToken": Nothing, "EmailAddress": Nothing, "OrganizationId": Nothing, "StorageRule": Nothing, "TimeZoneId": Nothing }
 
 -- | Constructs CreateUserRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateUserRequest' :: UserAttributeValueType -> PasswordType -> UserAttributeValueType -> UsernameType -> ( { "OrganizationId" :: NullOrUndefined (IdType) , "Username" :: (UsernameType) , "EmailAddress" :: NullOrUndefined (EmailAddressType) , "GivenName" :: (UserAttributeValueType) , "Surname" :: (UserAttributeValueType) , "Password" :: (PasswordType) , "TimeZoneId" :: NullOrUndefined (TimeZoneIdType) , "StorageRule" :: NullOrUndefined (StorageRuleType) , "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) } -> {"OrganizationId" :: NullOrUndefined (IdType) , "Username" :: (UsernameType) , "EmailAddress" :: NullOrUndefined (EmailAddressType) , "GivenName" :: (UserAttributeValueType) , "Surname" :: (UserAttributeValueType) , "Password" :: (PasswordType) , "TimeZoneId" :: NullOrUndefined (TimeZoneIdType) , "StorageRule" :: NullOrUndefined (StorageRuleType) , "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) } ) -> CreateUserRequest
-newCreateUserRequest' _GivenName _Password _Surname _Username customize = (CreateUserRequest <<< customize) { "GivenName": _GivenName, "Password": _Password, "Surname": _Surname, "Username": _Username, "AuthenticationToken": (NullOrUndefined Nothing), "EmailAddress": (NullOrUndefined Nothing), "OrganizationId": (NullOrUndefined Nothing), "StorageRule": (NullOrUndefined Nothing), "TimeZoneId": (NullOrUndefined Nothing) }
+newCreateUserRequest' :: UserAttributeValueType -> PasswordType -> UserAttributeValueType -> UsernameType -> ( { "OrganizationId" :: Maybe (IdType) , "Username" :: (UsernameType) , "EmailAddress" :: Maybe (EmailAddressType) , "GivenName" :: (UserAttributeValueType) , "Surname" :: (UserAttributeValueType) , "Password" :: (PasswordType) , "TimeZoneId" :: Maybe (TimeZoneIdType) , "StorageRule" :: Maybe (StorageRuleType) , "AuthenticationToken" :: Maybe (AuthenticationHeaderType) } -> {"OrganizationId" :: Maybe (IdType) , "Username" :: (UsernameType) , "EmailAddress" :: Maybe (EmailAddressType) , "GivenName" :: (UserAttributeValueType) , "Surname" :: (UserAttributeValueType) , "Password" :: (PasswordType) , "TimeZoneId" :: Maybe (TimeZoneIdType) , "StorageRule" :: Maybe (StorageRuleType) , "AuthenticationToken" :: Maybe (AuthenticationHeaderType) } ) -> CreateUserRequest
+newCreateUserRequest' _GivenName _Password _Surname _Username customize = (CreateUserRequest <<< customize) { "GivenName": _GivenName, "Password": _Password, "Surname": _Surname, "Username": _Username, "AuthenticationToken": Nothing, "EmailAddress": Nothing, "OrganizationId": Nothing, "StorageRule": Nothing, "TimeZoneId": Nothing }
 
 
 
 newtype CreateUserResponse = CreateUserResponse 
-  { "User" :: NullOrUndefined (User)
+  { "User" :: Maybe (User)
   }
 derive instance newtypeCreateUserResponse :: Newtype CreateUserResponse _
 derive instance repGenericCreateUserResponse :: Generic CreateUserResponse _
@@ -542,12 +541,12 @@ instance encodeCreateUserResponse :: Encode CreateUserResponse where encode = ge
 
 -- | Constructs CreateUserResponse from required parameters
 newCreateUserResponse :: CreateUserResponse
-newCreateUserResponse  = CreateUserResponse { "User": (NullOrUndefined Nothing) }
+newCreateUserResponse  = CreateUserResponse { "User": Nothing }
 
 -- | Constructs CreateUserResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateUserResponse' :: ( { "User" :: NullOrUndefined (User) } -> {"User" :: NullOrUndefined (User) } ) -> CreateUserResponse
-newCreateUserResponse'  customize = (CreateUserResponse <<< customize) { "User": (NullOrUndefined Nothing) }
+newCreateUserResponse' :: ( { "User" :: Maybe (User) } -> {"User" :: Maybe (User) } ) -> CreateUserResponse
+newCreateUserResponse'  customize = (CreateUserResponse <<< customize) { "User": Nothing }
 
 
 
@@ -571,7 +570,7 @@ instance encodeCustomMetadataKeyType :: Encode CustomMetadataKeyType where encod
 
 -- | <p>The limit has been reached on the number of custom properties for the specified resource.</p>
 newtype CustomMetadataLimitExceededException = CustomMetadataLimitExceededException 
-  { "Message" :: NullOrUndefined (ErrorMessageType)
+  { "Message" :: Maybe (ErrorMessageType)
   }
 derive instance newtypeCustomMetadataLimitExceededException :: Newtype CustomMetadataLimitExceededException _
 derive instance repGenericCustomMetadataLimitExceededException :: Generic CustomMetadataLimitExceededException _
@@ -581,12 +580,12 @@ instance encodeCustomMetadataLimitExceededException :: Encode CustomMetadataLimi
 
 -- | Constructs CustomMetadataLimitExceededException from required parameters
 newCustomMetadataLimitExceededException :: CustomMetadataLimitExceededException
-newCustomMetadataLimitExceededException  = CustomMetadataLimitExceededException { "Message": (NullOrUndefined Nothing) }
+newCustomMetadataLimitExceededException  = CustomMetadataLimitExceededException { "Message": Nothing }
 
 -- | Constructs CustomMetadataLimitExceededException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCustomMetadataLimitExceededException' :: ( { "Message" :: NullOrUndefined (ErrorMessageType) } -> {"Message" :: NullOrUndefined (ErrorMessageType) } ) -> CustomMetadataLimitExceededException
-newCustomMetadataLimitExceededException'  customize = (CustomMetadataLimitExceededException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newCustomMetadataLimitExceededException' :: ( { "Message" :: Maybe (ErrorMessageType) } -> {"Message" :: Maybe (ErrorMessageType) } ) -> CustomMetadataLimitExceededException
+newCustomMetadataLimitExceededException'  customize = (CustomMetadataLimitExceededException <<< customize) { "Message": Nothing }
 
 
 
@@ -610,7 +609,7 @@ instance encodeCustomMetadataValueType :: Encode CustomMetadataValueType where e
 
 newtype DeactivateUserRequest = DeactivateUserRequest 
   { "UserId" :: (IdType)
-  , "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType)
+  , "AuthenticationToken" :: Maybe (AuthenticationHeaderType)
   }
 derive instance newtypeDeactivateUserRequest :: Newtype DeactivateUserRequest _
 derive instance repGenericDeactivateUserRequest :: Generic DeactivateUserRequest _
@@ -620,12 +619,12 @@ instance encodeDeactivateUserRequest :: Encode DeactivateUserRequest where encod
 
 -- | Constructs DeactivateUserRequest from required parameters
 newDeactivateUserRequest :: IdType -> DeactivateUserRequest
-newDeactivateUserRequest _UserId = DeactivateUserRequest { "UserId": _UserId, "AuthenticationToken": (NullOrUndefined Nothing) }
+newDeactivateUserRequest _UserId = DeactivateUserRequest { "UserId": _UserId, "AuthenticationToken": Nothing }
 
 -- | Constructs DeactivateUserRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeactivateUserRequest' :: IdType -> ( { "UserId" :: (IdType) , "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) } -> {"UserId" :: (IdType) , "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) } ) -> DeactivateUserRequest
-newDeactivateUserRequest' _UserId customize = (DeactivateUserRequest <<< customize) { "UserId": _UserId, "AuthenticationToken": (NullOrUndefined Nothing) }
+newDeactivateUserRequest' :: IdType -> ( { "UserId" :: (IdType) , "AuthenticationToken" :: Maybe (AuthenticationHeaderType) } -> {"UserId" :: (IdType) , "AuthenticationToken" :: Maybe (AuthenticationHeaderType) } ) -> DeactivateUserRequest
+newDeactivateUserRequest' _UserId customize = (DeactivateUserRequest <<< customize) { "UserId": _UserId, "AuthenticationToken": Nothing }
 
 
 
@@ -640,7 +639,7 @@ instance encodeDeactivatingLastSystemUserException :: Encode DeactivatingLastSys
 
 
 newtype DeleteCommentRequest = DeleteCommentRequest 
-  { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType)
+  { "AuthenticationToken" :: Maybe (AuthenticationHeaderType)
   , "DocumentId" :: (ResourceIdType)
   , "VersionId" :: (DocumentVersionIdType)
   , "CommentId" :: (CommentIdType)
@@ -653,21 +652,21 @@ instance encodeDeleteCommentRequest :: Encode DeleteCommentRequest where encode 
 
 -- | Constructs DeleteCommentRequest from required parameters
 newDeleteCommentRequest :: CommentIdType -> ResourceIdType -> DocumentVersionIdType -> DeleteCommentRequest
-newDeleteCommentRequest _CommentId _DocumentId _VersionId = DeleteCommentRequest { "CommentId": _CommentId, "DocumentId": _DocumentId, "VersionId": _VersionId, "AuthenticationToken": (NullOrUndefined Nothing) }
+newDeleteCommentRequest _CommentId _DocumentId _VersionId = DeleteCommentRequest { "CommentId": _CommentId, "DocumentId": _DocumentId, "VersionId": _VersionId, "AuthenticationToken": Nothing }
 
 -- | Constructs DeleteCommentRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteCommentRequest' :: CommentIdType -> ResourceIdType -> DocumentVersionIdType -> ( { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "DocumentId" :: (ResourceIdType) , "VersionId" :: (DocumentVersionIdType) , "CommentId" :: (CommentIdType) } -> {"AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "DocumentId" :: (ResourceIdType) , "VersionId" :: (DocumentVersionIdType) , "CommentId" :: (CommentIdType) } ) -> DeleteCommentRequest
-newDeleteCommentRequest' _CommentId _DocumentId _VersionId customize = (DeleteCommentRequest <<< customize) { "CommentId": _CommentId, "DocumentId": _DocumentId, "VersionId": _VersionId, "AuthenticationToken": (NullOrUndefined Nothing) }
+newDeleteCommentRequest' :: CommentIdType -> ResourceIdType -> DocumentVersionIdType -> ( { "AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "DocumentId" :: (ResourceIdType) , "VersionId" :: (DocumentVersionIdType) , "CommentId" :: (CommentIdType) } -> {"AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "DocumentId" :: (ResourceIdType) , "VersionId" :: (DocumentVersionIdType) , "CommentId" :: (CommentIdType) } ) -> DeleteCommentRequest
+newDeleteCommentRequest' _CommentId _DocumentId _VersionId customize = (DeleteCommentRequest <<< customize) { "CommentId": _CommentId, "DocumentId": _DocumentId, "VersionId": _VersionId, "AuthenticationToken": Nothing }
 
 
 
 newtype DeleteCustomMetadataRequest = DeleteCustomMetadataRequest 
-  { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType)
+  { "AuthenticationToken" :: Maybe (AuthenticationHeaderType)
   , "ResourceId" :: (ResourceIdType)
-  , "VersionId" :: NullOrUndefined (DocumentVersionIdType)
-  , "Keys" :: NullOrUndefined (CustomMetadataKeyList)
-  , "DeleteAll" :: NullOrUndefined (BooleanType)
+  , "VersionId" :: Maybe (DocumentVersionIdType)
+  , "Keys" :: Maybe (CustomMetadataKeyList)
+  , "DeleteAll" :: Maybe (BooleanType)
   }
 derive instance newtypeDeleteCustomMetadataRequest :: Newtype DeleteCustomMetadataRequest _
 derive instance repGenericDeleteCustomMetadataRequest :: Generic DeleteCustomMetadataRequest _
@@ -677,12 +676,12 @@ instance encodeDeleteCustomMetadataRequest :: Encode DeleteCustomMetadataRequest
 
 -- | Constructs DeleteCustomMetadataRequest from required parameters
 newDeleteCustomMetadataRequest :: ResourceIdType -> DeleteCustomMetadataRequest
-newDeleteCustomMetadataRequest _ResourceId = DeleteCustomMetadataRequest { "ResourceId": _ResourceId, "AuthenticationToken": (NullOrUndefined Nothing), "DeleteAll": (NullOrUndefined Nothing), "Keys": (NullOrUndefined Nothing), "VersionId": (NullOrUndefined Nothing) }
+newDeleteCustomMetadataRequest _ResourceId = DeleteCustomMetadataRequest { "ResourceId": _ResourceId, "AuthenticationToken": Nothing, "DeleteAll": Nothing, "Keys": Nothing, "VersionId": Nothing }
 
 -- | Constructs DeleteCustomMetadataRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteCustomMetadataRequest' :: ResourceIdType -> ( { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "ResourceId" :: (ResourceIdType) , "VersionId" :: NullOrUndefined (DocumentVersionIdType) , "Keys" :: NullOrUndefined (CustomMetadataKeyList) , "DeleteAll" :: NullOrUndefined (BooleanType) } -> {"AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "ResourceId" :: (ResourceIdType) , "VersionId" :: NullOrUndefined (DocumentVersionIdType) , "Keys" :: NullOrUndefined (CustomMetadataKeyList) , "DeleteAll" :: NullOrUndefined (BooleanType) } ) -> DeleteCustomMetadataRequest
-newDeleteCustomMetadataRequest' _ResourceId customize = (DeleteCustomMetadataRequest <<< customize) { "ResourceId": _ResourceId, "AuthenticationToken": (NullOrUndefined Nothing), "DeleteAll": (NullOrUndefined Nothing), "Keys": (NullOrUndefined Nothing), "VersionId": (NullOrUndefined Nothing) }
+newDeleteCustomMetadataRequest' :: ResourceIdType -> ( { "AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "ResourceId" :: (ResourceIdType) , "VersionId" :: Maybe (DocumentVersionIdType) , "Keys" :: Maybe (CustomMetadataKeyList) , "DeleteAll" :: Maybe (BooleanType) } -> {"AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "ResourceId" :: (ResourceIdType) , "VersionId" :: Maybe (DocumentVersionIdType) , "Keys" :: Maybe (CustomMetadataKeyList) , "DeleteAll" :: Maybe (BooleanType) } ) -> DeleteCustomMetadataRequest
+newDeleteCustomMetadataRequest' _ResourceId customize = (DeleteCustomMetadataRequest <<< customize) { "ResourceId": _ResourceId, "AuthenticationToken": Nothing, "DeleteAll": Nothing, "Keys": Nothing, "VersionId": Nothing }
 
 
 
@@ -696,7 +695,7 @@ instance encodeDeleteCustomMetadataResponse :: Encode DeleteCustomMetadataRespon
 
 
 newtype DeleteDocumentRequest = DeleteDocumentRequest 
-  { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType)
+  { "AuthenticationToken" :: Maybe (AuthenticationHeaderType)
   , "DocumentId" :: (ResourceIdType)
   }
 derive instance newtypeDeleteDocumentRequest :: Newtype DeleteDocumentRequest _
@@ -707,17 +706,17 @@ instance encodeDeleteDocumentRequest :: Encode DeleteDocumentRequest where encod
 
 -- | Constructs DeleteDocumentRequest from required parameters
 newDeleteDocumentRequest :: ResourceIdType -> DeleteDocumentRequest
-newDeleteDocumentRequest _DocumentId = DeleteDocumentRequest { "DocumentId": _DocumentId, "AuthenticationToken": (NullOrUndefined Nothing) }
+newDeleteDocumentRequest _DocumentId = DeleteDocumentRequest { "DocumentId": _DocumentId, "AuthenticationToken": Nothing }
 
 -- | Constructs DeleteDocumentRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteDocumentRequest' :: ResourceIdType -> ( { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "DocumentId" :: (ResourceIdType) } -> {"AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "DocumentId" :: (ResourceIdType) } ) -> DeleteDocumentRequest
-newDeleteDocumentRequest' _DocumentId customize = (DeleteDocumentRequest <<< customize) { "DocumentId": _DocumentId, "AuthenticationToken": (NullOrUndefined Nothing) }
+newDeleteDocumentRequest' :: ResourceIdType -> ( { "AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "DocumentId" :: (ResourceIdType) } -> {"AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "DocumentId" :: (ResourceIdType) } ) -> DeleteDocumentRequest
+newDeleteDocumentRequest' _DocumentId customize = (DeleteDocumentRequest <<< customize) { "DocumentId": _DocumentId, "AuthenticationToken": Nothing }
 
 
 
 newtype DeleteFolderContentsRequest = DeleteFolderContentsRequest 
-  { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType)
+  { "AuthenticationToken" :: Maybe (AuthenticationHeaderType)
   , "FolderId" :: (ResourceIdType)
   }
 derive instance newtypeDeleteFolderContentsRequest :: Newtype DeleteFolderContentsRequest _
@@ -728,17 +727,17 @@ instance encodeDeleteFolderContentsRequest :: Encode DeleteFolderContentsRequest
 
 -- | Constructs DeleteFolderContentsRequest from required parameters
 newDeleteFolderContentsRequest :: ResourceIdType -> DeleteFolderContentsRequest
-newDeleteFolderContentsRequest _FolderId = DeleteFolderContentsRequest { "FolderId": _FolderId, "AuthenticationToken": (NullOrUndefined Nothing) }
+newDeleteFolderContentsRequest _FolderId = DeleteFolderContentsRequest { "FolderId": _FolderId, "AuthenticationToken": Nothing }
 
 -- | Constructs DeleteFolderContentsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteFolderContentsRequest' :: ResourceIdType -> ( { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "FolderId" :: (ResourceIdType) } -> {"AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "FolderId" :: (ResourceIdType) } ) -> DeleteFolderContentsRequest
-newDeleteFolderContentsRequest' _FolderId customize = (DeleteFolderContentsRequest <<< customize) { "FolderId": _FolderId, "AuthenticationToken": (NullOrUndefined Nothing) }
+newDeleteFolderContentsRequest' :: ResourceIdType -> ( { "AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "FolderId" :: (ResourceIdType) } -> {"AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "FolderId" :: (ResourceIdType) } ) -> DeleteFolderContentsRequest
+newDeleteFolderContentsRequest' _FolderId customize = (DeleteFolderContentsRequest <<< customize) { "FolderId": _FolderId, "AuthenticationToken": Nothing }
 
 
 
 newtype DeleteFolderRequest = DeleteFolderRequest 
-  { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType)
+  { "AuthenticationToken" :: Maybe (AuthenticationHeaderType)
   , "FolderId" :: (ResourceIdType)
   }
 derive instance newtypeDeleteFolderRequest :: Newtype DeleteFolderRequest _
@@ -749,20 +748,20 @@ instance encodeDeleteFolderRequest :: Encode DeleteFolderRequest where encode = 
 
 -- | Constructs DeleteFolderRequest from required parameters
 newDeleteFolderRequest :: ResourceIdType -> DeleteFolderRequest
-newDeleteFolderRequest _FolderId = DeleteFolderRequest { "FolderId": _FolderId, "AuthenticationToken": (NullOrUndefined Nothing) }
+newDeleteFolderRequest _FolderId = DeleteFolderRequest { "FolderId": _FolderId, "AuthenticationToken": Nothing }
 
 -- | Constructs DeleteFolderRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteFolderRequest' :: ResourceIdType -> ( { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "FolderId" :: (ResourceIdType) } -> {"AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "FolderId" :: (ResourceIdType) } ) -> DeleteFolderRequest
-newDeleteFolderRequest' _FolderId customize = (DeleteFolderRequest <<< customize) { "FolderId": _FolderId, "AuthenticationToken": (NullOrUndefined Nothing) }
+newDeleteFolderRequest' :: ResourceIdType -> ( { "AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "FolderId" :: (ResourceIdType) } -> {"AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "FolderId" :: (ResourceIdType) } ) -> DeleteFolderRequest
+newDeleteFolderRequest' _FolderId customize = (DeleteFolderRequest <<< customize) { "FolderId": _FolderId, "AuthenticationToken": Nothing }
 
 
 
 newtype DeleteLabelsRequest = DeleteLabelsRequest 
   { "ResourceId" :: (ResourceIdType)
-  , "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType)
-  , "Labels" :: NullOrUndefined (SharedLabels)
-  , "DeleteAll" :: NullOrUndefined (BooleanType)
+  , "AuthenticationToken" :: Maybe (AuthenticationHeaderType)
+  , "Labels" :: Maybe (SharedLabels)
+  , "DeleteAll" :: Maybe (BooleanType)
   }
 derive instance newtypeDeleteLabelsRequest :: Newtype DeleteLabelsRequest _
 derive instance repGenericDeleteLabelsRequest :: Generic DeleteLabelsRequest _
@@ -772,12 +771,12 @@ instance encodeDeleteLabelsRequest :: Encode DeleteLabelsRequest where encode = 
 
 -- | Constructs DeleteLabelsRequest from required parameters
 newDeleteLabelsRequest :: ResourceIdType -> DeleteLabelsRequest
-newDeleteLabelsRequest _ResourceId = DeleteLabelsRequest { "ResourceId": _ResourceId, "AuthenticationToken": (NullOrUndefined Nothing), "DeleteAll": (NullOrUndefined Nothing), "Labels": (NullOrUndefined Nothing) }
+newDeleteLabelsRequest _ResourceId = DeleteLabelsRequest { "ResourceId": _ResourceId, "AuthenticationToken": Nothing, "DeleteAll": Nothing, "Labels": Nothing }
 
 -- | Constructs DeleteLabelsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteLabelsRequest' :: ResourceIdType -> ( { "ResourceId" :: (ResourceIdType) , "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "Labels" :: NullOrUndefined (SharedLabels) , "DeleteAll" :: NullOrUndefined (BooleanType) } -> {"ResourceId" :: (ResourceIdType) , "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "Labels" :: NullOrUndefined (SharedLabels) , "DeleteAll" :: NullOrUndefined (BooleanType) } ) -> DeleteLabelsRequest
-newDeleteLabelsRequest' _ResourceId customize = (DeleteLabelsRequest <<< customize) { "ResourceId": _ResourceId, "AuthenticationToken": (NullOrUndefined Nothing), "DeleteAll": (NullOrUndefined Nothing), "Labels": (NullOrUndefined Nothing) }
+newDeleteLabelsRequest' :: ResourceIdType -> ( { "ResourceId" :: (ResourceIdType) , "AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "Labels" :: Maybe (SharedLabels) , "DeleteAll" :: Maybe (BooleanType) } -> {"ResourceId" :: (ResourceIdType) , "AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "Labels" :: Maybe (SharedLabels) , "DeleteAll" :: Maybe (BooleanType) } ) -> DeleteLabelsRequest
+newDeleteLabelsRequest' _ResourceId customize = (DeleteLabelsRequest <<< customize) { "ResourceId": _ResourceId, "AuthenticationToken": Nothing, "DeleteAll": Nothing, "Labels": Nothing }
 
 
 
@@ -812,7 +811,7 @@ newDeleteNotificationSubscriptionRequest' _OrganizationId _SubscriptionId custom
 
 
 newtype DeleteUserRequest = DeleteUserRequest 
-  { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType)
+  { "AuthenticationToken" :: Maybe (AuthenticationHeaderType)
   , "UserId" :: (IdType)
   }
 derive instance newtypeDeleteUserRequest :: Newtype DeleteUserRequest _
@@ -823,23 +822,23 @@ instance encodeDeleteUserRequest :: Encode DeleteUserRequest where encode = gene
 
 -- | Constructs DeleteUserRequest from required parameters
 newDeleteUserRequest :: IdType -> DeleteUserRequest
-newDeleteUserRequest _UserId = DeleteUserRequest { "UserId": _UserId, "AuthenticationToken": (NullOrUndefined Nothing) }
+newDeleteUserRequest _UserId = DeleteUserRequest { "UserId": _UserId, "AuthenticationToken": Nothing }
 
 -- | Constructs DeleteUserRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteUserRequest' :: IdType -> ( { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "UserId" :: (IdType) } -> {"AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "UserId" :: (IdType) } ) -> DeleteUserRequest
-newDeleteUserRequest' _UserId customize = (DeleteUserRequest <<< customize) { "UserId": _UserId, "AuthenticationToken": (NullOrUndefined Nothing) }
+newDeleteUserRequest' :: IdType -> ( { "AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "UserId" :: (IdType) } -> {"AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "UserId" :: (IdType) } ) -> DeleteUserRequest
+newDeleteUserRequest' _UserId customize = (DeleteUserRequest <<< customize) { "UserId": _UserId, "AuthenticationToken": Nothing }
 
 
 
 newtype DescribeActivitiesRequest = DescribeActivitiesRequest 
-  { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType)
-  , "StartTime" :: NullOrUndefined (TimestampType)
-  , "EndTime" :: NullOrUndefined (TimestampType)
-  , "OrganizationId" :: NullOrUndefined (IdType)
-  , "UserId" :: NullOrUndefined (IdType)
-  , "Limit" :: NullOrUndefined (LimitType)
-  , "Marker" :: NullOrUndefined (MarkerType)
+  { "AuthenticationToken" :: Maybe (AuthenticationHeaderType)
+  , "StartTime" :: Maybe (TimestampType)
+  , "EndTime" :: Maybe (TimestampType)
+  , "OrganizationId" :: Maybe (IdType)
+  , "UserId" :: Maybe (IdType)
+  , "Limit" :: Maybe (LimitType)
+  , "Marker" :: Maybe (MarkerType)
   }
 derive instance newtypeDescribeActivitiesRequest :: Newtype DescribeActivitiesRequest _
 derive instance repGenericDescribeActivitiesRequest :: Generic DescribeActivitiesRequest _
@@ -849,18 +848,18 @@ instance encodeDescribeActivitiesRequest :: Encode DescribeActivitiesRequest whe
 
 -- | Constructs DescribeActivitiesRequest from required parameters
 newDescribeActivitiesRequest :: DescribeActivitiesRequest
-newDescribeActivitiesRequest  = DescribeActivitiesRequest { "AuthenticationToken": (NullOrUndefined Nothing), "EndTime": (NullOrUndefined Nothing), "Limit": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "OrganizationId": (NullOrUndefined Nothing), "StartTime": (NullOrUndefined Nothing), "UserId": (NullOrUndefined Nothing) }
+newDescribeActivitiesRequest  = DescribeActivitiesRequest { "AuthenticationToken": Nothing, "EndTime": Nothing, "Limit": Nothing, "Marker": Nothing, "OrganizationId": Nothing, "StartTime": Nothing, "UserId": Nothing }
 
 -- | Constructs DescribeActivitiesRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeActivitiesRequest' :: ( { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "StartTime" :: NullOrUndefined (TimestampType) , "EndTime" :: NullOrUndefined (TimestampType) , "OrganizationId" :: NullOrUndefined (IdType) , "UserId" :: NullOrUndefined (IdType) , "Limit" :: NullOrUndefined (LimitType) , "Marker" :: NullOrUndefined (MarkerType) } -> {"AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "StartTime" :: NullOrUndefined (TimestampType) , "EndTime" :: NullOrUndefined (TimestampType) , "OrganizationId" :: NullOrUndefined (IdType) , "UserId" :: NullOrUndefined (IdType) , "Limit" :: NullOrUndefined (LimitType) , "Marker" :: NullOrUndefined (MarkerType) } ) -> DescribeActivitiesRequest
-newDescribeActivitiesRequest'  customize = (DescribeActivitiesRequest <<< customize) { "AuthenticationToken": (NullOrUndefined Nothing), "EndTime": (NullOrUndefined Nothing), "Limit": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "OrganizationId": (NullOrUndefined Nothing), "StartTime": (NullOrUndefined Nothing), "UserId": (NullOrUndefined Nothing) }
+newDescribeActivitiesRequest' :: ( { "AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "StartTime" :: Maybe (TimestampType) , "EndTime" :: Maybe (TimestampType) , "OrganizationId" :: Maybe (IdType) , "UserId" :: Maybe (IdType) , "Limit" :: Maybe (LimitType) , "Marker" :: Maybe (MarkerType) } -> {"AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "StartTime" :: Maybe (TimestampType) , "EndTime" :: Maybe (TimestampType) , "OrganizationId" :: Maybe (IdType) , "UserId" :: Maybe (IdType) , "Limit" :: Maybe (LimitType) , "Marker" :: Maybe (MarkerType) } ) -> DescribeActivitiesRequest
+newDescribeActivitiesRequest'  customize = (DescribeActivitiesRequest <<< customize) { "AuthenticationToken": Nothing, "EndTime": Nothing, "Limit": Nothing, "Marker": Nothing, "OrganizationId": Nothing, "StartTime": Nothing, "UserId": Nothing }
 
 
 
 newtype DescribeActivitiesResponse = DescribeActivitiesResponse 
-  { "UserActivities" :: NullOrUndefined (UserActivities)
-  , "Marker" :: NullOrUndefined (MarkerType)
+  { "UserActivities" :: Maybe (UserActivities)
+  , "Marker" :: Maybe (MarkerType)
   }
 derive instance newtypeDescribeActivitiesResponse :: Newtype DescribeActivitiesResponse _
 derive instance repGenericDescribeActivitiesResponse :: Generic DescribeActivitiesResponse _
@@ -870,21 +869,21 @@ instance encodeDescribeActivitiesResponse :: Encode DescribeActivitiesResponse w
 
 -- | Constructs DescribeActivitiesResponse from required parameters
 newDescribeActivitiesResponse :: DescribeActivitiesResponse
-newDescribeActivitiesResponse  = DescribeActivitiesResponse { "Marker": (NullOrUndefined Nothing), "UserActivities": (NullOrUndefined Nothing) }
+newDescribeActivitiesResponse  = DescribeActivitiesResponse { "Marker": Nothing, "UserActivities": Nothing }
 
 -- | Constructs DescribeActivitiesResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeActivitiesResponse' :: ( { "UserActivities" :: NullOrUndefined (UserActivities) , "Marker" :: NullOrUndefined (MarkerType) } -> {"UserActivities" :: NullOrUndefined (UserActivities) , "Marker" :: NullOrUndefined (MarkerType) } ) -> DescribeActivitiesResponse
-newDescribeActivitiesResponse'  customize = (DescribeActivitiesResponse <<< customize) { "Marker": (NullOrUndefined Nothing), "UserActivities": (NullOrUndefined Nothing) }
+newDescribeActivitiesResponse' :: ( { "UserActivities" :: Maybe (UserActivities) , "Marker" :: Maybe (MarkerType) } -> {"UserActivities" :: Maybe (UserActivities) , "Marker" :: Maybe (MarkerType) } ) -> DescribeActivitiesResponse
+newDescribeActivitiesResponse'  customize = (DescribeActivitiesResponse <<< customize) { "Marker": Nothing, "UserActivities": Nothing }
 
 
 
 newtype DescribeCommentsRequest = DescribeCommentsRequest 
-  { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType)
+  { "AuthenticationToken" :: Maybe (AuthenticationHeaderType)
   , "DocumentId" :: (ResourceIdType)
   , "VersionId" :: (DocumentVersionIdType)
-  , "Limit" :: NullOrUndefined (LimitType)
-  , "Marker" :: NullOrUndefined (MarkerType)
+  , "Limit" :: Maybe (LimitType)
+  , "Marker" :: Maybe (MarkerType)
   }
 derive instance newtypeDescribeCommentsRequest :: Newtype DescribeCommentsRequest _
 derive instance repGenericDescribeCommentsRequest :: Generic DescribeCommentsRequest _
@@ -894,18 +893,18 @@ instance encodeDescribeCommentsRequest :: Encode DescribeCommentsRequest where e
 
 -- | Constructs DescribeCommentsRequest from required parameters
 newDescribeCommentsRequest :: ResourceIdType -> DocumentVersionIdType -> DescribeCommentsRequest
-newDescribeCommentsRequest _DocumentId _VersionId = DescribeCommentsRequest { "DocumentId": _DocumentId, "VersionId": _VersionId, "AuthenticationToken": (NullOrUndefined Nothing), "Limit": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newDescribeCommentsRequest _DocumentId _VersionId = DescribeCommentsRequest { "DocumentId": _DocumentId, "VersionId": _VersionId, "AuthenticationToken": Nothing, "Limit": Nothing, "Marker": Nothing }
 
 -- | Constructs DescribeCommentsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeCommentsRequest' :: ResourceIdType -> DocumentVersionIdType -> ( { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "DocumentId" :: (ResourceIdType) , "VersionId" :: (DocumentVersionIdType) , "Limit" :: NullOrUndefined (LimitType) , "Marker" :: NullOrUndefined (MarkerType) } -> {"AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "DocumentId" :: (ResourceIdType) , "VersionId" :: (DocumentVersionIdType) , "Limit" :: NullOrUndefined (LimitType) , "Marker" :: NullOrUndefined (MarkerType) } ) -> DescribeCommentsRequest
-newDescribeCommentsRequest' _DocumentId _VersionId customize = (DescribeCommentsRequest <<< customize) { "DocumentId": _DocumentId, "VersionId": _VersionId, "AuthenticationToken": (NullOrUndefined Nothing), "Limit": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newDescribeCommentsRequest' :: ResourceIdType -> DocumentVersionIdType -> ( { "AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "DocumentId" :: (ResourceIdType) , "VersionId" :: (DocumentVersionIdType) , "Limit" :: Maybe (LimitType) , "Marker" :: Maybe (MarkerType) } -> {"AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "DocumentId" :: (ResourceIdType) , "VersionId" :: (DocumentVersionIdType) , "Limit" :: Maybe (LimitType) , "Marker" :: Maybe (MarkerType) } ) -> DescribeCommentsRequest
+newDescribeCommentsRequest' _DocumentId _VersionId customize = (DescribeCommentsRequest <<< customize) { "DocumentId": _DocumentId, "VersionId": _VersionId, "AuthenticationToken": Nothing, "Limit": Nothing, "Marker": Nothing }
 
 
 
 newtype DescribeCommentsResponse = DescribeCommentsResponse 
-  { "Comments" :: NullOrUndefined (CommentList)
-  , "Marker" :: NullOrUndefined (MarkerType)
+  { "Comments" :: Maybe (CommentList)
+  , "Marker" :: Maybe (MarkerType)
   }
 derive instance newtypeDescribeCommentsResponse :: Newtype DescribeCommentsResponse _
 derive instance repGenericDescribeCommentsResponse :: Generic DescribeCommentsResponse _
@@ -915,22 +914,22 @@ instance encodeDescribeCommentsResponse :: Encode DescribeCommentsResponse where
 
 -- | Constructs DescribeCommentsResponse from required parameters
 newDescribeCommentsResponse :: DescribeCommentsResponse
-newDescribeCommentsResponse  = DescribeCommentsResponse { "Comments": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newDescribeCommentsResponse  = DescribeCommentsResponse { "Comments": Nothing, "Marker": Nothing }
 
 -- | Constructs DescribeCommentsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeCommentsResponse' :: ( { "Comments" :: NullOrUndefined (CommentList) , "Marker" :: NullOrUndefined (MarkerType) } -> {"Comments" :: NullOrUndefined (CommentList) , "Marker" :: NullOrUndefined (MarkerType) } ) -> DescribeCommentsResponse
-newDescribeCommentsResponse'  customize = (DescribeCommentsResponse <<< customize) { "Comments": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newDescribeCommentsResponse' :: ( { "Comments" :: Maybe (CommentList) , "Marker" :: Maybe (MarkerType) } -> {"Comments" :: Maybe (CommentList) , "Marker" :: Maybe (MarkerType) } ) -> DescribeCommentsResponse
+newDescribeCommentsResponse'  customize = (DescribeCommentsResponse <<< customize) { "Comments": Nothing, "Marker": Nothing }
 
 
 
 newtype DescribeDocumentVersionsRequest = DescribeDocumentVersionsRequest 
-  { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType)
+  { "AuthenticationToken" :: Maybe (AuthenticationHeaderType)
   , "DocumentId" :: (ResourceIdType)
-  , "Marker" :: NullOrUndefined (PageMarkerType)
-  , "Limit" :: NullOrUndefined (LimitType)
-  , "Include" :: NullOrUndefined (FieldNamesType)
-  , "Fields" :: NullOrUndefined (FieldNamesType)
+  , "Marker" :: Maybe (PageMarkerType)
+  , "Limit" :: Maybe (LimitType)
+  , "Include" :: Maybe (FieldNamesType)
+  , "Fields" :: Maybe (FieldNamesType)
   }
 derive instance newtypeDescribeDocumentVersionsRequest :: Newtype DescribeDocumentVersionsRequest _
 derive instance repGenericDescribeDocumentVersionsRequest :: Generic DescribeDocumentVersionsRequest _
@@ -940,18 +939,18 @@ instance encodeDescribeDocumentVersionsRequest :: Encode DescribeDocumentVersion
 
 -- | Constructs DescribeDocumentVersionsRequest from required parameters
 newDescribeDocumentVersionsRequest :: ResourceIdType -> DescribeDocumentVersionsRequest
-newDescribeDocumentVersionsRequest _DocumentId = DescribeDocumentVersionsRequest { "DocumentId": _DocumentId, "AuthenticationToken": (NullOrUndefined Nothing), "Fields": (NullOrUndefined Nothing), "Include": (NullOrUndefined Nothing), "Limit": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newDescribeDocumentVersionsRequest _DocumentId = DescribeDocumentVersionsRequest { "DocumentId": _DocumentId, "AuthenticationToken": Nothing, "Fields": Nothing, "Include": Nothing, "Limit": Nothing, "Marker": Nothing }
 
 -- | Constructs DescribeDocumentVersionsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeDocumentVersionsRequest' :: ResourceIdType -> ( { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "DocumentId" :: (ResourceIdType) , "Marker" :: NullOrUndefined (PageMarkerType) , "Limit" :: NullOrUndefined (LimitType) , "Include" :: NullOrUndefined (FieldNamesType) , "Fields" :: NullOrUndefined (FieldNamesType) } -> {"AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "DocumentId" :: (ResourceIdType) , "Marker" :: NullOrUndefined (PageMarkerType) , "Limit" :: NullOrUndefined (LimitType) , "Include" :: NullOrUndefined (FieldNamesType) , "Fields" :: NullOrUndefined (FieldNamesType) } ) -> DescribeDocumentVersionsRequest
-newDescribeDocumentVersionsRequest' _DocumentId customize = (DescribeDocumentVersionsRequest <<< customize) { "DocumentId": _DocumentId, "AuthenticationToken": (NullOrUndefined Nothing), "Fields": (NullOrUndefined Nothing), "Include": (NullOrUndefined Nothing), "Limit": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newDescribeDocumentVersionsRequest' :: ResourceIdType -> ( { "AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "DocumentId" :: (ResourceIdType) , "Marker" :: Maybe (PageMarkerType) , "Limit" :: Maybe (LimitType) , "Include" :: Maybe (FieldNamesType) , "Fields" :: Maybe (FieldNamesType) } -> {"AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "DocumentId" :: (ResourceIdType) , "Marker" :: Maybe (PageMarkerType) , "Limit" :: Maybe (LimitType) , "Include" :: Maybe (FieldNamesType) , "Fields" :: Maybe (FieldNamesType) } ) -> DescribeDocumentVersionsRequest
+newDescribeDocumentVersionsRequest' _DocumentId customize = (DescribeDocumentVersionsRequest <<< customize) { "DocumentId": _DocumentId, "AuthenticationToken": Nothing, "Fields": Nothing, "Include": Nothing, "Limit": Nothing, "Marker": Nothing }
 
 
 
 newtype DescribeDocumentVersionsResponse = DescribeDocumentVersionsResponse 
-  { "DocumentVersions" :: NullOrUndefined (DocumentVersionMetadataList)
-  , "Marker" :: NullOrUndefined (PageMarkerType)
+  { "DocumentVersions" :: Maybe (DocumentVersionMetadataList)
+  , "Marker" :: Maybe (PageMarkerType)
   }
 derive instance newtypeDescribeDocumentVersionsResponse :: Newtype DescribeDocumentVersionsResponse _
 derive instance repGenericDescribeDocumentVersionsResponse :: Generic DescribeDocumentVersionsResponse _
@@ -961,24 +960,24 @@ instance encodeDescribeDocumentVersionsResponse :: Encode DescribeDocumentVersio
 
 -- | Constructs DescribeDocumentVersionsResponse from required parameters
 newDescribeDocumentVersionsResponse :: DescribeDocumentVersionsResponse
-newDescribeDocumentVersionsResponse  = DescribeDocumentVersionsResponse { "DocumentVersions": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newDescribeDocumentVersionsResponse  = DescribeDocumentVersionsResponse { "DocumentVersions": Nothing, "Marker": Nothing }
 
 -- | Constructs DescribeDocumentVersionsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeDocumentVersionsResponse' :: ( { "DocumentVersions" :: NullOrUndefined (DocumentVersionMetadataList) , "Marker" :: NullOrUndefined (PageMarkerType) } -> {"DocumentVersions" :: NullOrUndefined (DocumentVersionMetadataList) , "Marker" :: NullOrUndefined (PageMarkerType) } ) -> DescribeDocumentVersionsResponse
-newDescribeDocumentVersionsResponse'  customize = (DescribeDocumentVersionsResponse <<< customize) { "DocumentVersions": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newDescribeDocumentVersionsResponse' :: ( { "DocumentVersions" :: Maybe (DocumentVersionMetadataList) , "Marker" :: Maybe (PageMarkerType) } -> {"DocumentVersions" :: Maybe (DocumentVersionMetadataList) , "Marker" :: Maybe (PageMarkerType) } ) -> DescribeDocumentVersionsResponse
+newDescribeDocumentVersionsResponse'  customize = (DescribeDocumentVersionsResponse <<< customize) { "DocumentVersions": Nothing, "Marker": Nothing }
 
 
 
 newtype DescribeFolderContentsRequest = DescribeFolderContentsRequest 
-  { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType)
+  { "AuthenticationToken" :: Maybe (AuthenticationHeaderType)
   , "FolderId" :: (ResourceIdType)
-  , "Sort" :: NullOrUndefined (ResourceSortType)
-  , "Order" :: NullOrUndefined (OrderType)
-  , "Limit" :: NullOrUndefined (LimitType)
-  , "Marker" :: NullOrUndefined (PageMarkerType)
-  , "Type" :: NullOrUndefined (FolderContentType)
-  , "Include" :: NullOrUndefined (FieldNamesType)
+  , "Sort" :: Maybe (ResourceSortType)
+  , "Order" :: Maybe (OrderType)
+  , "Limit" :: Maybe (LimitType)
+  , "Marker" :: Maybe (PageMarkerType)
+  , "Type" :: Maybe (FolderContentType)
+  , "Include" :: Maybe (FieldNamesType)
   }
 derive instance newtypeDescribeFolderContentsRequest :: Newtype DescribeFolderContentsRequest _
 derive instance repGenericDescribeFolderContentsRequest :: Generic DescribeFolderContentsRequest _
@@ -988,19 +987,19 @@ instance encodeDescribeFolderContentsRequest :: Encode DescribeFolderContentsReq
 
 -- | Constructs DescribeFolderContentsRequest from required parameters
 newDescribeFolderContentsRequest :: ResourceIdType -> DescribeFolderContentsRequest
-newDescribeFolderContentsRequest _FolderId = DescribeFolderContentsRequest { "FolderId": _FolderId, "AuthenticationToken": (NullOrUndefined Nothing), "Include": (NullOrUndefined Nothing), "Limit": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "Order": (NullOrUndefined Nothing), "Sort": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
+newDescribeFolderContentsRequest _FolderId = DescribeFolderContentsRequest { "FolderId": _FolderId, "AuthenticationToken": Nothing, "Include": Nothing, "Limit": Nothing, "Marker": Nothing, "Order": Nothing, "Sort": Nothing, "Type": Nothing }
 
 -- | Constructs DescribeFolderContentsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeFolderContentsRequest' :: ResourceIdType -> ( { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "FolderId" :: (ResourceIdType) , "Sort" :: NullOrUndefined (ResourceSortType) , "Order" :: NullOrUndefined (OrderType) , "Limit" :: NullOrUndefined (LimitType) , "Marker" :: NullOrUndefined (PageMarkerType) , "Type" :: NullOrUndefined (FolderContentType) , "Include" :: NullOrUndefined (FieldNamesType) } -> {"AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "FolderId" :: (ResourceIdType) , "Sort" :: NullOrUndefined (ResourceSortType) , "Order" :: NullOrUndefined (OrderType) , "Limit" :: NullOrUndefined (LimitType) , "Marker" :: NullOrUndefined (PageMarkerType) , "Type" :: NullOrUndefined (FolderContentType) , "Include" :: NullOrUndefined (FieldNamesType) } ) -> DescribeFolderContentsRequest
-newDescribeFolderContentsRequest' _FolderId customize = (DescribeFolderContentsRequest <<< customize) { "FolderId": _FolderId, "AuthenticationToken": (NullOrUndefined Nothing), "Include": (NullOrUndefined Nothing), "Limit": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "Order": (NullOrUndefined Nothing), "Sort": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
+newDescribeFolderContentsRequest' :: ResourceIdType -> ( { "AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "FolderId" :: (ResourceIdType) , "Sort" :: Maybe (ResourceSortType) , "Order" :: Maybe (OrderType) , "Limit" :: Maybe (LimitType) , "Marker" :: Maybe (PageMarkerType) , "Type" :: Maybe (FolderContentType) , "Include" :: Maybe (FieldNamesType) } -> {"AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "FolderId" :: (ResourceIdType) , "Sort" :: Maybe (ResourceSortType) , "Order" :: Maybe (OrderType) , "Limit" :: Maybe (LimitType) , "Marker" :: Maybe (PageMarkerType) , "Type" :: Maybe (FolderContentType) , "Include" :: Maybe (FieldNamesType) } ) -> DescribeFolderContentsRequest
+newDescribeFolderContentsRequest' _FolderId customize = (DescribeFolderContentsRequest <<< customize) { "FolderId": _FolderId, "AuthenticationToken": Nothing, "Include": Nothing, "Limit": Nothing, "Marker": Nothing, "Order": Nothing, "Sort": Nothing, "Type": Nothing }
 
 
 
 newtype DescribeFolderContentsResponse = DescribeFolderContentsResponse 
-  { "Folders" :: NullOrUndefined (FolderMetadataList)
-  , "Documents" :: NullOrUndefined (DocumentMetadataList)
-  , "Marker" :: NullOrUndefined (PageMarkerType)
+  { "Folders" :: Maybe (FolderMetadataList)
+  , "Documents" :: Maybe (DocumentMetadataList)
+  , "Marker" :: Maybe (PageMarkerType)
   }
 derive instance newtypeDescribeFolderContentsResponse :: Newtype DescribeFolderContentsResponse _
 derive instance repGenericDescribeFolderContentsResponse :: Generic DescribeFolderContentsResponse _
@@ -1010,21 +1009,21 @@ instance encodeDescribeFolderContentsResponse :: Encode DescribeFolderContentsRe
 
 -- | Constructs DescribeFolderContentsResponse from required parameters
 newDescribeFolderContentsResponse :: DescribeFolderContentsResponse
-newDescribeFolderContentsResponse  = DescribeFolderContentsResponse { "Documents": (NullOrUndefined Nothing), "Folders": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newDescribeFolderContentsResponse  = DescribeFolderContentsResponse { "Documents": Nothing, "Folders": Nothing, "Marker": Nothing }
 
 -- | Constructs DescribeFolderContentsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeFolderContentsResponse' :: ( { "Folders" :: NullOrUndefined (FolderMetadataList) , "Documents" :: NullOrUndefined (DocumentMetadataList) , "Marker" :: NullOrUndefined (PageMarkerType) } -> {"Folders" :: NullOrUndefined (FolderMetadataList) , "Documents" :: NullOrUndefined (DocumentMetadataList) , "Marker" :: NullOrUndefined (PageMarkerType) } ) -> DescribeFolderContentsResponse
-newDescribeFolderContentsResponse'  customize = (DescribeFolderContentsResponse <<< customize) { "Documents": (NullOrUndefined Nothing), "Folders": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newDescribeFolderContentsResponse' :: ( { "Folders" :: Maybe (FolderMetadataList) , "Documents" :: Maybe (DocumentMetadataList) , "Marker" :: Maybe (PageMarkerType) } -> {"Folders" :: Maybe (FolderMetadataList) , "Documents" :: Maybe (DocumentMetadataList) , "Marker" :: Maybe (PageMarkerType) } ) -> DescribeFolderContentsResponse
+newDescribeFolderContentsResponse'  customize = (DescribeFolderContentsResponse <<< customize) { "Documents": Nothing, "Folders": Nothing, "Marker": Nothing }
 
 
 
 newtype DescribeGroupsRequest = DescribeGroupsRequest 
-  { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType)
+  { "AuthenticationToken" :: Maybe (AuthenticationHeaderType)
   , "SearchQuery" :: (SearchQueryType)
-  , "OrganizationId" :: NullOrUndefined (IdType)
-  , "Marker" :: NullOrUndefined (MarkerType)
-  , "Limit" :: NullOrUndefined (PositiveIntegerType)
+  , "OrganizationId" :: Maybe (IdType)
+  , "Marker" :: Maybe (MarkerType)
+  , "Limit" :: Maybe (PositiveIntegerType)
   }
 derive instance newtypeDescribeGroupsRequest :: Newtype DescribeGroupsRequest _
 derive instance repGenericDescribeGroupsRequest :: Generic DescribeGroupsRequest _
@@ -1034,18 +1033,18 @@ instance encodeDescribeGroupsRequest :: Encode DescribeGroupsRequest where encod
 
 -- | Constructs DescribeGroupsRequest from required parameters
 newDescribeGroupsRequest :: SearchQueryType -> DescribeGroupsRequest
-newDescribeGroupsRequest _SearchQuery = DescribeGroupsRequest { "SearchQuery": _SearchQuery, "AuthenticationToken": (NullOrUndefined Nothing), "Limit": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "OrganizationId": (NullOrUndefined Nothing) }
+newDescribeGroupsRequest _SearchQuery = DescribeGroupsRequest { "SearchQuery": _SearchQuery, "AuthenticationToken": Nothing, "Limit": Nothing, "Marker": Nothing, "OrganizationId": Nothing }
 
 -- | Constructs DescribeGroupsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeGroupsRequest' :: SearchQueryType -> ( { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "SearchQuery" :: (SearchQueryType) , "OrganizationId" :: NullOrUndefined (IdType) , "Marker" :: NullOrUndefined (MarkerType) , "Limit" :: NullOrUndefined (PositiveIntegerType) } -> {"AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "SearchQuery" :: (SearchQueryType) , "OrganizationId" :: NullOrUndefined (IdType) , "Marker" :: NullOrUndefined (MarkerType) , "Limit" :: NullOrUndefined (PositiveIntegerType) } ) -> DescribeGroupsRequest
-newDescribeGroupsRequest' _SearchQuery customize = (DescribeGroupsRequest <<< customize) { "SearchQuery": _SearchQuery, "AuthenticationToken": (NullOrUndefined Nothing), "Limit": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "OrganizationId": (NullOrUndefined Nothing) }
+newDescribeGroupsRequest' :: SearchQueryType -> ( { "AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "SearchQuery" :: (SearchQueryType) , "OrganizationId" :: Maybe (IdType) , "Marker" :: Maybe (MarkerType) , "Limit" :: Maybe (PositiveIntegerType) } -> {"AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "SearchQuery" :: (SearchQueryType) , "OrganizationId" :: Maybe (IdType) , "Marker" :: Maybe (MarkerType) , "Limit" :: Maybe (PositiveIntegerType) } ) -> DescribeGroupsRequest
+newDescribeGroupsRequest' _SearchQuery customize = (DescribeGroupsRequest <<< customize) { "SearchQuery": _SearchQuery, "AuthenticationToken": Nothing, "Limit": Nothing, "Marker": Nothing, "OrganizationId": Nothing }
 
 
 
 newtype DescribeGroupsResponse = DescribeGroupsResponse 
-  { "Groups" :: NullOrUndefined (GroupMetadataList)
-  , "Marker" :: NullOrUndefined (MarkerType)
+  { "Groups" :: Maybe (GroupMetadataList)
+  , "Marker" :: Maybe (MarkerType)
   }
 derive instance newtypeDescribeGroupsResponse :: Newtype DescribeGroupsResponse _
 derive instance repGenericDescribeGroupsResponse :: Generic DescribeGroupsResponse _
@@ -1055,19 +1054,19 @@ instance encodeDescribeGroupsResponse :: Encode DescribeGroupsResponse where enc
 
 -- | Constructs DescribeGroupsResponse from required parameters
 newDescribeGroupsResponse :: DescribeGroupsResponse
-newDescribeGroupsResponse  = DescribeGroupsResponse { "Groups": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newDescribeGroupsResponse  = DescribeGroupsResponse { "Groups": Nothing, "Marker": Nothing }
 
 -- | Constructs DescribeGroupsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeGroupsResponse' :: ( { "Groups" :: NullOrUndefined (GroupMetadataList) , "Marker" :: NullOrUndefined (MarkerType) } -> {"Groups" :: NullOrUndefined (GroupMetadataList) , "Marker" :: NullOrUndefined (MarkerType) } ) -> DescribeGroupsResponse
-newDescribeGroupsResponse'  customize = (DescribeGroupsResponse <<< customize) { "Groups": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newDescribeGroupsResponse' :: ( { "Groups" :: Maybe (GroupMetadataList) , "Marker" :: Maybe (MarkerType) } -> {"Groups" :: Maybe (GroupMetadataList) , "Marker" :: Maybe (MarkerType) } ) -> DescribeGroupsResponse
+newDescribeGroupsResponse'  customize = (DescribeGroupsResponse <<< customize) { "Groups": Nothing, "Marker": Nothing }
 
 
 
 newtype DescribeNotificationSubscriptionsRequest = DescribeNotificationSubscriptionsRequest 
   { "OrganizationId" :: (IdType)
-  , "Marker" :: NullOrUndefined (PageMarkerType)
-  , "Limit" :: NullOrUndefined (LimitType)
+  , "Marker" :: Maybe (PageMarkerType)
+  , "Limit" :: Maybe (LimitType)
   }
 derive instance newtypeDescribeNotificationSubscriptionsRequest :: Newtype DescribeNotificationSubscriptionsRequest _
 derive instance repGenericDescribeNotificationSubscriptionsRequest :: Generic DescribeNotificationSubscriptionsRequest _
@@ -1077,18 +1076,18 @@ instance encodeDescribeNotificationSubscriptionsRequest :: Encode DescribeNotifi
 
 -- | Constructs DescribeNotificationSubscriptionsRequest from required parameters
 newDescribeNotificationSubscriptionsRequest :: IdType -> DescribeNotificationSubscriptionsRequest
-newDescribeNotificationSubscriptionsRequest _OrganizationId = DescribeNotificationSubscriptionsRequest { "OrganizationId": _OrganizationId, "Limit": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newDescribeNotificationSubscriptionsRequest _OrganizationId = DescribeNotificationSubscriptionsRequest { "OrganizationId": _OrganizationId, "Limit": Nothing, "Marker": Nothing }
 
 -- | Constructs DescribeNotificationSubscriptionsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeNotificationSubscriptionsRequest' :: IdType -> ( { "OrganizationId" :: (IdType) , "Marker" :: NullOrUndefined (PageMarkerType) , "Limit" :: NullOrUndefined (LimitType) } -> {"OrganizationId" :: (IdType) , "Marker" :: NullOrUndefined (PageMarkerType) , "Limit" :: NullOrUndefined (LimitType) } ) -> DescribeNotificationSubscriptionsRequest
-newDescribeNotificationSubscriptionsRequest' _OrganizationId customize = (DescribeNotificationSubscriptionsRequest <<< customize) { "OrganizationId": _OrganizationId, "Limit": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newDescribeNotificationSubscriptionsRequest' :: IdType -> ( { "OrganizationId" :: (IdType) , "Marker" :: Maybe (PageMarkerType) , "Limit" :: Maybe (LimitType) } -> {"OrganizationId" :: (IdType) , "Marker" :: Maybe (PageMarkerType) , "Limit" :: Maybe (LimitType) } ) -> DescribeNotificationSubscriptionsRequest
+newDescribeNotificationSubscriptionsRequest' _OrganizationId customize = (DescribeNotificationSubscriptionsRequest <<< customize) { "OrganizationId": _OrganizationId, "Limit": Nothing, "Marker": Nothing }
 
 
 
 newtype DescribeNotificationSubscriptionsResponse = DescribeNotificationSubscriptionsResponse 
-  { "Subscriptions" :: NullOrUndefined (SubscriptionList)
-  , "Marker" :: NullOrUndefined (PageMarkerType)
+  { "Subscriptions" :: Maybe (SubscriptionList)
+  , "Marker" :: Maybe (PageMarkerType)
   }
 derive instance newtypeDescribeNotificationSubscriptionsResponse :: Newtype DescribeNotificationSubscriptionsResponse _
 derive instance repGenericDescribeNotificationSubscriptionsResponse :: Generic DescribeNotificationSubscriptionsResponse _
@@ -1098,21 +1097,21 @@ instance encodeDescribeNotificationSubscriptionsResponse :: Encode DescribeNotif
 
 -- | Constructs DescribeNotificationSubscriptionsResponse from required parameters
 newDescribeNotificationSubscriptionsResponse :: DescribeNotificationSubscriptionsResponse
-newDescribeNotificationSubscriptionsResponse  = DescribeNotificationSubscriptionsResponse { "Marker": (NullOrUndefined Nothing), "Subscriptions": (NullOrUndefined Nothing) }
+newDescribeNotificationSubscriptionsResponse  = DescribeNotificationSubscriptionsResponse { "Marker": Nothing, "Subscriptions": Nothing }
 
 -- | Constructs DescribeNotificationSubscriptionsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeNotificationSubscriptionsResponse' :: ( { "Subscriptions" :: NullOrUndefined (SubscriptionList) , "Marker" :: NullOrUndefined (PageMarkerType) } -> {"Subscriptions" :: NullOrUndefined (SubscriptionList) , "Marker" :: NullOrUndefined (PageMarkerType) } ) -> DescribeNotificationSubscriptionsResponse
-newDescribeNotificationSubscriptionsResponse'  customize = (DescribeNotificationSubscriptionsResponse <<< customize) { "Marker": (NullOrUndefined Nothing), "Subscriptions": (NullOrUndefined Nothing) }
+newDescribeNotificationSubscriptionsResponse' :: ( { "Subscriptions" :: Maybe (SubscriptionList) , "Marker" :: Maybe (PageMarkerType) } -> {"Subscriptions" :: Maybe (SubscriptionList) , "Marker" :: Maybe (PageMarkerType) } ) -> DescribeNotificationSubscriptionsResponse
+newDescribeNotificationSubscriptionsResponse'  customize = (DescribeNotificationSubscriptionsResponse <<< customize) { "Marker": Nothing, "Subscriptions": Nothing }
 
 
 
 newtype DescribeResourcePermissionsRequest = DescribeResourcePermissionsRequest 
-  { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType)
+  { "AuthenticationToken" :: Maybe (AuthenticationHeaderType)
   , "ResourceId" :: (ResourceIdType)
-  , "PrincipalId" :: NullOrUndefined (IdType)
-  , "Limit" :: NullOrUndefined (LimitType)
-  , "Marker" :: NullOrUndefined (PageMarkerType)
+  , "PrincipalId" :: Maybe (IdType)
+  , "Limit" :: Maybe (LimitType)
+  , "Marker" :: Maybe (PageMarkerType)
   }
 derive instance newtypeDescribeResourcePermissionsRequest :: Newtype DescribeResourcePermissionsRequest _
 derive instance repGenericDescribeResourcePermissionsRequest :: Generic DescribeResourcePermissionsRequest _
@@ -1122,18 +1121,18 @@ instance encodeDescribeResourcePermissionsRequest :: Encode DescribeResourcePerm
 
 -- | Constructs DescribeResourcePermissionsRequest from required parameters
 newDescribeResourcePermissionsRequest :: ResourceIdType -> DescribeResourcePermissionsRequest
-newDescribeResourcePermissionsRequest _ResourceId = DescribeResourcePermissionsRequest { "ResourceId": _ResourceId, "AuthenticationToken": (NullOrUndefined Nothing), "Limit": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "PrincipalId": (NullOrUndefined Nothing) }
+newDescribeResourcePermissionsRequest _ResourceId = DescribeResourcePermissionsRequest { "ResourceId": _ResourceId, "AuthenticationToken": Nothing, "Limit": Nothing, "Marker": Nothing, "PrincipalId": Nothing }
 
 -- | Constructs DescribeResourcePermissionsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeResourcePermissionsRequest' :: ResourceIdType -> ( { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "ResourceId" :: (ResourceIdType) , "PrincipalId" :: NullOrUndefined (IdType) , "Limit" :: NullOrUndefined (LimitType) , "Marker" :: NullOrUndefined (PageMarkerType) } -> {"AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "ResourceId" :: (ResourceIdType) , "PrincipalId" :: NullOrUndefined (IdType) , "Limit" :: NullOrUndefined (LimitType) , "Marker" :: NullOrUndefined (PageMarkerType) } ) -> DescribeResourcePermissionsRequest
-newDescribeResourcePermissionsRequest' _ResourceId customize = (DescribeResourcePermissionsRequest <<< customize) { "ResourceId": _ResourceId, "AuthenticationToken": (NullOrUndefined Nothing), "Limit": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "PrincipalId": (NullOrUndefined Nothing) }
+newDescribeResourcePermissionsRequest' :: ResourceIdType -> ( { "AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "ResourceId" :: (ResourceIdType) , "PrincipalId" :: Maybe (IdType) , "Limit" :: Maybe (LimitType) , "Marker" :: Maybe (PageMarkerType) } -> {"AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "ResourceId" :: (ResourceIdType) , "PrincipalId" :: Maybe (IdType) , "Limit" :: Maybe (LimitType) , "Marker" :: Maybe (PageMarkerType) } ) -> DescribeResourcePermissionsRequest
+newDescribeResourcePermissionsRequest' _ResourceId customize = (DescribeResourcePermissionsRequest <<< customize) { "ResourceId": _ResourceId, "AuthenticationToken": Nothing, "Limit": Nothing, "Marker": Nothing, "PrincipalId": Nothing }
 
 
 
 newtype DescribeResourcePermissionsResponse = DescribeResourcePermissionsResponse 
-  { "Principals" :: NullOrUndefined (PrincipalList)
-  , "Marker" :: NullOrUndefined (PageMarkerType)
+  { "Principals" :: Maybe (PrincipalList)
+  , "Marker" :: Maybe (PageMarkerType)
   }
 derive instance newtypeDescribeResourcePermissionsResponse :: Newtype DescribeResourcePermissionsResponse _
 derive instance repGenericDescribeResourcePermissionsResponse :: Generic DescribeResourcePermissionsResponse _
@@ -1143,19 +1142,19 @@ instance encodeDescribeResourcePermissionsResponse :: Encode DescribeResourcePer
 
 -- | Constructs DescribeResourcePermissionsResponse from required parameters
 newDescribeResourcePermissionsResponse :: DescribeResourcePermissionsResponse
-newDescribeResourcePermissionsResponse  = DescribeResourcePermissionsResponse { "Marker": (NullOrUndefined Nothing), "Principals": (NullOrUndefined Nothing) }
+newDescribeResourcePermissionsResponse  = DescribeResourcePermissionsResponse { "Marker": Nothing, "Principals": Nothing }
 
 -- | Constructs DescribeResourcePermissionsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeResourcePermissionsResponse' :: ( { "Principals" :: NullOrUndefined (PrincipalList) , "Marker" :: NullOrUndefined (PageMarkerType) } -> {"Principals" :: NullOrUndefined (PrincipalList) , "Marker" :: NullOrUndefined (PageMarkerType) } ) -> DescribeResourcePermissionsResponse
-newDescribeResourcePermissionsResponse'  customize = (DescribeResourcePermissionsResponse <<< customize) { "Marker": (NullOrUndefined Nothing), "Principals": (NullOrUndefined Nothing) }
+newDescribeResourcePermissionsResponse' :: ( { "Principals" :: Maybe (PrincipalList) , "Marker" :: Maybe (PageMarkerType) } -> {"Principals" :: Maybe (PrincipalList) , "Marker" :: Maybe (PageMarkerType) } ) -> DescribeResourcePermissionsResponse
+newDescribeResourcePermissionsResponse'  customize = (DescribeResourcePermissionsResponse <<< customize) { "Marker": Nothing, "Principals": Nothing }
 
 
 
 newtype DescribeRootFoldersRequest = DescribeRootFoldersRequest 
   { "AuthenticationToken" :: (AuthenticationHeaderType)
-  , "Limit" :: NullOrUndefined (LimitType)
-  , "Marker" :: NullOrUndefined (PageMarkerType)
+  , "Limit" :: Maybe (LimitType)
+  , "Marker" :: Maybe (PageMarkerType)
   }
 derive instance newtypeDescribeRootFoldersRequest :: Newtype DescribeRootFoldersRequest _
 derive instance repGenericDescribeRootFoldersRequest :: Generic DescribeRootFoldersRequest _
@@ -1165,18 +1164,18 @@ instance encodeDescribeRootFoldersRequest :: Encode DescribeRootFoldersRequest w
 
 -- | Constructs DescribeRootFoldersRequest from required parameters
 newDescribeRootFoldersRequest :: AuthenticationHeaderType -> DescribeRootFoldersRequest
-newDescribeRootFoldersRequest _AuthenticationToken = DescribeRootFoldersRequest { "AuthenticationToken": _AuthenticationToken, "Limit": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newDescribeRootFoldersRequest _AuthenticationToken = DescribeRootFoldersRequest { "AuthenticationToken": _AuthenticationToken, "Limit": Nothing, "Marker": Nothing }
 
 -- | Constructs DescribeRootFoldersRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeRootFoldersRequest' :: AuthenticationHeaderType -> ( { "AuthenticationToken" :: (AuthenticationHeaderType) , "Limit" :: NullOrUndefined (LimitType) , "Marker" :: NullOrUndefined (PageMarkerType) } -> {"AuthenticationToken" :: (AuthenticationHeaderType) , "Limit" :: NullOrUndefined (LimitType) , "Marker" :: NullOrUndefined (PageMarkerType) } ) -> DescribeRootFoldersRequest
-newDescribeRootFoldersRequest' _AuthenticationToken customize = (DescribeRootFoldersRequest <<< customize) { "AuthenticationToken": _AuthenticationToken, "Limit": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newDescribeRootFoldersRequest' :: AuthenticationHeaderType -> ( { "AuthenticationToken" :: (AuthenticationHeaderType) , "Limit" :: Maybe (LimitType) , "Marker" :: Maybe (PageMarkerType) } -> {"AuthenticationToken" :: (AuthenticationHeaderType) , "Limit" :: Maybe (LimitType) , "Marker" :: Maybe (PageMarkerType) } ) -> DescribeRootFoldersRequest
+newDescribeRootFoldersRequest' _AuthenticationToken customize = (DescribeRootFoldersRequest <<< customize) { "AuthenticationToken": _AuthenticationToken, "Limit": Nothing, "Marker": Nothing }
 
 
 
 newtype DescribeRootFoldersResponse = DescribeRootFoldersResponse 
-  { "Folders" :: NullOrUndefined (FolderMetadataList)
-  , "Marker" :: NullOrUndefined (PageMarkerType)
+  { "Folders" :: Maybe (FolderMetadataList)
+  , "Marker" :: Maybe (PageMarkerType)
   }
 derive instance newtypeDescribeRootFoldersResponse :: Newtype DescribeRootFoldersResponse _
 derive instance repGenericDescribeRootFoldersResponse :: Generic DescribeRootFoldersResponse _
@@ -1186,26 +1185,26 @@ instance encodeDescribeRootFoldersResponse :: Encode DescribeRootFoldersResponse
 
 -- | Constructs DescribeRootFoldersResponse from required parameters
 newDescribeRootFoldersResponse :: DescribeRootFoldersResponse
-newDescribeRootFoldersResponse  = DescribeRootFoldersResponse { "Folders": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newDescribeRootFoldersResponse  = DescribeRootFoldersResponse { "Folders": Nothing, "Marker": Nothing }
 
 -- | Constructs DescribeRootFoldersResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeRootFoldersResponse' :: ( { "Folders" :: NullOrUndefined (FolderMetadataList) , "Marker" :: NullOrUndefined (PageMarkerType) } -> {"Folders" :: NullOrUndefined (FolderMetadataList) , "Marker" :: NullOrUndefined (PageMarkerType) } ) -> DescribeRootFoldersResponse
-newDescribeRootFoldersResponse'  customize = (DescribeRootFoldersResponse <<< customize) { "Folders": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newDescribeRootFoldersResponse' :: ( { "Folders" :: Maybe (FolderMetadataList) , "Marker" :: Maybe (PageMarkerType) } -> {"Folders" :: Maybe (FolderMetadataList) , "Marker" :: Maybe (PageMarkerType) } ) -> DescribeRootFoldersResponse
+newDescribeRootFoldersResponse'  customize = (DescribeRootFoldersResponse <<< customize) { "Folders": Nothing, "Marker": Nothing }
 
 
 
 newtype DescribeUsersRequest = DescribeUsersRequest 
-  { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType)
-  , "OrganizationId" :: NullOrUndefined (IdType)
-  , "UserIds" :: NullOrUndefined (UserIdsType)
-  , "Query" :: NullOrUndefined (SearchQueryType)
-  , "Include" :: NullOrUndefined (UserFilterType)
-  , "Order" :: NullOrUndefined (OrderType)
-  , "Sort" :: NullOrUndefined (UserSortType)
-  , "Marker" :: NullOrUndefined (PageMarkerType)
-  , "Limit" :: NullOrUndefined (LimitType)
-  , "Fields" :: NullOrUndefined (FieldNamesType)
+  { "AuthenticationToken" :: Maybe (AuthenticationHeaderType)
+  , "OrganizationId" :: Maybe (IdType)
+  , "UserIds" :: Maybe (UserIdsType)
+  , "Query" :: Maybe (SearchQueryType)
+  , "Include" :: Maybe (UserFilterType)
+  , "Order" :: Maybe (OrderType)
+  , "Sort" :: Maybe (UserSortType)
+  , "Marker" :: Maybe (PageMarkerType)
+  , "Limit" :: Maybe (LimitType)
+  , "Fields" :: Maybe (FieldNamesType)
   }
 derive instance newtypeDescribeUsersRequest :: Newtype DescribeUsersRequest _
 derive instance repGenericDescribeUsersRequest :: Generic DescribeUsersRequest _
@@ -1215,19 +1214,19 @@ instance encodeDescribeUsersRequest :: Encode DescribeUsersRequest where encode 
 
 -- | Constructs DescribeUsersRequest from required parameters
 newDescribeUsersRequest :: DescribeUsersRequest
-newDescribeUsersRequest  = DescribeUsersRequest { "AuthenticationToken": (NullOrUndefined Nothing), "Fields": (NullOrUndefined Nothing), "Include": (NullOrUndefined Nothing), "Limit": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "Order": (NullOrUndefined Nothing), "OrganizationId": (NullOrUndefined Nothing), "Query": (NullOrUndefined Nothing), "Sort": (NullOrUndefined Nothing), "UserIds": (NullOrUndefined Nothing) }
+newDescribeUsersRequest  = DescribeUsersRequest { "AuthenticationToken": Nothing, "Fields": Nothing, "Include": Nothing, "Limit": Nothing, "Marker": Nothing, "Order": Nothing, "OrganizationId": Nothing, "Query": Nothing, "Sort": Nothing, "UserIds": Nothing }
 
 -- | Constructs DescribeUsersRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeUsersRequest' :: ( { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "OrganizationId" :: NullOrUndefined (IdType) , "UserIds" :: NullOrUndefined (UserIdsType) , "Query" :: NullOrUndefined (SearchQueryType) , "Include" :: NullOrUndefined (UserFilterType) , "Order" :: NullOrUndefined (OrderType) , "Sort" :: NullOrUndefined (UserSortType) , "Marker" :: NullOrUndefined (PageMarkerType) , "Limit" :: NullOrUndefined (LimitType) , "Fields" :: NullOrUndefined (FieldNamesType) } -> {"AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "OrganizationId" :: NullOrUndefined (IdType) , "UserIds" :: NullOrUndefined (UserIdsType) , "Query" :: NullOrUndefined (SearchQueryType) , "Include" :: NullOrUndefined (UserFilterType) , "Order" :: NullOrUndefined (OrderType) , "Sort" :: NullOrUndefined (UserSortType) , "Marker" :: NullOrUndefined (PageMarkerType) , "Limit" :: NullOrUndefined (LimitType) , "Fields" :: NullOrUndefined (FieldNamesType) } ) -> DescribeUsersRequest
-newDescribeUsersRequest'  customize = (DescribeUsersRequest <<< customize) { "AuthenticationToken": (NullOrUndefined Nothing), "Fields": (NullOrUndefined Nothing), "Include": (NullOrUndefined Nothing), "Limit": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "Order": (NullOrUndefined Nothing), "OrganizationId": (NullOrUndefined Nothing), "Query": (NullOrUndefined Nothing), "Sort": (NullOrUndefined Nothing), "UserIds": (NullOrUndefined Nothing) }
+newDescribeUsersRequest' :: ( { "AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "OrganizationId" :: Maybe (IdType) , "UserIds" :: Maybe (UserIdsType) , "Query" :: Maybe (SearchQueryType) , "Include" :: Maybe (UserFilterType) , "Order" :: Maybe (OrderType) , "Sort" :: Maybe (UserSortType) , "Marker" :: Maybe (PageMarkerType) , "Limit" :: Maybe (LimitType) , "Fields" :: Maybe (FieldNamesType) } -> {"AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "OrganizationId" :: Maybe (IdType) , "UserIds" :: Maybe (UserIdsType) , "Query" :: Maybe (SearchQueryType) , "Include" :: Maybe (UserFilterType) , "Order" :: Maybe (OrderType) , "Sort" :: Maybe (UserSortType) , "Marker" :: Maybe (PageMarkerType) , "Limit" :: Maybe (LimitType) , "Fields" :: Maybe (FieldNamesType) } ) -> DescribeUsersRequest
+newDescribeUsersRequest'  customize = (DescribeUsersRequest <<< customize) { "AuthenticationToken": Nothing, "Fields": Nothing, "Include": Nothing, "Limit": Nothing, "Marker": Nothing, "Order": Nothing, "OrganizationId": Nothing, "Query": Nothing, "Sort": Nothing, "UserIds": Nothing }
 
 
 
 newtype DescribeUsersResponse = DescribeUsersResponse 
-  { "Users" :: NullOrUndefined (OrganizationUserList)
-  , "TotalNumberOfUsers" :: NullOrUndefined (SizeType)
-  , "Marker" :: NullOrUndefined (PageMarkerType)
+  { "Users" :: Maybe (OrganizationUserList)
+  , "TotalNumberOfUsers" :: Maybe (SizeType)
+  , "Marker" :: Maybe (PageMarkerType)
   }
 derive instance newtypeDescribeUsersResponse :: Newtype DescribeUsersResponse _
 derive instance repGenericDescribeUsersResponse :: Generic DescribeUsersResponse _
@@ -1237,12 +1236,12 @@ instance encodeDescribeUsersResponse :: Encode DescribeUsersResponse where encod
 
 -- | Constructs DescribeUsersResponse from required parameters
 newDescribeUsersResponse :: DescribeUsersResponse
-newDescribeUsersResponse  = DescribeUsersResponse { "Marker": (NullOrUndefined Nothing), "TotalNumberOfUsers": (NullOrUndefined Nothing), "Users": (NullOrUndefined Nothing) }
+newDescribeUsersResponse  = DescribeUsersResponse { "Marker": Nothing, "TotalNumberOfUsers": Nothing, "Users": Nothing }
 
 -- | Constructs DescribeUsersResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeUsersResponse' :: ( { "Users" :: NullOrUndefined (OrganizationUserList) , "TotalNumberOfUsers" :: NullOrUndefined (SizeType) , "Marker" :: NullOrUndefined (PageMarkerType) } -> {"Users" :: NullOrUndefined (OrganizationUserList) , "TotalNumberOfUsers" :: NullOrUndefined (SizeType) , "Marker" :: NullOrUndefined (PageMarkerType) } ) -> DescribeUsersResponse
-newDescribeUsersResponse'  customize = (DescribeUsersResponse <<< customize) { "Marker": (NullOrUndefined Nothing), "TotalNumberOfUsers": (NullOrUndefined Nothing), "Users": (NullOrUndefined Nothing) }
+newDescribeUsersResponse' :: ( { "Users" :: Maybe (OrganizationUserList) , "TotalNumberOfUsers" :: Maybe (SizeType) , "Marker" :: Maybe (PageMarkerType) } -> {"Users" :: Maybe (OrganizationUserList) , "TotalNumberOfUsers" :: Maybe (SizeType) , "Marker" :: Maybe (PageMarkerType) } ) -> DescribeUsersResponse
+newDescribeUsersResponse'  customize = (DescribeUsersResponse <<< customize) { "Marker": Nothing, "TotalNumberOfUsers": Nothing, "Users": Nothing }
 
 
 
@@ -1257,7 +1256,7 @@ instance encodeDocumentContentType :: Encode DocumentContentType where encode = 
 
 -- | <p>This exception is thrown when the document is locked for comments and user tries to create or delete a comment on that document.</p>
 newtype DocumentLockedForCommentsException = DocumentLockedForCommentsException 
-  { "Message" :: NullOrUndefined (ErrorMessageType)
+  { "Message" :: Maybe (ErrorMessageType)
   }
 derive instance newtypeDocumentLockedForCommentsException :: Newtype DocumentLockedForCommentsException _
 derive instance repGenericDocumentLockedForCommentsException :: Generic DocumentLockedForCommentsException _
@@ -1267,25 +1266,25 @@ instance encodeDocumentLockedForCommentsException :: Encode DocumentLockedForCom
 
 -- | Constructs DocumentLockedForCommentsException from required parameters
 newDocumentLockedForCommentsException :: DocumentLockedForCommentsException
-newDocumentLockedForCommentsException  = DocumentLockedForCommentsException { "Message": (NullOrUndefined Nothing) }
+newDocumentLockedForCommentsException  = DocumentLockedForCommentsException { "Message": Nothing }
 
 -- | Constructs DocumentLockedForCommentsException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDocumentLockedForCommentsException' :: ( { "Message" :: NullOrUndefined (ErrorMessageType) } -> {"Message" :: NullOrUndefined (ErrorMessageType) } ) -> DocumentLockedForCommentsException
-newDocumentLockedForCommentsException'  customize = (DocumentLockedForCommentsException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newDocumentLockedForCommentsException' :: ( { "Message" :: Maybe (ErrorMessageType) } -> {"Message" :: Maybe (ErrorMessageType) } ) -> DocumentLockedForCommentsException
+newDocumentLockedForCommentsException'  customize = (DocumentLockedForCommentsException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>Describes the document.</p>
 newtype DocumentMetadata = DocumentMetadata 
-  { "Id" :: NullOrUndefined (ResourceIdType)
-  , "CreatorId" :: NullOrUndefined (IdType)
-  , "ParentFolderId" :: NullOrUndefined (ResourceIdType)
-  , "CreatedTimestamp" :: NullOrUndefined (TimestampType)
-  , "ModifiedTimestamp" :: NullOrUndefined (TimestampType)
-  , "LatestVersionMetadata" :: NullOrUndefined (DocumentVersionMetadata)
-  , "ResourceState" :: NullOrUndefined (ResourceStateType)
-  , "Labels" :: NullOrUndefined (SharedLabels)
+  { "Id" :: Maybe (ResourceIdType)
+  , "CreatorId" :: Maybe (IdType)
+  , "ParentFolderId" :: Maybe (ResourceIdType)
+  , "CreatedTimestamp" :: Maybe (TimestampType)
+  , "ModifiedTimestamp" :: Maybe (TimestampType)
+  , "LatestVersionMetadata" :: Maybe (DocumentVersionMetadata)
+  , "ResourceState" :: Maybe (ResourceStateType)
+  , "Labels" :: Maybe (SharedLabels)
   }
 derive instance newtypeDocumentMetadata :: Newtype DocumentMetadata _
 derive instance repGenericDocumentMetadata :: Generic DocumentMetadata _
@@ -1295,12 +1294,12 @@ instance encodeDocumentMetadata :: Encode DocumentMetadata where encode = generi
 
 -- | Constructs DocumentMetadata from required parameters
 newDocumentMetadata :: DocumentMetadata
-newDocumentMetadata  = DocumentMetadata { "CreatedTimestamp": (NullOrUndefined Nothing), "CreatorId": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "Labels": (NullOrUndefined Nothing), "LatestVersionMetadata": (NullOrUndefined Nothing), "ModifiedTimestamp": (NullOrUndefined Nothing), "ParentFolderId": (NullOrUndefined Nothing), "ResourceState": (NullOrUndefined Nothing) }
+newDocumentMetadata  = DocumentMetadata { "CreatedTimestamp": Nothing, "CreatorId": Nothing, "Id": Nothing, "Labels": Nothing, "LatestVersionMetadata": Nothing, "ModifiedTimestamp": Nothing, "ParentFolderId": Nothing, "ResourceState": Nothing }
 
 -- | Constructs DocumentMetadata's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDocumentMetadata' :: ( { "Id" :: NullOrUndefined (ResourceIdType) , "CreatorId" :: NullOrUndefined (IdType) , "ParentFolderId" :: NullOrUndefined (ResourceIdType) , "CreatedTimestamp" :: NullOrUndefined (TimestampType) , "ModifiedTimestamp" :: NullOrUndefined (TimestampType) , "LatestVersionMetadata" :: NullOrUndefined (DocumentVersionMetadata) , "ResourceState" :: NullOrUndefined (ResourceStateType) , "Labels" :: NullOrUndefined (SharedLabels) } -> {"Id" :: NullOrUndefined (ResourceIdType) , "CreatorId" :: NullOrUndefined (IdType) , "ParentFolderId" :: NullOrUndefined (ResourceIdType) , "CreatedTimestamp" :: NullOrUndefined (TimestampType) , "ModifiedTimestamp" :: NullOrUndefined (TimestampType) , "LatestVersionMetadata" :: NullOrUndefined (DocumentVersionMetadata) , "ResourceState" :: NullOrUndefined (ResourceStateType) , "Labels" :: NullOrUndefined (SharedLabels) } ) -> DocumentMetadata
-newDocumentMetadata'  customize = (DocumentMetadata <<< customize) { "CreatedTimestamp": (NullOrUndefined Nothing), "CreatorId": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "Labels": (NullOrUndefined Nothing), "LatestVersionMetadata": (NullOrUndefined Nothing), "ModifiedTimestamp": (NullOrUndefined Nothing), "ParentFolderId": (NullOrUndefined Nothing), "ResourceState": (NullOrUndefined Nothing) }
+newDocumentMetadata' :: ( { "Id" :: Maybe (ResourceIdType) , "CreatorId" :: Maybe (IdType) , "ParentFolderId" :: Maybe (ResourceIdType) , "CreatedTimestamp" :: Maybe (TimestampType) , "ModifiedTimestamp" :: Maybe (TimestampType) , "LatestVersionMetadata" :: Maybe (DocumentVersionMetadata) , "ResourceState" :: Maybe (ResourceStateType) , "Labels" :: Maybe (SharedLabels) } -> {"Id" :: Maybe (ResourceIdType) , "CreatorId" :: Maybe (IdType) , "ParentFolderId" :: Maybe (ResourceIdType) , "CreatedTimestamp" :: Maybe (TimestampType) , "ModifiedTimestamp" :: Maybe (TimestampType) , "LatestVersionMetadata" :: Maybe (DocumentVersionMetadata) , "ResourceState" :: Maybe (ResourceStateType) , "Labels" :: Maybe (SharedLabels) } ) -> DocumentMetadata
+newDocumentMetadata'  customize = (DocumentMetadata <<< customize) { "CreatedTimestamp": Nothing, "CreatorId": Nothing, "Id": Nothing, "Labels": Nothing, "LatestVersionMetadata": Nothing, "ModifiedTimestamp": Nothing, "ParentFolderId": Nothing, "ResourceState": Nothing }
 
 
 
@@ -1369,19 +1368,19 @@ instance encodeDocumentVersionIdType :: Encode DocumentVersionIdType where encod
 
 -- | <p>Describes a version of a document.</p>
 newtype DocumentVersionMetadata = DocumentVersionMetadata 
-  { "Id" :: NullOrUndefined (DocumentVersionIdType)
-  , "Name" :: NullOrUndefined (ResourceNameType)
-  , "ContentType" :: NullOrUndefined (DocumentContentType)
-  , "Size" :: NullOrUndefined (SizeType)
-  , "Signature" :: NullOrUndefined (HashType)
-  , "Status" :: NullOrUndefined (DocumentStatusType)
-  , "CreatedTimestamp" :: NullOrUndefined (TimestampType)
-  , "ModifiedTimestamp" :: NullOrUndefined (TimestampType)
-  , "ContentCreatedTimestamp" :: NullOrUndefined (TimestampType)
-  , "ContentModifiedTimestamp" :: NullOrUndefined (TimestampType)
-  , "CreatorId" :: NullOrUndefined (IdType)
-  , "Thumbnail" :: NullOrUndefined (DocumentThumbnailUrlMap)
-  , "Source" :: NullOrUndefined (DocumentSourceUrlMap)
+  { "Id" :: Maybe (DocumentVersionIdType)
+  , "Name" :: Maybe (ResourceNameType)
+  , "ContentType" :: Maybe (DocumentContentType)
+  , "Size" :: Maybe (SizeType)
+  , "Signature" :: Maybe (HashType)
+  , "Status" :: Maybe (DocumentStatusType)
+  , "CreatedTimestamp" :: Maybe (TimestampType)
+  , "ModifiedTimestamp" :: Maybe (TimestampType)
+  , "ContentCreatedTimestamp" :: Maybe (TimestampType)
+  , "ContentModifiedTimestamp" :: Maybe (TimestampType)
+  , "CreatorId" :: Maybe (IdType)
+  , "Thumbnail" :: Maybe (DocumentThumbnailUrlMap)
+  , "Source" :: Maybe (DocumentSourceUrlMap)
   }
 derive instance newtypeDocumentVersionMetadata :: Newtype DocumentVersionMetadata _
 derive instance repGenericDocumentVersionMetadata :: Generic DocumentVersionMetadata _
@@ -1391,12 +1390,12 @@ instance encodeDocumentVersionMetadata :: Encode DocumentVersionMetadata where e
 
 -- | Constructs DocumentVersionMetadata from required parameters
 newDocumentVersionMetadata :: DocumentVersionMetadata
-newDocumentVersionMetadata  = DocumentVersionMetadata { "ContentCreatedTimestamp": (NullOrUndefined Nothing), "ContentModifiedTimestamp": (NullOrUndefined Nothing), "ContentType": (NullOrUndefined Nothing), "CreatedTimestamp": (NullOrUndefined Nothing), "CreatorId": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "ModifiedTimestamp": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Signature": (NullOrUndefined Nothing), "Size": (NullOrUndefined Nothing), "Source": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "Thumbnail": (NullOrUndefined Nothing) }
+newDocumentVersionMetadata  = DocumentVersionMetadata { "ContentCreatedTimestamp": Nothing, "ContentModifiedTimestamp": Nothing, "ContentType": Nothing, "CreatedTimestamp": Nothing, "CreatorId": Nothing, "Id": Nothing, "ModifiedTimestamp": Nothing, "Name": Nothing, "Signature": Nothing, "Size": Nothing, "Source": Nothing, "Status": Nothing, "Thumbnail": Nothing }
 
 -- | Constructs DocumentVersionMetadata's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDocumentVersionMetadata' :: ( { "Id" :: NullOrUndefined (DocumentVersionIdType) , "Name" :: NullOrUndefined (ResourceNameType) , "ContentType" :: NullOrUndefined (DocumentContentType) , "Size" :: NullOrUndefined (SizeType) , "Signature" :: NullOrUndefined (HashType) , "Status" :: NullOrUndefined (DocumentStatusType) , "CreatedTimestamp" :: NullOrUndefined (TimestampType) , "ModifiedTimestamp" :: NullOrUndefined (TimestampType) , "ContentCreatedTimestamp" :: NullOrUndefined (TimestampType) , "ContentModifiedTimestamp" :: NullOrUndefined (TimestampType) , "CreatorId" :: NullOrUndefined (IdType) , "Thumbnail" :: NullOrUndefined (DocumentThumbnailUrlMap) , "Source" :: NullOrUndefined (DocumentSourceUrlMap) } -> {"Id" :: NullOrUndefined (DocumentVersionIdType) , "Name" :: NullOrUndefined (ResourceNameType) , "ContentType" :: NullOrUndefined (DocumentContentType) , "Size" :: NullOrUndefined (SizeType) , "Signature" :: NullOrUndefined (HashType) , "Status" :: NullOrUndefined (DocumentStatusType) , "CreatedTimestamp" :: NullOrUndefined (TimestampType) , "ModifiedTimestamp" :: NullOrUndefined (TimestampType) , "ContentCreatedTimestamp" :: NullOrUndefined (TimestampType) , "ContentModifiedTimestamp" :: NullOrUndefined (TimestampType) , "CreatorId" :: NullOrUndefined (IdType) , "Thumbnail" :: NullOrUndefined (DocumentThumbnailUrlMap) , "Source" :: NullOrUndefined (DocumentSourceUrlMap) } ) -> DocumentVersionMetadata
-newDocumentVersionMetadata'  customize = (DocumentVersionMetadata <<< customize) { "ContentCreatedTimestamp": (NullOrUndefined Nothing), "ContentModifiedTimestamp": (NullOrUndefined Nothing), "ContentType": (NullOrUndefined Nothing), "CreatedTimestamp": (NullOrUndefined Nothing), "CreatorId": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "ModifiedTimestamp": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Signature": (NullOrUndefined Nothing), "Size": (NullOrUndefined Nothing), "Source": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "Thumbnail": (NullOrUndefined Nothing) }
+newDocumentVersionMetadata' :: ( { "Id" :: Maybe (DocumentVersionIdType) , "Name" :: Maybe (ResourceNameType) , "ContentType" :: Maybe (DocumentContentType) , "Size" :: Maybe (SizeType) , "Signature" :: Maybe (HashType) , "Status" :: Maybe (DocumentStatusType) , "CreatedTimestamp" :: Maybe (TimestampType) , "ModifiedTimestamp" :: Maybe (TimestampType) , "ContentCreatedTimestamp" :: Maybe (TimestampType) , "ContentModifiedTimestamp" :: Maybe (TimestampType) , "CreatorId" :: Maybe (IdType) , "Thumbnail" :: Maybe (DocumentThumbnailUrlMap) , "Source" :: Maybe (DocumentSourceUrlMap) } -> {"Id" :: Maybe (DocumentVersionIdType) , "Name" :: Maybe (ResourceNameType) , "ContentType" :: Maybe (DocumentContentType) , "Size" :: Maybe (SizeType) , "Signature" :: Maybe (HashType) , "Status" :: Maybe (DocumentStatusType) , "CreatedTimestamp" :: Maybe (TimestampType) , "ModifiedTimestamp" :: Maybe (TimestampType) , "ContentCreatedTimestamp" :: Maybe (TimestampType) , "ContentModifiedTimestamp" :: Maybe (TimestampType) , "CreatorId" :: Maybe (IdType) , "Thumbnail" :: Maybe (DocumentThumbnailUrlMap) , "Source" :: Maybe (DocumentSourceUrlMap) } ) -> DocumentVersionMetadata
+newDocumentVersionMetadata'  customize = (DocumentVersionMetadata <<< customize) { "ContentCreatedTimestamp": Nothing, "ContentModifiedTimestamp": Nothing, "ContentType": Nothing, "CreatedTimestamp": Nothing, "CreatorId": Nothing, "Id": Nothing, "ModifiedTimestamp": Nothing, "Name": Nothing, "Signature": Nothing, "Size": Nothing, "Source": Nothing, "Status": Nothing, "Thumbnail": Nothing }
 
 
 
@@ -1420,7 +1419,7 @@ instance encodeDocumentVersionStatus :: Encode DocumentVersionStatus where encod
 
 -- | <p>This exception is thrown when a valid checkout ID is not presented on document version upload calls for a document that has been checked out from Web client.</p>
 newtype DraftUploadOutOfSyncException = DraftUploadOutOfSyncException 
-  { "Message" :: NullOrUndefined (ErrorMessageType)
+  { "Message" :: Maybe (ErrorMessageType)
   }
 derive instance newtypeDraftUploadOutOfSyncException :: Newtype DraftUploadOutOfSyncException _
 derive instance repGenericDraftUploadOutOfSyncException :: Generic DraftUploadOutOfSyncException _
@@ -1430,12 +1429,12 @@ instance encodeDraftUploadOutOfSyncException :: Encode DraftUploadOutOfSyncExcep
 
 -- | Constructs DraftUploadOutOfSyncException from required parameters
 newDraftUploadOutOfSyncException :: DraftUploadOutOfSyncException
-newDraftUploadOutOfSyncException  = DraftUploadOutOfSyncException { "Message": (NullOrUndefined Nothing) }
+newDraftUploadOutOfSyncException  = DraftUploadOutOfSyncException { "Message": Nothing }
 
 -- | Constructs DraftUploadOutOfSyncException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDraftUploadOutOfSyncException' :: ( { "Message" :: NullOrUndefined (ErrorMessageType) } -> {"Message" :: NullOrUndefined (ErrorMessageType) } ) -> DraftUploadOutOfSyncException
-newDraftUploadOutOfSyncException'  customize = (DraftUploadOutOfSyncException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newDraftUploadOutOfSyncException' :: ( { "Message" :: Maybe (ErrorMessageType) } -> {"Message" :: Maybe (ErrorMessageType) } ) -> DraftUploadOutOfSyncException
+newDraftUploadOutOfSyncException'  customize = (DraftUploadOutOfSyncException <<< customize) { "Message": Nothing }
 
 
 
@@ -1450,7 +1449,7 @@ instance encodeEmailAddressType :: Encode EmailAddressType where encode = generi
 
 -- | <p>The resource already exists.</p>
 newtype EntityAlreadyExistsException = EntityAlreadyExistsException 
-  { "Message" :: NullOrUndefined (ErrorMessageType)
+  { "Message" :: Maybe (ErrorMessageType)
   }
 derive instance newtypeEntityAlreadyExistsException :: Newtype EntityAlreadyExistsException _
 derive instance repGenericEntityAlreadyExistsException :: Generic EntityAlreadyExistsException _
@@ -1460,12 +1459,12 @@ instance encodeEntityAlreadyExistsException :: Encode EntityAlreadyExistsExcepti
 
 -- | Constructs EntityAlreadyExistsException from required parameters
 newEntityAlreadyExistsException :: EntityAlreadyExistsException
-newEntityAlreadyExistsException  = EntityAlreadyExistsException { "Message": (NullOrUndefined Nothing) }
+newEntityAlreadyExistsException  = EntityAlreadyExistsException { "Message": Nothing }
 
 -- | Constructs EntityAlreadyExistsException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEntityAlreadyExistsException' :: ( { "Message" :: NullOrUndefined (ErrorMessageType) } -> {"Message" :: NullOrUndefined (ErrorMessageType) } ) -> EntityAlreadyExistsException
-newEntityAlreadyExistsException'  customize = (EntityAlreadyExistsException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newEntityAlreadyExistsException' :: ( { "Message" :: Maybe (ErrorMessageType) } -> {"Message" :: Maybe (ErrorMessageType) } ) -> EntityAlreadyExistsException
+newEntityAlreadyExistsException'  customize = (EntityAlreadyExistsException <<< customize) { "Message": Nothing }
 
 
 
@@ -1480,8 +1479,8 @@ instance encodeEntityIdList :: Encode EntityIdList where encode = genericEncode 
 
 -- | <p>The resource does not exist.</p>
 newtype EntityNotExistsException = EntityNotExistsException 
-  { "Message" :: NullOrUndefined (ErrorMessageType)
-  , "EntityIds" :: NullOrUndefined (EntityIdList)
+  { "Message" :: Maybe (ErrorMessageType)
+  , "EntityIds" :: Maybe (EntityIdList)
   }
 derive instance newtypeEntityNotExistsException :: Newtype EntityNotExistsException _
 derive instance repGenericEntityNotExistsException :: Generic EntityNotExistsException _
@@ -1491,12 +1490,12 @@ instance encodeEntityNotExistsException :: Encode EntityNotExistsException where
 
 -- | Constructs EntityNotExistsException from required parameters
 newEntityNotExistsException :: EntityNotExistsException
-newEntityNotExistsException  = EntityNotExistsException { "EntityIds": (NullOrUndefined Nothing), "Message": (NullOrUndefined Nothing) }
+newEntityNotExistsException  = EntityNotExistsException { "EntityIds": Nothing, "Message": Nothing }
 
 -- | Constructs EntityNotExistsException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEntityNotExistsException' :: ( { "Message" :: NullOrUndefined (ErrorMessageType) , "EntityIds" :: NullOrUndefined (EntityIdList) } -> {"Message" :: NullOrUndefined (ErrorMessageType) , "EntityIds" :: NullOrUndefined (EntityIdList) } ) -> EntityNotExistsException
-newEntityNotExistsException'  customize = (EntityNotExistsException <<< customize) { "EntityIds": (NullOrUndefined Nothing), "Message": (NullOrUndefined Nothing) }
+newEntityNotExistsException' :: ( { "Message" :: Maybe (ErrorMessageType) , "EntityIds" :: Maybe (EntityIdList) } -> {"Message" :: Maybe (ErrorMessageType) , "EntityIds" :: Maybe (EntityIdList) } ) -> EntityNotExistsException
+newEntityNotExistsException'  customize = (EntityNotExistsException <<< customize) { "EntityIds": Nothing, "Message": Nothing }
 
 
 
@@ -1511,7 +1510,7 @@ instance encodeErrorMessageType :: Encode ErrorMessageType where encode = generi
 
 -- | <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
 newtype FailedDependencyException = FailedDependencyException 
-  { "Message" :: NullOrUndefined (ErrorMessageType)
+  { "Message" :: Maybe (ErrorMessageType)
   }
 derive instance newtypeFailedDependencyException :: Newtype FailedDependencyException _
 derive instance repGenericFailedDependencyException :: Generic FailedDependencyException _
@@ -1521,12 +1520,12 @@ instance encodeFailedDependencyException :: Encode FailedDependencyException whe
 
 -- | Constructs FailedDependencyException from required parameters
 newFailedDependencyException :: FailedDependencyException
-newFailedDependencyException  = FailedDependencyException { "Message": (NullOrUndefined Nothing) }
+newFailedDependencyException  = FailedDependencyException { "Message": Nothing }
 
 -- | Constructs FailedDependencyException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newFailedDependencyException' :: ( { "Message" :: NullOrUndefined (ErrorMessageType) } -> {"Message" :: NullOrUndefined (ErrorMessageType) } ) -> FailedDependencyException
-newFailedDependencyException'  customize = (FailedDependencyException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newFailedDependencyException' :: ( { "Message" :: Maybe (ErrorMessageType) } -> {"Message" :: Maybe (ErrorMessageType) } ) -> FailedDependencyException
+newFailedDependencyException'  customize = (FailedDependencyException <<< customize) { "Message": Nothing }
 
 
 
@@ -1550,17 +1549,17 @@ instance encodeFolderContentType :: Encode FolderContentType where encode = gene
 
 -- | <p>Describes a folder.</p>
 newtype FolderMetadata = FolderMetadata 
-  { "Id" :: NullOrUndefined (ResourceIdType)
-  , "Name" :: NullOrUndefined (ResourceNameType)
-  , "CreatorId" :: NullOrUndefined (IdType)
-  , "ParentFolderId" :: NullOrUndefined (ResourceIdType)
-  , "CreatedTimestamp" :: NullOrUndefined (TimestampType)
-  , "ModifiedTimestamp" :: NullOrUndefined (TimestampType)
-  , "ResourceState" :: NullOrUndefined (ResourceStateType)
-  , "Signature" :: NullOrUndefined (HashType)
-  , "Labels" :: NullOrUndefined (SharedLabels)
-  , "Size" :: NullOrUndefined (SizeType)
-  , "LatestVersionSize" :: NullOrUndefined (SizeType)
+  { "Id" :: Maybe (ResourceIdType)
+  , "Name" :: Maybe (ResourceNameType)
+  , "CreatorId" :: Maybe (IdType)
+  , "ParentFolderId" :: Maybe (ResourceIdType)
+  , "CreatedTimestamp" :: Maybe (TimestampType)
+  , "ModifiedTimestamp" :: Maybe (TimestampType)
+  , "ResourceState" :: Maybe (ResourceStateType)
+  , "Signature" :: Maybe (HashType)
+  , "Labels" :: Maybe (SharedLabels)
+  , "Size" :: Maybe (SizeType)
+  , "LatestVersionSize" :: Maybe (SizeType)
   }
 derive instance newtypeFolderMetadata :: Newtype FolderMetadata _
 derive instance repGenericFolderMetadata :: Generic FolderMetadata _
@@ -1570,12 +1569,12 @@ instance encodeFolderMetadata :: Encode FolderMetadata where encode = genericEnc
 
 -- | Constructs FolderMetadata from required parameters
 newFolderMetadata :: FolderMetadata
-newFolderMetadata  = FolderMetadata { "CreatedTimestamp": (NullOrUndefined Nothing), "CreatorId": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "Labels": (NullOrUndefined Nothing), "LatestVersionSize": (NullOrUndefined Nothing), "ModifiedTimestamp": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "ParentFolderId": (NullOrUndefined Nothing), "ResourceState": (NullOrUndefined Nothing), "Signature": (NullOrUndefined Nothing), "Size": (NullOrUndefined Nothing) }
+newFolderMetadata  = FolderMetadata { "CreatedTimestamp": Nothing, "CreatorId": Nothing, "Id": Nothing, "Labels": Nothing, "LatestVersionSize": Nothing, "ModifiedTimestamp": Nothing, "Name": Nothing, "ParentFolderId": Nothing, "ResourceState": Nothing, "Signature": Nothing, "Size": Nothing }
 
 -- | Constructs FolderMetadata's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newFolderMetadata' :: ( { "Id" :: NullOrUndefined (ResourceIdType) , "Name" :: NullOrUndefined (ResourceNameType) , "CreatorId" :: NullOrUndefined (IdType) , "ParentFolderId" :: NullOrUndefined (ResourceIdType) , "CreatedTimestamp" :: NullOrUndefined (TimestampType) , "ModifiedTimestamp" :: NullOrUndefined (TimestampType) , "ResourceState" :: NullOrUndefined (ResourceStateType) , "Signature" :: NullOrUndefined (HashType) , "Labels" :: NullOrUndefined (SharedLabels) , "Size" :: NullOrUndefined (SizeType) , "LatestVersionSize" :: NullOrUndefined (SizeType) } -> {"Id" :: NullOrUndefined (ResourceIdType) , "Name" :: NullOrUndefined (ResourceNameType) , "CreatorId" :: NullOrUndefined (IdType) , "ParentFolderId" :: NullOrUndefined (ResourceIdType) , "CreatedTimestamp" :: NullOrUndefined (TimestampType) , "ModifiedTimestamp" :: NullOrUndefined (TimestampType) , "ResourceState" :: NullOrUndefined (ResourceStateType) , "Signature" :: NullOrUndefined (HashType) , "Labels" :: NullOrUndefined (SharedLabels) , "Size" :: NullOrUndefined (SizeType) , "LatestVersionSize" :: NullOrUndefined (SizeType) } ) -> FolderMetadata
-newFolderMetadata'  customize = (FolderMetadata <<< customize) { "CreatedTimestamp": (NullOrUndefined Nothing), "CreatorId": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "Labels": (NullOrUndefined Nothing), "LatestVersionSize": (NullOrUndefined Nothing), "ModifiedTimestamp": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "ParentFolderId": (NullOrUndefined Nothing), "ResourceState": (NullOrUndefined Nothing), "Signature": (NullOrUndefined Nothing), "Size": (NullOrUndefined Nothing) }
+newFolderMetadata' :: ( { "Id" :: Maybe (ResourceIdType) , "Name" :: Maybe (ResourceNameType) , "CreatorId" :: Maybe (IdType) , "ParentFolderId" :: Maybe (ResourceIdType) , "CreatedTimestamp" :: Maybe (TimestampType) , "ModifiedTimestamp" :: Maybe (TimestampType) , "ResourceState" :: Maybe (ResourceStateType) , "Signature" :: Maybe (HashType) , "Labels" :: Maybe (SharedLabels) , "Size" :: Maybe (SizeType) , "LatestVersionSize" :: Maybe (SizeType) } -> {"Id" :: Maybe (ResourceIdType) , "Name" :: Maybe (ResourceNameType) , "CreatorId" :: Maybe (IdType) , "ParentFolderId" :: Maybe (ResourceIdType) , "CreatedTimestamp" :: Maybe (TimestampType) , "ModifiedTimestamp" :: Maybe (TimestampType) , "ResourceState" :: Maybe (ResourceStateType) , "Signature" :: Maybe (HashType) , "Labels" :: Maybe (SharedLabels) , "Size" :: Maybe (SizeType) , "LatestVersionSize" :: Maybe (SizeType) } ) -> FolderMetadata
+newFolderMetadata'  customize = (FolderMetadata <<< customize) { "CreatedTimestamp": Nothing, "CreatorId": Nothing, "Id": Nothing, "Labels": Nothing, "LatestVersionSize": Nothing, "ModifiedTimestamp": Nothing, "Name": Nothing, "ParentFolderId": Nothing, "ResourceState": Nothing, "Signature": Nothing, "Size": Nothing }
 
 
 
@@ -1609,7 +1608,7 @@ newGetCurrentUserRequest' _AuthenticationToken customize = (GetCurrentUserReques
 
 
 newtype GetCurrentUserResponse = GetCurrentUserResponse 
-  { "User" :: NullOrUndefined (User)
+  { "User" :: Maybe (User)
   }
 derive instance newtypeGetCurrentUserResponse :: Newtype GetCurrentUserResponse _
 derive instance repGenericGetCurrentUserResponse :: Generic GetCurrentUserResponse _
@@ -1619,21 +1618,21 @@ instance encodeGetCurrentUserResponse :: Encode GetCurrentUserResponse where enc
 
 -- | Constructs GetCurrentUserResponse from required parameters
 newGetCurrentUserResponse :: GetCurrentUserResponse
-newGetCurrentUserResponse  = GetCurrentUserResponse { "User": (NullOrUndefined Nothing) }
+newGetCurrentUserResponse  = GetCurrentUserResponse { "User": Nothing }
 
 -- | Constructs GetCurrentUserResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetCurrentUserResponse' :: ( { "User" :: NullOrUndefined (User) } -> {"User" :: NullOrUndefined (User) } ) -> GetCurrentUserResponse
-newGetCurrentUserResponse'  customize = (GetCurrentUserResponse <<< customize) { "User": (NullOrUndefined Nothing) }
+newGetCurrentUserResponse' :: ( { "User" :: Maybe (User) } -> {"User" :: Maybe (User) } ) -> GetCurrentUserResponse
+newGetCurrentUserResponse'  customize = (GetCurrentUserResponse <<< customize) { "User": Nothing }
 
 
 
 newtype GetDocumentPathRequest = GetDocumentPathRequest 
-  { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType)
+  { "AuthenticationToken" :: Maybe (AuthenticationHeaderType)
   , "DocumentId" :: (IdType)
-  , "Limit" :: NullOrUndefined (LimitType)
-  , "Fields" :: NullOrUndefined (FieldNamesType)
-  , "Marker" :: NullOrUndefined (PageMarkerType)
+  , "Limit" :: Maybe (LimitType)
+  , "Fields" :: Maybe (FieldNamesType)
+  , "Marker" :: Maybe (PageMarkerType)
   }
 derive instance newtypeGetDocumentPathRequest :: Newtype GetDocumentPathRequest _
 derive instance repGenericGetDocumentPathRequest :: Generic GetDocumentPathRequest _
@@ -1643,17 +1642,17 @@ instance encodeGetDocumentPathRequest :: Encode GetDocumentPathRequest where enc
 
 -- | Constructs GetDocumentPathRequest from required parameters
 newGetDocumentPathRequest :: IdType -> GetDocumentPathRequest
-newGetDocumentPathRequest _DocumentId = GetDocumentPathRequest { "DocumentId": _DocumentId, "AuthenticationToken": (NullOrUndefined Nothing), "Fields": (NullOrUndefined Nothing), "Limit": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newGetDocumentPathRequest _DocumentId = GetDocumentPathRequest { "DocumentId": _DocumentId, "AuthenticationToken": Nothing, "Fields": Nothing, "Limit": Nothing, "Marker": Nothing }
 
 -- | Constructs GetDocumentPathRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetDocumentPathRequest' :: IdType -> ( { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "DocumentId" :: (IdType) , "Limit" :: NullOrUndefined (LimitType) , "Fields" :: NullOrUndefined (FieldNamesType) , "Marker" :: NullOrUndefined (PageMarkerType) } -> {"AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "DocumentId" :: (IdType) , "Limit" :: NullOrUndefined (LimitType) , "Fields" :: NullOrUndefined (FieldNamesType) , "Marker" :: NullOrUndefined (PageMarkerType) } ) -> GetDocumentPathRequest
-newGetDocumentPathRequest' _DocumentId customize = (GetDocumentPathRequest <<< customize) { "DocumentId": _DocumentId, "AuthenticationToken": (NullOrUndefined Nothing), "Fields": (NullOrUndefined Nothing), "Limit": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newGetDocumentPathRequest' :: IdType -> ( { "AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "DocumentId" :: (IdType) , "Limit" :: Maybe (LimitType) , "Fields" :: Maybe (FieldNamesType) , "Marker" :: Maybe (PageMarkerType) } -> {"AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "DocumentId" :: (IdType) , "Limit" :: Maybe (LimitType) , "Fields" :: Maybe (FieldNamesType) , "Marker" :: Maybe (PageMarkerType) } ) -> GetDocumentPathRequest
+newGetDocumentPathRequest' _DocumentId customize = (GetDocumentPathRequest <<< customize) { "DocumentId": _DocumentId, "AuthenticationToken": Nothing, "Fields": Nothing, "Limit": Nothing, "Marker": Nothing }
 
 
 
 newtype GetDocumentPathResponse = GetDocumentPathResponse 
-  { "Path" :: NullOrUndefined (ResourcePath)
+  { "Path" :: Maybe (ResourcePath)
   }
 derive instance newtypeGetDocumentPathResponse :: Newtype GetDocumentPathResponse _
 derive instance repGenericGetDocumentPathResponse :: Generic GetDocumentPathResponse _
@@ -1663,19 +1662,19 @@ instance encodeGetDocumentPathResponse :: Encode GetDocumentPathResponse where e
 
 -- | Constructs GetDocumentPathResponse from required parameters
 newGetDocumentPathResponse :: GetDocumentPathResponse
-newGetDocumentPathResponse  = GetDocumentPathResponse { "Path": (NullOrUndefined Nothing) }
+newGetDocumentPathResponse  = GetDocumentPathResponse { "Path": Nothing }
 
 -- | Constructs GetDocumentPathResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetDocumentPathResponse' :: ( { "Path" :: NullOrUndefined (ResourcePath) } -> {"Path" :: NullOrUndefined (ResourcePath) } ) -> GetDocumentPathResponse
-newGetDocumentPathResponse'  customize = (GetDocumentPathResponse <<< customize) { "Path": (NullOrUndefined Nothing) }
+newGetDocumentPathResponse' :: ( { "Path" :: Maybe (ResourcePath) } -> {"Path" :: Maybe (ResourcePath) } ) -> GetDocumentPathResponse
+newGetDocumentPathResponse'  customize = (GetDocumentPathResponse <<< customize) { "Path": Nothing }
 
 
 
 newtype GetDocumentRequest = GetDocumentRequest 
-  { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType)
+  { "AuthenticationToken" :: Maybe (AuthenticationHeaderType)
   , "DocumentId" :: (ResourceIdType)
-  , "IncludeCustomMetadata" :: NullOrUndefined (BooleanType)
+  , "IncludeCustomMetadata" :: Maybe (BooleanType)
   }
 derive instance newtypeGetDocumentRequest :: Newtype GetDocumentRequest _
 derive instance repGenericGetDocumentRequest :: Generic GetDocumentRequest _
@@ -1685,18 +1684,18 @@ instance encodeGetDocumentRequest :: Encode GetDocumentRequest where encode = ge
 
 -- | Constructs GetDocumentRequest from required parameters
 newGetDocumentRequest :: ResourceIdType -> GetDocumentRequest
-newGetDocumentRequest _DocumentId = GetDocumentRequest { "DocumentId": _DocumentId, "AuthenticationToken": (NullOrUndefined Nothing), "IncludeCustomMetadata": (NullOrUndefined Nothing) }
+newGetDocumentRequest _DocumentId = GetDocumentRequest { "DocumentId": _DocumentId, "AuthenticationToken": Nothing, "IncludeCustomMetadata": Nothing }
 
 -- | Constructs GetDocumentRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetDocumentRequest' :: ResourceIdType -> ( { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "DocumentId" :: (ResourceIdType) , "IncludeCustomMetadata" :: NullOrUndefined (BooleanType) } -> {"AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "DocumentId" :: (ResourceIdType) , "IncludeCustomMetadata" :: NullOrUndefined (BooleanType) } ) -> GetDocumentRequest
-newGetDocumentRequest' _DocumentId customize = (GetDocumentRequest <<< customize) { "DocumentId": _DocumentId, "AuthenticationToken": (NullOrUndefined Nothing), "IncludeCustomMetadata": (NullOrUndefined Nothing) }
+newGetDocumentRequest' :: ResourceIdType -> ( { "AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "DocumentId" :: (ResourceIdType) , "IncludeCustomMetadata" :: Maybe (BooleanType) } -> {"AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "DocumentId" :: (ResourceIdType) , "IncludeCustomMetadata" :: Maybe (BooleanType) } ) -> GetDocumentRequest
+newGetDocumentRequest' _DocumentId customize = (GetDocumentRequest <<< customize) { "DocumentId": _DocumentId, "AuthenticationToken": Nothing, "IncludeCustomMetadata": Nothing }
 
 
 
 newtype GetDocumentResponse = GetDocumentResponse 
-  { "Metadata" :: NullOrUndefined (DocumentMetadata)
-  , "CustomMetadata" :: NullOrUndefined (CustomMetadataMap)
+  { "Metadata" :: Maybe (DocumentMetadata)
+  , "CustomMetadata" :: Maybe (CustomMetadataMap)
   }
 derive instance newtypeGetDocumentResponse :: Newtype GetDocumentResponse _
 derive instance repGenericGetDocumentResponse :: Generic GetDocumentResponse _
@@ -1706,21 +1705,21 @@ instance encodeGetDocumentResponse :: Encode GetDocumentResponse where encode = 
 
 -- | Constructs GetDocumentResponse from required parameters
 newGetDocumentResponse :: GetDocumentResponse
-newGetDocumentResponse  = GetDocumentResponse { "CustomMetadata": (NullOrUndefined Nothing), "Metadata": (NullOrUndefined Nothing) }
+newGetDocumentResponse  = GetDocumentResponse { "CustomMetadata": Nothing, "Metadata": Nothing }
 
 -- | Constructs GetDocumentResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetDocumentResponse' :: ( { "Metadata" :: NullOrUndefined (DocumentMetadata) , "CustomMetadata" :: NullOrUndefined (CustomMetadataMap) } -> {"Metadata" :: NullOrUndefined (DocumentMetadata) , "CustomMetadata" :: NullOrUndefined (CustomMetadataMap) } ) -> GetDocumentResponse
-newGetDocumentResponse'  customize = (GetDocumentResponse <<< customize) { "CustomMetadata": (NullOrUndefined Nothing), "Metadata": (NullOrUndefined Nothing) }
+newGetDocumentResponse' :: ( { "Metadata" :: Maybe (DocumentMetadata) , "CustomMetadata" :: Maybe (CustomMetadataMap) } -> {"Metadata" :: Maybe (DocumentMetadata) , "CustomMetadata" :: Maybe (CustomMetadataMap) } ) -> GetDocumentResponse
+newGetDocumentResponse'  customize = (GetDocumentResponse <<< customize) { "CustomMetadata": Nothing, "Metadata": Nothing }
 
 
 
 newtype GetDocumentVersionRequest = GetDocumentVersionRequest 
-  { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType)
+  { "AuthenticationToken" :: Maybe (AuthenticationHeaderType)
   , "DocumentId" :: (ResourceIdType)
   , "VersionId" :: (DocumentVersionIdType)
-  , "Fields" :: NullOrUndefined (FieldNamesType)
-  , "IncludeCustomMetadata" :: NullOrUndefined (BooleanType)
+  , "Fields" :: Maybe (FieldNamesType)
+  , "IncludeCustomMetadata" :: Maybe (BooleanType)
   }
 derive instance newtypeGetDocumentVersionRequest :: Newtype GetDocumentVersionRequest _
 derive instance repGenericGetDocumentVersionRequest :: Generic GetDocumentVersionRequest _
@@ -1730,18 +1729,18 @@ instance encodeGetDocumentVersionRequest :: Encode GetDocumentVersionRequest whe
 
 -- | Constructs GetDocumentVersionRequest from required parameters
 newGetDocumentVersionRequest :: ResourceIdType -> DocumentVersionIdType -> GetDocumentVersionRequest
-newGetDocumentVersionRequest _DocumentId _VersionId = GetDocumentVersionRequest { "DocumentId": _DocumentId, "VersionId": _VersionId, "AuthenticationToken": (NullOrUndefined Nothing), "Fields": (NullOrUndefined Nothing), "IncludeCustomMetadata": (NullOrUndefined Nothing) }
+newGetDocumentVersionRequest _DocumentId _VersionId = GetDocumentVersionRequest { "DocumentId": _DocumentId, "VersionId": _VersionId, "AuthenticationToken": Nothing, "Fields": Nothing, "IncludeCustomMetadata": Nothing }
 
 -- | Constructs GetDocumentVersionRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetDocumentVersionRequest' :: ResourceIdType -> DocumentVersionIdType -> ( { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "DocumentId" :: (ResourceIdType) , "VersionId" :: (DocumentVersionIdType) , "Fields" :: NullOrUndefined (FieldNamesType) , "IncludeCustomMetadata" :: NullOrUndefined (BooleanType) } -> {"AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "DocumentId" :: (ResourceIdType) , "VersionId" :: (DocumentVersionIdType) , "Fields" :: NullOrUndefined (FieldNamesType) , "IncludeCustomMetadata" :: NullOrUndefined (BooleanType) } ) -> GetDocumentVersionRequest
-newGetDocumentVersionRequest' _DocumentId _VersionId customize = (GetDocumentVersionRequest <<< customize) { "DocumentId": _DocumentId, "VersionId": _VersionId, "AuthenticationToken": (NullOrUndefined Nothing), "Fields": (NullOrUndefined Nothing), "IncludeCustomMetadata": (NullOrUndefined Nothing) }
+newGetDocumentVersionRequest' :: ResourceIdType -> DocumentVersionIdType -> ( { "AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "DocumentId" :: (ResourceIdType) , "VersionId" :: (DocumentVersionIdType) , "Fields" :: Maybe (FieldNamesType) , "IncludeCustomMetadata" :: Maybe (BooleanType) } -> {"AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "DocumentId" :: (ResourceIdType) , "VersionId" :: (DocumentVersionIdType) , "Fields" :: Maybe (FieldNamesType) , "IncludeCustomMetadata" :: Maybe (BooleanType) } ) -> GetDocumentVersionRequest
+newGetDocumentVersionRequest' _DocumentId _VersionId customize = (GetDocumentVersionRequest <<< customize) { "DocumentId": _DocumentId, "VersionId": _VersionId, "AuthenticationToken": Nothing, "Fields": Nothing, "IncludeCustomMetadata": Nothing }
 
 
 
 newtype GetDocumentVersionResponse = GetDocumentVersionResponse 
-  { "Metadata" :: NullOrUndefined (DocumentVersionMetadata)
-  , "CustomMetadata" :: NullOrUndefined (CustomMetadataMap)
+  { "Metadata" :: Maybe (DocumentVersionMetadata)
+  , "CustomMetadata" :: Maybe (CustomMetadataMap)
   }
 derive instance newtypeGetDocumentVersionResponse :: Newtype GetDocumentVersionResponse _
 derive instance repGenericGetDocumentVersionResponse :: Generic GetDocumentVersionResponse _
@@ -1751,21 +1750,21 @@ instance encodeGetDocumentVersionResponse :: Encode GetDocumentVersionResponse w
 
 -- | Constructs GetDocumentVersionResponse from required parameters
 newGetDocumentVersionResponse :: GetDocumentVersionResponse
-newGetDocumentVersionResponse  = GetDocumentVersionResponse { "CustomMetadata": (NullOrUndefined Nothing), "Metadata": (NullOrUndefined Nothing) }
+newGetDocumentVersionResponse  = GetDocumentVersionResponse { "CustomMetadata": Nothing, "Metadata": Nothing }
 
 -- | Constructs GetDocumentVersionResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetDocumentVersionResponse' :: ( { "Metadata" :: NullOrUndefined (DocumentVersionMetadata) , "CustomMetadata" :: NullOrUndefined (CustomMetadataMap) } -> {"Metadata" :: NullOrUndefined (DocumentVersionMetadata) , "CustomMetadata" :: NullOrUndefined (CustomMetadataMap) } ) -> GetDocumentVersionResponse
-newGetDocumentVersionResponse'  customize = (GetDocumentVersionResponse <<< customize) { "CustomMetadata": (NullOrUndefined Nothing), "Metadata": (NullOrUndefined Nothing) }
+newGetDocumentVersionResponse' :: ( { "Metadata" :: Maybe (DocumentVersionMetadata) , "CustomMetadata" :: Maybe (CustomMetadataMap) } -> {"Metadata" :: Maybe (DocumentVersionMetadata) , "CustomMetadata" :: Maybe (CustomMetadataMap) } ) -> GetDocumentVersionResponse
+newGetDocumentVersionResponse'  customize = (GetDocumentVersionResponse <<< customize) { "CustomMetadata": Nothing, "Metadata": Nothing }
 
 
 
 newtype GetFolderPathRequest = GetFolderPathRequest 
-  { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType)
+  { "AuthenticationToken" :: Maybe (AuthenticationHeaderType)
   , "FolderId" :: (IdType)
-  , "Limit" :: NullOrUndefined (LimitType)
-  , "Fields" :: NullOrUndefined (FieldNamesType)
-  , "Marker" :: NullOrUndefined (PageMarkerType)
+  , "Limit" :: Maybe (LimitType)
+  , "Fields" :: Maybe (FieldNamesType)
+  , "Marker" :: Maybe (PageMarkerType)
   }
 derive instance newtypeGetFolderPathRequest :: Newtype GetFolderPathRequest _
 derive instance repGenericGetFolderPathRequest :: Generic GetFolderPathRequest _
@@ -1775,17 +1774,17 @@ instance encodeGetFolderPathRequest :: Encode GetFolderPathRequest where encode 
 
 -- | Constructs GetFolderPathRequest from required parameters
 newGetFolderPathRequest :: IdType -> GetFolderPathRequest
-newGetFolderPathRequest _FolderId = GetFolderPathRequest { "FolderId": _FolderId, "AuthenticationToken": (NullOrUndefined Nothing), "Fields": (NullOrUndefined Nothing), "Limit": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newGetFolderPathRequest _FolderId = GetFolderPathRequest { "FolderId": _FolderId, "AuthenticationToken": Nothing, "Fields": Nothing, "Limit": Nothing, "Marker": Nothing }
 
 -- | Constructs GetFolderPathRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetFolderPathRequest' :: IdType -> ( { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "FolderId" :: (IdType) , "Limit" :: NullOrUndefined (LimitType) , "Fields" :: NullOrUndefined (FieldNamesType) , "Marker" :: NullOrUndefined (PageMarkerType) } -> {"AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "FolderId" :: (IdType) , "Limit" :: NullOrUndefined (LimitType) , "Fields" :: NullOrUndefined (FieldNamesType) , "Marker" :: NullOrUndefined (PageMarkerType) } ) -> GetFolderPathRequest
-newGetFolderPathRequest' _FolderId customize = (GetFolderPathRequest <<< customize) { "FolderId": _FolderId, "AuthenticationToken": (NullOrUndefined Nothing), "Fields": (NullOrUndefined Nothing), "Limit": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newGetFolderPathRequest' :: IdType -> ( { "AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "FolderId" :: (IdType) , "Limit" :: Maybe (LimitType) , "Fields" :: Maybe (FieldNamesType) , "Marker" :: Maybe (PageMarkerType) } -> {"AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "FolderId" :: (IdType) , "Limit" :: Maybe (LimitType) , "Fields" :: Maybe (FieldNamesType) , "Marker" :: Maybe (PageMarkerType) } ) -> GetFolderPathRequest
+newGetFolderPathRequest' _FolderId customize = (GetFolderPathRequest <<< customize) { "FolderId": _FolderId, "AuthenticationToken": Nothing, "Fields": Nothing, "Limit": Nothing, "Marker": Nothing }
 
 
 
 newtype GetFolderPathResponse = GetFolderPathResponse 
-  { "Path" :: NullOrUndefined (ResourcePath)
+  { "Path" :: Maybe (ResourcePath)
   }
 derive instance newtypeGetFolderPathResponse :: Newtype GetFolderPathResponse _
 derive instance repGenericGetFolderPathResponse :: Generic GetFolderPathResponse _
@@ -1795,19 +1794,19 @@ instance encodeGetFolderPathResponse :: Encode GetFolderPathResponse where encod
 
 -- | Constructs GetFolderPathResponse from required parameters
 newGetFolderPathResponse :: GetFolderPathResponse
-newGetFolderPathResponse  = GetFolderPathResponse { "Path": (NullOrUndefined Nothing) }
+newGetFolderPathResponse  = GetFolderPathResponse { "Path": Nothing }
 
 -- | Constructs GetFolderPathResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetFolderPathResponse' :: ( { "Path" :: NullOrUndefined (ResourcePath) } -> {"Path" :: NullOrUndefined (ResourcePath) } ) -> GetFolderPathResponse
-newGetFolderPathResponse'  customize = (GetFolderPathResponse <<< customize) { "Path": (NullOrUndefined Nothing) }
+newGetFolderPathResponse' :: ( { "Path" :: Maybe (ResourcePath) } -> {"Path" :: Maybe (ResourcePath) } ) -> GetFolderPathResponse
+newGetFolderPathResponse'  customize = (GetFolderPathResponse <<< customize) { "Path": Nothing }
 
 
 
 newtype GetFolderRequest = GetFolderRequest 
-  { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType)
+  { "AuthenticationToken" :: Maybe (AuthenticationHeaderType)
   , "FolderId" :: (ResourceIdType)
-  , "IncludeCustomMetadata" :: NullOrUndefined (BooleanType)
+  , "IncludeCustomMetadata" :: Maybe (BooleanType)
   }
 derive instance newtypeGetFolderRequest :: Newtype GetFolderRequest _
 derive instance repGenericGetFolderRequest :: Generic GetFolderRequest _
@@ -1817,18 +1816,18 @@ instance encodeGetFolderRequest :: Encode GetFolderRequest where encode = generi
 
 -- | Constructs GetFolderRequest from required parameters
 newGetFolderRequest :: ResourceIdType -> GetFolderRequest
-newGetFolderRequest _FolderId = GetFolderRequest { "FolderId": _FolderId, "AuthenticationToken": (NullOrUndefined Nothing), "IncludeCustomMetadata": (NullOrUndefined Nothing) }
+newGetFolderRequest _FolderId = GetFolderRequest { "FolderId": _FolderId, "AuthenticationToken": Nothing, "IncludeCustomMetadata": Nothing }
 
 -- | Constructs GetFolderRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetFolderRequest' :: ResourceIdType -> ( { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "FolderId" :: (ResourceIdType) , "IncludeCustomMetadata" :: NullOrUndefined (BooleanType) } -> {"AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "FolderId" :: (ResourceIdType) , "IncludeCustomMetadata" :: NullOrUndefined (BooleanType) } ) -> GetFolderRequest
-newGetFolderRequest' _FolderId customize = (GetFolderRequest <<< customize) { "FolderId": _FolderId, "AuthenticationToken": (NullOrUndefined Nothing), "IncludeCustomMetadata": (NullOrUndefined Nothing) }
+newGetFolderRequest' :: ResourceIdType -> ( { "AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "FolderId" :: (ResourceIdType) , "IncludeCustomMetadata" :: Maybe (BooleanType) } -> {"AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "FolderId" :: (ResourceIdType) , "IncludeCustomMetadata" :: Maybe (BooleanType) } ) -> GetFolderRequest
+newGetFolderRequest' _FolderId customize = (GetFolderRequest <<< customize) { "FolderId": _FolderId, "AuthenticationToken": Nothing, "IncludeCustomMetadata": Nothing }
 
 
 
 newtype GetFolderResponse = GetFolderResponse 
-  { "Metadata" :: NullOrUndefined (FolderMetadata)
-  , "CustomMetadata" :: NullOrUndefined (CustomMetadataMap)
+  { "Metadata" :: Maybe (FolderMetadata)
+  , "CustomMetadata" :: Maybe (CustomMetadataMap)
   }
 derive instance newtypeGetFolderResponse :: Newtype GetFolderResponse _
 derive instance repGenericGetFolderResponse :: Generic GetFolderResponse _
@@ -1838,19 +1837,19 @@ instance encodeGetFolderResponse :: Encode GetFolderResponse where encode = gene
 
 -- | Constructs GetFolderResponse from required parameters
 newGetFolderResponse :: GetFolderResponse
-newGetFolderResponse  = GetFolderResponse { "CustomMetadata": (NullOrUndefined Nothing), "Metadata": (NullOrUndefined Nothing) }
+newGetFolderResponse  = GetFolderResponse { "CustomMetadata": Nothing, "Metadata": Nothing }
 
 -- | Constructs GetFolderResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetFolderResponse' :: ( { "Metadata" :: NullOrUndefined (FolderMetadata) , "CustomMetadata" :: NullOrUndefined (CustomMetadataMap) } -> {"Metadata" :: NullOrUndefined (FolderMetadata) , "CustomMetadata" :: NullOrUndefined (CustomMetadataMap) } ) -> GetFolderResponse
-newGetFolderResponse'  customize = (GetFolderResponse <<< customize) { "CustomMetadata": (NullOrUndefined Nothing), "Metadata": (NullOrUndefined Nothing) }
+newGetFolderResponse' :: ( { "Metadata" :: Maybe (FolderMetadata) , "CustomMetadata" :: Maybe (CustomMetadataMap) } -> {"Metadata" :: Maybe (FolderMetadata) , "CustomMetadata" :: Maybe (CustomMetadataMap) } ) -> GetFolderResponse
+newGetFolderResponse'  customize = (GetFolderResponse <<< customize) { "CustomMetadata": Nothing, "Metadata": Nothing }
 
 
 
 -- | <p>Describes the metadata of a user group.</p>
 newtype GroupMetadata = GroupMetadata 
-  { "Id" :: NullOrUndefined (IdType)
-  , "Name" :: NullOrUndefined (GroupNameType)
+  { "Id" :: Maybe (IdType)
+  , "Name" :: Maybe (GroupNameType)
   }
 derive instance newtypeGroupMetadata :: Newtype GroupMetadata _
 derive instance repGenericGroupMetadata :: Generic GroupMetadata _
@@ -1860,12 +1859,12 @@ instance encodeGroupMetadata :: Encode GroupMetadata where encode = genericEncod
 
 -- | Constructs GroupMetadata from required parameters
 newGroupMetadata :: GroupMetadata
-newGroupMetadata  = GroupMetadata { "Id": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing) }
+newGroupMetadata  = GroupMetadata { "Id": Nothing, "Name": Nothing }
 
 -- | Constructs GroupMetadata's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGroupMetadata' :: ( { "Id" :: NullOrUndefined (IdType) , "Name" :: NullOrUndefined (GroupNameType) } -> {"Id" :: NullOrUndefined (IdType) , "Name" :: NullOrUndefined (GroupNameType) } ) -> GroupMetadata
-newGroupMetadata'  customize = (GroupMetadata <<< customize) { "Id": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing) }
+newGroupMetadata' :: ( { "Id" :: Maybe (IdType) , "Name" :: Maybe (GroupNameType) } -> {"Id" :: Maybe (IdType) , "Name" :: Maybe (GroupNameType) } ) -> GroupMetadata
+newGroupMetadata'  customize = (GroupMetadata <<< customize) { "Id": Nothing, "Name": Nothing }
 
 
 
@@ -1925,7 +1924,7 @@ instance encodeIdType :: Encode IdType where encode = genericEncode options
 
 -- | <p>The user is undergoing transfer of ownership.</p>
 newtype IllegalUserStateException = IllegalUserStateException 
-  { "Message" :: NullOrUndefined (ErrorMessageType)
+  { "Message" :: Maybe (ErrorMessageType)
   }
 derive instance newtypeIllegalUserStateException :: Newtype IllegalUserStateException _
 derive instance repGenericIllegalUserStateException :: Generic IllegalUserStateException _
@@ -1935,23 +1934,23 @@ instance encodeIllegalUserStateException :: Encode IllegalUserStateException whe
 
 -- | Constructs IllegalUserStateException from required parameters
 newIllegalUserStateException :: IllegalUserStateException
-newIllegalUserStateException  = IllegalUserStateException { "Message": (NullOrUndefined Nothing) }
+newIllegalUserStateException  = IllegalUserStateException { "Message": Nothing }
 
 -- | Constructs IllegalUserStateException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newIllegalUserStateException' :: ( { "Message" :: NullOrUndefined (ErrorMessageType) } -> {"Message" :: NullOrUndefined (ErrorMessageType) } ) -> IllegalUserStateException
-newIllegalUserStateException'  customize = (IllegalUserStateException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newIllegalUserStateException' :: ( { "Message" :: Maybe (ErrorMessageType) } -> {"Message" :: Maybe (ErrorMessageType) } ) -> IllegalUserStateException
+newIllegalUserStateException'  customize = (IllegalUserStateException <<< customize) { "Message": Nothing }
 
 
 
 newtype InitiateDocumentVersionUploadRequest = InitiateDocumentVersionUploadRequest 
-  { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType)
-  , "Id" :: NullOrUndefined (ResourceIdType)
-  , "Name" :: NullOrUndefined (ResourceNameType)
-  , "ContentCreatedTimestamp" :: NullOrUndefined (TimestampType)
-  , "ContentModifiedTimestamp" :: NullOrUndefined (TimestampType)
-  , "ContentType" :: NullOrUndefined (DocumentContentType)
-  , "DocumentSizeInBytes" :: NullOrUndefined (SizeType)
+  { "AuthenticationToken" :: Maybe (AuthenticationHeaderType)
+  , "Id" :: Maybe (ResourceIdType)
+  , "Name" :: Maybe (ResourceNameType)
+  , "ContentCreatedTimestamp" :: Maybe (TimestampType)
+  , "ContentModifiedTimestamp" :: Maybe (TimestampType)
+  , "ContentType" :: Maybe (DocumentContentType)
+  , "DocumentSizeInBytes" :: Maybe (SizeType)
   , "ParentFolderId" :: (ResourceIdType)
   }
 derive instance newtypeInitiateDocumentVersionUploadRequest :: Newtype InitiateDocumentVersionUploadRequest _
@@ -1962,18 +1961,18 @@ instance encodeInitiateDocumentVersionUploadRequest :: Encode InitiateDocumentVe
 
 -- | Constructs InitiateDocumentVersionUploadRequest from required parameters
 newInitiateDocumentVersionUploadRequest :: ResourceIdType -> InitiateDocumentVersionUploadRequest
-newInitiateDocumentVersionUploadRequest _ParentFolderId = InitiateDocumentVersionUploadRequest { "ParentFolderId": _ParentFolderId, "AuthenticationToken": (NullOrUndefined Nothing), "ContentCreatedTimestamp": (NullOrUndefined Nothing), "ContentModifiedTimestamp": (NullOrUndefined Nothing), "ContentType": (NullOrUndefined Nothing), "DocumentSizeInBytes": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing) }
+newInitiateDocumentVersionUploadRequest _ParentFolderId = InitiateDocumentVersionUploadRequest { "ParentFolderId": _ParentFolderId, "AuthenticationToken": Nothing, "ContentCreatedTimestamp": Nothing, "ContentModifiedTimestamp": Nothing, "ContentType": Nothing, "DocumentSizeInBytes": Nothing, "Id": Nothing, "Name": Nothing }
 
 -- | Constructs InitiateDocumentVersionUploadRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInitiateDocumentVersionUploadRequest' :: ResourceIdType -> ( { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "Id" :: NullOrUndefined (ResourceIdType) , "Name" :: NullOrUndefined (ResourceNameType) , "ContentCreatedTimestamp" :: NullOrUndefined (TimestampType) , "ContentModifiedTimestamp" :: NullOrUndefined (TimestampType) , "ContentType" :: NullOrUndefined (DocumentContentType) , "DocumentSizeInBytes" :: NullOrUndefined (SizeType) , "ParentFolderId" :: (ResourceIdType) } -> {"AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "Id" :: NullOrUndefined (ResourceIdType) , "Name" :: NullOrUndefined (ResourceNameType) , "ContentCreatedTimestamp" :: NullOrUndefined (TimestampType) , "ContentModifiedTimestamp" :: NullOrUndefined (TimestampType) , "ContentType" :: NullOrUndefined (DocumentContentType) , "DocumentSizeInBytes" :: NullOrUndefined (SizeType) , "ParentFolderId" :: (ResourceIdType) } ) -> InitiateDocumentVersionUploadRequest
-newInitiateDocumentVersionUploadRequest' _ParentFolderId customize = (InitiateDocumentVersionUploadRequest <<< customize) { "ParentFolderId": _ParentFolderId, "AuthenticationToken": (NullOrUndefined Nothing), "ContentCreatedTimestamp": (NullOrUndefined Nothing), "ContentModifiedTimestamp": (NullOrUndefined Nothing), "ContentType": (NullOrUndefined Nothing), "DocumentSizeInBytes": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing) }
+newInitiateDocumentVersionUploadRequest' :: ResourceIdType -> ( { "AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "Id" :: Maybe (ResourceIdType) , "Name" :: Maybe (ResourceNameType) , "ContentCreatedTimestamp" :: Maybe (TimestampType) , "ContentModifiedTimestamp" :: Maybe (TimestampType) , "ContentType" :: Maybe (DocumentContentType) , "DocumentSizeInBytes" :: Maybe (SizeType) , "ParentFolderId" :: (ResourceIdType) } -> {"AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "Id" :: Maybe (ResourceIdType) , "Name" :: Maybe (ResourceNameType) , "ContentCreatedTimestamp" :: Maybe (TimestampType) , "ContentModifiedTimestamp" :: Maybe (TimestampType) , "ContentType" :: Maybe (DocumentContentType) , "DocumentSizeInBytes" :: Maybe (SizeType) , "ParentFolderId" :: (ResourceIdType) } ) -> InitiateDocumentVersionUploadRequest
+newInitiateDocumentVersionUploadRequest' _ParentFolderId customize = (InitiateDocumentVersionUploadRequest <<< customize) { "ParentFolderId": _ParentFolderId, "AuthenticationToken": Nothing, "ContentCreatedTimestamp": Nothing, "ContentModifiedTimestamp": Nothing, "ContentType": Nothing, "DocumentSizeInBytes": Nothing, "Id": Nothing, "Name": Nothing }
 
 
 
 newtype InitiateDocumentVersionUploadResponse = InitiateDocumentVersionUploadResponse 
-  { "Metadata" :: NullOrUndefined (DocumentMetadata)
-  , "UploadMetadata" :: NullOrUndefined (UploadMetadata)
+  { "Metadata" :: Maybe (DocumentMetadata)
+  , "UploadMetadata" :: Maybe (UploadMetadata)
   }
 derive instance newtypeInitiateDocumentVersionUploadResponse :: Newtype InitiateDocumentVersionUploadResponse _
 derive instance repGenericInitiateDocumentVersionUploadResponse :: Generic InitiateDocumentVersionUploadResponse _
@@ -1983,18 +1982,18 @@ instance encodeInitiateDocumentVersionUploadResponse :: Encode InitiateDocumentV
 
 -- | Constructs InitiateDocumentVersionUploadResponse from required parameters
 newInitiateDocumentVersionUploadResponse :: InitiateDocumentVersionUploadResponse
-newInitiateDocumentVersionUploadResponse  = InitiateDocumentVersionUploadResponse { "Metadata": (NullOrUndefined Nothing), "UploadMetadata": (NullOrUndefined Nothing) }
+newInitiateDocumentVersionUploadResponse  = InitiateDocumentVersionUploadResponse { "Metadata": Nothing, "UploadMetadata": Nothing }
 
 -- | Constructs InitiateDocumentVersionUploadResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInitiateDocumentVersionUploadResponse' :: ( { "Metadata" :: NullOrUndefined (DocumentMetadata) , "UploadMetadata" :: NullOrUndefined (UploadMetadata) } -> {"Metadata" :: NullOrUndefined (DocumentMetadata) , "UploadMetadata" :: NullOrUndefined (UploadMetadata) } ) -> InitiateDocumentVersionUploadResponse
-newInitiateDocumentVersionUploadResponse'  customize = (InitiateDocumentVersionUploadResponse <<< customize) { "Metadata": (NullOrUndefined Nothing), "UploadMetadata": (NullOrUndefined Nothing) }
+newInitiateDocumentVersionUploadResponse' :: ( { "Metadata" :: Maybe (DocumentMetadata) , "UploadMetadata" :: Maybe (UploadMetadata) } -> {"Metadata" :: Maybe (DocumentMetadata) , "UploadMetadata" :: Maybe (UploadMetadata) } ) -> InitiateDocumentVersionUploadResponse
+newInitiateDocumentVersionUploadResponse'  customize = (InitiateDocumentVersionUploadResponse <<< customize) { "Metadata": Nothing, "UploadMetadata": Nothing }
 
 
 
 -- | <p>The pagination marker or limit fields are not valid.</p>
 newtype InvalidArgumentException = InvalidArgumentException 
-  { "Message" :: NullOrUndefined (ErrorMessageType)
+  { "Message" :: Maybe (ErrorMessageType)
   }
 derive instance newtypeInvalidArgumentException :: Newtype InvalidArgumentException _
 derive instance repGenericInvalidArgumentException :: Generic InvalidArgumentException _
@@ -2004,18 +2003,18 @@ instance encodeInvalidArgumentException :: Encode InvalidArgumentException where
 
 -- | Constructs InvalidArgumentException from required parameters
 newInvalidArgumentException :: InvalidArgumentException
-newInvalidArgumentException  = InvalidArgumentException { "Message": (NullOrUndefined Nothing) }
+newInvalidArgumentException  = InvalidArgumentException { "Message": Nothing }
 
 -- | Constructs InvalidArgumentException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidArgumentException' :: ( { "Message" :: NullOrUndefined (ErrorMessageType) } -> {"Message" :: NullOrUndefined (ErrorMessageType) } ) -> InvalidArgumentException
-newInvalidArgumentException'  customize = (InvalidArgumentException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newInvalidArgumentException' :: ( { "Message" :: Maybe (ErrorMessageType) } -> {"Message" :: Maybe (ErrorMessageType) } ) -> InvalidArgumentException
+newInvalidArgumentException'  customize = (InvalidArgumentException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>The operation is invalid.</p>
 newtype InvalidOperationException = InvalidOperationException 
-  { "Message" :: NullOrUndefined (ErrorMessageType)
+  { "Message" :: Maybe (ErrorMessageType)
   }
 derive instance newtypeInvalidOperationException :: Newtype InvalidOperationException _
 derive instance repGenericInvalidOperationException :: Generic InvalidOperationException _
@@ -2025,18 +2024,18 @@ instance encodeInvalidOperationException :: Encode InvalidOperationException whe
 
 -- | Constructs InvalidOperationException from required parameters
 newInvalidOperationException :: InvalidOperationException
-newInvalidOperationException  = InvalidOperationException { "Message": (NullOrUndefined Nothing) }
+newInvalidOperationException  = InvalidOperationException { "Message": Nothing }
 
 -- | Constructs InvalidOperationException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidOperationException' :: ( { "Message" :: NullOrUndefined (ErrorMessageType) } -> {"Message" :: NullOrUndefined (ErrorMessageType) } ) -> InvalidOperationException
-newInvalidOperationException'  customize = (InvalidOperationException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newInvalidOperationException' :: ( { "Message" :: Maybe (ErrorMessageType) } -> {"Message" :: Maybe (ErrorMessageType) } ) -> InvalidOperationException
+newInvalidOperationException'  customize = (InvalidOperationException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>The password is invalid.</p>
 newtype InvalidPasswordException = InvalidPasswordException 
-  { "Message" :: NullOrUndefined (ErrorMessageType)
+  { "Message" :: Maybe (ErrorMessageType)
   }
 derive instance newtypeInvalidPasswordException :: Newtype InvalidPasswordException _
 derive instance repGenericInvalidPasswordException :: Generic InvalidPasswordException _
@@ -2046,18 +2045,18 @@ instance encodeInvalidPasswordException :: Encode InvalidPasswordException where
 
 -- | Constructs InvalidPasswordException from required parameters
 newInvalidPasswordException :: InvalidPasswordException
-newInvalidPasswordException  = InvalidPasswordException { "Message": (NullOrUndefined Nothing) }
+newInvalidPasswordException  = InvalidPasswordException { "Message": Nothing }
 
 -- | Constructs InvalidPasswordException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidPasswordException' :: ( { "Message" :: NullOrUndefined (ErrorMessageType) } -> {"Message" :: NullOrUndefined (ErrorMessageType) } ) -> InvalidPasswordException
-newInvalidPasswordException'  customize = (InvalidPasswordException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newInvalidPasswordException' :: ( { "Message" :: Maybe (ErrorMessageType) } -> {"Message" :: Maybe (ErrorMessageType) } ) -> InvalidPasswordException
+newInvalidPasswordException'  customize = (InvalidPasswordException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>The maximum of 100,000 folders under the parent folder has been exceeded.</p>
 newtype LimitExceededException = LimitExceededException 
-  { "Message" :: NullOrUndefined (ErrorMessageType)
+  { "Message" :: Maybe (ErrorMessageType)
   }
 derive instance newtypeLimitExceededException :: Newtype LimitExceededException _
 derive instance repGenericLimitExceededException :: Generic LimitExceededException _
@@ -2067,12 +2066,12 @@ instance encodeLimitExceededException :: Encode LimitExceededException where enc
 
 -- | Constructs LimitExceededException from required parameters
 newLimitExceededException :: LimitExceededException
-newLimitExceededException  = LimitExceededException { "Message": (NullOrUndefined Nothing) }
+newLimitExceededException  = LimitExceededException { "Message": Nothing }
 
 -- | Constructs LimitExceededException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newLimitExceededException' :: ( { "Message" :: NullOrUndefined (ErrorMessageType) } -> {"Message" :: NullOrUndefined (ErrorMessageType) } ) -> LimitExceededException
-newLimitExceededException'  customize = (LimitExceededException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newLimitExceededException' :: ( { "Message" :: Maybe (ErrorMessageType) } -> {"Message" :: Maybe (ErrorMessageType) } ) -> LimitExceededException
+newLimitExceededException'  customize = (LimitExceededException <<< customize) { "Message": Nothing }
 
 
 
@@ -2114,8 +2113,8 @@ instance encodeMessageType :: Encode MessageType where encode = genericEncode op
 
 -- | <p>Set of options which defines notification preferences of given action.</p>
 newtype NotificationOptions = NotificationOptions 
-  { "SendEmail" :: NullOrUndefined (BooleanType)
-  , "EmailMessage" :: NullOrUndefined (MessageType)
+  { "SendEmail" :: Maybe (BooleanType)
+  , "EmailMessage" :: Maybe (MessageType)
   }
 derive instance newtypeNotificationOptions :: Newtype NotificationOptions _
 derive instance repGenericNotificationOptions :: Generic NotificationOptions _
@@ -2125,12 +2124,12 @@ instance encodeNotificationOptions :: Encode NotificationOptions where encode = 
 
 -- | Constructs NotificationOptions from required parameters
 newNotificationOptions :: NotificationOptions
-newNotificationOptions  = NotificationOptions { "EmailMessage": (NullOrUndefined Nothing), "SendEmail": (NullOrUndefined Nothing) }
+newNotificationOptions  = NotificationOptions { "EmailMessage": Nothing, "SendEmail": Nothing }
 
 -- | Constructs NotificationOptions's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newNotificationOptions' :: ( { "SendEmail" :: NullOrUndefined (BooleanType) , "EmailMessage" :: NullOrUndefined (MessageType) } -> {"SendEmail" :: NullOrUndefined (BooleanType) , "EmailMessage" :: NullOrUndefined (MessageType) } ) -> NotificationOptions
-newNotificationOptions'  customize = (NotificationOptions <<< customize) { "EmailMessage": (NullOrUndefined Nothing), "SendEmail": (NullOrUndefined Nothing) }
+newNotificationOptions' :: ( { "SendEmail" :: Maybe (BooleanType) , "EmailMessage" :: Maybe (MessageType) } -> {"SendEmail" :: Maybe (BooleanType) , "EmailMessage" :: Maybe (MessageType) } ) -> NotificationOptions
+newNotificationOptions'  customize = (NotificationOptions <<< customize) { "EmailMessage": Nothing, "SendEmail": Nothing }
 
 
 
@@ -2163,8 +2162,8 @@ instance encodePageMarkerType :: Encode PageMarkerType where encode = genericEnc
 
 -- | <p>Describes the users or user groups.</p>
 newtype Participants = Participants 
-  { "Users" :: NullOrUndefined (UserMetadataList)
-  , "Groups" :: NullOrUndefined (GroupMetadataList)
+  { "Users" :: Maybe (UserMetadataList)
+  , "Groups" :: Maybe (GroupMetadataList)
   }
 derive instance newtypeParticipants :: Newtype Participants _
 derive instance repGenericParticipants :: Generic Participants _
@@ -2174,12 +2173,12 @@ instance encodeParticipants :: Encode Participants where encode = genericEncode 
 
 -- | Constructs Participants from required parameters
 newParticipants :: Participants
-newParticipants  = Participants { "Groups": (NullOrUndefined Nothing), "Users": (NullOrUndefined Nothing) }
+newParticipants  = Participants { "Groups": Nothing, "Users": Nothing }
 
 -- | Constructs Participants's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newParticipants' :: ( { "Users" :: NullOrUndefined (UserMetadataList) , "Groups" :: NullOrUndefined (GroupMetadataList) } -> {"Users" :: NullOrUndefined (UserMetadataList) , "Groups" :: NullOrUndefined (GroupMetadataList) } ) -> Participants
-newParticipants'  customize = (Participants <<< customize) { "Groups": (NullOrUndefined Nothing), "Users": (NullOrUndefined Nothing) }
+newParticipants' :: ( { "Users" :: Maybe (UserMetadataList) , "Groups" :: Maybe (GroupMetadataList) } -> {"Users" :: Maybe (UserMetadataList) , "Groups" :: Maybe (GroupMetadataList) } ) -> Participants
+newParticipants'  customize = (Participants <<< customize) { "Groups": Nothing, "Users": Nothing }
 
 
 
@@ -2194,8 +2193,8 @@ instance encodePasswordType :: Encode PasswordType where encode = genericEncode 
 
 -- | <p>Describes the permissions.</p>
 newtype PermissionInfo = PermissionInfo 
-  { "Role" :: NullOrUndefined (RoleType)
-  , "Type" :: NullOrUndefined (RolePermissionType)
+  { "Role" :: Maybe (RoleType)
+  , "Type" :: Maybe (RolePermissionType)
   }
 derive instance newtypePermissionInfo :: Newtype PermissionInfo _
 derive instance repGenericPermissionInfo :: Generic PermissionInfo _
@@ -2205,12 +2204,12 @@ instance encodePermissionInfo :: Encode PermissionInfo where encode = genericEnc
 
 -- | Constructs PermissionInfo from required parameters
 newPermissionInfo :: PermissionInfo
-newPermissionInfo  = PermissionInfo { "Role": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
+newPermissionInfo  = PermissionInfo { "Role": Nothing, "Type": Nothing }
 
 -- | Constructs PermissionInfo's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPermissionInfo' :: ( { "Role" :: NullOrUndefined (RoleType) , "Type" :: NullOrUndefined (RolePermissionType) } -> {"Role" :: NullOrUndefined (RoleType) , "Type" :: NullOrUndefined (RolePermissionType) } ) -> PermissionInfo
-newPermissionInfo'  customize = (PermissionInfo <<< customize) { "Role": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
+newPermissionInfo' :: ( { "Role" :: Maybe (RoleType) , "Type" :: Maybe (RolePermissionType) } -> {"Role" :: Maybe (RoleType) , "Type" :: Maybe (RolePermissionType) } ) -> PermissionInfo
+newPermissionInfo'  customize = (PermissionInfo <<< customize) { "Role": Nothing, "Type": Nothing }
 
 
 
@@ -2243,9 +2242,9 @@ instance encodePositiveSizeType :: Encode PositiveSizeType where encode = generi
 
 -- | <p>Describes a resource.</p>
 newtype Principal = Principal 
-  { "Id" :: NullOrUndefined (IdType)
-  , "Type" :: NullOrUndefined (PrincipalType)
-  , "Roles" :: NullOrUndefined (PermissionInfoList)
+  { "Id" :: Maybe (IdType)
+  , "Type" :: Maybe (PrincipalType)
+  , "Roles" :: Maybe (PermissionInfoList)
   }
 derive instance newtypePrincipal :: Newtype Principal _
 derive instance repGenericPrincipal :: Generic Principal _
@@ -2255,12 +2254,12 @@ instance encodePrincipal :: Encode Principal where encode = genericEncode option
 
 -- | Constructs Principal from required parameters
 newPrincipal :: Principal
-newPrincipal  = Principal { "Id": (NullOrUndefined Nothing), "Roles": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
+newPrincipal  = Principal { "Id": Nothing, "Roles": Nothing, "Type": Nothing }
 
 -- | Constructs Principal's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPrincipal' :: ( { "Id" :: NullOrUndefined (IdType) , "Type" :: NullOrUndefined (PrincipalType) , "Roles" :: NullOrUndefined (PermissionInfoList) } -> {"Id" :: NullOrUndefined (IdType) , "Type" :: NullOrUndefined (PrincipalType) , "Roles" :: NullOrUndefined (PermissionInfoList) } ) -> Principal
-newPrincipal'  customize = (Principal <<< customize) { "Id": (NullOrUndefined Nothing), "Roles": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
+newPrincipal' :: ( { "Id" :: Maybe (IdType) , "Type" :: Maybe (PrincipalType) , "Roles" :: Maybe (PermissionInfoList) } -> {"Id" :: Maybe (IdType) , "Type" :: Maybe (PrincipalType) , "Roles" :: Maybe (PermissionInfoList) } ) -> Principal
+newPrincipal'  customize = (Principal <<< customize) { "Id": Nothing, "Roles": Nothing, "Type": Nothing }
 
 
 
@@ -2284,7 +2283,7 @@ instance encodePrincipalType :: Encode PrincipalType where encode = genericEncod
 
 -- | <p>The specified document version is not in the INITIALIZED state.</p>
 newtype ProhibitedStateException = ProhibitedStateException 
-  { "Message" :: NullOrUndefined (ErrorMessageType)
+  { "Message" :: Maybe (ErrorMessageType)
   }
 derive instance newtypeProhibitedStateException :: Newtype ProhibitedStateException _
 derive instance repGenericProhibitedStateException :: Generic ProhibitedStateException _
@@ -2294,17 +2293,17 @@ instance encodeProhibitedStateException :: Encode ProhibitedStateException where
 
 -- | Constructs ProhibitedStateException from required parameters
 newProhibitedStateException :: ProhibitedStateException
-newProhibitedStateException  = ProhibitedStateException { "Message": (NullOrUndefined Nothing) }
+newProhibitedStateException  = ProhibitedStateException { "Message": Nothing }
 
 -- | Constructs ProhibitedStateException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newProhibitedStateException' :: ( { "Message" :: NullOrUndefined (ErrorMessageType) } -> {"Message" :: NullOrUndefined (ErrorMessageType) } ) -> ProhibitedStateException
-newProhibitedStateException'  customize = (ProhibitedStateException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newProhibitedStateException' :: ( { "Message" :: Maybe (ErrorMessageType) } -> {"Message" :: Maybe (ErrorMessageType) } ) -> ProhibitedStateException
+newProhibitedStateException'  customize = (ProhibitedStateException <<< customize) { "Message": Nothing }
 
 
 
 newtype RemoveAllResourcePermissionsRequest = RemoveAllResourcePermissionsRequest 
-  { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType)
+  { "AuthenticationToken" :: Maybe (AuthenticationHeaderType)
   , "ResourceId" :: (ResourceIdType)
   }
 derive instance newtypeRemoveAllResourcePermissionsRequest :: Newtype RemoveAllResourcePermissionsRequest _
@@ -2315,20 +2314,20 @@ instance encodeRemoveAllResourcePermissionsRequest :: Encode RemoveAllResourcePe
 
 -- | Constructs RemoveAllResourcePermissionsRequest from required parameters
 newRemoveAllResourcePermissionsRequest :: ResourceIdType -> RemoveAllResourcePermissionsRequest
-newRemoveAllResourcePermissionsRequest _ResourceId = RemoveAllResourcePermissionsRequest { "ResourceId": _ResourceId, "AuthenticationToken": (NullOrUndefined Nothing) }
+newRemoveAllResourcePermissionsRequest _ResourceId = RemoveAllResourcePermissionsRequest { "ResourceId": _ResourceId, "AuthenticationToken": Nothing }
 
 -- | Constructs RemoveAllResourcePermissionsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRemoveAllResourcePermissionsRequest' :: ResourceIdType -> ( { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "ResourceId" :: (ResourceIdType) } -> {"AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "ResourceId" :: (ResourceIdType) } ) -> RemoveAllResourcePermissionsRequest
-newRemoveAllResourcePermissionsRequest' _ResourceId customize = (RemoveAllResourcePermissionsRequest <<< customize) { "ResourceId": _ResourceId, "AuthenticationToken": (NullOrUndefined Nothing) }
+newRemoveAllResourcePermissionsRequest' :: ResourceIdType -> ( { "AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "ResourceId" :: (ResourceIdType) } -> {"AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "ResourceId" :: (ResourceIdType) } ) -> RemoveAllResourcePermissionsRequest
+newRemoveAllResourcePermissionsRequest' _ResourceId customize = (RemoveAllResourcePermissionsRequest <<< customize) { "ResourceId": _ResourceId, "AuthenticationToken": Nothing }
 
 
 
 newtype RemoveResourcePermissionRequest = RemoveResourcePermissionRequest 
-  { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType)
+  { "AuthenticationToken" :: Maybe (AuthenticationHeaderType)
   , "ResourceId" :: (ResourceIdType)
   , "PrincipalId" :: (IdType)
-  , "PrincipalType" :: NullOrUndefined (PrincipalType)
+  , "PrincipalType" :: Maybe (PrincipalType)
   }
 derive instance newtypeRemoveResourcePermissionRequest :: Newtype RemoveResourcePermissionRequest _
 derive instance repGenericRemoveResourcePermissionRequest :: Generic RemoveResourcePermissionRequest _
@@ -2338,18 +2337,18 @@ instance encodeRemoveResourcePermissionRequest :: Encode RemoveResourcePermissio
 
 -- | Constructs RemoveResourcePermissionRequest from required parameters
 newRemoveResourcePermissionRequest :: IdType -> ResourceIdType -> RemoveResourcePermissionRequest
-newRemoveResourcePermissionRequest _PrincipalId _ResourceId = RemoveResourcePermissionRequest { "PrincipalId": _PrincipalId, "ResourceId": _ResourceId, "AuthenticationToken": (NullOrUndefined Nothing), "PrincipalType": (NullOrUndefined Nothing) }
+newRemoveResourcePermissionRequest _PrincipalId _ResourceId = RemoveResourcePermissionRequest { "PrincipalId": _PrincipalId, "ResourceId": _ResourceId, "AuthenticationToken": Nothing, "PrincipalType": Nothing }
 
 -- | Constructs RemoveResourcePermissionRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRemoveResourcePermissionRequest' :: IdType -> ResourceIdType -> ( { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "ResourceId" :: (ResourceIdType) , "PrincipalId" :: (IdType) , "PrincipalType" :: NullOrUndefined (PrincipalType) } -> {"AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "ResourceId" :: (ResourceIdType) , "PrincipalId" :: (IdType) , "PrincipalType" :: NullOrUndefined (PrincipalType) } ) -> RemoveResourcePermissionRequest
-newRemoveResourcePermissionRequest' _PrincipalId _ResourceId customize = (RemoveResourcePermissionRequest <<< customize) { "PrincipalId": _PrincipalId, "ResourceId": _ResourceId, "AuthenticationToken": (NullOrUndefined Nothing), "PrincipalType": (NullOrUndefined Nothing) }
+newRemoveResourcePermissionRequest' :: IdType -> ResourceIdType -> ( { "AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "ResourceId" :: (ResourceIdType) , "PrincipalId" :: (IdType) , "PrincipalType" :: Maybe (PrincipalType) } -> {"AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "ResourceId" :: (ResourceIdType) , "PrincipalId" :: (IdType) , "PrincipalType" :: Maybe (PrincipalType) } ) -> RemoveResourcePermissionRequest
+newRemoveResourcePermissionRequest' _PrincipalId _ResourceId customize = (RemoveResourcePermissionRequest <<< customize) { "PrincipalId": _PrincipalId, "ResourceId": _ResourceId, "AuthenticationToken": Nothing, "PrincipalType": Nothing }
 
 
 
 -- | <p>The resource is already checked out.</p>
 newtype ResourceAlreadyCheckedOutException = ResourceAlreadyCheckedOutException 
-  { "Message" :: NullOrUndefined (ErrorMessageType)
+  { "Message" :: Maybe (ErrorMessageType)
   }
 derive instance newtypeResourceAlreadyCheckedOutException :: Newtype ResourceAlreadyCheckedOutException _
 derive instance repGenericResourceAlreadyCheckedOutException :: Generic ResourceAlreadyCheckedOutException _
@@ -2359,12 +2358,12 @@ instance encodeResourceAlreadyCheckedOutException :: Encode ResourceAlreadyCheck
 
 -- | Constructs ResourceAlreadyCheckedOutException from required parameters
 newResourceAlreadyCheckedOutException :: ResourceAlreadyCheckedOutException
-newResourceAlreadyCheckedOutException  = ResourceAlreadyCheckedOutException { "Message": (NullOrUndefined Nothing) }
+newResourceAlreadyCheckedOutException  = ResourceAlreadyCheckedOutException { "Message": Nothing }
 
 -- | Constructs ResourceAlreadyCheckedOutException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newResourceAlreadyCheckedOutException' :: ( { "Message" :: NullOrUndefined (ErrorMessageType) } -> {"Message" :: NullOrUndefined (ErrorMessageType) } ) -> ResourceAlreadyCheckedOutException
-newResourceAlreadyCheckedOutException'  customize = (ResourceAlreadyCheckedOutException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newResourceAlreadyCheckedOutException' :: ( { "Message" :: Maybe (ErrorMessageType) } -> {"Message" :: Maybe (ErrorMessageType) } ) -> ResourceAlreadyCheckedOutException
+newResourceAlreadyCheckedOutException'  customize = (ResourceAlreadyCheckedOutException <<< customize) { "Message": Nothing }
 
 
 
@@ -2379,13 +2378,13 @@ instance encodeResourceIdType :: Encode ResourceIdType where encode = genericEnc
 
 -- | <p>Describes the metadata of a resource.</p>
 newtype ResourceMetadata = ResourceMetadata 
-  { "Type" :: NullOrUndefined (ResourceType)
-  , "Name" :: NullOrUndefined (ResourceNameType)
-  , "OriginalName" :: NullOrUndefined (ResourceNameType)
-  , "Id" :: NullOrUndefined (ResourceIdType)
-  , "VersionId" :: NullOrUndefined (DocumentVersionIdType)
-  , "Owner" :: NullOrUndefined (UserMetadata)
-  , "ParentId" :: NullOrUndefined (ResourceIdType)
+  { "Type" :: Maybe (ResourceType)
+  , "Name" :: Maybe (ResourceNameType)
+  , "OriginalName" :: Maybe (ResourceNameType)
+  , "Id" :: Maybe (ResourceIdType)
+  , "VersionId" :: Maybe (DocumentVersionIdType)
+  , "Owner" :: Maybe (UserMetadata)
+  , "ParentId" :: Maybe (ResourceIdType)
   }
 derive instance newtypeResourceMetadata :: Newtype ResourceMetadata _
 derive instance repGenericResourceMetadata :: Generic ResourceMetadata _
@@ -2395,12 +2394,12 @@ instance encodeResourceMetadata :: Encode ResourceMetadata where encode = generi
 
 -- | Constructs ResourceMetadata from required parameters
 newResourceMetadata :: ResourceMetadata
-newResourceMetadata  = ResourceMetadata { "Id": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "OriginalName": (NullOrUndefined Nothing), "Owner": (NullOrUndefined Nothing), "ParentId": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing), "VersionId": (NullOrUndefined Nothing) }
+newResourceMetadata  = ResourceMetadata { "Id": Nothing, "Name": Nothing, "OriginalName": Nothing, "Owner": Nothing, "ParentId": Nothing, "Type": Nothing, "VersionId": Nothing }
 
 -- | Constructs ResourceMetadata's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newResourceMetadata' :: ( { "Type" :: NullOrUndefined (ResourceType) , "Name" :: NullOrUndefined (ResourceNameType) , "OriginalName" :: NullOrUndefined (ResourceNameType) , "Id" :: NullOrUndefined (ResourceIdType) , "VersionId" :: NullOrUndefined (DocumentVersionIdType) , "Owner" :: NullOrUndefined (UserMetadata) , "ParentId" :: NullOrUndefined (ResourceIdType) } -> {"Type" :: NullOrUndefined (ResourceType) , "Name" :: NullOrUndefined (ResourceNameType) , "OriginalName" :: NullOrUndefined (ResourceNameType) , "Id" :: NullOrUndefined (ResourceIdType) , "VersionId" :: NullOrUndefined (DocumentVersionIdType) , "Owner" :: NullOrUndefined (UserMetadata) , "ParentId" :: NullOrUndefined (ResourceIdType) } ) -> ResourceMetadata
-newResourceMetadata'  customize = (ResourceMetadata <<< customize) { "Id": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "OriginalName": (NullOrUndefined Nothing), "Owner": (NullOrUndefined Nothing), "ParentId": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing), "VersionId": (NullOrUndefined Nothing) }
+newResourceMetadata' :: ( { "Type" :: Maybe (ResourceType) , "Name" :: Maybe (ResourceNameType) , "OriginalName" :: Maybe (ResourceNameType) , "Id" :: Maybe (ResourceIdType) , "VersionId" :: Maybe (DocumentVersionIdType) , "Owner" :: Maybe (UserMetadata) , "ParentId" :: Maybe (ResourceIdType) } -> {"Type" :: Maybe (ResourceType) , "Name" :: Maybe (ResourceNameType) , "OriginalName" :: Maybe (ResourceNameType) , "Id" :: Maybe (ResourceIdType) , "VersionId" :: Maybe (DocumentVersionIdType) , "Owner" :: Maybe (UserMetadata) , "ParentId" :: Maybe (ResourceIdType) } ) -> ResourceMetadata
+newResourceMetadata'  customize = (ResourceMetadata <<< customize) { "Id": Nothing, "Name": Nothing, "OriginalName": Nothing, "Owner": Nothing, "ParentId": Nothing, "Type": Nothing, "VersionId": Nothing }
 
 
 
@@ -2415,7 +2414,7 @@ instance encodeResourceNameType :: Encode ResourceNameType where encode = generi
 
 -- | <p>Describes the path information of a resource.</p>
 newtype ResourcePath = ResourcePath 
-  { "Components" :: NullOrUndefined (ResourcePathComponentList)
+  { "Components" :: Maybe (ResourcePathComponentList)
   }
 derive instance newtypeResourcePath :: Newtype ResourcePath _
 derive instance repGenericResourcePath :: Generic ResourcePath _
@@ -2425,19 +2424,19 @@ instance encodeResourcePath :: Encode ResourcePath where encode = genericEncode 
 
 -- | Constructs ResourcePath from required parameters
 newResourcePath :: ResourcePath
-newResourcePath  = ResourcePath { "Components": (NullOrUndefined Nothing) }
+newResourcePath  = ResourcePath { "Components": Nothing }
 
 -- | Constructs ResourcePath's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newResourcePath' :: ( { "Components" :: NullOrUndefined (ResourcePathComponentList) } -> {"Components" :: NullOrUndefined (ResourcePathComponentList) } ) -> ResourcePath
-newResourcePath'  customize = (ResourcePath <<< customize) { "Components": (NullOrUndefined Nothing) }
+newResourcePath' :: ( { "Components" :: Maybe (ResourcePathComponentList) } -> {"Components" :: Maybe (ResourcePathComponentList) } ) -> ResourcePath
+newResourcePath'  customize = (ResourcePath <<< customize) { "Components": Nothing }
 
 
 
 -- | <p>Describes the resource path.</p>
 newtype ResourcePathComponent = ResourcePathComponent 
-  { "Id" :: NullOrUndefined (IdType)
-  , "Name" :: NullOrUndefined (ResourceNameType)
+  { "Id" :: Maybe (IdType)
+  , "Name" :: Maybe (ResourceNameType)
   }
 derive instance newtypeResourcePathComponent :: Newtype ResourcePathComponent _
 derive instance repGenericResourcePathComponent :: Generic ResourcePathComponent _
@@ -2447,12 +2446,12 @@ instance encodeResourcePathComponent :: Encode ResourcePathComponent where encod
 
 -- | Constructs ResourcePathComponent from required parameters
 newResourcePathComponent :: ResourcePathComponent
-newResourcePathComponent  = ResourcePathComponent { "Id": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing) }
+newResourcePathComponent  = ResourcePathComponent { "Id": Nothing, "Name": Nothing }
 
 -- | Constructs ResourcePathComponent's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newResourcePathComponent' :: ( { "Id" :: NullOrUndefined (IdType) , "Name" :: NullOrUndefined (ResourceNameType) } -> {"Id" :: NullOrUndefined (IdType) , "Name" :: NullOrUndefined (ResourceNameType) } ) -> ResourcePathComponent
-newResourcePathComponent'  customize = (ResourcePathComponent <<< customize) { "Id": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing) }
+newResourcePathComponent' :: ( { "Id" :: Maybe (IdType) , "Name" :: Maybe (ResourceNameType) } -> {"Id" :: Maybe (IdType) , "Name" :: Maybe (ResourceNameType) } ) -> ResourcePathComponent
+newResourcePathComponent'  customize = (ResourcePathComponent <<< customize) { "Id": Nothing, "Name": Nothing }
 
 
 
@@ -2521,7 +2520,7 @@ instance encodeSearchQueryType :: Encode SearchQueryType where encode = genericE
 
 -- | <p>One or more of the dependencies is unavailable.</p>
 newtype ServiceUnavailableException = ServiceUnavailableException 
-  { "Message" :: NullOrUndefined (ErrorMessageType)
+  { "Message" :: Maybe (ErrorMessageType)
   }
 derive instance newtypeServiceUnavailableException :: Newtype ServiceUnavailableException _
 derive instance repGenericServiceUnavailableException :: Generic ServiceUnavailableException _
@@ -2531,12 +2530,12 @@ instance encodeServiceUnavailableException :: Encode ServiceUnavailableException
 
 -- | Constructs ServiceUnavailableException from required parameters
 newServiceUnavailableException :: ServiceUnavailableException
-newServiceUnavailableException  = ServiceUnavailableException { "Message": (NullOrUndefined Nothing) }
+newServiceUnavailableException  = ServiceUnavailableException { "Message": Nothing }
 
 -- | Constructs ServiceUnavailableException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newServiceUnavailableException' :: ( { "Message" :: NullOrUndefined (ErrorMessageType) } -> {"Message" :: NullOrUndefined (ErrorMessageType) } ) -> ServiceUnavailableException
-newServiceUnavailableException'  customize = (ServiceUnavailableException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newServiceUnavailableException' :: ( { "Message" :: Maybe (ErrorMessageType) } -> {"Message" :: Maybe (ErrorMessageType) } ) -> ServiceUnavailableException
+newServiceUnavailableException'  customize = (ServiceUnavailableException <<< customize) { "Message": Nothing }
 
 
 
@@ -2574,11 +2573,11 @@ instance encodeSharePrincipalList :: Encode SharePrincipalList where encode = ge
 
 -- | <p>Describes the share results of a resource.</p>
 newtype ShareResult = ShareResult 
-  { "PrincipalId" :: NullOrUndefined (IdType)
-  , "Role" :: NullOrUndefined (RoleType)
-  , "Status" :: NullOrUndefined (ShareStatusType)
-  , "ShareId" :: NullOrUndefined (ResourceIdType)
-  , "StatusMessage" :: NullOrUndefined (MessageType)
+  { "PrincipalId" :: Maybe (IdType)
+  , "Role" :: Maybe (RoleType)
+  , "Status" :: Maybe (ShareStatusType)
+  , "ShareId" :: Maybe (ResourceIdType)
+  , "StatusMessage" :: Maybe (MessageType)
   }
 derive instance newtypeShareResult :: Newtype ShareResult _
 derive instance repGenericShareResult :: Generic ShareResult _
@@ -2588,12 +2587,12 @@ instance encodeShareResult :: Encode ShareResult where encode = genericEncode op
 
 -- | Constructs ShareResult from required parameters
 newShareResult :: ShareResult
-newShareResult  = ShareResult { "PrincipalId": (NullOrUndefined Nothing), "Role": (NullOrUndefined Nothing), "ShareId": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "StatusMessage": (NullOrUndefined Nothing) }
+newShareResult  = ShareResult { "PrincipalId": Nothing, "Role": Nothing, "ShareId": Nothing, "Status": Nothing, "StatusMessage": Nothing }
 
 -- | Constructs ShareResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newShareResult' :: ( { "PrincipalId" :: NullOrUndefined (IdType) , "Role" :: NullOrUndefined (RoleType) , "Status" :: NullOrUndefined (ShareStatusType) , "ShareId" :: NullOrUndefined (ResourceIdType) , "StatusMessage" :: NullOrUndefined (MessageType) } -> {"PrincipalId" :: NullOrUndefined (IdType) , "Role" :: NullOrUndefined (RoleType) , "Status" :: NullOrUndefined (ShareStatusType) , "ShareId" :: NullOrUndefined (ResourceIdType) , "StatusMessage" :: NullOrUndefined (MessageType) } ) -> ShareResult
-newShareResult'  customize = (ShareResult <<< customize) { "PrincipalId": (NullOrUndefined Nothing), "Role": (NullOrUndefined Nothing), "ShareId": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "StatusMessage": (NullOrUndefined Nothing) }
+newShareResult' :: ( { "PrincipalId" :: Maybe (IdType) , "Role" :: Maybe (RoleType) , "Status" :: Maybe (ShareStatusType) , "ShareId" :: Maybe (ResourceIdType) , "StatusMessage" :: Maybe (MessageType) } -> {"PrincipalId" :: Maybe (IdType) , "Role" :: Maybe (RoleType) , "Status" :: Maybe (ShareStatusType) , "ShareId" :: Maybe (ResourceIdType) , "StatusMessage" :: Maybe (MessageType) } ) -> ShareResult
+newShareResult'  customize = (ShareResult <<< customize) { "PrincipalId": Nothing, "Role": Nothing, "ShareId": Nothing, "Status": Nothing, "StatusMessage": Nothing }
 
 
 
@@ -2653,7 +2652,7 @@ instance encodeSizeType :: Encode SizeType where encode = genericEncode options
 
 -- | <p>The storage limit has been exceeded.</p>
 newtype StorageLimitExceededException = StorageLimitExceededException 
-  { "Message" :: NullOrUndefined (ErrorMessageType)
+  { "Message" :: Maybe (ErrorMessageType)
   }
 derive instance newtypeStorageLimitExceededException :: Newtype StorageLimitExceededException _
 derive instance repGenericStorageLimitExceededException :: Generic StorageLimitExceededException _
@@ -2663,18 +2662,18 @@ instance encodeStorageLimitExceededException :: Encode StorageLimitExceededExcep
 
 -- | Constructs StorageLimitExceededException from required parameters
 newStorageLimitExceededException :: StorageLimitExceededException
-newStorageLimitExceededException  = StorageLimitExceededException { "Message": (NullOrUndefined Nothing) }
+newStorageLimitExceededException  = StorageLimitExceededException { "Message": Nothing }
 
 -- | Constructs StorageLimitExceededException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newStorageLimitExceededException' :: ( { "Message" :: NullOrUndefined (ErrorMessageType) } -> {"Message" :: NullOrUndefined (ErrorMessageType) } ) -> StorageLimitExceededException
-newStorageLimitExceededException'  customize = (StorageLimitExceededException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newStorageLimitExceededException' :: ( { "Message" :: Maybe (ErrorMessageType) } -> {"Message" :: Maybe (ErrorMessageType) } ) -> StorageLimitExceededException
+newStorageLimitExceededException'  customize = (StorageLimitExceededException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>The storage limit will be exceeded.</p>
 newtype StorageLimitWillExceedException = StorageLimitWillExceedException 
-  { "Message" :: NullOrUndefined (ErrorMessageType)
+  { "Message" :: Maybe (ErrorMessageType)
   }
 derive instance newtypeStorageLimitWillExceedException :: Newtype StorageLimitWillExceedException _
 derive instance repGenericStorageLimitWillExceedException :: Generic StorageLimitWillExceedException _
@@ -2684,19 +2683,19 @@ instance encodeStorageLimitWillExceedException :: Encode StorageLimitWillExceedE
 
 -- | Constructs StorageLimitWillExceedException from required parameters
 newStorageLimitWillExceedException :: StorageLimitWillExceedException
-newStorageLimitWillExceedException  = StorageLimitWillExceedException { "Message": (NullOrUndefined Nothing) }
+newStorageLimitWillExceedException  = StorageLimitWillExceedException { "Message": Nothing }
 
 -- | Constructs StorageLimitWillExceedException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newStorageLimitWillExceedException' :: ( { "Message" :: NullOrUndefined (ErrorMessageType) } -> {"Message" :: NullOrUndefined (ErrorMessageType) } ) -> StorageLimitWillExceedException
-newStorageLimitWillExceedException'  customize = (StorageLimitWillExceedException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newStorageLimitWillExceedException' :: ( { "Message" :: Maybe (ErrorMessageType) } -> {"Message" :: Maybe (ErrorMessageType) } ) -> StorageLimitWillExceedException
+newStorageLimitWillExceedException'  customize = (StorageLimitWillExceedException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>Describes the storage for a user.</p>
 newtype StorageRuleType = StorageRuleType 
-  { "StorageAllocatedInBytes" :: NullOrUndefined (PositiveSizeType)
-  , "StorageType" :: NullOrUndefined (StorageType)
+  { "StorageAllocatedInBytes" :: Maybe (PositiveSizeType)
+  , "StorageType" :: Maybe (StorageType)
   }
 derive instance newtypeStorageRuleType :: Newtype StorageRuleType _
 derive instance repGenericStorageRuleType :: Generic StorageRuleType _
@@ -2706,12 +2705,12 @@ instance encodeStorageRuleType :: Encode StorageRuleType where encode = genericE
 
 -- | Constructs StorageRuleType from required parameters
 newStorageRuleType :: StorageRuleType
-newStorageRuleType  = StorageRuleType { "StorageAllocatedInBytes": (NullOrUndefined Nothing), "StorageType": (NullOrUndefined Nothing) }
+newStorageRuleType  = StorageRuleType { "StorageAllocatedInBytes": Nothing, "StorageType": Nothing }
 
 -- | Constructs StorageRuleType's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newStorageRuleType' :: ( { "StorageAllocatedInBytes" :: NullOrUndefined (PositiveSizeType) , "StorageType" :: NullOrUndefined (StorageType) } -> {"StorageAllocatedInBytes" :: NullOrUndefined (PositiveSizeType) , "StorageType" :: NullOrUndefined (StorageType) } ) -> StorageRuleType
-newStorageRuleType'  customize = (StorageRuleType <<< customize) { "StorageAllocatedInBytes": (NullOrUndefined Nothing), "StorageType": (NullOrUndefined Nothing) }
+newStorageRuleType' :: ( { "StorageAllocatedInBytes" :: Maybe (PositiveSizeType) , "StorageType" :: Maybe (StorageType) } -> {"StorageAllocatedInBytes" :: Maybe (PositiveSizeType) , "StorageType" :: Maybe (StorageType) } ) -> StorageRuleType
+newStorageRuleType'  customize = (StorageRuleType <<< customize) { "StorageAllocatedInBytes": Nothing, "StorageType": Nothing }
 
 
 
@@ -2726,9 +2725,9 @@ instance encodeStorageType :: Encode StorageType where encode = genericEncode op
 
 -- | <p>Describes a subscription.</p>
 newtype Subscription = Subscription 
-  { "SubscriptionId" :: NullOrUndefined (IdType)
-  , "EndPoint" :: NullOrUndefined (SubscriptionEndPointType)
-  , "Protocol" :: NullOrUndefined (SubscriptionProtocolType)
+  { "SubscriptionId" :: Maybe (IdType)
+  , "EndPoint" :: Maybe (SubscriptionEndPointType)
+  , "Protocol" :: Maybe (SubscriptionProtocolType)
   }
 derive instance newtypeSubscription :: Newtype Subscription _
 derive instance repGenericSubscription :: Generic Subscription _
@@ -2738,12 +2737,12 @@ instance encodeSubscription :: Encode Subscription where encode = genericEncode 
 
 -- | Constructs Subscription from required parameters
 newSubscription :: Subscription
-newSubscription  = Subscription { "EndPoint": (NullOrUndefined Nothing), "Protocol": (NullOrUndefined Nothing), "SubscriptionId": (NullOrUndefined Nothing) }
+newSubscription  = Subscription { "EndPoint": Nothing, "Protocol": Nothing, "SubscriptionId": Nothing }
 
 -- | Constructs Subscription's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSubscription' :: ( { "SubscriptionId" :: NullOrUndefined (IdType) , "EndPoint" :: NullOrUndefined (SubscriptionEndPointType) , "Protocol" :: NullOrUndefined (SubscriptionProtocolType) } -> {"SubscriptionId" :: NullOrUndefined (IdType) , "EndPoint" :: NullOrUndefined (SubscriptionEndPointType) , "Protocol" :: NullOrUndefined (SubscriptionProtocolType) } ) -> Subscription
-newSubscription'  customize = (Subscription <<< customize) { "EndPoint": (NullOrUndefined Nothing), "Protocol": (NullOrUndefined Nothing), "SubscriptionId": (NullOrUndefined Nothing) }
+newSubscription' :: ( { "SubscriptionId" :: Maybe (IdType) , "EndPoint" :: Maybe (SubscriptionEndPointType) , "Protocol" :: Maybe (SubscriptionProtocolType) } -> {"SubscriptionId" :: Maybe (IdType) , "EndPoint" :: Maybe (SubscriptionEndPointType) , "Protocol" :: Maybe (SubscriptionProtocolType) } ) -> Subscription
+newSubscription'  customize = (Subscription <<< customize) { "EndPoint": Nothing, "Protocol": Nothing, "SubscriptionId": Nothing }
 
 
 
@@ -2803,7 +2802,7 @@ instance encodeTimestampType :: Encode TimestampType where encode = genericEncod
 
 -- | <p>The limit has been reached on the number of labels for the specified resource.</p>
 newtype TooManyLabelsException = TooManyLabelsException 
-  { "Message" :: NullOrUndefined (ErrorMessageType)
+  { "Message" :: Maybe (ErrorMessageType)
   }
 derive instance newtypeTooManyLabelsException :: Newtype TooManyLabelsException _
 derive instance repGenericTooManyLabelsException :: Generic TooManyLabelsException _
@@ -2813,18 +2812,18 @@ instance encodeTooManyLabelsException :: Encode TooManyLabelsException where enc
 
 -- | Constructs TooManyLabelsException from required parameters
 newTooManyLabelsException :: TooManyLabelsException
-newTooManyLabelsException  = TooManyLabelsException { "Message": (NullOrUndefined Nothing) }
+newTooManyLabelsException  = TooManyLabelsException { "Message": Nothing }
 
 -- | Constructs TooManyLabelsException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTooManyLabelsException' :: ( { "Message" :: NullOrUndefined (ErrorMessageType) } -> {"Message" :: NullOrUndefined (ErrorMessageType) } ) -> TooManyLabelsException
-newTooManyLabelsException'  customize = (TooManyLabelsException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newTooManyLabelsException' :: ( { "Message" :: Maybe (ErrorMessageType) } -> {"Message" :: Maybe (ErrorMessageType) } ) -> TooManyLabelsException
+newTooManyLabelsException'  customize = (TooManyLabelsException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>You've reached the limit on the number of subscriptions for the WorkDocs instance.</p>
 newtype TooManySubscriptionsException = TooManySubscriptionsException 
-  { "Message" :: NullOrUndefined (ErrorMessageType)
+  { "Message" :: Maybe (ErrorMessageType)
   }
 derive instance newtypeTooManySubscriptionsException :: Newtype TooManySubscriptionsException _
 derive instance repGenericTooManySubscriptionsException :: Generic TooManySubscriptionsException _
@@ -2834,12 +2833,12 @@ instance encodeTooManySubscriptionsException :: Encode TooManySubscriptionsExcep
 
 -- | Constructs TooManySubscriptionsException from required parameters
 newTooManySubscriptionsException :: TooManySubscriptionsException
-newTooManySubscriptionsException  = TooManySubscriptionsException { "Message": (NullOrUndefined Nothing) }
+newTooManySubscriptionsException  = TooManySubscriptionsException { "Message": Nothing }
 
 -- | Constructs TooManySubscriptionsException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTooManySubscriptionsException' :: ( { "Message" :: NullOrUndefined (ErrorMessageType) } -> {"Message" :: NullOrUndefined (ErrorMessageType) } ) -> TooManySubscriptionsException
-newTooManySubscriptionsException'  customize = (TooManySubscriptionsException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newTooManySubscriptionsException' :: ( { "Message" :: Maybe (ErrorMessageType) } -> {"Message" :: Maybe (ErrorMessageType) } ) -> TooManySubscriptionsException
+newTooManySubscriptionsException'  customize = (TooManySubscriptionsException <<< customize) { "Message": Nothing }
 
 
 
@@ -2855,7 +2854,7 @@ instance encodeUnauthorizedOperationException :: Encode UnauthorizedOperationExc
 
 -- | <p>The caller does not have access to perform the action on the resource.</p>
 newtype UnauthorizedResourceAccessException = UnauthorizedResourceAccessException 
-  { "Message" :: NullOrUndefined (ErrorMessageType)
+  { "Message" :: Maybe (ErrorMessageType)
   }
 derive instance newtypeUnauthorizedResourceAccessException :: Newtype UnauthorizedResourceAccessException _
 derive instance repGenericUnauthorizedResourceAccessException :: Generic UnauthorizedResourceAccessException _
@@ -2865,21 +2864,21 @@ instance encodeUnauthorizedResourceAccessException :: Encode UnauthorizedResourc
 
 -- | Constructs UnauthorizedResourceAccessException from required parameters
 newUnauthorizedResourceAccessException :: UnauthorizedResourceAccessException
-newUnauthorizedResourceAccessException  = UnauthorizedResourceAccessException { "Message": (NullOrUndefined Nothing) }
+newUnauthorizedResourceAccessException  = UnauthorizedResourceAccessException { "Message": Nothing }
 
 -- | Constructs UnauthorizedResourceAccessException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUnauthorizedResourceAccessException' :: ( { "Message" :: NullOrUndefined (ErrorMessageType) } -> {"Message" :: NullOrUndefined (ErrorMessageType) } ) -> UnauthorizedResourceAccessException
-newUnauthorizedResourceAccessException'  customize = (UnauthorizedResourceAccessException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newUnauthorizedResourceAccessException' :: ( { "Message" :: Maybe (ErrorMessageType) } -> {"Message" :: Maybe (ErrorMessageType) } ) -> UnauthorizedResourceAccessException
+newUnauthorizedResourceAccessException'  customize = (UnauthorizedResourceAccessException <<< customize) { "Message": Nothing }
 
 
 
 newtype UpdateDocumentRequest = UpdateDocumentRequest 
-  { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType)
+  { "AuthenticationToken" :: Maybe (AuthenticationHeaderType)
   , "DocumentId" :: (ResourceIdType)
-  , "Name" :: NullOrUndefined (ResourceNameType)
-  , "ParentFolderId" :: NullOrUndefined (ResourceIdType)
-  , "ResourceState" :: NullOrUndefined (ResourceStateType)
+  , "Name" :: Maybe (ResourceNameType)
+  , "ParentFolderId" :: Maybe (ResourceIdType)
+  , "ResourceState" :: Maybe (ResourceStateType)
   }
 derive instance newtypeUpdateDocumentRequest :: Newtype UpdateDocumentRequest _
 derive instance repGenericUpdateDocumentRequest :: Generic UpdateDocumentRequest _
@@ -2889,20 +2888,20 @@ instance encodeUpdateDocumentRequest :: Encode UpdateDocumentRequest where encod
 
 -- | Constructs UpdateDocumentRequest from required parameters
 newUpdateDocumentRequest :: ResourceIdType -> UpdateDocumentRequest
-newUpdateDocumentRequest _DocumentId = UpdateDocumentRequest { "DocumentId": _DocumentId, "AuthenticationToken": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "ParentFolderId": (NullOrUndefined Nothing), "ResourceState": (NullOrUndefined Nothing) }
+newUpdateDocumentRequest _DocumentId = UpdateDocumentRequest { "DocumentId": _DocumentId, "AuthenticationToken": Nothing, "Name": Nothing, "ParentFolderId": Nothing, "ResourceState": Nothing }
 
 -- | Constructs UpdateDocumentRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateDocumentRequest' :: ResourceIdType -> ( { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "DocumentId" :: (ResourceIdType) , "Name" :: NullOrUndefined (ResourceNameType) , "ParentFolderId" :: NullOrUndefined (ResourceIdType) , "ResourceState" :: NullOrUndefined (ResourceStateType) } -> {"AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "DocumentId" :: (ResourceIdType) , "Name" :: NullOrUndefined (ResourceNameType) , "ParentFolderId" :: NullOrUndefined (ResourceIdType) , "ResourceState" :: NullOrUndefined (ResourceStateType) } ) -> UpdateDocumentRequest
-newUpdateDocumentRequest' _DocumentId customize = (UpdateDocumentRequest <<< customize) { "DocumentId": _DocumentId, "AuthenticationToken": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "ParentFolderId": (NullOrUndefined Nothing), "ResourceState": (NullOrUndefined Nothing) }
+newUpdateDocumentRequest' :: ResourceIdType -> ( { "AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "DocumentId" :: (ResourceIdType) , "Name" :: Maybe (ResourceNameType) , "ParentFolderId" :: Maybe (ResourceIdType) , "ResourceState" :: Maybe (ResourceStateType) } -> {"AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "DocumentId" :: (ResourceIdType) , "Name" :: Maybe (ResourceNameType) , "ParentFolderId" :: Maybe (ResourceIdType) , "ResourceState" :: Maybe (ResourceStateType) } ) -> UpdateDocumentRequest
+newUpdateDocumentRequest' _DocumentId customize = (UpdateDocumentRequest <<< customize) { "DocumentId": _DocumentId, "AuthenticationToken": Nothing, "Name": Nothing, "ParentFolderId": Nothing, "ResourceState": Nothing }
 
 
 
 newtype UpdateDocumentVersionRequest = UpdateDocumentVersionRequest 
-  { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType)
+  { "AuthenticationToken" :: Maybe (AuthenticationHeaderType)
   , "DocumentId" :: (ResourceIdType)
   , "VersionId" :: (DocumentVersionIdType)
-  , "VersionStatus" :: NullOrUndefined (DocumentVersionStatus)
+  , "VersionStatus" :: Maybe (DocumentVersionStatus)
   }
 derive instance newtypeUpdateDocumentVersionRequest :: Newtype UpdateDocumentVersionRequest _
 derive instance repGenericUpdateDocumentVersionRequest :: Generic UpdateDocumentVersionRequest _
@@ -2912,21 +2911,21 @@ instance encodeUpdateDocumentVersionRequest :: Encode UpdateDocumentVersionReque
 
 -- | Constructs UpdateDocumentVersionRequest from required parameters
 newUpdateDocumentVersionRequest :: ResourceIdType -> DocumentVersionIdType -> UpdateDocumentVersionRequest
-newUpdateDocumentVersionRequest _DocumentId _VersionId = UpdateDocumentVersionRequest { "DocumentId": _DocumentId, "VersionId": _VersionId, "AuthenticationToken": (NullOrUndefined Nothing), "VersionStatus": (NullOrUndefined Nothing) }
+newUpdateDocumentVersionRequest _DocumentId _VersionId = UpdateDocumentVersionRequest { "DocumentId": _DocumentId, "VersionId": _VersionId, "AuthenticationToken": Nothing, "VersionStatus": Nothing }
 
 -- | Constructs UpdateDocumentVersionRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateDocumentVersionRequest' :: ResourceIdType -> DocumentVersionIdType -> ( { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "DocumentId" :: (ResourceIdType) , "VersionId" :: (DocumentVersionIdType) , "VersionStatus" :: NullOrUndefined (DocumentVersionStatus) } -> {"AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "DocumentId" :: (ResourceIdType) , "VersionId" :: (DocumentVersionIdType) , "VersionStatus" :: NullOrUndefined (DocumentVersionStatus) } ) -> UpdateDocumentVersionRequest
-newUpdateDocumentVersionRequest' _DocumentId _VersionId customize = (UpdateDocumentVersionRequest <<< customize) { "DocumentId": _DocumentId, "VersionId": _VersionId, "AuthenticationToken": (NullOrUndefined Nothing), "VersionStatus": (NullOrUndefined Nothing) }
+newUpdateDocumentVersionRequest' :: ResourceIdType -> DocumentVersionIdType -> ( { "AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "DocumentId" :: (ResourceIdType) , "VersionId" :: (DocumentVersionIdType) , "VersionStatus" :: Maybe (DocumentVersionStatus) } -> {"AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "DocumentId" :: (ResourceIdType) , "VersionId" :: (DocumentVersionIdType) , "VersionStatus" :: Maybe (DocumentVersionStatus) } ) -> UpdateDocumentVersionRequest
+newUpdateDocumentVersionRequest' _DocumentId _VersionId customize = (UpdateDocumentVersionRequest <<< customize) { "DocumentId": _DocumentId, "VersionId": _VersionId, "AuthenticationToken": Nothing, "VersionStatus": Nothing }
 
 
 
 newtype UpdateFolderRequest = UpdateFolderRequest 
-  { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType)
+  { "AuthenticationToken" :: Maybe (AuthenticationHeaderType)
   , "FolderId" :: (ResourceIdType)
-  , "Name" :: NullOrUndefined (ResourceNameType)
-  , "ParentFolderId" :: NullOrUndefined (ResourceIdType)
-  , "ResourceState" :: NullOrUndefined (ResourceStateType)
+  , "Name" :: Maybe (ResourceNameType)
+  , "ParentFolderId" :: Maybe (ResourceIdType)
+  , "ResourceState" :: Maybe (ResourceStateType)
   }
 derive instance newtypeUpdateFolderRequest :: Newtype UpdateFolderRequest _
 derive instance repGenericUpdateFolderRequest :: Generic UpdateFolderRequest _
@@ -2936,25 +2935,25 @@ instance encodeUpdateFolderRequest :: Encode UpdateFolderRequest where encode = 
 
 -- | Constructs UpdateFolderRequest from required parameters
 newUpdateFolderRequest :: ResourceIdType -> UpdateFolderRequest
-newUpdateFolderRequest _FolderId = UpdateFolderRequest { "FolderId": _FolderId, "AuthenticationToken": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "ParentFolderId": (NullOrUndefined Nothing), "ResourceState": (NullOrUndefined Nothing) }
+newUpdateFolderRequest _FolderId = UpdateFolderRequest { "FolderId": _FolderId, "AuthenticationToken": Nothing, "Name": Nothing, "ParentFolderId": Nothing, "ResourceState": Nothing }
 
 -- | Constructs UpdateFolderRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateFolderRequest' :: ResourceIdType -> ( { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "FolderId" :: (ResourceIdType) , "Name" :: NullOrUndefined (ResourceNameType) , "ParentFolderId" :: NullOrUndefined (ResourceIdType) , "ResourceState" :: NullOrUndefined (ResourceStateType) } -> {"AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "FolderId" :: (ResourceIdType) , "Name" :: NullOrUndefined (ResourceNameType) , "ParentFolderId" :: NullOrUndefined (ResourceIdType) , "ResourceState" :: NullOrUndefined (ResourceStateType) } ) -> UpdateFolderRequest
-newUpdateFolderRequest' _FolderId customize = (UpdateFolderRequest <<< customize) { "FolderId": _FolderId, "AuthenticationToken": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "ParentFolderId": (NullOrUndefined Nothing), "ResourceState": (NullOrUndefined Nothing) }
+newUpdateFolderRequest' :: ResourceIdType -> ( { "AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "FolderId" :: (ResourceIdType) , "Name" :: Maybe (ResourceNameType) , "ParentFolderId" :: Maybe (ResourceIdType) , "ResourceState" :: Maybe (ResourceStateType) } -> {"AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "FolderId" :: (ResourceIdType) , "Name" :: Maybe (ResourceNameType) , "ParentFolderId" :: Maybe (ResourceIdType) , "ResourceState" :: Maybe (ResourceStateType) } ) -> UpdateFolderRequest
+newUpdateFolderRequest' _FolderId customize = (UpdateFolderRequest <<< customize) { "FolderId": _FolderId, "AuthenticationToken": Nothing, "Name": Nothing, "ParentFolderId": Nothing, "ResourceState": Nothing }
 
 
 
 newtype UpdateUserRequest = UpdateUserRequest 
-  { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType)
+  { "AuthenticationToken" :: Maybe (AuthenticationHeaderType)
   , "UserId" :: (IdType)
-  , "GivenName" :: NullOrUndefined (UserAttributeValueType)
-  , "Surname" :: NullOrUndefined (UserAttributeValueType)
-  , "Type" :: NullOrUndefined (UserType)
-  , "StorageRule" :: NullOrUndefined (StorageRuleType)
-  , "TimeZoneId" :: NullOrUndefined (TimeZoneIdType)
-  , "Locale" :: NullOrUndefined (LocaleType)
-  , "GrantPoweruserPrivileges" :: NullOrUndefined (BooleanEnumType)
+  , "GivenName" :: Maybe (UserAttributeValueType)
+  , "Surname" :: Maybe (UserAttributeValueType)
+  , "Type" :: Maybe (UserType)
+  , "StorageRule" :: Maybe (StorageRuleType)
+  , "TimeZoneId" :: Maybe (TimeZoneIdType)
+  , "Locale" :: Maybe (LocaleType)
+  , "GrantPoweruserPrivileges" :: Maybe (BooleanEnumType)
   }
 derive instance newtypeUpdateUserRequest :: Newtype UpdateUserRequest _
 derive instance repGenericUpdateUserRequest :: Generic UpdateUserRequest _
@@ -2964,17 +2963,17 @@ instance encodeUpdateUserRequest :: Encode UpdateUserRequest where encode = gene
 
 -- | Constructs UpdateUserRequest from required parameters
 newUpdateUserRequest :: IdType -> UpdateUserRequest
-newUpdateUserRequest _UserId = UpdateUserRequest { "UserId": _UserId, "AuthenticationToken": (NullOrUndefined Nothing), "GivenName": (NullOrUndefined Nothing), "GrantPoweruserPrivileges": (NullOrUndefined Nothing), "Locale": (NullOrUndefined Nothing), "StorageRule": (NullOrUndefined Nothing), "Surname": (NullOrUndefined Nothing), "TimeZoneId": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
+newUpdateUserRequest _UserId = UpdateUserRequest { "UserId": _UserId, "AuthenticationToken": Nothing, "GivenName": Nothing, "GrantPoweruserPrivileges": Nothing, "Locale": Nothing, "StorageRule": Nothing, "Surname": Nothing, "TimeZoneId": Nothing, "Type": Nothing }
 
 -- | Constructs UpdateUserRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateUserRequest' :: IdType -> ( { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "UserId" :: (IdType) , "GivenName" :: NullOrUndefined (UserAttributeValueType) , "Surname" :: NullOrUndefined (UserAttributeValueType) , "Type" :: NullOrUndefined (UserType) , "StorageRule" :: NullOrUndefined (StorageRuleType) , "TimeZoneId" :: NullOrUndefined (TimeZoneIdType) , "Locale" :: NullOrUndefined (LocaleType) , "GrantPoweruserPrivileges" :: NullOrUndefined (BooleanEnumType) } -> {"AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) , "UserId" :: (IdType) , "GivenName" :: NullOrUndefined (UserAttributeValueType) , "Surname" :: NullOrUndefined (UserAttributeValueType) , "Type" :: NullOrUndefined (UserType) , "StorageRule" :: NullOrUndefined (StorageRuleType) , "TimeZoneId" :: NullOrUndefined (TimeZoneIdType) , "Locale" :: NullOrUndefined (LocaleType) , "GrantPoweruserPrivileges" :: NullOrUndefined (BooleanEnumType) } ) -> UpdateUserRequest
-newUpdateUserRequest' _UserId customize = (UpdateUserRequest <<< customize) { "UserId": _UserId, "AuthenticationToken": (NullOrUndefined Nothing), "GivenName": (NullOrUndefined Nothing), "GrantPoweruserPrivileges": (NullOrUndefined Nothing), "Locale": (NullOrUndefined Nothing), "StorageRule": (NullOrUndefined Nothing), "Surname": (NullOrUndefined Nothing), "TimeZoneId": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
+newUpdateUserRequest' :: IdType -> ( { "AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "UserId" :: (IdType) , "GivenName" :: Maybe (UserAttributeValueType) , "Surname" :: Maybe (UserAttributeValueType) , "Type" :: Maybe (UserType) , "StorageRule" :: Maybe (StorageRuleType) , "TimeZoneId" :: Maybe (TimeZoneIdType) , "Locale" :: Maybe (LocaleType) , "GrantPoweruserPrivileges" :: Maybe (BooleanEnumType) } -> {"AuthenticationToken" :: Maybe (AuthenticationHeaderType) , "UserId" :: (IdType) , "GivenName" :: Maybe (UserAttributeValueType) , "Surname" :: Maybe (UserAttributeValueType) , "Type" :: Maybe (UserType) , "StorageRule" :: Maybe (StorageRuleType) , "TimeZoneId" :: Maybe (TimeZoneIdType) , "Locale" :: Maybe (LocaleType) , "GrantPoweruserPrivileges" :: Maybe (BooleanEnumType) } ) -> UpdateUserRequest
+newUpdateUserRequest' _UserId customize = (UpdateUserRequest <<< customize) { "UserId": _UserId, "AuthenticationToken": Nothing, "GivenName": Nothing, "GrantPoweruserPrivileges": Nothing, "Locale": Nothing, "StorageRule": Nothing, "Surname": Nothing, "TimeZoneId": Nothing, "Type": Nothing }
 
 
 
 newtype UpdateUserResponse = UpdateUserResponse 
-  { "User" :: NullOrUndefined (User)
+  { "User" :: Maybe (User)
   }
 derive instance newtypeUpdateUserResponse :: Newtype UpdateUserResponse _
 derive instance repGenericUpdateUserResponse :: Generic UpdateUserResponse _
@@ -2984,19 +2983,19 @@ instance encodeUpdateUserResponse :: Encode UpdateUserResponse where encode = ge
 
 -- | Constructs UpdateUserResponse from required parameters
 newUpdateUserResponse :: UpdateUserResponse
-newUpdateUserResponse  = UpdateUserResponse { "User": (NullOrUndefined Nothing) }
+newUpdateUserResponse  = UpdateUserResponse { "User": Nothing }
 
 -- | Constructs UpdateUserResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateUserResponse' :: ( { "User" :: NullOrUndefined (User) } -> {"User" :: NullOrUndefined (User) } ) -> UpdateUserResponse
-newUpdateUserResponse'  customize = (UpdateUserResponse <<< customize) { "User": (NullOrUndefined Nothing) }
+newUpdateUserResponse' :: ( { "User" :: Maybe (User) } -> {"User" :: Maybe (User) } ) -> UpdateUserResponse
+newUpdateUserResponse'  customize = (UpdateUserResponse <<< customize) { "User": Nothing }
 
 
 
 -- | <p>Describes the upload.</p>
 newtype UploadMetadata = UploadMetadata 
-  { "UploadUrl" :: NullOrUndefined (UrlType)
-  , "SignedHeaders" :: NullOrUndefined (SignedHeaderMap)
+  { "UploadUrl" :: Maybe (UrlType)
+  , "SignedHeaders" :: Maybe (SignedHeaderMap)
   }
 derive instance newtypeUploadMetadata :: Newtype UploadMetadata _
 derive instance repGenericUploadMetadata :: Generic UploadMetadata _
@@ -3006,12 +3005,12 @@ instance encodeUploadMetadata :: Encode UploadMetadata where encode = genericEnc
 
 -- | Constructs UploadMetadata from required parameters
 newUploadMetadata :: UploadMetadata
-newUploadMetadata  = UploadMetadata { "SignedHeaders": (NullOrUndefined Nothing), "UploadUrl": (NullOrUndefined Nothing) }
+newUploadMetadata  = UploadMetadata { "SignedHeaders": Nothing, "UploadUrl": Nothing }
 
 -- | Constructs UploadMetadata's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUploadMetadata' :: ( { "UploadUrl" :: NullOrUndefined (UrlType) , "SignedHeaders" :: NullOrUndefined (SignedHeaderMap) } -> {"UploadUrl" :: NullOrUndefined (UrlType) , "SignedHeaders" :: NullOrUndefined (SignedHeaderMap) } ) -> UploadMetadata
-newUploadMetadata'  customize = (UploadMetadata <<< customize) { "SignedHeaders": (NullOrUndefined Nothing), "UploadUrl": (NullOrUndefined Nothing) }
+newUploadMetadata' :: ( { "UploadUrl" :: Maybe (UrlType) , "SignedHeaders" :: Maybe (SignedHeaderMap) } -> {"UploadUrl" :: Maybe (UrlType) , "SignedHeaders" :: Maybe (SignedHeaderMap) } ) -> UploadMetadata
+newUploadMetadata'  customize = (UploadMetadata <<< customize) { "SignedHeaders": Nothing, "UploadUrl": Nothing }
 
 
 
@@ -3026,21 +3025,21 @@ instance encodeUrlType :: Encode UrlType where encode = genericEncode options
 
 -- | <p>Describes a user.</p>
 newtype User = User 
-  { "Id" :: NullOrUndefined (IdType)
-  , "Username" :: NullOrUndefined (UsernameType)
-  , "EmailAddress" :: NullOrUndefined (EmailAddressType)
-  , "GivenName" :: NullOrUndefined (UserAttributeValueType)
-  , "Surname" :: NullOrUndefined (UserAttributeValueType)
-  , "OrganizationId" :: NullOrUndefined (IdType)
-  , "RootFolderId" :: NullOrUndefined (ResourceIdType)
-  , "RecycleBinFolderId" :: NullOrUndefined (ResourceIdType)
-  , "Status" :: NullOrUndefined (UserStatusType)
-  , "Type" :: NullOrUndefined (UserType)
-  , "CreatedTimestamp" :: NullOrUndefined (TimestampType)
-  , "ModifiedTimestamp" :: NullOrUndefined (TimestampType)
-  , "TimeZoneId" :: NullOrUndefined (TimeZoneIdType)
-  , "Locale" :: NullOrUndefined (LocaleType)
-  , "Storage" :: NullOrUndefined (UserStorageMetadata)
+  { "Id" :: Maybe (IdType)
+  , "Username" :: Maybe (UsernameType)
+  , "EmailAddress" :: Maybe (EmailAddressType)
+  , "GivenName" :: Maybe (UserAttributeValueType)
+  , "Surname" :: Maybe (UserAttributeValueType)
+  , "OrganizationId" :: Maybe (IdType)
+  , "RootFolderId" :: Maybe (ResourceIdType)
+  , "RecycleBinFolderId" :: Maybe (ResourceIdType)
+  , "Status" :: Maybe (UserStatusType)
+  , "Type" :: Maybe (UserType)
+  , "CreatedTimestamp" :: Maybe (TimestampType)
+  , "ModifiedTimestamp" :: Maybe (TimestampType)
+  , "TimeZoneId" :: Maybe (TimeZoneIdType)
+  , "Locale" :: Maybe (LocaleType)
+  , "Storage" :: Maybe (UserStorageMetadata)
   }
 derive instance newtypeUser :: Newtype User _
 derive instance repGenericUser :: Generic User _
@@ -3050,12 +3049,12 @@ instance encodeUser :: Encode User where encode = genericEncode options
 
 -- | Constructs User from required parameters
 newUser :: User
-newUser  = User { "CreatedTimestamp": (NullOrUndefined Nothing), "EmailAddress": (NullOrUndefined Nothing), "GivenName": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "Locale": (NullOrUndefined Nothing), "ModifiedTimestamp": (NullOrUndefined Nothing), "OrganizationId": (NullOrUndefined Nothing), "RecycleBinFolderId": (NullOrUndefined Nothing), "RootFolderId": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "Storage": (NullOrUndefined Nothing), "Surname": (NullOrUndefined Nothing), "TimeZoneId": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing), "Username": (NullOrUndefined Nothing) }
+newUser  = User { "CreatedTimestamp": Nothing, "EmailAddress": Nothing, "GivenName": Nothing, "Id": Nothing, "Locale": Nothing, "ModifiedTimestamp": Nothing, "OrganizationId": Nothing, "RecycleBinFolderId": Nothing, "RootFolderId": Nothing, "Status": Nothing, "Storage": Nothing, "Surname": Nothing, "TimeZoneId": Nothing, "Type": Nothing, "Username": Nothing }
 
 -- | Constructs User's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUser' :: ( { "Id" :: NullOrUndefined (IdType) , "Username" :: NullOrUndefined (UsernameType) , "EmailAddress" :: NullOrUndefined (EmailAddressType) , "GivenName" :: NullOrUndefined (UserAttributeValueType) , "Surname" :: NullOrUndefined (UserAttributeValueType) , "OrganizationId" :: NullOrUndefined (IdType) , "RootFolderId" :: NullOrUndefined (ResourceIdType) , "RecycleBinFolderId" :: NullOrUndefined (ResourceIdType) , "Status" :: NullOrUndefined (UserStatusType) , "Type" :: NullOrUndefined (UserType) , "CreatedTimestamp" :: NullOrUndefined (TimestampType) , "ModifiedTimestamp" :: NullOrUndefined (TimestampType) , "TimeZoneId" :: NullOrUndefined (TimeZoneIdType) , "Locale" :: NullOrUndefined (LocaleType) , "Storage" :: NullOrUndefined (UserStorageMetadata) } -> {"Id" :: NullOrUndefined (IdType) , "Username" :: NullOrUndefined (UsernameType) , "EmailAddress" :: NullOrUndefined (EmailAddressType) , "GivenName" :: NullOrUndefined (UserAttributeValueType) , "Surname" :: NullOrUndefined (UserAttributeValueType) , "OrganizationId" :: NullOrUndefined (IdType) , "RootFolderId" :: NullOrUndefined (ResourceIdType) , "RecycleBinFolderId" :: NullOrUndefined (ResourceIdType) , "Status" :: NullOrUndefined (UserStatusType) , "Type" :: NullOrUndefined (UserType) , "CreatedTimestamp" :: NullOrUndefined (TimestampType) , "ModifiedTimestamp" :: NullOrUndefined (TimestampType) , "TimeZoneId" :: NullOrUndefined (TimeZoneIdType) , "Locale" :: NullOrUndefined (LocaleType) , "Storage" :: NullOrUndefined (UserStorageMetadata) } ) -> User
-newUser'  customize = (User <<< customize) { "CreatedTimestamp": (NullOrUndefined Nothing), "EmailAddress": (NullOrUndefined Nothing), "GivenName": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "Locale": (NullOrUndefined Nothing), "ModifiedTimestamp": (NullOrUndefined Nothing), "OrganizationId": (NullOrUndefined Nothing), "RecycleBinFolderId": (NullOrUndefined Nothing), "RootFolderId": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "Storage": (NullOrUndefined Nothing), "Surname": (NullOrUndefined Nothing), "TimeZoneId": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing), "Username": (NullOrUndefined Nothing) }
+newUser' :: ( { "Id" :: Maybe (IdType) , "Username" :: Maybe (UsernameType) , "EmailAddress" :: Maybe (EmailAddressType) , "GivenName" :: Maybe (UserAttributeValueType) , "Surname" :: Maybe (UserAttributeValueType) , "OrganizationId" :: Maybe (IdType) , "RootFolderId" :: Maybe (ResourceIdType) , "RecycleBinFolderId" :: Maybe (ResourceIdType) , "Status" :: Maybe (UserStatusType) , "Type" :: Maybe (UserType) , "CreatedTimestamp" :: Maybe (TimestampType) , "ModifiedTimestamp" :: Maybe (TimestampType) , "TimeZoneId" :: Maybe (TimeZoneIdType) , "Locale" :: Maybe (LocaleType) , "Storage" :: Maybe (UserStorageMetadata) } -> {"Id" :: Maybe (IdType) , "Username" :: Maybe (UsernameType) , "EmailAddress" :: Maybe (EmailAddressType) , "GivenName" :: Maybe (UserAttributeValueType) , "Surname" :: Maybe (UserAttributeValueType) , "OrganizationId" :: Maybe (IdType) , "RootFolderId" :: Maybe (ResourceIdType) , "RecycleBinFolderId" :: Maybe (ResourceIdType) , "Status" :: Maybe (UserStatusType) , "Type" :: Maybe (UserType) , "CreatedTimestamp" :: Maybe (TimestampType) , "ModifiedTimestamp" :: Maybe (TimestampType) , "TimeZoneId" :: Maybe (TimeZoneIdType) , "Locale" :: Maybe (LocaleType) , "Storage" :: Maybe (UserStorageMetadata) } ) -> User
+newUser'  customize = (User <<< customize) { "CreatedTimestamp": Nothing, "EmailAddress": Nothing, "GivenName": Nothing, "Id": Nothing, "Locale": Nothing, "ModifiedTimestamp": Nothing, "OrganizationId": Nothing, "RecycleBinFolderId": Nothing, "RootFolderId": Nothing, "Status": Nothing, "Storage": Nothing, "Surname": Nothing, "TimeZoneId": Nothing, "Type": Nothing, "Username": Nothing }
 
 
 
@@ -3097,11 +3096,11 @@ instance encodeUserIdsType :: Encode UserIdsType where encode = genericEncode op
 
 -- | <p>Describes the metadata of the user.</p>
 newtype UserMetadata = UserMetadata 
-  { "Id" :: NullOrUndefined (IdType)
-  , "Username" :: NullOrUndefined (UsernameType)
-  , "GivenName" :: NullOrUndefined (UserAttributeValueType)
-  , "Surname" :: NullOrUndefined (UserAttributeValueType)
-  , "EmailAddress" :: NullOrUndefined (EmailAddressType)
+  { "Id" :: Maybe (IdType)
+  , "Username" :: Maybe (UsernameType)
+  , "GivenName" :: Maybe (UserAttributeValueType)
+  , "Surname" :: Maybe (UserAttributeValueType)
+  , "EmailAddress" :: Maybe (EmailAddressType)
   }
 derive instance newtypeUserMetadata :: Newtype UserMetadata _
 derive instance repGenericUserMetadata :: Generic UserMetadata _
@@ -3111,12 +3110,12 @@ instance encodeUserMetadata :: Encode UserMetadata where encode = genericEncode 
 
 -- | Constructs UserMetadata from required parameters
 newUserMetadata :: UserMetadata
-newUserMetadata  = UserMetadata { "EmailAddress": (NullOrUndefined Nothing), "GivenName": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "Surname": (NullOrUndefined Nothing), "Username": (NullOrUndefined Nothing) }
+newUserMetadata  = UserMetadata { "EmailAddress": Nothing, "GivenName": Nothing, "Id": Nothing, "Surname": Nothing, "Username": Nothing }
 
 -- | Constructs UserMetadata's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUserMetadata' :: ( { "Id" :: NullOrUndefined (IdType) , "Username" :: NullOrUndefined (UsernameType) , "GivenName" :: NullOrUndefined (UserAttributeValueType) , "Surname" :: NullOrUndefined (UserAttributeValueType) , "EmailAddress" :: NullOrUndefined (EmailAddressType) } -> {"Id" :: NullOrUndefined (IdType) , "Username" :: NullOrUndefined (UsernameType) , "GivenName" :: NullOrUndefined (UserAttributeValueType) , "Surname" :: NullOrUndefined (UserAttributeValueType) , "EmailAddress" :: NullOrUndefined (EmailAddressType) } ) -> UserMetadata
-newUserMetadata'  customize = (UserMetadata <<< customize) { "EmailAddress": (NullOrUndefined Nothing), "GivenName": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "Surname": (NullOrUndefined Nothing), "Username": (NullOrUndefined Nothing) }
+newUserMetadata' :: ( { "Id" :: Maybe (IdType) , "Username" :: Maybe (UsernameType) , "GivenName" :: Maybe (UserAttributeValueType) , "Surname" :: Maybe (UserAttributeValueType) , "EmailAddress" :: Maybe (EmailAddressType) } -> {"Id" :: Maybe (IdType) , "Username" :: Maybe (UsernameType) , "GivenName" :: Maybe (UserAttributeValueType) , "Surname" :: Maybe (UserAttributeValueType) , "EmailAddress" :: Maybe (EmailAddressType) } ) -> UserMetadata
+newUserMetadata'  customize = (UserMetadata <<< customize) { "EmailAddress": Nothing, "GivenName": Nothing, "Id": Nothing, "Surname": Nothing, "Username": Nothing }
 
 
 
@@ -3149,8 +3148,8 @@ instance encodeUserStatusType :: Encode UserStatusType where encode = genericEnc
 
 -- | <p>Describes the storage for a user.</p>
 newtype UserStorageMetadata = UserStorageMetadata 
-  { "StorageUtilizedInBytes" :: NullOrUndefined (SizeType)
-  , "StorageRule" :: NullOrUndefined (StorageRuleType)
+  { "StorageUtilizedInBytes" :: Maybe (SizeType)
+  , "StorageRule" :: Maybe (StorageRuleType)
   }
 derive instance newtypeUserStorageMetadata :: Newtype UserStorageMetadata _
 derive instance repGenericUserStorageMetadata :: Generic UserStorageMetadata _
@@ -3160,12 +3159,12 @@ instance encodeUserStorageMetadata :: Encode UserStorageMetadata where encode = 
 
 -- | Constructs UserStorageMetadata from required parameters
 newUserStorageMetadata :: UserStorageMetadata
-newUserStorageMetadata  = UserStorageMetadata { "StorageRule": (NullOrUndefined Nothing), "StorageUtilizedInBytes": (NullOrUndefined Nothing) }
+newUserStorageMetadata  = UserStorageMetadata { "StorageRule": Nothing, "StorageUtilizedInBytes": Nothing }
 
 -- | Constructs UserStorageMetadata's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUserStorageMetadata' :: ( { "StorageUtilizedInBytes" :: NullOrUndefined (SizeType) , "StorageRule" :: NullOrUndefined (StorageRuleType) } -> {"StorageUtilizedInBytes" :: NullOrUndefined (SizeType) , "StorageRule" :: NullOrUndefined (StorageRuleType) } ) -> UserStorageMetadata
-newUserStorageMetadata'  customize = (UserStorageMetadata <<< customize) { "StorageRule": (NullOrUndefined Nothing), "StorageUtilizedInBytes": (NullOrUndefined Nothing) }
+newUserStorageMetadata' :: ( { "StorageUtilizedInBytes" :: Maybe (SizeType) , "StorageRule" :: Maybe (StorageRuleType) } -> {"StorageUtilizedInBytes" :: Maybe (SizeType) , "StorageRule" :: Maybe (StorageRuleType) } ) -> UserStorageMetadata
+newUserStorageMetadata'  customize = (UserStorageMetadata <<< customize) { "StorageRule": Nothing, "StorageUtilizedInBytes": Nothing }
 
 
 

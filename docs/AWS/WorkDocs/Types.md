@@ -10,7 +10,7 @@ options :: Options
 
 ``` purescript
 newtype AbortDocumentVersionUploadRequest
-  = AbortDocumentVersionUploadRequest { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "DocumentId" :: ResourceIdType, "VersionId" :: DocumentVersionIdType }
+  = AbortDocumentVersionUploadRequest { "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "DocumentId" :: ResourceIdType, "VersionId" :: DocumentVersionIdType }
 ```
 
 ##### Instances
@@ -33,7 +33,7 @@ Constructs AbortDocumentVersionUploadRequest from required parameters
 #### `newAbortDocumentVersionUploadRequest'`
 
 ``` purescript
-newAbortDocumentVersionUploadRequest' :: ResourceIdType -> DocumentVersionIdType -> ({ "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "DocumentId" :: ResourceIdType, "VersionId" :: DocumentVersionIdType } -> { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "DocumentId" :: ResourceIdType, "VersionId" :: DocumentVersionIdType }) -> AbortDocumentVersionUploadRequest
+newAbortDocumentVersionUploadRequest' :: ResourceIdType -> DocumentVersionIdType -> ({ "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "DocumentId" :: ResourceIdType, "VersionId" :: DocumentVersionIdType } -> { "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "DocumentId" :: ResourceIdType, "VersionId" :: DocumentVersionIdType }) -> AbortDocumentVersionUploadRequest
 ```
 
 Constructs AbortDocumentVersionUploadRequest's fields from required parameters
@@ -42,7 +42,7 @@ Constructs AbortDocumentVersionUploadRequest's fields from required parameters
 
 ``` purescript
 newtype ActivateUserRequest
-  = ActivateUserRequest { "UserId" :: IdType, "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) }
+  = ActivateUserRequest { "UserId" :: IdType, "AuthenticationToken" :: Maybe (AuthenticationHeaderType) }
 ```
 
 ##### Instances
@@ -65,7 +65,7 @@ Constructs ActivateUserRequest from required parameters
 #### `newActivateUserRequest'`
 
 ``` purescript
-newActivateUserRequest' :: IdType -> ({ "UserId" :: IdType, "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) } -> { "UserId" :: IdType, "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) }) -> ActivateUserRequest
+newActivateUserRequest' :: IdType -> ({ "UserId" :: IdType, "AuthenticationToken" :: Maybe (AuthenticationHeaderType) } -> { "UserId" :: IdType, "AuthenticationToken" :: Maybe (AuthenticationHeaderType) }) -> ActivateUserRequest
 ```
 
 Constructs ActivateUserRequest's fields from required parameters
@@ -74,7 +74,7 @@ Constructs ActivateUserRequest's fields from required parameters
 
 ``` purescript
 newtype ActivateUserResponse
-  = ActivateUserResponse { "User" :: NullOrUndefined (User) }
+  = ActivateUserResponse { "User" :: Maybe (User) }
 ```
 
 ##### Instances
@@ -97,7 +97,7 @@ Constructs ActivateUserResponse from required parameters
 #### `newActivateUserResponse'`
 
 ``` purescript
-newActivateUserResponse' :: ({ "User" :: NullOrUndefined (User) } -> { "User" :: NullOrUndefined (User) }) -> ActivateUserResponse
+newActivateUserResponse' :: ({ "User" :: Maybe (User) } -> { "User" :: Maybe (User) }) -> ActivateUserResponse
 ```
 
 Constructs ActivateUserResponse's fields from required parameters
@@ -106,7 +106,7 @@ Constructs ActivateUserResponse's fields from required parameters
 
 ``` purescript
 newtype Activity
-  = Activity { "Type" :: NullOrUndefined (ActivityType), "TimeStamp" :: NullOrUndefined (TimestampType), "OrganizationId" :: NullOrUndefined (IdType), "Initiator" :: NullOrUndefined (UserMetadata), "Participants" :: NullOrUndefined (Participants), "ResourceMetadata" :: NullOrUndefined (ResourceMetadata), "OriginalParent" :: NullOrUndefined (ResourceMetadata), "CommentMetadata" :: NullOrUndefined (CommentMetadata) }
+  = Activity { "Type" :: Maybe (ActivityType), "TimeStamp" :: Maybe (TimestampType), "OrganizationId" :: Maybe (IdType), "Initiator" :: Maybe (UserMetadata), "Participants" :: Maybe (Participants), "ResourceMetadata" :: Maybe (ResourceMetadata), "OriginalParent" :: Maybe (ResourceMetadata), "CommentMetadata" :: Maybe (CommentMetadata) }
 ```
 
 <p>Describes the activity information.</p>
@@ -131,7 +131,7 @@ Constructs Activity from required parameters
 #### `newActivity'`
 
 ``` purescript
-newActivity' :: ({ "Type" :: NullOrUndefined (ActivityType), "TimeStamp" :: NullOrUndefined (TimestampType), "OrganizationId" :: NullOrUndefined (IdType), "Initiator" :: NullOrUndefined (UserMetadata), "Participants" :: NullOrUndefined (Participants), "ResourceMetadata" :: NullOrUndefined (ResourceMetadata), "OriginalParent" :: NullOrUndefined (ResourceMetadata), "CommentMetadata" :: NullOrUndefined (CommentMetadata) } -> { "Type" :: NullOrUndefined (ActivityType), "TimeStamp" :: NullOrUndefined (TimestampType), "OrganizationId" :: NullOrUndefined (IdType), "Initiator" :: NullOrUndefined (UserMetadata), "Participants" :: NullOrUndefined (Participants), "ResourceMetadata" :: NullOrUndefined (ResourceMetadata), "OriginalParent" :: NullOrUndefined (ResourceMetadata), "CommentMetadata" :: NullOrUndefined (CommentMetadata) }) -> Activity
+newActivity' :: ({ "Type" :: Maybe (ActivityType), "TimeStamp" :: Maybe (TimestampType), "OrganizationId" :: Maybe (IdType), "Initiator" :: Maybe (UserMetadata), "Participants" :: Maybe (Participants), "ResourceMetadata" :: Maybe (ResourceMetadata), "OriginalParent" :: Maybe (ResourceMetadata), "CommentMetadata" :: Maybe (CommentMetadata) } -> { "Type" :: Maybe (ActivityType), "TimeStamp" :: Maybe (TimestampType), "OrganizationId" :: Maybe (IdType), "Initiator" :: Maybe (UserMetadata), "Participants" :: Maybe (Participants), "ResourceMetadata" :: Maybe (ResourceMetadata), "OriginalParent" :: Maybe (ResourceMetadata), "CommentMetadata" :: Maybe (CommentMetadata) }) -> Activity
 ```
 
 Constructs Activity's fields from required parameters
@@ -156,7 +156,7 @@ Encode ActivityType
 
 ``` purescript
 newtype AddResourcePermissionsRequest
-  = AddResourcePermissionsRequest { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "ResourceId" :: ResourceIdType, "Principals" :: SharePrincipalList, "NotificationOptions" :: NullOrUndefined (NotificationOptions) }
+  = AddResourcePermissionsRequest { "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "ResourceId" :: ResourceIdType, "Principals" :: SharePrincipalList, "NotificationOptions" :: Maybe (NotificationOptions) }
 ```
 
 ##### Instances
@@ -179,7 +179,7 @@ Constructs AddResourcePermissionsRequest from required parameters
 #### `newAddResourcePermissionsRequest'`
 
 ``` purescript
-newAddResourcePermissionsRequest' :: SharePrincipalList -> ResourceIdType -> ({ "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "ResourceId" :: ResourceIdType, "Principals" :: SharePrincipalList, "NotificationOptions" :: NullOrUndefined (NotificationOptions) } -> { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "ResourceId" :: ResourceIdType, "Principals" :: SharePrincipalList, "NotificationOptions" :: NullOrUndefined (NotificationOptions) }) -> AddResourcePermissionsRequest
+newAddResourcePermissionsRequest' :: SharePrincipalList -> ResourceIdType -> ({ "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "ResourceId" :: ResourceIdType, "Principals" :: SharePrincipalList, "NotificationOptions" :: Maybe (NotificationOptions) } -> { "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "ResourceId" :: ResourceIdType, "Principals" :: SharePrincipalList, "NotificationOptions" :: Maybe (NotificationOptions) }) -> AddResourcePermissionsRequest
 ```
 
 Constructs AddResourcePermissionsRequest's fields from required parameters
@@ -188,7 +188,7 @@ Constructs AddResourcePermissionsRequest's fields from required parameters
 
 ``` purescript
 newtype AddResourcePermissionsResponse
-  = AddResourcePermissionsResponse { "ShareResults" :: NullOrUndefined (ShareResultsList) }
+  = AddResourcePermissionsResponse { "ShareResults" :: Maybe (ShareResultsList) }
 ```
 
 ##### Instances
@@ -211,7 +211,7 @@ Constructs AddResourcePermissionsResponse from required parameters
 #### `newAddResourcePermissionsResponse'`
 
 ``` purescript
-newAddResourcePermissionsResponse' :: ({ "ShareResults" :: NullOrUndefined (ShareResultsList) } -> { "ShareResults" :: NullOrUndefined (ShareResultsList) }) -> AddResourcePermissionsResponse
+newAddResourcePermissionsResponse' :: ({ "ShareResults" :: Maybe (ShareResultsList) } -> { "ShareResults" :: Maybe (ShareResultsList) }) -> AddResourcePermissionsResponse
 ```
 
 Constructs AddResourcePermissionsResponse's fields from required parameters
@@ -268,7 +268,7 @@ Encode BooleanType
 
 ``` purescript
 newtype Comment
-  = Comment { "CommentId" :: CommentIdType, "ParentId" :: NullOrUndefined (CommentIdType), "ThreadId" :: NullOrUndefined (CommentIdType), "Text" :: NullOrUndefined (CommentTextType), "Contributor" :: NullOrUndefined (User), "CreatedTimestamp" :: NullOrUndefined (TimestampType), "Status" :: NullOrUndefined (CommentStatusType), "Visibility" :: NullOrUndefined (CommentVisibilityType), "RecipientId" :: NullOrUndefined (IdType) }
+  = Comment { "CommentId" :: CommentIdType, "ParentId" :: Maybe (CommentIdType), "ThreadId" :: Maybe (CommentIdType), "Text" :: Maybe (CommentTextType), "Contributor" :: Maybe (User), "CreatedTimestamp" :: Maybe (TimestampType), "Status" :: Maybe (CommentStatusType), "Visibility" :: Maybe (CommentVisibilityType), "RecipientId" :: Maybe (IdType) }
 ```
 
 <p>Describes a comment.</p>
@@ -293,7 +293,7 @@ Constructs Comment from required parameters
 #### `newComment'`
 
 ``` purescript
-newComment' :: CommentIdType -> ({ "CommentId" :: CommentIdType, "ParentId" :: NullOrUndefined (CommentIdType), "ThreadId" :: NullOrUndefined (CommentIdType), "Text" :: NullOrUndefined (CommentTextType), "Contributor" :: NullOrUndefined (User), "CreatedTimestamp" :: NullOrUndefined (TimestampType), "Status" :: NullOrUndefined (CommentStatusType), "Visibility" :: NullOrUndefined (CommentVisibilityType), "RecipientId" :: NullOrUndefined (IdType) } -> { "CommentId" :: CommentIdType, "ParentId" :: NullOrUndefined (CommentIdType), "ThreadId" :: NullOrUndefined (CommentIdType), "Text" :: NullOrUndefined (CommentTextType), "Contributor" :: NullOrUndefined (User), "CreatedTimestamp" :: NullOrUndefined (TimestampType), "Status" :: NullOrUndefined (CommentStatusType), "Visibility" :: NullOrUndefined (CommentVisibilityType), "RecipientId" :: NullOrUndefined (IdType) }) -> Comment
+newComment' :: CommentIdType -> ({ "CommentId" :: CommentIdType, "ParentId" :: Maybe (CommentIdType), "ThreadId" :: Maybe (CommentIdType), "Text" :: Maybe (CommentTextType), "Contributor" :: Maybe (User), "CreatedTimestamp" :: Maybe (TimestampType), "Status" :: Maybe (CommentStatusType), "Visibility" :: Maybe (CommentVisibilityType), "RecipientId" :: Maybe (IdType) } -> { "CommentId" :: CommentIdType, "ParentId" :: Maybe (CommentIdType), "ThreadId" :: Maybe (CommentIdType), "Text" :: Maybe (CommentTextType), "Contributor" :: Maybe (User), "CreatedTimestamp" :: Maybe (TimestampType), "Status" :: Maybe (CommentStatusType), "Visibility" :: Maybe (CommentVisibilityType), "RecipientId" :: Maybe (IdType) }) -> Comment
 ```
 
 Constructs Comment's fields from required parameters
@@ -334,7 +334,7 @@ Encode CommentList
 
 ``` purescript
 newtype CommentMetadata
-  = CommentMetadata { "CommentId" :: NullOrUndefined (CommentIdType), "Contributor" :: NullOrUndefined (User), "CreatedTimestamp" :: NullOrUndefined (TimestampType), "CommentStatus" :: NullOrUndefined (CommentStatusType), "RecipientId" :: NullOrUndefined (IdType) }
+  = CommentMetadata { "CommentId" :: Maybe (CommentIdType), "Contributor" :: Maybe (User), "CreatedTimestamp" :: Maybe (TimestampType), "CommentStatus" :: Maybe (CommentStatusType), "RecipientId" :: Maybe (IdType) }
 ```
 
 <p>Describes the metadata of a comment.</p>
@@ -359,7 +359,7 @@ Constructs CommentMetadata from required parameters
 #### `newCommentMetadata'`
 
 ``` purescript
-newCommentMetadata' :: ({ "CommentId" :: NullOrUndefined (CommentIdType), "Contributor" :: NullOrUndefined (User), "CreatedTimestamp" :: NullOrUndefined (TimestampType), "CommentStatus" :: NullOrUndefined (CommentStatusType), "RecipientId" :: NullOrUndefined (IdType) } -> { "CommentId" :: NullOrUndefined (CommentIdType), "Contributor" :: NullOrUndefined (User), "CreatedTimestamp" :: NullOrUndefined (TimestampType), "CommentStatus" :: NullOrUndefined (CommentStatusType), "RecipientId" :: NullOrUndefined (IdType) }) -> CommentMetadata
+newCommentMetadata' :: ({ "CommentId" :: Maybe (CommentIdType), "Contributor" :: Maybe (User), "CreatedTimestamp" :: Maybe (TimestampType), "CommentStatus" :: Maybe (CommentStatusType), "RecipientId" :: Maybe (IdType) } -> { "CommentId" :: Maybe (CommentIdType), "Contributor" :: Maybe (User), "CreatedTimestamp" :: Maybe (TimestampType), "CommentStatus" :: Maybe (CommentStatusType), "RecipientId" :: Maybe (IdType) }) -> CommentMetadata
 ```
 
 Constructs CommentMetadata's fields from required parameters
@@ -416,7 +416,7 @@ Encode CommentVisibilityType
 
 ``` purescript
 newtype ConcurrentModificationException
-  = ConcurrentModificationException { "Message" :: NullOrUndefined (ErrorMessageType) }
+  = ConcurrentModificationException { "Message" :: Maybe (ErrorMessageType) }
 ```
 
 <p>The resource hierarchy is changing.</p>
@@ -441,7 +441,7 @@ Constructs ConcurrentModificationException from required parameters
 #### `newConcurrentModificationException'`
 
 ``` purescript
-newConcurrentModificationException' :: ({ "Message" :: NullOrUndefined (ErrorMessageType) } -> { "Message" :: NullOrUndefined (ErrorMessageType) }) -> ConcurrentModificationException
+newConcurrentModificationException' :: ({ "Message" :: Maybe (ErrorMessageType) } -> { "Message" :: Maybe (ErrorMessageType) }) -> ConcurrentModificationException
 ```
 
 Constructs ConcurrentModificationException's fields from required parameters
@@ -450,7 +450,7 @@ Constructs ConcurrentModificationException's fields from required parameters
 
 ``` purescript
 newtype CreateCommentRequest
-  = CreateCommentRequest { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "DocumentId" :: ResourceIdType, "VersionId" :: DocumentVersionIdType, "ParentId" :: NullOrUndefined (CommentIdType), "ThreadId" :: NullOrUndefined (CommentIdType), "Text" :: CommentTextType, "Visibility" :: NullOrUndefined (CommentVisibilityType), "NotifyCollaborators" :: NullOrUndefined (BooleanType) }
+  = CreateCommentRequest { "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "DocumentId" :: ResourceIdType, "VersionId" :: DocumentVersionIdType, "ParentId" :: Maybe (CommentIdType), "ThreadId" :: Maybe (CommentIdType), "Text" :: CommentTextType, "Visibility" :: Maybe (CommentVisibilityType), "NotifyCollaborators" :: Maybe (BooleanType) }
 ```
 
 ##### Instances
@@ -473,7 +473,7 @@ Constructs CreateCommentRequest from required parameters
 #### `newCreateCommentRequest'`
 
 ``` purescript
-newCreateCommentRequest' :: ResourceIdType -> CommentTextType -> DocumentVersionIdType -> ({ "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "DocumentId" :: ResourceIdType, "VersionId" :: DocumentVersionIdType, "ParentId" :: NullOrUndefined (CommentIdType), "ThreadId" :: NullOrUndefined (CommentIdType), "Text" :: CommentTextType, "Visibility" :: NullOrUndefined (CommentVisibilityType), "NotifyCollaborators" :: NullOrUndefined (BooleanType) } -> { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "DocumentId" :: ResourceIdType, "VersionId" :: DocumentVersionIdType, "ParentId" :: NullOrUndefined (CommentIdType), "ThreadId" :: NullOrUndefined (CommentIdType), "Text" :: CommentTextType, "Visibility" :: NullOrUndefined (CommentVisibilityType), "NotifyCollaborators" :: NullOrUndefined (BooleanType) }) -> CreateCommentRequest
+newCreateCommentRequest' :: ResourceIdType -> CommentTextType -> DocumentVersionIdType -> ({ "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "DocumentId" :: ResourceIdType, "VersionId" :: DocumentVersionIdType, "ParentId" :: Maybe (CommentIdType), "ThreadId" :: Maybe (CommentIdType), "Text" :: CommentTextType, "Visibility" :: Maybe (CommentVisibilityType), "NotifyCollaborators" :: Maybe (BooleanType) } -> { "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "DocumentId" :: ResourceIdType, "VersionId" :: DocumentVersionIdType, "ParentId" :: Maybe (CommentIdType), "ThreadId" :: Maybe (CommentIdType), "Text" :: CommentTextType, "Visibility" :: Maybe (CommentVisibilityType), "NotifyCollaborators" :: Maybe (BooleanType) }) -> CreateCommentRequest
 ```
 
 Constructs CreateCommentRequest's fields from required parameters
@@ -482,7 +482,7 @@ Constructs CreateCommentRequest's fields from required parameters
 
 ``` purescript
 newtype CreateCommentResponse
-  = CreateCommentResponse { "Comment" :: NullOrUndefined (Comment) }
+  = CreateCommentResponse { "Comment" :: Maybe (Comment) }
 ```
 
 ##### Instances
@@ -505,7 +505,7 @@ Constructs CreateCommentResponse from required parameters
 #### `newCreateCommentResponse'`
 
 ``` purescript
-newCreateCommentResponse' :: ({ "Comment" :: NullOrUndefined (Comment) } -> { "Comment" :: NullOrUndefined (Comment) }) -> CreateCommentResponse
+newCreateCommentResponse' :: ({ "Comment" :: Maybe (Comment) } -> { "Comment" :: Maybe (Comment) }) -> CreateCommentResponse
 ```
 
 Constructs CreateCommentResponse's fields from required parameters
@@ -514,7 +514,7 @@ Constructs CreateCommentResponse's fields from required parameters
 
 ``` purescript
 newtype CreateCustomMetadataRequest
-  = CreateCustomMetadataRequest { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "ResourceId" :: ResourceIdType, "VersionId" :: NullOrUndefined (DocumentVersionIdType), "CustomMetadata" :: CustomMetadataMap }
+  = CreateCustomMetadataRequest { "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "ResourceId" :: ResourceIdType, "VersionId" :: Maybe (DocumentVersionIdType), "CustomMetadata" :: CustomMetadataMap }
 ```
 
 ##### Instances
@@ -537,7 +537,7 @@ Constructs CreateCustomMetadataRequest from required parameters
 #### `newCreateCustomMetadataRequest'`
 
 ``` purescript
-newCreateCustomMetadataRequest' :: CustomMetadataMap -> ResourceIdType -> ({ "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "ResourceId" :: ResourceIdType, "VersionId" :: NullOrUndefined (DocumentVersionIdType), "CustomMetadata" :: CustomMetadataMap } -> { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "ResourceId" :: ResourceIdType, "VersionId" :: NullOrUndefined (DocumentVersionIdType), "CustomMetadata" :: CustomMetadataMap }) -> CreateCustomMetadataRequest
+newCreateCustomMetadataRequest' :: CustomMetadataMap -> ResourceIdType -> ({ "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "ResourceId" :: ResourceIdType, "VersionId" :: Maybe (DocumentVersionIdType), "CustomMetadata" :: CustomMetadataMap } -> { "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "ResourceId" :: ResourceIdType, "VersionId" :: Maybe (DocumentVersionIdType), "CustomMetadata" :: CustomMetadataMap }) -> CreateCustomMetadataRequest
 ```
 
 Constructs CreateCustomMetadataRequest's fields from required parameters
@@ -562,7 +562,7 @@ Encode CreateCustomMetadataResponse
 
 ``` purescript
 newtype CreateFolderRequest
-  = CreateFolderRequest { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "Name" :: NullOrUndefined (ResourceNameType), "ParentFolderId" :: ResourceIdType }
+  = CreateFolderRequest { "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "Name" :: Maybe (ResourceNameType), "ParentFolderId" :: ResourceIdType }
 ```
 
 ##### Instances
@@ -585,7 +585,7 @@ Constructs CreateFolderRequest from required parameters
 #### `newCreateFolderRequest'`
 
 ``` purescript
-newCreateFolderRequest' :: ResourceIdType -> ({ "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "Name" :: NullOrUndefined (ResourceNameType), "ParentFolderId" :: ResourceIdType } -> { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "Name" :: NullOrUndefined (ResourceNameType), "ParentFolderId" :: ResourceIdType }) -> CreateFolderRequest
+newCreateFolderRequest' :: ResourceIdType -> ({ "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "Name" :: Maybe (ResourceNameType), "ParentFolderId" :: ResourceIdType } -> { "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "Name" :: Maybe (ResourceNameType), "ParentFolderId" :: ResourceIdType }) -> CreateFolderRequest
 ```
 
 Constructs CreateFolderRequest's fields from required parameters
@@ -594,7 +594,7 @@ Constructs CreateFolderRequest's fields from required parameters
 
 ``` purescript
 newtype CreateFolderResponse
-  = CreateFolderResponse { "Metadata" :: NullOrUndefined (FolderMetadata) }
+  = CreateFolderResponse { "Metadata" :: Maybe (FolderMetadata) }
 ```
 
 ##### Instances
@@ -617,7 +617,7 @@ Constructs CreateFolderResponse from required parameters
 #### `newCreateFolderResponse'`
 
 ``` purescript
-newCreateFolderResponse' :: ({ "Metadata" :: NullOrUndefined (FolderMetadata) } -> { "Metadata" :: NullOrUndefined (FolderMetadata) }) -> CreateFolderResponse
+newCreateFolderResponse' :: ({ "Metadata" :: Maybe (FolderMetadata) } -> { "Metadata" :: Maybe (FolderMetadata) }) -> CreateFolderResponse
 ```
 
 Constructs CreateFolderResponse's fields from required parameters
@@ -626,7 +626,7 @@ Constructs CreateFolderResponse's fields from required parameters
 
 ``` purescript
 newtype CreateLabelsRequest
-  = CreateLabelsRequest { "ResourceId" :: ResourceIdType, "Labels" :: SharedLabels, "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) }
+  = CreateLabelsRequest { "ResourceId" :: ResourceIdType, "Labels" :: SharedLabels, "AuthenticationToken" :: Maybe (AuthenticationHeaderType) }
 ```
 
 ##### Instances
@@ -649,7 +649,7 @@ Constructs CreateLabelsRequest from required parameters
 #### `newCreateLabelsRequest'`
 
 ``` purescript
-newCreateLabelsRequest' :: SharedLabels -> ResourceIdType -> ({ "ResourceId" :: ResourceIdType, "Labels" :: SharedLabels, "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) } -> { "ResourceId" :: ResourceIdType, "Labels" :: SharedLabels, "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) }) -> CreateLabelsRequest
+newCreateLabelsRequest' :: SharedLabels -> ResourceIdType -> ({ "ResourceId" :: ResourceIdType, "Labels" :: SharedLabels, "AuthenticationToken" :: Maybe (AuthenticationHeaderType) } -> { "ResourceId" :: ResourceIdType, "Labels" :: SharedLabels, "AuthenticationToken" :: Maybe (AuthenticationHeaderType) }) -> CreateLabelsRequest
 ```
 
 Constructs CreateLabelsRequest's fields from required parameters
@@ -706,7 +706,7 @@ Constructs CreateNotificationSubscriptionRequest's fields from required paramete
 
 ``` purescript
 newtype CreateNotificationSubscriptionResponse
-  = CreateNotificationSubscriptionResponse { "Subscription" :: NullOrUndefined (Subscription) }
+  = CreateNotificationSubscriptionResponse { "Subscription" :: Maybe (Subscription) }
 ```
 
 ##### Instances
@@ -729,7 +729,7 @@ Constructs CreateNotificationSubscriptionResponse from required parameters
 #### `newCreateNotificationSubscriptionResponse'`
 
 ``` purescript
-newCreateNotificationSubscriptionResponse' :: ({ "Subscription" :: NullOrUndefined (Subscription) } -> { "Subscription" :: NullOrUndefined (Subscription) }) -> CreateNotificationSubscriptionResponse
+newCreateNotificationSubscriptionResponse' :: ({ "Subscription" :: Maybe (Subscription) } -> { "Subscription" :: Maybe (Subscription) }) -> CreateNotificationSubscriptionResponse
 ```
 
 Constructs CreateNotificationSubscriptionResponse's fields from required parameters
@@ -738,7 +738,7 @@ Constructs CreateNotificationSubscriptionResponse's fields from required paramet
 
 ``` purescript
 newtype CreateUserRequest
-  = CreateUserRequest { "OrganizationId" :: NullOrUndefined (IdType), "Username" :: UsernameType, "EmailAddress" :: NullOrUndefined (EmailAddressType), "GivenName" :: UserAttributeValueType, "Surname" :: UserAttributeValueType, "Password" :: PasswordType, "TimeZoneId" :: NullOrUndefined (TimeZoneIdType), "StorageRule" :: NullOrUndefined (StorageRuleType), "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) }
+  = CreateUserRequest { "OrganizationId" :: Maybe (IdType), "Username" :: UsernameType, "EmailAddress" :: Maybe (EmailAddressType), "GivenName" :: UserAttributeValueType, "Surname" :: UserAttributeValueType, "Password" :: PasswordType, "TimeZoneId" :: Maybe (TimeZoneIdType), "StorageRule" :: Maybe (StorageRuleType), "AuthenticationToken" :: Maybe (AuthenticationHeaderType) }
 ```
 
 ##### Instances
@@ -761,7 +761,7 @@ Constructs CreateUserRequest from required parameters
 #### `newCreateUserRequest'`
 
 ``` purescript
-newCreateUserRequest' :: UserAttributeValueType -> PasswordType -> UserAttributeValueType -> UsernameType -> ({ "OrganizationId" :: NullOrUndefined (IdType), "Username" :: UsernameType, "EmailAddress" :: NullOrUndefined (EmailAddressType), "GivenName" :: UserAttributeValueType, "Surname" :: UserAttributeValueType, "Password" :: PasswordType, "TimeZoneId" :: NullOrUndefined (TimeZoneIdType), "StorageRule" :: NullOrUndefined (StorageRuleType), "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) } -> { "OrganizationId" :: NullOrUndefined (IdType), "Username" :: UsernameType, "EmailAddress" :: NullOrUndefined (EmailAddressType), "GivenName" :: UserAttributeValueType, "Surname" :: UserAttributeValueType, "Password" :: PasswordType, "TimeZoneId" :: NullOrUndefined (TimeZoneIdType), "StorageRule" :: NullOrUndefined (StorageRuleType), "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) }) -> CreateUserRequest
+newCreateUserRequest' :: UserAttributeValueType -> PasswordType -> UserAttributeValueType -> UsernameType -> ({ "OrganizationId" :: Maybe (IdType), "Username" :: UsernameType, "EmailAddress" :: Maybe (EmailAddressType), "GivenName" :: UserAttributeValueType, "Surname" :: UserAttributeValueType, "Password" :: PasswordType, "TimeZoneId" :: Maybe (TimeZoneIdType), "StorageRule" :: Maybe (StorageRuleType), "AuthenticationToken" :: Maybe (AuthenticationHeaderType) } -> { "OrganizationId" :: Maybe (IdType), "Username" :: UsernameType, "EmailAddress" :: Maybe (EmailAddressType), "GivenName" :: UserAttributeValueType, "Surname" :: UserAttributeValueType, "Password" :: PasswordType, "TimeZoneId" :: Maybe (TimeZoneIdType), "StorageRule" :: Maybe (StorageRuleType), "AuthenticationToken" :: Maybe (AuthenticationHeaderType) }) -> CreateUserRequest
 ```
 
 Constructs CreateUserRequest's fields from required parameters
@@ -770,7 +770,7 @@ Constructs CreateUserRequest's fields from required parameters
 
 ``` purescript
 newtype CreateUserResponse
-  = CreateUserResponse { "User" :: NullOrUndefined (User) }
+  = CreateUserResponse { "User" :: Maybe (User) }
 ```
 
 ##### Instances
@@ -793,7 +793,7 @@ Constructs CreateUserResponse from required parameters
 #### `newCreateUserResponse'`
 
 ``` purescript
-newCreateUserResponse' :: ({ "User" :: NullOrUndefined (User) } -> { "User" :: NullOrUndefined (User) }) -> CreateUserResponse
+newCreateUserResponse' :: ({ "User" :: Maybe (User) } -> { "User" :: Maybe (User) }) -> CreateUserResponse
 ```
 
 Constructs CreateUserResponse's fields from required parameters
@@ -834,7 +834,7 @@ Encode CustomMetadataKeyType
 
 ``` purescript
 newtype CustomMetadataLimitExceededException
-  = CustomMetadataLimitExceededException { "Message" :: NullOrUndefined (ErrorMessageType) }
+  = CustomMetadataLimitExceededException { "Message" :: Maybe (ErrorMessageType) }
 ```
 
 <p>The limit has been reached on the number of custom properties for the specified resource.</p>
@@ -859,7 +859,7 @@ Constructs CustomMetadataLimitExceededException from required parameters
 #### `newCustomMetadataLimitExceededException'`
 
 ``` purescript
-newCustomMetadataLimitExceededException' :: ({ "Message" :: NullOrUndefined (ErrorMessageType) } -> { "Message" :: NullOrUndefined (ErrorMessageType) }) -> CustomMetadataLimitExceededException
+newCustomMetadataLimitExceededException' :: ({ "Message" :: Maybe (ErrorMessageType) } -> { "Message" :: Maybe (ErrorMessageType) }) -> CustomMetadataLimitExceededException
 ```
 
 Constructs CustomMetadataLimitExceededException's fields from required parameters
@@ -900,7 +900,7 @@ Encode CustomMetadataValueType
 
 ``` purescript
 newtype DeactivateUserRequest
-  = DeactivateUserRequest { "UserId" :: IdType, "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) }
+  = DeactivateUserRequest { "UserId" :: IdType, "AuthenticationToken" :: Maybe (AuthenticationHeaderType) }
 ```
 
 ##### Instances
@@ -923,7 +923,7 @@ Constructs DeactivateUserRequest from required parameters
 #### `newDeactivateUserRequest'`
 
 ``` purescript
-newDeactivateUserRequest' :: IdType -> ({ "UserId" :: IdType, "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) } -> { "UserId" :: IdType, "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType) }) -> DeactivateUserRequest
+newDeactivateUserRequest' :: IdType -> ({ "UserId" :: IdType, "AuthenticationToken" :: Maybe (AuthenticationHeaderType) } -> { "UserId" :: IdType, "AuthenticationToken" :: Maybe (AuthenticationHeaderType) }) -> DeactivateUserRequest
 ```
 
 Constructs DeactivateUserRequest's fields from required parameters
@@ -950,7 +950,7 @@ Encode DeactivatingLastSystemUserException
 
 ``` purescript
 newtype DeleteCommentRequest
-  = DeleteCommentRequest { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "DocumentId" :: ResourceIdType, "VersionId" :: DocumentVersionIdType, "CommentId" :: CommentIdType }
+  = DeleteCommentRequest { "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "DocumentId" :: ResourceIdType, "VersionId" :: DocumentVersionIdType, "CommentId" :: CommentIdType }
 ```
 
 ##### Instances
@@ -973,7 +973,7 @@ Constructs DeleteCommentRequest from required parameters
 #### `newDeleteCommentRequest'`
 
 ``` purescript
-newDeleteCommentRequest' :: CommentIdType -> ResourceIdType -> DocumentVersionIdType -> ({ "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "DocumentId" :: ResourceIdType, "VersionId" :: DocumentVersionIdType, "CommentId" :: CommentIdType } -> { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "DocumentId" :: ResourceIdType, "VersionId" :: DocumentVersionIdType, "CommentId" :: CommentIdType }) -> DeleteCommentRequest
+newDeleteCommentRequest' :: CommentIdType -> ResourceIdType -> DocumentVersionIdType -> ({ "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "DocumentId" :: ResourceIdType, "VersionId" :: DocumentVersionIdType, "CommentId" :: CommentIdType } -> { "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "DocumentId" :: ResourceIdType, "VersionId" :: DocumentVersionIdType, "CommentId" :: CommentIdType }) -> DeleteCommentRequest
 ```
 
 Constructs DeleteCommentRequest's fields from required parameters
@@ -982,7 +982,7 @@ Constructs DeleteCommentRequest's fields from required parameters
 
 ``` purescript
 newtype DeleteCustomMetadataRequest
-  = DeleteCustomMetadataRequest { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "ResourceId" :: ResourceIdType, "VersionId" :: NullOrUndefined (DocumentVersionIdType), "Keys" :: NullOrUndefined (CustomMetadataKeyList), "DeleteAll" :: NullOrUndefined (BooleanType) }
+  = DeleteCustomMetadataRequest { "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "ResourceId" :: ResourceIdType, "VersionId" :: Maybe (DocumentVersionIdType), "Keys" :: Maybe (CustomMetadataKeyList), "DeleteAll" :: Maybe (BooleanType) }
 ```
 
 ##### Instances
@@ -1005,7 +1005,7 @@ Constructs DeleteCustomMetadataRequest from required parameters
 #### `newDeleteCustomMetadataRequest'`
 
 ``` purescript
-newDeleteCustomMetadataRequest' :: ResourceIdType -> ({ "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "ResourceId" :: ResourceIdType, "VersionId" :: NullOrUndefined (DocumentVersionIdType), "Keys" :: NullOrUndefined (CustomMetadataKeyList), "DeleteAll" :: NullOrUndefined (BooleanType) } -> { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "ResourceId" :: ResourceIdType, "VersionId" :: NullOrUndefined (DocumentVersionIdType), "Keys" :: NullOrUndefined (CustomMetadataKeyList), "DeleteAll" :: NullOrUndefined (BooleanType) }) -> DeleteCustomMetadataRequest
+newDeleteCustomMetadataRequest' :: ResourceIdType -> ({ "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "ResourceId" :: ResourceIdType, "VersionId" :: Maybe (DocumentVersionIdType), "Keys" :: Maybe (CustomMetadataKeyList), "DeleteAll" :: Maybe (BooleanType) } -> { "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "ResourceId" :: ResourceIdType, "VersionId" :: Maybe (DocumentVersionIdType), "Keys" :: Maybe (CustomMetadataKeyList), "DeleteAll" :: Maybe (BooleanType) }) -> DeleteCustomMetadataRequest
 ```
 
 Constructs DeleteCustomMetadataRequest's fields from required parameters
@@ -1030,7 +1030,7 @@ Encode DeleteCustomMetadataResponse
 
 ``` purescript
 newtype DeleteDocumentRequest
-  = DeleteDocumentRequest { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "DocumentId" :: ResourceIdType }
+  = DeleteDocumentRequest { "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "DocumentId" :: ResourceIdType }
 ```
 
 ##### Instances
@@ -1053,7 +1053,7 @@ Constructs DeleteDocumentRequest from required parameters
 #### `newDeleteDocumentRequest'`
 
 ``` purescript
-newDeleteDocumentRequest' :: ResourceIdType -> ({ "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "DocumentId" :: ResourceIdType } -> { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "DocumentId" :: ResourceIdType }) -> DeleteDocumentRequest
+newDeleteDocumentRequest' :: ResourceIdType -> ({ "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "DocumentId" :: ResourceIdType } -> { "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "DocumentId" :: ResourceIdType }) -> DeleteDocumentRequest
 ```
 
 Constructs DeleteDocumentRequest's fields from required parameters
@@ -1062,7 +1062,7 @@ Constructs DeleteDocumentRequest's fields from required parameters
 
 ``` purescript
 newtype DeleteFolderContentsRequest
-  = DeleteFolderContentsRequest { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "FolderId" :: ResourceIdType }
+  = DeleteFolderContentsRequest { "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "FolderId" :: ResourceIdType }
 ```
 
 ##### Instances
@@ -1085,7 +1085,7 @@ Constructs DeleteFolderContentsRequest from required parameters
 #### `newDeleteFolderContentsRequest'`
 
 ``` purescript
-newDeleteFolderContentsRequest' :: ResourceIdType -> ({ "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "FolderId" :: ResourceIdType } -> { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "FolderId" :: ResourceIdType }) -> DeleteFolderContentsRequest
+newDeleteFolderContentsRequest' :: ResourceIdType -> ({ "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "FolderId" :: ResourceIdType } -> { "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "FolderId" :: ResourceIdType }) -> DeleteFolderContentsRequest
 ```
 
 Constructs DeleteFolderContentsRequest's fields from required parameters
@@ -1094,7 +1094,7 @@ Constructs DeleteFolderContentsRequest's fields from required parameters
 
 ``` purescript
 newtype DeleteFolderRequest
-  = DeleteFolderRequest { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "FolderId" :: ResourceIdType }
+  = DeleteFolderRequest { "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "FolderId" :: ResourceIdType }
 ```
 
 ##### Instances
@@ -1117,7 +1117,7 @@ Constructs DeleteFolderRequest from required parameters
 #### `newDeleteFolderRequest'`
 
 ``` purescript
-newDeleteFolderRequest' :: ResourceIdType -> ({ "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "FolderId" :: ResourceIdType } -> { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "FolderId" :: ResourceIdType }) -> DeleteFolderRequest
+newDeleteFolderRequest' :: ResourceIdType -> ({ "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "FolderId" :: ResourceIdType } -> { "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "FolderId" :: ResourceIdType }) -> DeleteFolderRequest
 ```
 
 Constructs DeleteFolderRequest's fields from required parameters
@@ -1126,7 +1126,7 @@ Constructs DeleteFolderRequest's fields from required parameters
 
 ``` purescript
 newtype DeleteLabelsRequest
-  = DeleteLabelsRequest { "ResourceId" :: ResourceIdType, "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "Labels" :: NullOrUndefined (SharedLabels), "DeleteAll" :: NullOrUndefined (BooleanType) }
+  = DeleteLabelsRequest { "ResourceId" :: ResourceIdType, "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "Labels" :: Maybe (SharedLabels), "DeleteAll" :: Maybe (BooleanType) }
 ```
 
 ##### Instances
@@ -1149,7 +1149,7 @@ Constructs DeleteLabelsRequest from required parameters
 #### `newDeleteLabelsRequest'`
 
 ``` purescript
-newDeleteLabelsRequest' :: ResourceIdType -> ({ "ResourceId" :: ResourceIdType, "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "Labels" :: NullOrUndefined (SharedLabels), "DeleteAll" :: NullOrUndefined (BooleanType) } -> { "ResourceId" :: ResourceIdType, "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "Labels" :: NullOrUndefined (SharedLabels), "DeleteAll" :: NullOrUndefined (BooleanType) }) -> DeleteLabelsRequest
+newDeleteLabelsRequest' :: ResourceIdType -> ({ "ResourceId" :: ResourceIdType, "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "Labels" :: Maybe (SharedLabels), "DeleteAll" :: Maybe (BooleanType) } -> { "ResourceId" :: ResourceIdType, "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "Labels" :: Maybe (SharedLabels), "DeleteAll" :: Maybe (BooleanType) }) -> DeleteLabelsRequest
 ```
 
 Constructs DeleteLabelsRequest's fields from required parameters
@@ -1206,7 +1206,7 @@ Constructs DeleteNotificationSubscriptionRequest's fields from required paramete
 
 ``` purescript
 newtype DeleteUserRequest
-  = DeleteUserRequest { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "UserId" :: IdType }
+  = DeleteUserRequest { "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "UserId" :: IdType }
 ```
 
 ##### Instances
@@ -1229,7 +1229,7 @@ Constructs DeleteUserRequest from required parameters
 #### `newDeleteUserRequest'`
 
 ``` purescript
-newDeleteUserRequest' :: IdType -> ({ "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "UserId" :: IdType } -> { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "UserId" :: IdType }) -> DeleteUserRequest
+newDeleteUserRequest' :: IdType -> ({ "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "UserId" :: IdType } -> { "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "UserId" :: IdType }) -> DeleteUserRequest
 ```
 
 Constructs DeleteUserRequest's fields from required parameters
@@ -1238,7 +1238,7 @@ Constructs DeleteUserRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeActivitiesRequest
-  = DescribeActivitiesRequest { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "StartTime" :: NullOrUndefined (TimestampType), "EndTime" :: NullOrUndefined (TimestampType), "OrganizationId" :: NullOrUndefined (IdType), "UserId" :: NullOrUndefined (IdType), "Limit" :: NullOrUndefined (LimitType), "Marker" :: NullOrUndefined (MarkerType) }
+  = DescribeActivitiesRequest { "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "StartTime" :: Maybe (TimestampType), "EndTime" :: Maybe (TimestampType), "OrganizationId" :: Maybe (IdType), "UserId" :: Maybe (IdType), "Limit" :: Maybe (LimitType), "Marker" :: Maybe (MarkerType) }
 ```
 
 ##### Instances
@@ -1261,7 +1261,7 @@ Constructs DescribeActivitiesRequest from required parameters
 #### `newDescribeActivitiesRequest'`
 
 ``` purescript
-newDescribeActivitiesRequest' :: ({ "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "StartTime" :: NullOrUndefined (TimestampType), "EndTime" :: NullOrUndefined (TimestampType), "OrganizationId" :: NullOrUndefined (IdType), "UserId" :: NullOrUndefined (IdType), "Limit" :: NullOrUndefined (LimitType), "Marker" :: NullOrUndefined (MarkerType) } -> { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "StartTime" :: NullOrUndefined (TimestampType), "EndTime" :: NullOrUndefined (TimestampType), "OrganizationId" :: NullOrUndefined (IdType), "UserId" :: NullOrUndefined (IdType), "Limit" :: NullOrUndefined (LimitType), "Marker" :: NullOrUndefined (MarkerType) }) -> DescribeActivitiesRequest
+newDescribeActivitiesRequest' :: ({ "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "StartTime" :: Maybe (TimestampType), "EndTime" :: Maybe (TimestampType), "OrganizationId" :: Maybe (IdType), "UserId" :: Maybe (IdType), "Limit" :: Maybe (LimitType), "Marker" :: Maybe (MarkerType) } -> { "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "StartTime" :: Maybe (TimestampType), "EndTime" :: Maybe (TimestampType), "OrganizationId" :: Maybe (IdType), "UserId" :: Maybe (IdType), "Limit" :: Maybe (LimitType), "Marker" :: Maybe (MarkerType) }) -> DescribeActivitiesRequest
 ```
 
 Constructs DescribeActivitiesRequest's fields from required parameters
@@ -1270,7 +1270,7 @@ Constructs DescribeActivitiesRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeActivitiesResponse
-  = DescribeActivitiesResponse { "UserActivities" :: NullOrUndefined (UserActivities), "Marker" :: NullOrUndefined (MarkerType) }
+  = DescribeActivitiesResponse { "UserActivities" :: Maybe (UserActivities), "Marker" :: Maybe (MarkerType) }
 ```
 
 ##### Instances
@@ -1293,7 +1293,7 @@ Constructs DescribeActivitiesResponse from required parameters
 #### `newDescribeActivitiesResponse'`
 
 ``` purescript
-newDescribeActivitiesResponse' :: ({ "UserActivities" :: NullOrUndefined (UserActivities), "Marker" :: NullOrUndefined (MarkerType) } -> { "UserActivities" :: NullOrUndefined (UserActivities), "Marker" :: NullOrUndefined (MarkerType) }) -> DescribeActivitiesResponse
+newDescribeActivitiesResponse' :: ({ "UserActivities" :: Maybe (UserActivities), "Marker" :: Maybe (MarkerType) } -> { "UserActivities" :: Maybe (UserActivities), "Marker" :: Maybe (MarkerType) }) -> DescribeActivitiesResponse
 ```
 
 Constructs DescribeActivitiesResponse's fields from required parameters
@@ -1302,7 +1302,7 @@ Constructs DescribeActivitiesResponse's fields from required parameters
 
 ``` purescript
 newtype DescribeCommentsRequest
-  = DescribeCommentsRequest { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "DocumentId" :: ResourceIdType, "VersionId" :: DocumentVersionIdType, "Limit" :: NullOrUndefined (LimitType), "Marker" :: NullOrUndefined (MarkerType) }
+  = DescribeCommentsRequest { "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "DocumentId" :: ResourceIdType, "VersionId" :: DocumentVersionIdType, "Limit" :: Maybe (LimitType), "Marker" :: Maybe (MarkerType) }
 ```
 
 ##### Instances
@@ -1325,7 +1325,7 @@ Constructs DescribeCommentsRequest from required parameters
 #### `newDescribeCommentsRequest'`
 
 ``` purescript
-newDescribeCommentsRequest' :: ResourceIdType -> DocumentVersionIdType -> ({ "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "DocumentId" :: ResourceIdType, "VersionId" :: DocumentVersionIdType, "Limit" :: NullOrUndefined (LimitType), "Marker" :: NullOrUndefined (MarkerType) } -> { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "DocumentId" :: ResourceIdType, "VersionId" :: DocumentVersionIdType, "Limit" :: NullOrUndefined (LimitType), "Marker" :: NullOrUndefined (MarkerType) }) -> DescribeCommentsRequest
+newDescribeCommentsRequest' :: ResourceIdType -> DocumentVersionIdType -> ({ "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "DocumentId" :: ResourceIdType, "VersionId" :: DocumentVersionIdType, "Limit" :: Maybe (LimitType), "Marker" :: Maybe (MarkerType) } -> { "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "DocumentId" :: ResourceIdType, "VersionId" :: DocumentVersionIdType, "Limit" :: Maybe (LimitType), "Marker" :: Maybe (MarkerType) }) -> DescribeCommentsRequest
 ```
 
 Constructs DescribeCommentsRequest's fields from required parameters
@@ -1334,7 +1334,7 @@ Constructs DescribeCommentsRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeCommentsResponse
-  = DescribeCommentsResponse { "Comments" :: NullOrUndefined (CommentList), "Marker" :: NullOrUndefined (MarkerType) }
+  = DescribeCommentsResponse { "Comments" :: Maybe (CommentList), "Marker" :: Maybe (MarkerType) }
 ```
 
 ##### Instances
@@ -1357,7 +1357,7 @@ Constructs DescribeCommentsResponse from required parameters
 #### `newDescribeCommentsResponse'`
 
 ``` purescript
-newDescribeCommentsResponse' :: ({ "Comments" :: NullOrUndefined (CommentList), "Marker" :: NullOrUndefined (MarkerType) } -> { "Comments" :: NullOrUndefined (CommentList), "Marker" :: NullOrUndefined (MarkerType) }) -> DescribeCommentsResponse
+newDescribeCommentsResponse' :: ({ "Comments" :: Maybe (CommentList), "Marker" :: Maybe (MarkerType) } -> { "Comments" :: Maybe (CommentList), "Marker" :: Maybe (MarkerType) }) -> DescribeCommentsResponse
 ```
 
 Constructs DescribeCommentsResponse's fields from required parameters
@@ -1366,7 +1366,7 @@ Constructs DescribeCommentsResponse's fields from required parameters
 
 ``` purescript
 newtype DescribeDocumentVersionsRequest
-  = DescribeDocumentVersionsRequest { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "DocumentId" :: ResourceIdType, "Marker" :: NullOrUndefined (PageMarkerType), "Limit" :: NullOrUndefined (LimitType), "Include" :: NullOrUndefined (FieldNamesType), "Fields" :: NullOrUndefined (FieldNamesType) }
+  = DescribeDocumentVersionsRequest { "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "DocumentId" :: ResourceIdType, "Marker" :: Maybe (PageMarkerType), "Limit" :: Maybe (LimitType), "Include" :: Maybe (FieldNamesType), "Fields" :: Maybe (FieldNamesType) }
 ```
 
 ##### Instances
@@ -1389,7 +1389,7 @@ Constructs DescribeDocumentVersionsRequest from required parameters
 #### `newDescribeDocumentVersionsRequest'`
 
 ``` purescript
-newDescribeDocumentVersionsRequest' :: ResourceIdType -> ({ "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "DocumentId" :: ResourceIdType, "Marker" :: NullOrUndefined (PageMarkerType), "Limit" :: NullOrUndefined (LimitType), "Include" :: NullOrUndefined (FieldNamesType), "Fields" :: NullOrUndefined (FieldNamesType) } -> { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "DocumentId" :: ResourceIdType, "Marker" :: NullOrUndefined (PageMarkerType), "Limit" :: NullOrUndefined (LimitType), "Include" :: NullOrUndefined (FieldNamesType), "Fields" :: NullOrUndefined (FieldNamesType) }) -> DescribeDocumentVersionsRequest
+newDescribeDocumentVersionsRequest' :: ResourceIdType -> ({ "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "DocumentId" :: ResourceIdType, "Marker" :: Maybe (PageMarkerType), "Limit" :: Maybe (LimitType), "Include" :: Maybe (FieldNamesType), "Fields" :: Maybe (FieldNamesType) } -> { "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "DocumentId" :: ResourceIdType, "Marker" :: Maybe (PageMarkerType), "Limit" :: Maybe (LimitType), "Include" :: Maybe (FieldNamesType), "Fields" :: Maybe (FieldNamesType) }) -> DescribeDocumentVersionsRequest
 ```
 
 Constructs DescribeDocumentVersionsRequest's fields from required parameters
@@ -1398,7 +1398,7 @@ Constructs DescribeDocumentVersionsRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeDocumentVersionsResponse
-  = DescribeDocumentVersionsResponse { "DocumentVersions" :: NullOrUndefined (DocumentVersionMetadataList), "Marker" :: NullOrUndefined (PageMarkerType) }
+  = DescribeDocumentVersionsResponse { "DocumentVersions" :: Maybe (DocumentVersionMetadataList), "Marker" :: Maybe (PageMarkerType) }
 ```
 
 ##### Instances
@@ -1421,7 +1421,7 @@ Constructs DescribeDocumentVersionsResponse from required parameters
 #### `newDescribeDocumentVersionsResponse'`
 
 ``` purescript
-newDescribeDocumentVersionsResponse' :: ({ "DocumentVersions" :: NullOrUndefined (DocumentVersionMetadataList), "Marker" :: NullOrUndefined (PageMarkerType) } -> { "DocumentVersions" :: NullOrUndefined (DocumentVersionMetadataList), "Marker" :: NullOrUndefined (PageMarkerType) }) -> DescribeDocumentVersionsResponse
+newDescribeDocumentVersionsResponse' :: ({ "DocumentVersions" :: Maybe (DocumentVersionMetadataList), "Marker" :: Maybe (PageMarkerType) } -> { "DocumentVersions" :: Maybe (DocumentVersionMetadataList), "Marker" :: Maybe (PageMarkerType) }) -> DescribeDocumentVersionsResponse
 ```
 
 Constructs DescribeDocumentVersionsResponse's fields from required parameters
@@ -1430,7 +1430,7 @@ Constructs DescribeDocumentVersionsResponse's fields from required parameters
 
 ``` purescript
 newtype DescribeFolderContentsRequest
-  = DescribeFolderContentsRequest { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "FolderId" :: ResourceIdType, "Sort" :: NullOrUndefined (ResourceSortType), "Order" :: NullOrUndefined (OrderType), "Limit" :: NullOrUndefined (LimitType), "Marker" :: NullOrUndefined (PageMarkerType), "Type" :: NullOrUndefined (FolderContentType), "Include" :: NullOrUndefined (FieldNamesType) }
+  = DescribeFolderContentsRequest { "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "FolderId" :: ResourceIdType, "Sort" :: Maybe (ResourceSortType), "Order" :: Maybe (OrderType), "Limit" :: Maybe (LimitType), "Marker" :: Maybe (PageMarkerType), "Type" :: Maybe (FolderContentType), "Include" :: Maybe (FieldNamesType) }
 ```
 
 ##### Instances
@@ -1453,7 +1453,7 @@ Constructs DescribeFolderContentsRequest from required parameters
 #### `newDescribeFolderContentsRequest'`
 
 ``` purescript
-newDescribeFolderContentsRequest' :: ResourceIdType -> ({ "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "FolderId" :: ResourceIdType, "Sort" :: NullOrUndefined (ResourceSortType), "Order" :: NullOrUndefined (OrderType), "Limit" :: NullOrUndefined (LimitType), "Marker" :: NullOrUndefined (PageMarkerType), "Type" :: NullOrUndefined (FolderContentType), "Include" :: NullOrUndefined (FieldNamesType) } -> { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "FolderId" :: ResourceIdType, "Sort" :: NullOrUndefined (ResourceSortType), "Order" :: NullOrUndefined (OrderType), "Limit" :: NullOrUndefined (LimitType), "Marker" :: NullOrUndefined (PageMarkerType), "Type" :: NullOrUndefined (FolderContentType), "Include" :: NullOrUndefined (FieldNamesType) }) -> DescribeFolderContentsRequest
+newDescribeFolderContentsRequest' :: ResourceIdType -> ({ "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "FolderId" :: ResourceIdType, "Sort" :: Maybe (ResourceSortType), "Order" :: Maybe (OrderType), "Limit" :: Maybe (LimitType), "Marker" :: Maybe (PageMarkerType), "Type" :: Maybe (FolderContentType), "Include" :: Maybe (FieldNamesType) } -> { "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "FolderId" :: ResourceIdType, "Sort" :: Maybe (ResourceSortType), "Order" :: Maybe (OrderType), "Limit" :: Maybe (LimitType), "Marker" :: Maybe (PageMarkerType), "Type" :: Maybe (FolderContentType), "Include" :: Maybe (FieldNamesType) }) -> DescribeFolderContentsRequest
 ```
 
 Constructs DescribeFolderContentsRequest's fields from required parameters
@@ -1462,7 +1462,7 @@ Constructs DescribeFolderContentsRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeFolderContentsResponse
-  = DescribeFolderContentsResponse { "Folders" :: NullOrUndefined (FolderMetadataList), "Documents" :: NullOrUndefined (DocumentMetadataList), "Marker" :: NullOrUndefined (PageMarkerType) }
+  = DescribeFolderContentsResponse { "Folders" :: Maybe (FolderMetadataList), "Documents" :: Maybe (DocumentMetadataList), "Marker" :: Maybe (PageMarkerType) }
 ```
 
 ##### Instances
@@ -1485,7 +1485,7 @@ Constructs DescribeFolderContentsResponse from required parameters
 #### `newDescribeFolderContentsResponse'`
 
 ``` purescript
-newDescribeFolderContentsResponse' :: ({ "Folders" :: NullOrUndefined (FolderMetadataList), "Documents" :: NullOrUndefined (DocumentMetadataList), "Marker" :: NullOrUndefined (PageMarkerType) } -> { "Folders" :: NullOrUndefined (FolderMetadataList), "Documents" :: NullOrUndefined (DocumentMetadataList), "Marker" :: NullOrUndefined (PageMarkerType) }) -> DescribeFolderContentsResponse
+newDescribeFolderContentsResponse' :: ({ "Folders" :: Maybe (FolderMetadataList), "Documents" :: Maybe (DocumentMetadataList), "Marker" :: Maybe (PageMarkerType) } -> { "Folders" :: Maybe (FolderMetadataList), "Documents" :: Maybe (DocumentMetadataList), "Marker" :: Maybe (PageMarkerType) }) -> DescribeFolderContentsResponse
 ```
 
 Constructs DescribeFolderContentsResponse's fields from required parameters
@@ -1494,7 +1494,7 @@ Constructs DescribeFolderContentsResponse's fields from required parameters
 
 ``` purescript
 newtype DescribeGroupsRequest
-  = DescribeGroupsRequest { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "SearchQuery" :: SearchQueryType, "OrganizationId" :: NullOrUndefined (IdType), "Marker" :: NullOrUndefined (MarkerType), "Limit" :: NullOrUndefined (PositiveIntegerType) }
+  = DescribeGroupsRequest { "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "SearchQuery" :: SearchQueryType, "OrganizationId" :: Maybe (IdType), "Marker" :: Maybe (MarkerType), "Limit" :: Maybe (PositiveIntegerType) }
 ```
 
 ##### Instances
@@ -1517,7 +1517,7 @@ Constructs DescribeGroupsRequest from required parameters
 #### `newDescribeGroupsRequest'`
 
 ``` purescript
-newDescribeGroupsRequest' :: SearchQueryType -> ({ "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "SearchQuery" :: SearchQueryType, "OrganizationId" :: NullOrUndefined (IdType), "Marker" :: NullOrUndefined (MarkerType), "Limit" :: NullOrUndefined (PositiveIntegerType) } -> { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "SearchQuery" :: SearchQueryType, "OrganizationId" :: NullOrUndefined (IdType), "Marker" :: NullOrUndefined (MarkerType), "Limit" :: NullOrUndefined (PositiveIntegerType) }) -> DescribeGroupsRequest
+newDescribeGroupsRequest' :: SearchQueryType -> ({ "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "SearchQuery" :: SearchQueryType, "OrganizationId" :: Maybe (IdType), "Marker" :: Maybe (MarkerType), "Limit" :: Maybe (PositiveIntegerType) } -> { "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "SearchQuery" :: SearchQueryType, "OrganizationId" :: Maybe (IdType), "Marker" :: Maybe (MarkerType), "Limit" :: Maybe (PositiveIntegerType) }) -> DescribeGroupsRequest
 ```
 
 Constructs DescribeGroupsRequest's fields from required parameters
@@ -1526,7 +1526,7 @@ Constructs DescribeGroupsRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeGroupsResponse
-  = DescribeGroupsResponse { "Groups" :: NullOrUndefined (GroupMetadataList), "Marker" :: NullOrUndefined (MarkerType) }
+  = DescribeGroupsResponse { "Groups" :: Maybe (GroupMetadataList), "Marker" :: Maybe (MarkerType) }
 ```
 
 ##### Instances
@@ -1549,7 +1549,7 @@ Constructs DescribeGroupsResponse from required parameters
 #### `newDescribeGroupsResponse'`
 
 ``` purescript
-newDescribeGroupsResponse' :: ({ "Groups" :: NullOrUndefined (GroupMetadataList), "Marker" :: NullOrUndefined (MarkerType) } -> { "Groups" :: NullOrUndefined (GroupMetadataList), "Marker" :: NullOrUndefined (MarkerType) }) -> DescribeGroupsResponse
+newDescribeGroupsResponse' :: ({ "Groups" :: Maybe (GroupMetadataList), "Marker" :: Maybe (MarkerType) } -> { "Groups" :: Maybe (GroupMetadataList), "Marker" :: Maybe (MarkerType) }) -> DescribeGroupsResponse
 ```
 
 Constructs DescribeGroupsResponse's fields from required parameters
@@ -1558,7 +1558,7 @@ Constructs DescribeGroupsResponse's fields from required parameters
 
 ``` purescript
 newtype DescribeNotificationSubscriptionsRequest
-  = DescribeNotificationSubscriptionsRequest { "OrganizationId" :: IdType, "Marker" :: NullOrUndefined (PageMarkerType), "Limit" :: NullOrUndefined (LimitType) }
+  = DescribeNotificationSubscriptionsRequest { "OrganizationId" :: IdType, "Marker" :: Maybe (PageMarkerType), "Limit" :: Maybe (LimitType) }
 ```
 
 ##### Instances
@@ -1581,7 +1581,7 @@ Constructs DescribeNotificationSubscriptionsRequest from required parameters
 #### `newDescribeNotificationSubscriptionsRequest'`
 
 ``` purescript
-newDescribeNotificationSubscriptionsRequest' :: IdType -> ({ "OrganizationId" :: IdType, "Marker" :: NullOrUndefined (PageMarkerType), "Limit" :: NullOrUndefined (LimitType) } -> { "OrganizationId" :: IdType, "Marker" :: NullOrUndefined (PageMarkerType), "Limit" :: NullOrUndefined (LimitType) }) -> DescribeNotificationSubscriptionsRequest
+newDescribeNotificationSubscriptionsRequest' :: IdType -> ({ "OrganizationId" :: IdType, "Marker" :: Maybe (PageMarkerType), "Limit" :: Maybe (LimitType) } -> { "OrganizationId" :: IdType, "Marker" :: Maybe (PageMarkerType), "Limit" :: Maybe (LimitType) }) -> DescribeNotificationSubscriptionsRequest
 ```
 
 Constructs DescribeNotificationSubscriptionsRequest's fields from required parameters
@@ -1590,7 +1590,7 @@ Constructs DescribeNotificationSubscriptionsRequest's fields from required param
 
 ``` purescript
 newtype DescribeNotificationSubscriptionsResponse
-  = DescribeNotificationSubscriptionsResponse { "Subscriptions" :: NullOrUndefined (SubscriptionList), "Marker" :: NullOrUndefined (PageMarkerType) }
+  = DescribeNotificationSubscriptionsResponse { "Subscriptions" :: Maybe (SubscriptionList), "Marker" :: Maybe (PageMarkerType) }
 ```
 
 ##### Instances
@@ -1613,7 +1613,7 @@ Constructs DescribeNotificationSubscriptionsResponse from required parameters
 #### `newDescribeNotificationSubscriptionsResponse'`
 
 ``` purescript
-newDescribeNotificationSubscriptionsResponse' :: ({ "Subscriptions" :: NullOrUndefined (SubscriptionList), "Marker" :: NullOrUndefined (PageMarkerType) } -> { "Subscriptions" :: NullOrUndefined (SubscriptionList), "Marker" :: NullOrUndefined (PageMarkerType) }) -> DescribeNotificationSubscriptionsResponse
+newDescribeNotificationSubscriptionsResponse' :: ({ "Subscriptions" :: Maybe (SubscriptionList), "Marker" :: Maybe (PageMarkerType) } -> { "Subscriptions" :: Maybe (SubscriptionList), "Marker" :: Maybe (PageMarkerType) }) -> DescribeNotificationSubscriptionsResponse
 ```
 
 Constructs DescribeNotificationSubscriptionsResponse's fields from required parameters
@@ -1622,7 +1622,7 @@ Constructs DescribeNotificationSubscriptionsResponse's fields from required para
 
 ``` purescript
 newtype DescribeResourcePermissionsRequest
-  = DescribeResourcePermissionsRequest { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "ResourceId" :: ResourceIdType, "PrincipalId" :: NullOrUndefined (IdType), "Limit" :: NullOrUndefined (LimitType), "Marker" :: NullOrUndefined (PageMarkerType) }
+  = DescribeResourcePermissionsRequest { "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "ResourceId" :: ResourceIdType, "PrincipalId" :: Maybe (IdType), "Limit" :: Maybe (LimitType), "Marker" :: Maybe (PageMarkerType) }
 ```
 
 ##### Instances
@@ -1645,7 +1645,7 @@ Constructs DescribeResourcePermissionsRequest from required parameters
 #### `newDescribeResourcePermissionsRequest'`
 
 ``` purescript
-newDescribeResourcePermissionsRequest' :: ResourceIdType -> ({ "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "ResourceId" :: ResourceIdType, "PrincipalId" :: NullOrUndefined (IdType), "Limit" :: NullOrUndefined (LimitType), "Marker" :: NullOrUndefined (PageMarkerType) } -> { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "ResourceId" :: ResourceIdType, "PrincipalId" :: NullOrUndefined (IdType), "Limit" :: NullOrUndefined (LimitType), "Marker" :: NullOrUndefined (PageMarkerType) }) -> DescribeResourcePermissionsRequest
+newDescribeResourcePermissionsRequest' :: ResourceIdType -> ({ "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "ResourceId" :: ResourceIdType, "PrincipalId" :: Maybe (IdType), "Limit" :: Maybe (LimitType), "Marker" :: Maybe (PageMarkerType) } -> { "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "ResourceId" :: ResourceIdType, "PrincipalId" :: Maybe (IdType), "Limit" :: Maybe (LimitType), "Marker" :: Maybe (PageMarkerType) }) -> DescribeResourcePermissionsRequest
 ```
 
 Constructs DescribeResourcePermissionsRequest's fields from required parameters
@@ -1654,7 +1654,7 @@ Constructs DescribeResourcePermissionsRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeResourcePermissionsResponse
-  = DescribeResourcePermissionsResponse { "Principals" :: NullOrUndefined (PrincipalList), "Marker" :: NullOrUndefined (PageMarkerType) }
+  = DescribeResourcePermissionsResponse { "Principals" :: Maybe (PrincipalList), "Marker" :: Maybe (PageMarkerType) }
 ```
 
 ##### Instances
@@ -1677,7 +1677,7 @@ Constructs DescribeResourcePermissionsResponse from required parameters
 #### `newDescribeResourcePermissionsResponse'`
 
 ``` purescript
-newDescribeResourcePermissionsResponse' :: ({ "Principals" :: NullOrUndefined (PrincipalList), "Marker" :: NullOrUndefined (PageMarkerType) } -> { "Principals" :: NullOrUndefined (PrincipalList), "Marker" :: NullOrUndefined (PageMarkerType) }) -> DescribeResourcePermissionsResponse
+newDescribeResourcePermissionsResponse' :: ({ "Principals" :: Maybe (PrincipalList), "Marker" :: Maybe (PageMarkerType) } -> { "Principals" :: Maybe (PrincipalList), "Marker" :: Maybe (PageMarkerType) }) -> DescribeResourcePermissionsResponse
 ```
 
 Constructs DescribeResourcePermissionsResponse's fields from required parameters
@@ -1686,7 +1686,7 @@ Constructs DescribeResourcePermissionsResponse's fields from required parameters
 
 ``` purescript
 newtype DescribeRootFoldersRequest
-  = DescribeRootFoldersRequest { "AuthenticationToken" :: AuthenticationHeaderType, "Limit" :: NullOrUndefined (LimitType), "Marker" :: NullOrUndefined (PageMarkerType) }
+  = DescribeRootFoldersRequest { "AuthenticationToken" :: AuthenticationHeaderType, "Limit" :: Maybe (LimitType), "Marker" :: Maybe (PageMarkerType) }
 ```
 
 ##### Instances
@@ -1709,7 +1709,7 @@ Constructs DescribeRootFoldersRequest from required parameters
 #### `newDescribeRootFoldersRequest'`
 
 ``` purescript
-newDescribeRootFoldersRequest' :: AuthenticationHeaderType -> ({ "AuthenticationToken" :: AuthenticationHeaderType, "Limit" :: NullOrUndefined (LimitType), "Marker" :: NullOrUndefined (PageMarkerType) } -> { "AuthenticationToken" :: AuthenticationHeaderType, "Limit" :: NullOrUndefined (LimitType), "Marker" :: NullOrUndefined (PageMarkerType) }) -> DescribeRootFoldersRequest
+newDescribeRootFoldersRequest' :: AuthenticationHeaderType -> ({ "AuthenticationToken" :: AuthenticationHeaderType, "Limit" :: Maybe (LimitType), "Marker" :: Maybe (PageMarkerType) } -> { "AuthenticationToken" :: AuthenticationHeaderType, "Limit" :: Maybe (LimitType), "Marker" :: Maybe (PageMarkerType) }) -> DescribeRootFoldersRequest
 ```
 
 Constructs DescribeRootFoldersRequest's fields from required parameters
@@ -1718,7 +1718,7 @@ Constructs DescribeRootFoldersRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeRootFoldersResponse
-  = DescribeRootFoldersResponse { "Folders" :: NullOrUndefined (FolderMetadataList), "Marker" :: NullOrUndefined (PageMarkerType) }
+  = DescribeRootFoldersResponse { "Folders" :: Maybe (FolderMetadataList), "Marker" :: Maybe (PageMarkerType) }
 ```
 
 ##### Instances
@@ -1741,7 +1741,7 @@ Constructs DescribeRootFoldersResponse from required parameters
 #### `newDescribeRootFoldersResponse'`
 
 ``` purescript
-newDescribeRootFoldersResponse' :: ({ "Folders" :: NullOrUndefined (FolderMetadataList), "Marker" :: NullOrUndefined (PageMarkerType) } -> { "Folders" :: NullOrUndefined (FolderMetadataList), "Marker" :: NullOrUndefined (PageMarkerType) }) -> DescribeRootFoldersResponse
+newDescribeRootFoldersResponse' :: ({ "Folders" :: Maybe (FolderMetadataList), "Marker" :: Maybe (PageMarkerType) } -> { "Folders" :: Maybe (FolderMetadataList), "Marker" :: Maybe (PageMarkerType) }) -> DescribeRootFoldersResponse
 ```
 
 Constructs DescribeRootFoldersResponse's fields from required parameters
@@ -1750,7 +1750,7 @@ Constructs DescribeRootFoldersResponse's fields from required parameters
 
 ``` purescript
 newtype DescribeUsersRequest
-  = DescribeUsersRequest { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "OrganizationId" :: NullOrUndefined (IdType), "UserIds" :: NullOrUndefined (UserIdsType), "Query" :: NullOrUndefined (SearchQueryType), "Include" :: NullOrUndefined (UserFilterType), "Order" :: NullOrUndefined (OrderType), "Sort" :: NullOrUndefined (UserSortType), "Marker" :: NullOrUndefined (PageMarkerType), "Limit" :: NullOrUndefined (LimitType), "Fields" :: NullOrUndefined (FieldNamesType) }
+  = DescribeUsersRequest { "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "OrganizationId" :: Maybe (IdType), "UserIds" :: Maybe (UserIdsType), "Query" :: Maybe (SearchQueryType), "Include" :: Maybe (UserFilterType), "Order" :: Maybe (OrderType), "Sort" :: Maybe (UserSortType), "Marker" :: Maybe (PageMarkerType), "Limit" :: Maybe (LimitType), "Fields" :: Maybe (FieldNamesType) }
 ```
 
 ##### Instances
@@ -1773,7 +1773,7 @@ Constructs DescribeUsersRequest from required parameters
 #### `newDescribeUsersRequest'`
 
 ``` purescript
-newDescribeUsersRequest' :: ({ "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "OrganizationId" :: NullOrUndefined (IdType), "UserIds" :: NullOrUndefined (UserIdsType), "Query" :: NullOrUndefined (SearchQueryType), "Include" :: NullOrUndefined (UserFilterType), "Order" :: NullOrUndefined (OrderType), "Sort" :: NullOrUndefined (UserSortType), "Marker" :: NullOrUndefined (PageMarkerType), "Limit" :: NullOrUndefined (LimitType), "Fields" :: NullOrUndefined (FieldNamesType) } -> { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "OrganizationId" :: NullOrUndefined (IdType), "UserIds" :: NullOrUndefined (UserIdsType), "Query" :: NullOrUndefined (SearchQueryType), "Include" :: NullOrUndefined (UserFilterType), "Order" :: NullOrUndefined (OrderType), "Sort" :: NullOrUndefined (UserSortType), "Marker" :: NullOrUndefined (PageMarkerType), "Limit" :: NullOrUndefined (LimitType), "Fields" :: NullOrUndefined (FieldNamesType) }) -> DescribeUsersRequest
+newDescribeUsersRequest' :: ({ "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "OrganizationId" :: Maybe (IdType), "UserIds" :: Maybe (UserIdsType), "Query" :: Maybe (SearchQueryType), "Include" :: Maybe (UserFilterType), "Order" :: Maybe (OrderType), "Sort" :: Maybe (UserSortType), "Marker" :: Maybe (PageMarkerType), "Limit" :: Maybe (LimitType), "Fields" :: Maybe (FieldNamesType) } -> { "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "OrganizationId" :: Maybe (IdType), "UserIds" :: Maybe (UserIdsType), "Query" :: Maybe (SearchQueryType), "Include" :: Maybe (UserFilterType), "Order" :: Maybe (OrderType), "Sort" :: Maybe (UserSortType), "Marker" :: Maybe (PageMarkerType), "Limit" :: Maybe (LimitType), "Fields" :: Maybe (FieldNamesType) }) -> DescribeUsersRequest
 ```
 
 Constructs DescribeUsersRequest's fields from required parameters
@@ -1782,7 +1782,7 @@ Constructs DescribeUsersRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeUsersResponse
-  = DescribeUsersResponse { "Users" :: NullOrUndefined (OrganizationUserList), "TotalNumberOfUsers" :: NullOrUndefined (SizeType), "Marker" :: NullOrUndefined (PageMarkerType) }
+  = DescribeUsersResponse { "Users" :: Maybe (OrganizationUserList), "TotalNumberOfUsers" :: Maybe (SizeType), "Marker" :: Maybe (PageMarkerType) }
 ```
 
 ##### Instances
@@ -1805,7 +1805,7 @@ Constructs DescribeUsersResponse from required parameters
 #### `newDescribeUsersResponse'`
 
 ``` purescript
-newDescribeUsersResponse' :: ({ "Users" :: NullOrUndefined (OrganizationUserList), "TotalNumberOfUsers" :: NullOrUndefined (SizeType), "Marker" :: NullOrUndefined (PageMarkerType) } -> { "Users" :: NullOrUndefined (OrganizationUserList), "TotalNumberOfUsers" :: NullOrUndefined (SizeType), "Marker" :: NullOrUndefined (PageMarkerType) }) -> DescribeUsersResponse
+newDescribeUsersResponse' :: ({ "Users" :: Maybe (OrganizationUserList), "TotalNumberOfUsers" :: Maybe (SizeType), "Marker" :: Maybe (PageMarkerType) } -> { "Users" :: Maybe (OrganizationUserList), "TotalNumberOfUsers" :: Maybe (SizeType), "Marker" :: Maybe (PageMarkerType) }) -> DescribeUsersResponse
 ```
 
 Constructs DescribeUsersResponse's fields from required parameters
@@ -1830,7 +1830,7 @@ Encode DocumentContentType
 
 ``` purescript
 newtype DocumentLockedForCommentsException
-  = DocumentLockedForCommentsException { "Message" :: NullOrUndefined (ErrorMessageType) }
+  = DocumentLockedForCommentsException { "Message" :: Maybe (ErrorMessageType) }
 ```
 
 <p>This exception is thrown when the document is locked for comments and user tries to create or delete a comment on that document.</p>
@@ -1855,7 +1855,7 @@ Constructs DocumentLockedForCommentsException from required parameters
 #### `newDocumentLockedForCommentsException'`
 
 ``` purescript
-newDocumentLockedForCommentsException' :: ({ "Message" :: NullOrUndefined (ErrorMessageType) } -> { "Message" :: NullOrUndefined (ErrorMessageType) }) -> DocumentLockedForCommentsException
+newDocumentLockedForCommentsException' :: ({ "Message" :: Maybe (ErrorMessageType) } -> { "Message" :: Maybe (ErrorMessageType) }) -> DocumentLockedForCommentsException
 ```
 
 Constructs DocumentLockedForCommentsException's fields from required parameters
@@ -1864,7 +1864,7 @@ Constructs DocumentLockedForCommentsException's fields from required parameters
 
 ``` purescript
 newtype DocumentMetadata
-  = DocumentMetadata { "Id" :: NullOrUndefined (ResourceIdType), "CreatorId" :: NullOrUndefined (IdType), "ParentFolderId" :: NullOrUndefined (ResourceIdType), "CreatedTimestamp" :: NullOrUndefined (TimestampType), "ModifiedTimestamp" :: NullOrUndefined (TimestampType), "LatestVersionMetadata" :: NullOrUndefined (DocumentVersionMetadata), "ResourceState" :: NullOrUndefined (ResourceStateType), "Labels" :: NullOrUndefined (SharedLabels) }
+  = DocumentMetadata { "Id" :: Maybe (ResourceIdType), "CreatorId" :: Maybe (IdType), "ParentFolderId" :: Maybe (ResourceIdType), "CreatedTimestamp" :: Maybe (TimestampType), "ModifiedTimestamp" :: Maybe (TimestampType), "LatestVersionMetadata" :: Maybe (DocumentVersionMetadata), "ResourceState" :: Maybe (ResourceStateType), "Labels" :: Maybe (SharedLabels) }
 ```
 
 <p>Describes the document.</p>
@@ -1889,7 +1889,7 @@ Constructs DocumentMetadata from required parameters
 #### `newDocumentMetadata'`
 
 ``` purescript
-newDocumentMetadata' :: ({ "Id" :: NullOrUndefined (ResourceIdType), "CreatorId" :: NullOrUndefined (IdType), "ParentFolderId" :: NullOrUndefined (ResourceIdType), "CreatedTimestamp" :: NullOrUndefined (TimestampType), "ModifiedTimestamp" :: NullOrUndefined (TimestampType), "LatestVersionMetadata" :: NullOrUndefined (DocumentVersionMetadata), "ResourceState" :: NullOrUndefined (ResourceStateType), "Labels" :: NullOrUndefined (SharedLabels) } -> { "Id" :: NullOrUndefined (ResourceIdType), "CreatorId" :: NullOrUndefined (IdType), "ParentFolderId" :: NullOrUndefined (ResourceIdType), "CreatedTimestamp" :: NullOrUndefined (TimestampType), "ModifiedTimestamp" :: NullOrUndefined (TimestampType), "LatestVersionMetadata" :: NullOrUndefined (DocumentVersionMetadata), "ResourceState" :: NullOrUndefined (ResourceStateType), "Labels" :: NullOrUndefined (SharedLabels) }) -> DocumentMetadata
+newDocumentMetadata' :: ({ "Id" :: Maybe (ResourceIdType), "CreatorId" :: Maybe (IdType), "ParentFolderId" :: Maybe (ResourceIdType), "CreatedTimestamp" :: Maybe (TimestampType), "ModifiedTimestamp" :: Maybe (TimestampType), "LatestVersionMetadata" :: Maybe (DocumentVersionMetadata), "ResourceState" :: Maybe (ResourceStateType), "Labels" :: Maybe (SharedLabels) } -> { "Id" :: Maybe (ResourceIdType), "CreatorId" :: Maybe (IdType), "ParentFolderId" :: Maybe (ResourceIdType), "CreatedTimestamp" :: Maybe (TimestampType), "ModifiedTimestamp" :: Maybe (TimestampType), "LatestVersionMetadata" :: Maybe (DocumentVersionMetadata), "ResourceState" :: Maybe (ResourceStateType), "Labels" :: Maybe (SharedLabels) }) -> DocumentMetadata
 ```
 
 Constructs DocumentMetadata's fields from required parameters
@@ -2010,7 +2010,7 @@ Encode DocumentVersionIdType
 
 ``` purescript
 newtype DocumentVersionMetadata
-  = DocumentVersionMetadata { "Id" :: NullOrUndefined (DocumentVersionIdType), "Name" :: NullOrUndefined (ResourceNameType), "ContentType" :: NullOrUndefined (DocumentContentType), "Size" :: NullOrUndefined (SizeType), "Signature" :: NullOrUndefined (HashType), "Status" :: NullOrUndefined (DocumentStatusType), "CreatedTimestamp" :: NullOrUndefined (TimestampType), "ModifiedTimestamp" :: NullOrUndefined (TimestampType), "ContentCreatedTimestamp" :: NullOrUndefined (TimestampType), "ContentModifiedTimestamp" :: NullOrUndefined (TimestampType), "CreatorId" :: NullOrUndefined (IdType), "Thumbnail" :: NullOrUndefined (DocumentThumbnailUrlMap), "Source" :: NullOrUndefined (DocumentSourceUrlMap) }
+  = DocumentVersionMetadata { "Id" :: Maybe (DocumentVersionIdType), "Name" :: Maybe (ResourceNameType), "ContentType" :: Maybe (DocumentContentType), "Size" :: Maybe (SizeType), "Signature" :: Maybe (HashType), "Status" :: Maybe (DocumentStatusType), "CreatedTimestamp" :: Maybe (TimestampType), "ModifiedTimestamp" :: Maybe (TimestampType), "ContentCreatedTimestamp" :: Maybe (TimestampType), "ContentModifiedTimestamp" :: Maybe (TimestampType), "CreatorId" :: Maybe (IdType), "Thumbnail" :: Maybe (DocumentThumbnailUrlMap), "Source" :: Maybe (DocumentSourceUrlMap) }
 ```
 
 <p>Describes a version of a document.</p>
@@ -2035,7 +2035,7 @@ Constructs DocumentVersionMetadata from required parameters
 #### `newDocumentVersionMetadata'`
 
 ``` purescript
-newDocumentVersionMetadata' :: ({ "Id" :: NullOrUndefined (DocumentVersionIdType), "Name" :: NullOrUndefined (ResourceNameType), "ContentType" :: NullOrUndefined (DocumentContentType), "Size" :: NullOrUndefined (SizeType), "Signature" :: NullOrUndefined (HashType), "Status" :: NullOrUndefined (DocumentStatusType), "CreatedTimestamp" :: NullOrUndefined (TimestampType), "ModifiedTimestamp" :: NullOrUndefined (TimestampType), "ContentCreatedTimestamp" :: NullOrUndefined (TimestampType), "ContentModifiedTimestamp" :: NullOrUndefined (TimestampType), "CreatorId" :: NullOrUndefined (IdType), "Thumbnail" :: NullOrUndefined (DocumentThumbnailUrlMap), "Source" :: NullOrUndefined (DocumentSourceUrlMap) } -> { "Id" :: NullOrUndefined (DocumentVersionIdType), "Name" :: NullOrUndefined (ResourceNameType), "ContentType" :: NullOrUndefined (DocumentContentType), "Size" :: NullOrUndefined (SizeType), "Signature" :: NullOrUndefined (HashType), "Status" :: NullOrUndefined (DocumentStatusType), "CreatedTimestamp" :: NullOrUndefined (TimestampType), "ModifiedTimestamp" :: NullOrUndefined (TimestampType), "ContentCreatedTimestamp" :: NullOrUndefined (TimestampType), "ContentModifiedTimestamp" :: NullOrUndefined (TimestampType), "CreatorId" :: NullOrUndefined (IdType), "Thumbnail" :: NullOrUndefined (DocumentThumbnailUrlMap), "Source" :: NullOrUndefined (DocumentSourceUrlMap) }) -> DocumentVersionMetadata
+newDocumentVersionMetadata' :: ({ "Id" :: Maybe (DocumentVersionIdType), "Name" :: Maybe (ResourceNameType), "ContentType" :: Maybe (DocumentContentType), "Size" :: Maybe (SizeType), "Signature" :: Maybe (HashType), "Status" :: Maybe (DocumentStatusType), "CreatedTimestamp" :: Maybe (TimestampType), "ModifiedTimestamp" :: Maybe (TimestampType), "ContentCreatedTimestamp" :: Maybe (TimestampType), "ContentModifiedTimestamp" :: Maybe (TimestampType), "CreatorId" :: Maybe (IdType), "Thumbnail" :: Maybe (DocumentThumbnailUrlMap), "Source" :: Maybe (DocumentSourceUrlMap) } -> { "Id" :: Maybe (DocumentVersionIdType), "Name" :: Maybe (ResourceNameType), "ContentType" :: Maybe (DocumentContentType), "Size" :: Maybe (SizeType), "Signature" :: Maybe (HashType), "Status" :: Maybe (DocumentStatusType), "CreatedTimestamp" :: Maybe (TimestampType), "ModifiedTimestamp" :: Maybe (TimestampType), "ContentCreatedTimestamp" :: Maybe (TimestampType), "ContentModifiedTimestamp" :: Maybe (TimestampType), "CreatorId" :: Maybe (IdType), "Thumbnail" :: Maybe (DocumentThumbnailUrlMap), "Source" :: Maybe (DocumentSourceUrlMap) }) -> DocumentVersionMetadata
 ```
 
 Constructs DocumentVersionMetadata's fields from required parameters
@@ -2076,7 +2076,7 @@ Encode DocumentVersionStatus
 
 ``` purescript
 newtype DraftUploadOutOfSyncException
-  = DraftUploadOutOfSyncException { "Message" :: NullOrUndefined (ErrorMessageType) }
+  = DraftUploadOutOfSyncException { "Message" :: Maybe (ErrorMessageType) }
 ```
 
 <p>This exception is thrown when a valid checkout ID is not presented on document version upload calls for a document that has been checked out from Web client.</p>
@@ -2101,7 +2101,7 @@ Constructs DraftUploadOutOfSyncException from required parameters
 #### `newDraftUploadOutOfSyncException'`
 
 ``` purescript
-newDraftUploadOutOfSyncException' :: ({ "Message" :: NullOrUndefined (ErrorMessageType) } -> { "Message" :: NullOrUndefined (ErrorMessageType) }) -> DraftUploadOutOfSyncException
+newDraftUploadOutOfSyncException' :: ({ "Message" :: Maybe (ErrorMessageType) } -> { "Message" :: Maybe (ErrorMessageType) }) -> DraftUploadOutOfSyncException
 ```
 
 Constructs DraftUploadOutOfSyncException's fields from required parameters
@@ -2126,7 +2126,7 @@ Encode EmailAddressType
 
 ``` purescript
 newtype EntityAlreadyExistsException
-  = EntityAlreadyExistsException { "Message" :: NullOrUndefined (ErrorMessageType) }
+  = EntityAlreadyExistsException { "Message" :: Maybe (ErrorMessageType) }
 ```
 
 <p>The resource already exists.</p>
@@ -2151,7 +2151,7 @@ Constructs EntityAlreadyExistsException from required parameters
 #### `newEntityAlreadyExistsException'`
 
 ``` purescript
-newEntityAlreadyExistsException' :: ({ "Message" :: NullOrUndefined (ErrorMessageType) } -> { "Message" :: NullOrUndefined (ErrorMessageType) }) -> EntityAlreadyExistsException
+newEntityAlreadyExistsException' :: ({ "Message" :: Maybe (ErrorMessageType) } -> { "Message" :: Maybe (ErrorMessageType) }) -> EntityAlreadyExistsException
 ```
 
 Constructs EntityAlreadyExistsException's fields from required parameters
@@ -2176,7 +2176,7 @@ Encode EntityIdList
 
 ``` purescript
 newtype EntityNotExistsException
-  = EntityNotExistsException { "Message" :: NullOrUndefined (ErrorMessageType), "EntityIds" :: NullOrUndefined (EntityIdList) }
+  = EntityNotExistsException { "Message" :: Maybe (ErrorMessageType), "EntityIds" :: Maybe (EntityIdList) }
 ```
 
 <p>The resource does not exist.</p>
@@ -2201,7 +2201,7 @@ Constructs EntityNotExistsException from required parameters
 #### `newEntityNotExistsException'`
 
 ``` purescript
-newEntityNotExistsException' :: ({ "Message" :: NullOrUndefined (ErrorMessageType), "EntityIds" :: NullOrUndefined (EntityIdList) } -> { "Message" :: NullOrUndefined (ErrorMessageType), "EntityIds" :: NullOrUndefined (EntityIdList) }) -> EntityNotExistsException
+newEntityNotExistsException' :: ({ "Message" :: Maybe (ErrorMessageType), "EntityIds" :: Maybe (EntityIdList) } -> { "Message" :: Maybe (ErrorMessageType), "EntityIds" :: Maybe (EntityIdList) }) -> EntityNotExistsException
 ```
 
 Constructs EntityNotExistsException's fields from required parameters
@@ -2226,7 +2226,7 @@ Encode ErrorMessageType
 
 ``` purescript
 newtype FailedDependencyException
-  = FailedDependencyException { "Message" :: NullOrUndefined (ErrorMessageType) }
+  = FailedDependencyException { "Message" :: Maybe (ErrorMessageType) }
 ```
 
 <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
@@ -2251,7 +2251,7 @@ Constructs FailedDependencyException from required parameters
 #### `newFailedDependencyException'`
 
 ``` purescript
-newFailedDependencyException' :: ({ "Message" :: NullOrUndefined (ErrorMessageType) } -> { "Message" :: NullOrUndefined (ErrorMessageType) }) -> FailedDependencyException
+newFailedDependencyException' :: ({ "Message" :: Maybe (ErrorMessageType) } -> { "Message" :: Maybe (ErrorMessageType) }) -> FailedDependencyException
 ```
 
 Constructs FailedDependencyException's fields from required parameters
@@ -2292,7 +2292,7 @@ Encode FolderContentType
 
 ``` purescript
 newtype FolderMetadata
-  = FolderMetadata { "Id" :: NullOrUndefined (ResourceIdType), "Name" :: NullOrUndefined (ResourceNameType), "CreatorId" :: NullOrUndefined (IdType), "ParentFolderId" :: NullOrUndefined (ResourceIdType), "CreatedTimestamp" :: NullOrUndefined (TimestampType), "ModifiedTimestamp" :: NullOrUndefined (TimestampType), "ResourceState" :: NullOrUndefined (ResourceStateType), "Signature" :: NullOrUndefined (HashType), "Labels" :: NullOrUndefined (SharedLabels), "Size" :: NullOrUndefined (SizeType), "LatestVersionSize" :: NullOrUndefined (SizeType) }
+  = FolderMetadata { "Id" :: Maybe (ResourceIdType), "Name" :: Maybe (ResourceNameType), "CreatorId" :: Maybe (IdType), "ParentFolderId" :: Maybe (ResourceIdType), "CreatedTimestamp" :: Maybe (TimestampType), "ModifiedTimestamp" :: Maybe (TimestampType), "ResourceState" :: Maybe (ResourceStateType), "Signature" :: Maybe (HashType), "Labels" :: Maybe (SharedLabels), "Size" :: Maybe (SizeType), "LatestVersionSize" :: Maybe (SizeType) }
 ```
 
 <p>Describes a folder.</p>
@@ -2317,7 +2317,7 @@ Constructs FolderMetadata from required parameters
 #### `newFolderMetadata'`
 
 ``` purescript
-newFolderMetadata' :: ({ "Id" :: NullOrUndefined (ResourceIdType), "Name" :: NullOrUndefined (ResourceNameType), "CreatorId" :: NullOrUndefined (IdType), "ParentFolderId" :: NullOrUndefined (ResourceIdType), "CreatedTimestamp" :: NullOrUndefined (TimestampType), "ModifiedTimestamp" :: NullOrUndefined (TimestampType), "ResourceState" :: NullOrUndefined (ResourceStateType), "Signature" :: NullOrUndefined (HashType), "Labels" :: NullOrUndefined (SharedLabels), "Size" :: NullOrUndefined (SizeType), "LatestVersionSize" :: NullOrUndefined (SizeType) } -> { "Id" :: NullOrUndefined (ResourceIdType), "Name" :: NullOrUndefined (ResourceNameType), "CreatorId" :: NullOrUndefined (IdType), "ParentFolderId" :: NullOrUndefined (ResourceIdType), "CreatedTimestamp" :: NullOrUndefined (TimestampType), "ModifiedTimestamp" :: NullOrUndefined (TimestampType), "ResourceState" :: NullOrUndefined (ResourceStateType), "Signature" :: NullOrUndefined (HashType), "Labels" :: NullOrUndefined (SharedLabels), "Size" :: NullOrUndefined (SizeType), "LatestVersionSize" :: NullOrUndefined (SizeType) }) -> FolderMetadata
+newFolderMetadata' :: ({ "Id" :: Maybe (ResourceIdType), "Name" :: Maybe (ResourceNameType), "CreatorId" :: Maybe (IdType), "ParentFolderId" :: Maybe (ResourceIdType), "CreatedTimestamp" :: Maybe (TimestampType), "ModifiedTimestamp" :: Maybe (TimestampType), "ResourceState" :: Maybe (ResourceStateType), "Signature" :: Maybe (HashType), "Labels" :: Maybe (SharedLabels), "Size" :: Maybe (SizeType), "LatestVersionSize" :: Maybe (SizeType) } -> { "Id" :: Maybe (ResourceIdType), "Name" :: Maybe (ResourceNameType), "CreatorId" :: Maybe (IdType), "ParentFolderId" :: Maybe (ResourceIdType), "CreatedTimestamp" :: Maybe (TimestampType), "ModifiedTimestamp" :: Maybe (TimestampType), "ResourceState" :: Maybe (ResourceStateType), "Signature" :: Maybe (HashType), "Labels" :: Maybe (SharedLabels), "Size" :: Maybe (SizeType), "LatestVersionSize" :: Maybe (SizeType) }) -> FolderMetadata
 ```
 
 Constructs FolderMetadata's fields from required parameters
@@ -2374,7 +2374,7 @@ Constructs GetCurrentUserRequest's fields from required parameters
 
 ``` purescript
 newtype GetCurrentUserResponse
-  = GetCurrentUserResponse { "User" :: NullOrUndefined (User) }
+  = GetCurrentUserResponse { "User" :: Maybe (User) }
 ```
 
 ##### Instances
@@ -2397,7 +2397,7 @@ Constructs GetCurrentUserResponse from required parameters
 #### `newGetCurrentUserResponse'`
 
 ``` purescript
-newGetCurrentUserResponse' :: ({ "User" :: NullOrUndefined (User) } -> { "User" :: NullOrUndefined (User) }) -> GetCurrentUserResponse
+newGetCurrentUserResponse' :: ({ "User" :: Maybe (User) } -> { "User" :: Maybe (User) }) -> GetCurrentUserResponse
 ```
 
 Constructs GetCurrentUserResponse's fields from required parameters
@@ -2406,7 +2406,7 @@ Constructs GetCurrentUserResponse's fields from required parameters
 
 ``` purescript
 newtype GetDocumentPathRequest
-  = GetDocumentPathRequest { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "DocumentId" :: IdType, "Limit" :: NullOrUndefined (LimitType), "Fields" :: NullOrUndefined (FieldNamesType), "Marker" :: NullOrUndefined (PageMarkerType) }
+  = GetDocumentPathRequest { "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "DocumentId" :: IdType, "Limit" :: Maybe (LimitType), "Fields" :: Maybe (FieldNamesType), "Marker" :: Maybe (PageMarkerType) }
 ```
 
 ##### Instances
@@ -2429,7 +2429,7 @@ Constructs GetDocumentPathRequest from required parameters
 #### `newGetDocumentPathRequest'`
 
 ``` purescript
-newGetDocumentPathRequest' :: IdType -> ({ "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "DocumentId" :: IdType, "Limit" :: NullOrUndefined (LimitType), "Fields" :: NullOrUndefined (FieldNamesType), "Marker" :: NullOrUndefined (PageMarkerType) } -> { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "DocumentId" :: IdType, "Limit" :: NullOrUndefined (LimitType), "Fields" :: NullOrUndefined (FieldNamesType), "Marker" :: NullOrUndefined (PageMarkerType) }) -> GetDocumentPathRequest
+newGetDocumentPathRequest' :: IdType -> ({ "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "DocumentId" :: IdType, "Limit" :: Maybe (LimitType), "Fields" :: Maybe (FieldNamesType), "Marker" :: Maybe (PageMarkerType) } -> { "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "DocumentId" :: IdType, "Limit" :: Maybe (LimitType), "Fields" :: Maybe (FieldNamesType), "Marker" :: Maybe (PageMarkerType) }) -> GetDocumentPathRequest
 ```
 
 Constructs GetDocumentPathRequest's fields from required parameters
@@ -2438,7 +2438,7 @@ Constructs GetDocumentPathRequest's fields from required parameters
 
 ``` purescript
 newtype GetDocumentPathResponse
-  = GetDocumentPathResponse { "Path" :: NullOrUndefined (ResourcePath) }
+  = GetDocumentPathResponse { "Path" :: Maybe (ResourcePath) }
 ```
 
 ##### Instances
@@ -2461,7 +2461,7 @@ Constructs GetDocumentPathResponse from required parameters
 #### `newGetDocumentPathResponse'`
 
 ``` purescript
-newGetDocumentPathResponse' :: ({ "Path" :: NullOrUndefined (ResourcePath) } -> { "Path" :: NullOrUndefined (ResourcePath) }) -> GetDocumentPathResponse
+newGetDocumentPathResponse' :: ({ "Path" :: Maybe (ResourcePath) } -> { "Path" :: Maybe (ResourcePath) }) -> GetDocumentPathResponse
 ```
 
 Constructs GetDocumentPathResponse's fields from required parameters
@@ -2470,7 +2470,7 @@ Constructs GetDocumentPathResponse's fields from required parameters
 
 ``` purescript
 newtype GetDocumentRequest
-  = GetDocumentRequest { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "DocumentId" :: ResourceIdType, "IncludeCustomMetadata" :: NullOrUndefined (BooleanType) }
+  = GetDocumentRequest { "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "DocumentId" :: ResourceIdType, "IncludeCustomMetadata" :: Maybe (BooleanType) }
 ```
 
 ##### Instances
@@ -2493,7 +2493,7 @@ Constructs GetDocumentRequest from required parameters
 #### `newGetDocumentRequest'`
 
 ``` purescript
-newGetDocumentRequest' :: ResourceIdType -> ({ "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "DocumentId" :: ResourceIdType, "IncludeCustomMetadata" :: NullOrUndefined (BooleanType) } -> { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "DocumentId" :: ResourceIdType, "IncludeCustomMetadata" :: NullOrUndefined (BooleanType) }) -> GetDocumentRequest
+newGetDocumentRequest' :: ResourceIdType -> ({ "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "DocumentId" :: ResourceIdType, "IncludeCustomMetadata" :: Maybe (BooleanType) } -> { "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "DocumentId" :: ResourceIdType, "IncludeCustomMetadata" :: Maybe (BooleanType) }) -> GetDocumentRequest
 ```
 
 Constructs GetDocumentRequest's fields from required parameters
@@ -2502,7 +2502,7 @@ Constructs GetDocumentRequest's fields from required parameters
 
 ``` purescript
 newtype GetDocumentResponse
-  = GetDocumentResponse { "Metadata" :: NullOrUndefined (DocumentMetadata), "CustomMetadata" :: NullOrUndefined (CustomMetadataMap) }
+  = GetDocumentResponse { "Metadata" :: Maybe (DocumentMetadata), "CustomMetadata" :: Maybe (CustomMetadataMap) }
 ```
 
 ##### Instances
@@ -2525,7 +2525,7 @@ Constructs GetDocumentResponse from required parameters
 #### `newGetDocumentResponse'`
 
 ``` purescript
-newGetDocumentResponse' :: ({ "Metadata" :: NullOrUndefined (DocumentMetadata), "CustomMetadata" :: NullOrUndefined (CustomMetadataMap) } -> { "Metadata" :: NullOrUndefined (DocumentMetadata), "CustomMetadata" :: NullOrUndefined (CustomMetadataMap) }) -> GetDocumentResponse
+newGetDocumentResponse' :: ({ "Metadata" :: Maybe (DocumentMetadata), "CustomMetadata" :: Maybe (CustomMetadataMap) } -> { "Metadata" :: Maybe (DocumentMetadata), "CustomMetadata" :: Maybe (CustomMetadataMap) }) -> GetDocumentResponse
 ```
 
 Constructs GetDocumentResponse's fields from required parameters
@@ -2534,7 +2534,7 @@ Constructs GetDocumentResponse's fields from required parameters
 
 ``` purescript
 newtype GetDocumentVersionRequest
-  = GetDocumentVersionRequest { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "DocumentId" :: ResourceIdType, "VersionId" :: DocumentVersionIdType, "Fields" :: NullOrUndefined (FieldNamesType), "IncludeCustomMetadata" :: NullOrUndefined (BooleanType) }
+  = GetDocumentVersionRequest { "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "DocumentId" :: ResourceIdType, "VersionId" :: DocumentVersionIdType, "Fields" :: Maybe (FieldNamesType), "IncludeCustomMetadata" :: Maybe (BooleanType) }
 ```
 
 ##### Instances
@@ -2557,7 +2557,7 @@ Constructs GetDocumentVersionRequest from required parameters
 #### `newGetDocumentVersionRequest'`
 
 ``` purescript
-newGetDocumentVersionRequest' :: ResourceIdType -> DocumentVersionIdType -> ({ "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "DocumentId" :: ResourceIdType, "VersionId" :: DocumentVersionIdType, "Fields" :: NullOrUndefined (FieldNamesType), "IncludeCustomMetadata" :: NullOrUndefined (BooleanType) } -> { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "DocumentId" :: ResourceIdType, "VersionId" :: DocumentVersionIdType, "Fields" :: NullOrUndefined (FieldNamesType), "IncludeCustomMetadata" :: NullOrUndefined (BooleanType) }) -> GetDocumentVersionRequest
+newGetDocumentVersionRequest' :: ResourceIdType -> DocumentVersionIdType -> ({ "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "DocumentId" :: ResourceIdType, "VersionId" :: DocumentVersionIdType, "Fields" :: Maybe (FieldNamesType), "IncludeCustomMetadata" :: Maybe (BooleanType) } -> { "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "DocumentId" :: ResourceIdType, "VersionId" :: DocumentVersionIdType, "Fields" :: Maybe (FieldNamesType), "IncludeCustomMetadata" :: Maybe (BooleanType) }) -> GetDocumentVersionRequest
 ```
 
 Constructs GetDocumentVersionRequest's fields from required parameters
@@ -2566,7 +2566,7 @@ Constructs GetDocumentVersionRequest's fields from required parameters
 
 ``` purescript
 newtype GetDocumentVersionResponse
-  = GetDocumentVersionResponse { "Metadata" :: NullOrUndefined (DocumentVersionMetadata), "CustomMetadata" :: NullOrUndefined (CustomMetadataMap) }
+  = GetDocumentVersionResponse { "Metadata" :: Maybe (DocumentVersionMetadata), "CustomMetadata" :: Maybe (CustomMetadataMap) }
 ```
 
 ##### Instances
@@ -2589,7 +2589,7 @@ Constructs GetDocumentVersionResponse from required parameters
 #### `newGetDocumentVersionResponse'`
 
 ``` purescript
-newGetDocumentVersionResponse' :: ({ "Metadata" :: NullOrUndefined (DocumentVersionMetadata), "CustomMetadata" :: NullOrUndefined (CustomMetadataMap) } -> { "Metadata" :: NullOrUndefined (DocumentVersionMetadata), "CustomMetadata" :: NullOrUndefined (CustomMetadataMap) }) -> GetDocumentVersionResponse
+newGetDocumentVersionResponse' :: ({ "Metadata" :: Maybe (DocumentVersionMetadata), "CustomMetadata" :: Maybe (CustomMetadataMap) } -> { "Metadata" :: Maybe (DocumentVersionMetadata), "CustomMetadata" :: Maybe (CustomMetadataMap) }) -> GetDocumentVersionResponse
 ```
 
 Constructs GetDocumentVersionResponse's fields from required parameters
@@ -2598,7 +2598,7 @@ Constructs GetDocumentVersionResponse's fields from required parameters
 
 ``` purescript
 newtype GetFolderPathRequest
-  = GetFolderPathRequest { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "FolderId" :: IdType, "Limit" :: NullOrUndefined (LimitType), "Fields" :: NullOrUndefined (FieldNamesType), "Marker" :: NullOrUndefined (PageMarkerType) }
+  = GetFolderPathRequest { "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "FolderId" :: IdType, "Limit" :: Maybe (LimitType), "Fields" :: Maybe (FieldNamesType), "Marker" :: Maybe (PageMarkerType) }
 ```
 
 ##### Instances
@@ -2621,7 +2621,7 @@ Constructs GetFolderPathRequest from required parameters
 #### `newGetFolderPathRequest'`
 
 ``` purescript
-newGetFolderPathRequest' :: IdType -> ({ "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "FolderId" :: IdType, "Limit" :: NullOrUndefined (LimitType), "Fields" :: NullOrUndefined (FieldNamesType), "Marker" :: NullOrUndefined (PageMarkerType) } -> { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "FolderId" :: IdType, "Limit" :: NullOrUndefined (LimitType), "Fields" :: NullOrUndefined (FieldNamesType), "Marker" :: NullOrUndefined (PageMarkerType) }) -> GetFolderPathRequest
+newGetFolderPathRequest' :: IdType -> ({ "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "FolderId" :: IdType, "Limit" :: Maybe (LimitType), "Fields" :: Maybe (FieldNamesType), "Marker" :: Maybe (PageMarkerType) } -> { "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "FolderId" :: IdType, "Limit" :: Maybe (LimitType), "Fields" :: Maybe (FieldNamesType), "Marker" :: Maybe (PageMarkerType) }) -> GetFolderPathRequest
 ```
 
 Constructs GetFolderPathRequest's fields from required parameters
@@ -2630,7 +2630,7 @@ Constructs GetFolderPathRequest's fields from required parameters
 
 ``` purescript
 newtype GetFolderPathResponse
-  = GetFolderPathResponse { "Path" :: NullOrUndefined (ResourcePath) }
+  = GetFolderPathResponse { "Path" :: Maybe (ResourcePath) }
 ```
 
 ##### Instances
@@ -2653,7 +2653,7 @@ Constructs GetFolderPathResponse from required parameters
 #### `newGetFolderPathResponse'`
 
 ``` purescript
-newGetFolderPathResponse' :: ({ "Path" :: NullOrUndefined (ResourcePath) } -> { "Path" :: NullOrUndefined (ResourcePath) }) -> GetFolderPathResponse
+newGetFolderPathResponse' :: ({ "Path" :: Maybe (ResourcePath) } -> { "Path" :: Maybe (ResourcePath) }) -> GetFolderPathResponse
 ```
 
 Constructs GetFolderPathResponse's fields from required parameters
@@ -2662,7 +2662,7 @@ Constructs GetFolderPathResponse's fields from required parameters
 
 ``` purescript
 newtype GetFolderRequest
-  = GetFolderRequest { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "FolderId" :: ResourceIdType, "IncludeCustomMetadata" :: NullOrUndefined (BooleanType) }
+  = GetFolderRequest { "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "FolderId" :: ResourceIdType, "IncludeCustomMetadata" :: Maybe (BooleanType) }
 ```
 
 ##### Instances
@@ -2685,7 +2685,7 @@ Constructs GetFolderRequest from required parameters
 #### `newGetFolderRequest'`
 
 ``` purescript
-newGetFolderRequest' :: ResourceIdType -> ({ "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "FolderId" :: ResourceIdType, "IncludeCustomMetadata" :: NullOrUndefined (BooleanType) } -> { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "FolderId" :: ResourceIdType, "IncludeCustomMetadata" :: NullOrUndefined (BooleanType) }) -> GetFolderRequest
+newGetFolderRequest' :: ResourceIdType -> ({ "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "FolderId" :: ResourceIdType, "IncludeCustomMetadata" :: Maybe (BooleanType) } -> { "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "FolderId" :: ResourceIdType, "IncludeCustomMetadata" :: Maybe (BooleanType) }) -> GetFolderRequest
 ```
 
 Constructs GetFolderRequest's fields from required parameters
@@ -2694,7 +2694,7 @@ Constructs GetFolderRequest's fields from required parameters
 
 ``` purescript
 newtype GetFolderResponse
-  = GetFolderResponse { "Metadata" :: NullOrUndefined (FolderMetadata), "CustomMetadata" :: NullOrUndefined (CustomMetadataMap) }
+  = GetFolderResponse { "Metadata" :: Maybe (FolderMetadata), "CustomMetadata" :: Maybe (CustomMetadataMap) }
 ```
 
 ##### Instances
@@ -2717,7 +2717,7 @@ Constructs GetFolderResponse from required parameters
 #### `newGetFolderResponse'`
 
 ``` purescript
-newGetFolderResponse' :: ({ "Metadata" :: NullOrUndefined (FolderMetadata), "CustomMetadata" :: NullOrUndefined (CustomMetadataMap) } -> { "Metadata" :: NullOrUndefined (FolderMetadata), "CustomMetadata" :: NullOrUndefined (CustomMetadataMap) }) -> GetFolderResponse
+newGetFolderResponse' :: ({ "Metadata" :: Maybe (FolderMetadata), "CustomMetadata" :: Maybe (CustomMetadataMap) } -> { "Metadata" :: Maybe (FolderMetadata), "CustomMetadata" :: Maybe (CustomMetadataMap) }) -> GetFolderResponse
 ```
 
 Constructs GetFolderResponse's fields from required parameters
@@ -2726,7 +2726,7 @@ Constructs GetFolderResponse's fields from required parameters
 
 ``` purescript
 newtype GroupMetadata
-  = GroupMetadata { "Id" :: NullOrUndefined (IdType), "Name" :: NullOrUndefined (GroupNameType) }
+  = GroupMetadata { "Id" :: Maybe (IdType), "Name" :: Maybe (GroupNameType) }
 ```
 
 <p>Describes the metadata of a user group.</p>
@@ -2751,7 +2751,7 @@ Constructs GroupMetadata from required parameters
 #### `newGroupMetadata'`
 
 ``` purescript
-newGroupMetadata' :: ({ "Id" :: NullOrUndefined (IdType), "Name" :: NullOrUndefined (GroupNameType) } -> { "Id" :: NullOrUndefined (IdType), "Name" :: NullOrUndefined (GroupNameType) }) -> GroupMetadata
+newGroupMetadata' :: ({ "Id" :: Maybe (IdType), "Name" :: Maybe (GroupNameType) } -> { "Id" :: Maybe (IdType), "Name" :: Maybe (GroupNameType) }) -> GroupMetadata
 ```
 
 Constructs GroupMetadata's fields from required parameters
@@ -2856,7 +2856,7 @@ Encode IdType
 
 ``` purescript
 newtype IllegalUserStateException
-  = IllegalUserStateException { "Message" :: NullOrUndefined (ErrorMessageType) }
+  = IllegalUserStateException { "Message" :: Maybe (ErrorMessageType) }
 ```
 
 <p>The user is undergoing transfer of ownership.</p>
@@ -2881,7 +2881,7 @@ Constructs IllegalUserStateException from required parameters
 #### `newIllegalUserStateException'`
 
 ``` purescript
-newIllegalUserStateException' :: ({ "Message" :: NullOrUndefined (ErrorMessageType) } -> { "Message" :: NullOrUndefined (ErrorMessageType) }) -> IllegalUserStateException
+newIllegalUserStateException' :: ({ "Message" :: Maybe (ErrorMessageType) } -> { "Message" :: Maybe (ErrorMessageType) }) -> IllegalUserStateException
 ```
 
 Constructs IllegalUserStateException's fields from required parameters
@@ -2890,7 +2890,7 @@ Constructs IllegalUserStateException's fields from required parameters
 
 ``` purescript
 newtype InitiateDocumentVersionUploadRequest
-  = InitiateDocumentVersionUploadRequest { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "Id" :: NullOrUndefined (ResourceIdType), "Name" :: NullOrUndefined (ResourceNameType), "ContentCreatedTimestamp" :: NullOrUndefined (TimestampType), "ContentModifiedTimestamp" :: NullOrUndefined (TimestampType), "ContentType" :: NullOrUndefined (DocumentContentType), "DocumentSizeInBytes" :: NullOrUndefined (SizeType), "ParentFolderId" :: ResourceIdType }
+  = InitiateDocumentVersionUploadRequest { "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "Id" :: Maybe (ResourceIdType), "Name" :: Maybe (ResourceNameType), "ContentCreatedTimestamp" :: Maybe (TimestampType), "ContentModifiedTimestamp" :: Maybe (TimestampType), "ContentType" :: Maybe (DocumentContentType), "DocumentSizeInBytes" :: Maybe (SizeType), "ParentFolderId" :: ResourceIdType }
 ```
 
 ##### Instances
@@ -2913,7 +2913,7 @@ Constructs InitiateDocumentVersionUploadRequest from required parameters
 #### `newInitiateDocumentVersionUploadRequest'`
 
 ``` purescript
-newInitiateDocumentVersionUploadRequest' :: ResourceIdType -> ({ "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "Id" :: NullOrUndefined (ResourceIdType), "Name" :: NullOrUndefined (ResourceNameType), "ContentCreatedTimestamp" :: NullOrUndefined (TimestampType), "ContentModifiedTimestamp" :: NullOrUndefined (TimestampType), "ContentType" :: NullOrUndefined (DocumentContentType), "DocumentSizeInBytes" :: NullOrUndefined (SizeType), "ParentFolderId" :: ResourceIdType } -> { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "Id" :: NullOrUndefined (ResourceIdType), "Name" :: NullOrUndefined (ResourceNameType), "ContentCreatedTimestamp" :: NullOrUndefined (TimestampType), "ContentModifiedTimestamp" :: NullOrUndefined (TimestampType), "ContentType" :: NullOrUndefined (DocumentContentType), "DocumentSizeInBytes" :: NullOrUndefined (SizeType), "ParentFolderId" :: ResourceIdType }) -> InitiateDocumentVersionUploadRequest
+newInitiateDocumentVersionUploadRequest' :: ResourceIdType -> ({ "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "Id" :: Maybe (ResourceIdType), "Name" :: Maybe (ResourceNameType), "ContentCreatedTimestamp" :: Maybe (TimestampType), "ContentModifiedTimestamp" :: Maybe (TimestampType), "ContentType" :: Maybe (DocumentContentType), "DocumentSizeInBytes" :: Maybe (SizeType), "ParentFolderId" :: ResourceIdType } -> { "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "Id" :: Maybe (ResourceIdType), "Name" :: Maybe (ResourceNameType), "ContentCreatedTimestamp" :: Maybe (TimestampType), "ContentModifiedTimestamp" :: Maybe (TimestampType), "ContentType" :: Maybe (DocumentContentType), "DocumentSizeInBytes" :: Maybe (SizeType), "ParentFolderId" :: ResourceIdType }) -> InitiateDocumentVersionUploadRequest
 ```
 
 Constructs InitiateDocumentVersionUploadRequest's fields from required parameters
@@ -2922,7 +2922,7 @@ Constructs InitiateDocumentVersionUploadRequest's fields from required parameter
 
 ``` purescript
 newtype InitiateDocumentVersionUploadResponse
-  = InitiateDocumentVersionUploadResponse { "Metadata" :: NullOrUndefined (DocumentMetadata), "UploadMetadata" :: NullOrUndefined (UploadMetadata) }
+  = InitiateDocumentVersionUploadResponse { "Metadata" :: Maybe (DocumentMetadata), "UploadMetadata" :: Maybe (UploadMetadata) }
 ```
 
 ##### Instances
@@ -2945,7 +2945,7 @@ Constructs InitiateDocumentVersionUploadResponse from required parameters
 #### `newInitiateDocumentVersionUploadResponse'`
 
 ``` purescript
-newInitiateDocumentVersionUploadResponse' :: ({ "Metadata" :: NullOrUndefined (DocumentMetadata), "UploadMetadata" :: NullOrUndefined (UploadMetadata) } -> { "Metadata" :: NullOrUndefined (DocumentMetadata), "UploadMetadata" :: NullOrUndefined (UploadMetadata) }) -> InitiateDocumentVersionUploadResponse
+newInitiateDocumentVersionUploadResponse' :: ({ "Metadata" :: Maybe (DocumentMetadata), "UploadMetadata" :: Maybe (UploadMetadata) } -> { "Metadata" :: Maybe (DocumentMetadata), "UploadMetadata" :: Maybe (UploadMetadata) }) -> InitiateDocumentVersionUploadResponse
 ```
 
 Constructs InitiateDocumentVersionUploadResponse's fields from required parameters
@@ -2954,7 +2954,7 @@ Constructs InitiateDocumentVersionUploadResponse's fields from required paramete
 
 ``` purescript
 newtype InvalidArgumentException
-  = InvalidArgumentException { "Message" :: NullOrUndefined (ErrorMessageType) }
+  = InvalidArgumentException { "Message" :: Maybe (ErrorMessageType) }
 ```
 
 <p>The pagination marker or limit fields are not valid.</p>
@@ -2979,7 +2979,7 @@ Constructs InvalidArgumentException from required parameters
 #### `newInvalidArgumentException'`
 
 ``` purescript
-newInvalidArgumentException' :: ({ "Message" :: NullOrUndefined (ErrorMessageType) } -> { "Message" :: NullOrUndefined (ErrorMessageType) }) -> InvalidArgumentException
+newInvalidArgumentException' :: ({ "Message" :: Maybe (ErrorMessageType) } -> { "Message" :: Maybe (ErrorMessageType) }) -> InvalidArgumentException
 ```
 
 Constructs InvalidArgumentException's fields from required parameters
@@ -2988,7 +2988,7 @@ Constructs InvalidArgumentException's fields from required parameters
 
 ``` purescript
 newtype InvalidOperationException
-  = InvalidOperationException { "Message" :: NullOrUndefined (ErrorMessageType) }
+  = InvalidOperationException { "Message" :: Maybe (ErrorMessageType) }
 ```
 
 <p>The operation is invalid.</p>
@@ -3013,7 +3013,7 @@ Constructs InvalidOperationException from required parameters
 #### `newInvalidOperationException'`
 
 ``` purescript
-newInvalidOperationException' :: ({ "Message" :: NullOrUndefined (ErrorMessageType) } -> { "Message" :: NullOrUndefined (ErrorMessageType) }) -> InvalidOperationException
+newInvalidOperationException' :: ({ "Message" :: Maybe (ErrorMessageType) } -> { "Message" :: Maybe (ErrorMessageType) }) -> InvalidOperationException
 ```
 
 Constructs InvalidOperationException's fields from required parameters
@@ -3022,7 +3022,7 @@ Constructs InvalidOperationException's fields from required parameters
 
 ``` purescript
 newtype InvalidPasswordException
-  = InvalidPasswordException { "Message" :: NullOrUndefined (ErrorMessageType) }
+  = InvalidPasswordException { "Message" :: Maybe (ErrorMessageType) }
 ```
 
 <p>The password is invalid.</p>
@@ -3047,7 +3047,7 @@ Constructs InvalidPasswordException from required parameters
 #### `newInvalidPasswordException'`
 
 ``` purescript
-newInvalidPasswordException' :: ({ "Message" :: NullOrUndefined (ErrorMessageType) } -> { "Message" :: NullOrUndefined (ErrorMessageType) }) -> InvalidPasswordException
+newInvalidPasswordException' :: ({ "Message" :: Maybe (ErrorMessageType) } -> { "Message" :: Maybe (ErrorMessageType) }) -> InvalidPasswordException
 ```
 
 Constructs InvalidPasswordException's fields from required parameters
@@ -3056,7 +3056,7 @@ Constructs InvalidPasswordException's fields from required parameters
 
 ``` purescript
 newtype LimitExceededException
-  = LimitExceededException { "Message" :: NullOrUndefined (ErrorMessageType) }
+  = LimitExceededException { "Message" :: Maybe (ErrorMessageType) }
 ```
 
 <p>The maximum of 100,000 folders under the parent folder has been exceeded.</p>
@@ -3081,7 +3081,7 @@ Constructs LimitExceededException from required parameters
 #### `newLimitExceededException'`
 
 ``` purescript
-newLimitExceededException' :: ({ "Message" :: NullOrUndefined (ErrorMessageType) } -> { "Message" :: NullOrUndefined (ErrorMessageType) }) -> LimitExceededException
+newLimitExceededException' :: ({ "Message" :: Maybe (ErrorMessageType) } -> { "Message" :: Maybe (ErrorMessageType) }) -> LimitExceededException
 ```
 
 Constructs LimitExceededException's fields from required parameters
@@ -3154,7 +3154,7 @@ Encode MessageType
 
 ``` purescript
 newtype NotificationOptions
-  = NotificationOptions { "SendEmail" :: NullOrUndefined (BooleanType), "EmailMessage" :: NullOrUndefined (MessageType) }
+  = NotificationOptions { "SendEmail" :: Maybe (BooleanType), "EmailMessage" :: Maybe (MessageType) }
 ```
 
 <p>Set of options which defines notification preferences of given action.</p>
@@ -3179,7 +3179,7 @@ Constructs NotificationOptions from required parameters
 #### `newNotificationOptions'`
 
 ``` purescript
-newNotificationOptions' :: ({ "SendEmail" :: NullOrUndefined (BooleanType), "EmailMessage" :: NullOrUndefined (MessageType) } -> { "SendEmail" :: NullOrUndefined (BooleanType), "EmailMessage" :: NullOrUndefined (MessageType) }) -> NotificationOptions
+newNotificationOptions' :: ({ "SendEmail" :: Maybe (BooleanType), "EmailMessage" :: Maybe (MessageType) } -> { "SendEmail" :: Maybe (BooleanType), "EmailMessage" :: Maybe (MessageType) }) -> NotificationOptions
 ```
 
 Constructs NotificationOptions's fields from required parameters
@@ -3236,7 +3236,7 @@ Encode PageMarkerType
 
 ``` purescript
 newtype Participants
-  = Participants { "Users" :: NullOrUndefined (UserMetadataList), "Groups" :: NullOrUndefined (GroupMetadataList) }
+  = Participants { "Users" :: Maybe (UserMetadataList), "Groups" :: Maybe (GroupMetadataList) }
 ```
 
 <p>Describes the users or user groups.</p>
@@ -3261,7 +3261,7 @@ Constructs Participants from required parameters
 #### `newParticipants'`
 
 ``` purescript
-newParticipants' :: ({ "Users" :: NullOrUndefined (UserMetadataList), "Groups" :: NullOrUndefined (GroupMetadataList) } -> { "Users" :: NullOrUndefined (UserMetadataList), "Groups" :: NullOrUndefined (GroupMetadataList) }) -> Participants
+newParticipants' :: ({ "Users" :: Maybe (UserMetadataList), "Groups" :: Maybe (GroupMetadataList) } -> { "Users" :: Maybe (UserMetadataList), "Groups" :: Maybe (GroupMetadataList) }) -> Participants
 ```
 
 Constructs Participants's fields from required parameters
@@ -3286,7 +3286,7 @@ Encode PasswordType
 
 ``` purescript
 newtype PermissionInfo
-  = PermissionInfo { "Role" :: NullOrUndefined (RoleType), "Type" :: NullOrUndefined (RolePermissionType) }
+  = PermissionInfo { "Role" :: Maybe (RoleType), "Type" :: Maybe (RolePermissionType) }
 ```
 
 <p>Describes the permissions.</p>
@@ -3311,7 +3311,7 @@ Constructs PermissionInfo from required parameters
 #### `newPermissionInfo'`
 
 ``` purescript
-newPermissionInfo' :: ({ "Role" :: NullOrUndefined (RoleType), "Type" :: NullOrUndefined (RolePermissionType) } -> { "Role" :: NullOrUndefined (RoleType), "Type" :: NullOrUndefined (RolePermissionType) }) -> PermissionInfo
+newPermissionInfo' :: ({ "Role" :: Maybe (RoleType), "Type" :: Maybe (RolePermissionType) } -> { "Role" :: Maybe (RoleType), "Type" :: Maybe (RolePermissionType) }) -> PermissionInfo
 ```
 
 Constructs PermissionInfo's fields from required parameters
@@ -3368,7 +3368,7 @@ Encode PositiveSizeType
 
 ``` purescript
 newtype Principal
-  = Principal { "Id" :: NullOrUndefined (IdType), "Type" :: NullOrUndefined (PrincipalType), "Roles" :: NullOrUndefined (PermissionInfoList) }
+  = Principal { "Id" :: Maybe (IdType), "Type" :: Maybe (PrincipalType), "Roles" :: Maybe (PermissionInfoList) }
 ```
 
 <p>Describes a resource.</p>
@@ -3393,7 +3393,7 @@ Constructs Principal from required parameters
 #### `newPrincipal'`
 
 ``` purescript
-newPrincipal' :: ({ "Id" :: NullOrUndefined (IdType), "Type" :: NullOrUndefined (PrincipalType), "Roles" :: NullOrUndefined (PermissionInfoList) } -> { "Id" :: NullOrUndefined (IdType), "Type" :: NullOrUndefined (PrincipalType), "Roles" :: NullOrUndefined (PermissionInfoList) }) -> Principal
+newPrincipal' :: ({ "Id" :: Maybe (IdType), "Type" :: Maybe (PrincipalType), "Roles" :: Maybe (PermissionInfoList) } -> { "Id" :: Maybe (IdType), "Type" :: Maybe (PrincipalType), "Roles" :: Maybe (PermissionInfoList) }) -> Principal
 ```
 
 Constructs Principal's fields from required parameters
@@ -3434,7 +3434,7 @@ Encode PrincipalType
 
 ``` purescript
 newtype ProhibitedStateException
-  = ProhibitedStateException { "Message" :: NullOrUndefined (ErrorMessageType) }
+  = ProhibitedStateException { "Message" :: Maybe (ErrorMessageType) }
 ```
 
 <p>The specified document version is not in the INITIALIZED state.</p>
@@ -3459,7 +3459,7 @@ Constructs ProhibitedStateException from required parameters
 #### `newProhibitedStateException'`
 
 ``` purescript
-newProhibitedStateException' :: ({ "Message" :: NullOrUndefined (ErrorMessageType) } -> { "Message" :: NullOrUndefined (ErrorMessageType) }) -> ProhibitedStateException
+newProhibitedStateException' :: ({ "Message" :: Maybe (ErrorMessageType) } -> { "Message" :: Maybe (ErrorMessageType) }) -> ProhibitedStateException
 ```
 
 Constructs ProhibitedStateException's fields from required parameters
@@ -3468,7 +3468,7 @@ Constructs ProhibitedStateException's fields from required parameters
 
 ``` purescript
 newtype RemoveAllResourcePermissionsRequest
-  = RemoveAllResourcePermissionsRequest { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "ResourceId" :: ResourceIdType }
+  = RemoveAllResourcePermissionsRequest { "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "ResourceId" :: ResourceIdType }
 ```
 
 ##### Instances
@@ -3491,7 +3491,7 @@ Constructs RemoveAllResourcePermissionsRequest from required parameters
 #### `newRemoveAllResourcePermissionsRequest'`
 
 ``` purescript
-newRemoveAllResourcePermissionsRequest' :: ResourceIdType -> ({ "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "ResourceId" :: ResourceIdType } -> { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "ResourceId" :: ResourceIdType }) -> RemoveAllResourcePermissionsRequest
+newRemoveAllResourcePermissionsRequest' :: ResourceIdType -> ({ "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "ResourceId" :: ResourceIdType } -> { "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "ResourceId" :: ResourceIdType }) -> RemoveAllResourcePermissionsRequest
 ```
 
 Constructs RemoveAllResourcePermissionsRequest's fields from required parameters
@@ -3500,7 +3500,7 @@ Constructs RemoveAllResourcePermissionsRequest's fields from required parameters
 
 ``` purescript
 newtype RemoveResourcePermissionRequest
-  = RemoveResourcePermissionRequest { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "ResourceId" :: ResourceIdType, "PrincipalId" :: IdType, "PrincipalType" :: NullOrUndefined (PrincipalType) }
+  = RemoveResourcePermissionRequest { "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "ResourceId" :: ResourceIdType, "PrincipalId" :: IdType, "PrincipalType" :: Maybe (PrincipalType) }
 ```
 
 ##### Instances
@@ -3523,7 +3523,7 @@ Constructs RemoveResourcePermissionRequest from required parameters
 #### `newRemoveResourcePermissionRequest'`
 
 ``` purescript
-newRemoveResourcePermissionRequest' :: IdType -> ResourceIdType -> ({ "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "ResourceId" :: ResourceIdType, "PrincipalId" :: IdType, "PrincipalType" :: NullOrUndefined (PrincipalType) } -> { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "ResourceId" :: ResourceIdType, "PrincipalId" :: IdType, "PrincipalType" :: NullOrUndefined (PrincipalType) }) -> RemoveResourcePermissionRequest
+newRemoveResourcePermissionRequest' :: IdType -> ResourceIdType -> ({ "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "ResourceId" :: ResourceIdType, "PrincipalId" :: IdType, "PrincipalType" :: Maybe (PrincipalType) } -> { "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "ResourceId" :: ResourceIdType, "PrincipalId" :: IdType, "PrincipalType" :: Maybe (PrincipalType) }) -> RemoveResourcePermissionRequest
 ```
 
 Constructs RemoveResourcePermissionRequest's fields from required parameters
@@ -3532,7 +3532,7 @@ Constructs RemoveResourcePermissionRequest's fields from required parameters
 
 ``` purescript
 newtype ResourceAlreadyCheckedOutException
-  = ResourceAlreadyCheckedOutException { "Message" :: NullOrUndefined (ErrorMessageType) }
+  = ResourceAlreadyCheckedOutException { "Message" :: Maybe (ErrorMessageType) }
 ```
 
 <p>The resource is already checked out.</p>
@@ -3557,7 +3557,7 @@ Constructs ResourceAlreadyCheckedOutException from required parameters
 #### `newResourceAlreadyCheckedOutException'`
 
 ``` purescript
-newResourceAlreadyCheckedOutException' :: ({ "Message" :: NullOrUndefined (ErrorMessageType) } -> { "Message" :: NullOrUndefined (ErrorMessageType) }) -> ResourceAlreadyCheckedOutException
+newResourceAlreadyCheckedOutException' :: ({ "Message" :: Maybe (ErrorMessageType) } -> { "Message" :: Maybe (ErrorMessageType) }) -> ResourceAlreadyCheckedOutException
 ```
 
 Constructs ResourceAlreadyCheckedOutException's fields from required parameters
@@ -3582,7 +3582,7 @@ Encode ResourceIdType
 
 ``` purescript
 newtype ResourceMetadata
-  = ResourceMetadata { "Type" :: NullOrUndefined (ResourceType), "Name" :: NullOrUndefined (ResourceNameType), "OriginalName" :: NullOrUndefined (ResourceNameType), "Id" :: NullOrUndefined (ResourceIdType), "VersionId" :: NullOrUndefined (DocumentVersionIdType), "Owner" :: NullOrUndefined (UserMetadata), "ParentId" :: NullOrUndefined (ResourceIdType) }
+  = ResourceMetadata { "Type" :: Maybe (ResourceType), "Name" :: Maybe (ResourceNameType), "OriginalName" :: Maybe (ResourceNameType), "Id" :: Maybe (ResourceIdType), "VersionId" :: Maybe (DocumentVersionIdType), "Owner" :: Maybe (UserMetadata), "ParentId" :: Maybe (ResourceIdType) }
 ```
 
 <p>Describes the metadata of a resource.</p>
@@ -3607,7 +3607,7 @@ Constructs ResourceMetadata from required parameters
 #### `newResourceMetadata'`
 
 ``` purescript
-newResourceMetadata' :: ({ "Type" :: NullOrUndefined (ResourceType), "Name" :: NullOrUndefined (ResourceNameType), "OriginalName" :: NullOrUndefined (ResourceNameType), "Id" :: NullOrUndefined (ResourceIdType), "VersionId" :: NullOrUndefined (DocumentVersionIdType), "Owner" :: NullOrUndefined (UserMetadata), "ParentId" :: NullOrUndefined (ResourceIdType) } -> { "Type" :: NullOrUndefined (ResourceType), "Name" :: NullOrUndefined (ResourceNameType), "OriginalName" :: NullOrUndefined (ResourceNameType), "Id" :: NullOrUndefined (ResourceIdType), "VersionId" :: NullOrUndefined (DocumentVersionIdType), "Owner" :: NullOrUndefined (UserMetadata), "ParentId" :: NullOrUndefined (ResourceIdType) }) -> ResourceMetadata
+newResourceMetadata' :: ({ "Type" :: Maybe (ResourceType), "Name" :: Maybe (ResourceNameType), "OriginalName" :: Maybe (ResourceNameType), "Id" :: Maybe (ResourceIdType), "VersionId" :: Maybe (DocumentVersionIdType), "Owner" :: Maybe (UserMetadata), "ParentId" :: Maybe (ResourceIdType) } -> { "Type" :: Maybe (ResourceType), "Name" :: Maybe (ResourceNameType), "OriginalName" :: Maybe (ResourceNameType), "Id" :: Maybe (ResourceIdType), "VersionId" :: Maybe (DocumentVersionIdType), "Owner" :: Maybe (UserMetadata), "ParentId" :: Maybe (ResourceIdType) }) -> ResourceMetadata
 ```
 
 Constructs ResourceMetadata's fields from required parameters
@@ -3632,7 +3632,7 @@ Encode ResourceNameType
 
 ``` purescript
 newtype ResourcePath
-  = ResourcePath { "Components" :: NullOrUndefined (ResourcePathComponentList) }
+  = ResourcePath { "Components" :: Maybe (ResourcePathComponentList) }
 ```
 
 <p>Describes the path information of a resource.</p>
@@ -3657,7 +3657,7 @@ Constructs ResourcePath from required parameters
 #### `newResourcePath'`
 
 ``` purescript
-newResourcePath' :: ({ "Components" :: NullOrUndefined (ResourcePathComponentList) } -> { "Components" :: NullOrUndefined (ResourcePathComponentList) }) -> ResourcePath
+newResourcePath' :: ({ "Components" :: Maybe (ResourcePathComponentList) } -> { "Components" :: Maybe (ResourcePathComponentList) }) -> ResourcePath
 ```
 
 Constructs ResourcePath's fields from required parameters
@@ -3666,7 +3666,7 @@ Constructs ResourcePath's fields from required parameters
 
 ``` purescript
 newtype ResourcePathComponent
-  = ResourcePathComponent { "Id" :: NullOrUndefined (IdType), "Name" :: NullOrUndefined (ResourceNameType) }
+  = ResourcePathComponent { "Id" :: Maybe (IdType), "Name" :: Maybe (ResourceNameType) }
 ```
 
 <p>Describes the resource path.</p>
@@ -3691,7 +3691,7 @@ Constructs ResourcePathComponent from required parameters
 #### `newResourcePathComponent'`
 
 ``` purescript
-newResourcePathComponent' :: ({ "Id" :: NullOrUndefined (IdType), "Name" :: NullOrUndefined (ResourceNameType) } -> { "Id" :: NullOrUndefined (IdType), "Name" :: NullOrUndefined (ResourceNameType) }) -> ResourcePathComponent
+newResourcePathComponent' :: ({ "Id" :: Maybe (IdType), "Name" :: Maybe (ResourceNameType) } -> { "Id" :: Maybe (IdType), "Name" :: Maybe (ResourceNameType) }) -> ResourcePathComponent
 ```
 
 Constructs ResourcePathComponent's fields from required parameters
@@ -3812,7 +3812,7 @@ Encode SearchQueryType
 
 ``` purescript
 newtype ServiceUnavailableException
-  = ServiceUnavailableException { "Message" :: NullOrUndefined (ErrorMessageType) }
+  = ServiceUnavailableException { "Message" :: Maybe (ErrorMessageType) }
 ```
 
 <p>One or more of the dependencies is unavailable.</p>
@@ -3837,7 +3837,7 @@ Constructs ServiceUnavailableException from required parameters
 #### `newServiceUnavailableException'`
 
 ``` purescript
-newServiceUnavailableException' :: ({ "Message" :: NullOrUndefined (ErrorMessageType) } -> { "Message" :: NullOrUndefined (ErrorMessageType) }) -> ServiceUnavailableException
+newServiceUnavailableException' :: ({ "Message" :: Maybe (ErrorMessageType) } -> { "Message" :: Maybe (ErrorMessageType) }) -> ServiceUnavailableException
 ```
 
 Constructs ServiceUnavailableException's fields from required parameters
@@ -3896,7 +3896,7 @@ Encode SharePrincipalList
 
 ``` purescript
 newtype ShareResult
-  = ShareResult { "PrincipalId" :: NullOrUndefined (IdType), "Role" :: NullOrUndefined (RoleType), "Status" :: NullOrUndefined (ShareStatusType), "ShareId" :: NullOrUndefined (ResourceIdType), "StatusMessage" :: NullOrUndefined (MessageType) }
+  = ShareResult { "PrincipalId" :: Maybe (IdType), "Role" :: Maybe (RoleType), "Status" :: Maybe (ShareStatusType), "ShareId" :: Maybe (ResourceIdType), "StatusMessage" :: Maybe (MessageType) }
 ```
 
 <p>Describes the share results of a resource.</p>
@@ -3921,7 +3921,7 @@ Constructs ShareResult from required parameters
 #### `newShareResult'`
 
 ``` purescript
-newShareResult' :: ({ "PrincipalId" :: NullOrUndefined (IdType), "Role" :: NullOrUndefined (RoleType), "Status" :: NullOrUndefined (ShareStatusType), "ShareId" :: NullOrUndefined (ResourceIdType), "StatusMessage" :: NullOrUndefined (MessageType) } -> { "PrincipalId" :: NullOrUndefined (IdType), "Role" :: NullOrUndefined (RoleType), "Status" :: NullOrUndefined (ShareStatusType), "ShareId" :: NullOrUndefined (ResourceIdType), "StatusMessage" :: NullOrUndefined (MessageType) }) -> ShareResult
+newShareResult' :: ({ "PrincipalId" :: Maybe (IdType), "Role" :: Maybe (RoleType), "Status" :: Maybe (ShareStatusType), "ShareId" :: Maybe (ResourceIdType), "StatusMessage" :: Maybe (MessageType) } -> { "PrincipalId" :: Maybe (IdType), "Role" :: Maybe (RoleType), "Status" :: Maybe (ShareStatusType), "ShareId" :: Maybe (ResourceIdType), "StatusMessage" :: Maybe (MessageType) }) -> ShareResult
 ```
 
 Constructs ShareResult's fields from required parameters
@@ -4026,7 +4026,7 @@ Encode SizeType
 
 ``` purescript
 newtype StorageLimitExceededException
-  = StorageLimitExceededException { "Message" :: NullOrUndefined (ErrorMessageType) }
+  = StorageLimitExceededException { "Message" :: Maybe (ErrorMessageType) }
 ```
 
 <p>The storage limit has been exceeded.</p>
@@ -4051,7 +4051,7 @@ Constructs StorageLimitExceededException from required parameters
 #### `newStorageLimitExceededException'`
 
 ``` purescript
-newStorageLimitExceededException' :: ({ "Message" :: NullOrUndefined (ErrorMessageType) } -> { "Message" :: NullOrUndefined (ErrorMessageType) }) -> StorageLimitExceededException
+newStorageLimitExceededException' :: ({ "Message" :: Maybe (ErrorMessageType) } -> { "Message" :: Maybe (ErrorMessageType) }) -> StorageLimitExceededException
 ```
 
 Constructs StorageLimitExceededException's fields from required parameters
@@ -4060,7 +4060,7 @@ Constructs StorageLimitExceededException's fields from required parameters
 
 ``` purescript
 newtype StorageLimitWillExceedException
-  = StorageLimitWillExceedException { "Message" :: NullOrUndefined (ErrorMessageType) }
+  = StorageLimitWillExceedException { "Message" :: Maybe (ErrorMessageType) }
 ```
 
 <p>The storage limit will be exceeded.</p>
@@ -4085,7 +4085,7 @@ Constructs StorageLimitWillExceedException from required parameters
 #### `newStorageLimitWillExceedException'`
 
 ``` purescript
-newStorageLimitWillExceedException' :: ({ "Message" :: NullOrUndefined (ErrorMessageType) } -> { "Message" :: NullOrUndefined (ErrorMessageType) }) -> StorageLimitWillExceedException
+newStorageLimitWillExceedException' :: ({ "Message" :: Maybe (ErrorMessageType) } -> { "Message" :: Maybe (ErrorMessageType) }) -> StorageLimitWillExceedException
 ```
 
 Constructs StorageLimitWillExceedException's fields from required parameters
@@ -4094,7 +4094,7 @@ Constructs StorageLimitWillExceedException's fields from required parameters
 
 ``` purescript
 newtype StorageRuleType
-  = StorageRuleType { "StorageAllocatedInBytes" :: NullOrUndefined (PositiveSizeType), "StorageType" :: NullOrUndefined (StorageType) }
+  = StorageRuleType { "StorageAllocatedInBytes" :: Maybe (PositiveSizeType), "StorageType" :: Maybe (StorageType) }
 ```
 
 <p>Describes the storage for a user.</p>
@@ -4119,7 +4119,7 @@ Constructs StorageRuleType from required parameters
 #### `newStorageRuleType'`
 
 ``` purescript
-newStorageRuleType' :: ({ "StorageAllocatedInBytes" :: NullOrUndefined (PositiveSizeType), "StorageType" :: NullOrUndefined (StorageType) } -> { "StorageAllocatedInBytes" :: NullOrUndefined (PositiveSizeType), "StorageType" :: NullOrUndefined (StorageType) }) -> StorageRuleType
+newStorageRuleType' :: ({ "StorageAllocatedInBytes" :: Maybe (PositiveSizeType), "StorageType" :: Maybe (StorageType) } -> { "StorageAllocatedInBytes" :: Maybe (PositiveSizeType), "StorageType" :: Maybe (StorageType) }) -> StorageRuleType
 ```
 
 Constructs StorageRuleType's fields from required parameters
@@ -4144,7 +4144,7 @@ Encode StorageType
 
 ``` purescript
 newtype Subscription
-  = Subscription { "SubscriptionId" :: NullOrUndefined (IdType), "EndPoint" :: NullOrUndefined (SubscriptionEndPointType), "Protocol" :: NullOrUndefined (SubscriptionProtocolType) }
+  = Subscription { "SubscriptionId" :: Maybe (IdType), "EndPoint" :: Maybe (SubscriptionEndPointType), "Protocol" :: Maybe (SubscriptionProtocolType) }
 ```
 
 <p>Describes a subscription.</p>
@@ -4169,7 +4169,7 @@ Constructs Subscription from required parameters
 #### `newSubscription'`
 
 ``` purescript
-newSubscription' :: ({ "SubscriptionId" :: NullOrUndefined (IdType), "EndPoint" :: NullOrUndefined (SubscriptionEndPointType), "Protocol" :: NullOrUndefined (SubscriptionProtocolType) } -> { "SubscriptionId" :: NullOrUndefined (IdType), "EndPoint" :: NullOrUndefined (SubscriptionEndPointType), "Protocol" :: NullOrUndefined (SubscriptionProtocolType) }) -> Subscription
+newSubscription' :: ({ "SubscriptionId" :: Maybe (IdType), "EndPoint" :: Maybe (SubscriptionEndPointType), "Protocol" :: Maybe (SubscriptionProtocolType) } -> { "SubscriptionId" :: Maybe (IdType), "EndPoint" :: Maybe (SubscriptionEndPointType), "Protocol" :: Maybe (SubscriptionProtocolType) }) -> Subscription
 ```
 
 Constructs Subscription's fields from required parameters
@@ -4274,7 +4274,7 @@ Encode TimestampType
 
 ``` purescript
 newtype TooManyLabelsException
-  = TooManyLabelsException { "Message" :: NullOrUndefined (ErrorMessageType) }
+  = TooManyLabelsException { "Message" :: Maybe (ErrorMessageType) }
 ```
 
 <p>The limit has been reached on the number of labels for the specified resource.</p>
@@ -4299,7 +4299,7 @@ Constructs TooManyLabelsException from required parameters
 #### `newTooManyLabelsException'`
 
 ``` purescript
-newTooManyLabelsException' :: ({ "Message" :: NullOrUndefined (ErrorMessageType) } -> { "Message" :: NullOrUndefined (ErrorMessageType) }) -> TooManyLabelsException
+newTooManyLabelsException' :: ({ "Message" :: Maybe (ErrorMessageType) } -> { "Message" :: Maybe (ErrorMessageType) }) -> TooManyLabelsException
 ```
 
 Constructs TooManyLabelsException's fields from required parameters
@@ -4308,7 +4308,7 @@ Constructs TooManyLabelsException's fields from required parameters
 
 ``` purescript
 newtype TooManySubscriptionsException
-  = TooManySubscriptionsException { "Message" :: NullOrUndefined (ErrorMessageType) }
+  = TooManySubscriptionsException { "Message" :: Maybe (ErrorMessageType) }
 ```
 
 <p>You've reached the limit on the number of subscriptions for the WorkDocs instance.</p>
@@ -4333,7 +4333,7 @@ Constructs TooManySubscriptionsException from required parameters
 #### `newTooManySubscriptionsException'`
 
 ``` purescript
-newTooManySubscriptionsException' :: ({ "Message" :: NullOrUndefined (ErrorMessageType) } -> { "Message" :: NullOrUndefined (ErrorMessageType) }) -> TooManySubscriptionsException
+newTooManySubscriptionsException' :: ({ "Message" :: Maybe (ErrorMessageType) } -> { "Message" :: Maybe (ErrorMessageType) }) -> TooManySubscriptionsException
 ```
 
 Constructs TooManySubscriptionsException's fields from required parameters
@@ -4360,7 +4360,7 @@ Encode UnauthorizedOperationException
 
 ``` purescript
 newtype UnauthorizedResourceAccessException
-  = UnauthorizedResourceAccessException { "Message" :: NullOrUndefined (ErrorMessageType) }
+  = UnauthorizedResourceAccessException { "Message" :: Maybe (ErrorMessageType) }
 ```
 
 <p>The caller does not have access to perform the action on the resource.</p>
@@ -4385,7 +4385,7 @@ Constructs UnauthorizedResourceAccessException from required parameters
 #### `newUnauthorizedResourceAccessException'`
 
 ``` purescript
-newUnauthorizedResourceAccessException' :: ({ "Message" :: NullOrUndefined (ErrorMessageType) } -> { "Message" :: NullOrUndefined (ErrorMessageType) }) -> UnauthorizedResourceAccessException
+newUnauthorizedResourceAccessException' :: ({ "Message" :: Maybe (ErrorMessageType) } -> { "Message" :: Maybe (ErrorMessageType) }) -> UnauthorizedResourceAccessException
 ```
 
 Constructs UnauthorizedResourceAccessException's fields from required parameters
@@ -4394,7 +4394,7 @@ Constructs UnauthorizedResourceAccessException's fields from required parameters
 
 ``` purescript
 newtype UpdateDocumentRequest
-  = UpdateDocumentRequest { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "DocumentId" :: ResourceIdType, "Name" :: NullOrUndefined (ResourceNameType), "ParentFolderId" :: NullOrUndefined (ResourceIdType), "ResourceState" :: NullOrUndefined (ResourceStateType) }
+  = UpdateDocumentRequest { "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "DocumentId" :: ResourceIdType, "Name" :: Maybe (ResourceNameType), "ParentFolderId" :: Maybe (ResourceIdType), "ResourceState" :: Maybe (ResourceStateType) }
 ```
 
 ##### Instances
@@ -4417,7 +4417,7 @@ Constructs UpdateDocumentRequest from required parameters
 #### `newUpdateDocumentRequest'`
 
 ``` purescript
-newUpdateDocumentRequest' :: ResourceIdType -> ({ "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "DocumentId" :: ResourceIdType, "Name" :: NullOrUndefined (ResourceNameType), "ParentFolderId" :: NullOrUndefined (ResourceIdType), "ResourceState" :: NullOrUndefined (ResourceStateType) } -> { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "DocumentId" :: ResourceIdType, "Name" :: NullOrUndefined (ResourceNameType), "ParentFolderId" :: NullOrUndefined (ResourceIdType), "ResourceState" :: NullOrUndefined (ResourceStateType) }) -> UpdateDocumentRequest
+newUpdateDocumentRequest' :: ResourceIdType -> ({ "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "DocumentId" :: ResourceIdType, "Name" :: Maybe (ResourceNameType), "ParentFolderId" :: Maybe (ResourceIdType), "ResourceState" :: Maybe (ResourceStateType) } -> { "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "DocumentId" :: ResourceIdType, "Name" :: Maybe (ResourceNameType), "ParentFolderId" :: Maybe (ResourceIdType), "ResourceState" :: Maybe (ResourceStateType) }) -> UpdateDocumentRequest
 ```
 
 Constructs UpdateDocumentRequest's fields from required parameters
@@ -4426,7 +4426,7 @@ Constructs UpdateDocumentRequest's fields from required parameters
 
 ``` purescript
 newtype UpdateDocumentVersionRequest
-  = UpdateDocumentVersionRequest { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "DocumentId" :: ResourceIdType, "VersionId" :: DocumentVersionIdType, "VersionStatus" :: NullOrUndefined (DocumentVersionStatus) }
+  = UpdateDocumentVersionRequest { "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "DocumentId" :: ResourceIdType, "VersionId" :: DocumentVersionIdType, "VersionStatus" :: Maybe (DocumentVersionStatus) }
 ```
 
 ##### Instances
@@ -4449,7 +4449,7 @@ Constructs UpdateDocumentVersionRequest from required parameters
 #### `newUpdateDocumentVersionRequest'`
 
 ``` purescript
-newUpdateDocumentVersionRequest' :: ResourceIdType -> DocumentVersionIdType -> ({ "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "DocumentId" :: ResourceIdType, "VersionId" :: DocumentVersionIdType, "VersionStatus" :: NullOrUndefined (DocumentVersionStatus) } -> { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "DocumentId" :: ResourceIdType, "VersionId" :: DocumentVersionIdType, "VersionStatus" :: NullOrUndefined (DocumentVersionStatus) }) -> UpdateDocumentVersionRequest
+newUpdateDocumentVersionRequest' :: ResourceIdType -> DocumentVersionIdType -> ({ "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "DocumentId" :: ResourceIdType, "VersionId" :: DocumentVersionIdType, "VersionStatus" :: Maybe (DocumentVersionStatus) } -> { "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "DocumentId" :: ResourceIdType, "VersionId" :: DocumentVersionIdType, "VersionStatus" :: Maybe (DocumentVersionStatus) }) -> UpdateDocumentVersionRequest
 ```
 
 Constructs UpdateDocumentVersionRequest's fields from required parameters
@@ -4458,7 +4458,7 @@ Constructs UpdateDocumentVersionRequest's fields from required parameters
 
 ``` purescript
 newtype UpdateFolderRequest
-  = UpdateFolderRequest { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "FolderId" :: ResourceIdType, "Name" :: NullOrUndefined (ResourceNameType), "ParentFolderId" :: NullOrUndefined (ResourceIdType), "ResourceState" :: NullOrUndefined (ResourceStateType) }
+  = UpdateFolderRequest { "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "FolderId" :: ResourceIdType, "Name" :: Maybe (ResourceNameType), "ParentFolderId" :: Maybe (ResourceIdType), "ResourceState" :: Maybe (ResourceStateType) }
 ```
 
 ##### Instances
@@ -4481,7 +4481,7 @@ Constructs UpdateFolderRequest from required parameters
 #### `newUpdateFolderRequest'`
 
 ``` purescript
-newUpdateFolderRequest' :: ResourceIdType -> ({ "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "FolderId" :: ResourceIdType, "Name" :: NullOrUndefined (ResourceNameType), "ParentFolderId" :: NullOrUndefined (ResourceIdType), "ResourceState" :: NullOrUndefined (ResourceStateType) } -> { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "FolderId" :: ResourceIdType, "Name" :: NullOrUndefined (ResourceNameType), "ParentFolderId" :: NullOrUndefined (ResourceIdType), "ResourceState" :: NullOrUndefined (ResourceStateType) }) -> UpdateFolderRequest
+newUpdateFolderRequest' :: ResourceIdType -> ({ "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "FolderId" :: ResourceIdType, "Name" :: Maybe (ResourceNameType), "ParentFolderId" :: Maybe (ResourceIdType), "ResourceState" :: Maybe (ResourceStateType) } -> { "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "FolderId" :: ResourceIdType, "Name" :: Maybe (ResourceNameType), "ParentFolderId" :: Maybe (ResourceIdType), "ResourceState" :: Maybe (ResourceStateType) }) -> UpdateFolderRequest
 ```
 
 Constructs UpdateFolderRequest's fields from required parameters
@@ -4490,7 +4490,7 @@ Constructs UpdateFolderRequest's fields from required parameters
 
 ``` purescript
 newtype UpdateUserRequest
-  = UpdateUserRequest { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "UserId" :: IdType, "GivenName" :: NullOrUndefined (UserAttributeValueType), "Surname" :: NullOrUndefined (UserAttributeValueType), "Type" :: NullOrUndefined (UserType), "StorageRule" :: NullOrUndefined (StorageRuleType), "TimeZoneId" :: NullOrUndefined (TimeZoneIdType), "Locale" :: NullOrUndefined (LocaleType), "GrantPoweruserPrivileges" :: NullOrUndefined (BooleanEnumType) }
+  = UpdateUserRequest { "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "UserId" :: IdType, "GivenName" :: Maybe (UserAttributeValueType), "Surname" :: Maybe (UserAttributeValueType), "Type" :: Maybe (UserType), "StorageRule" :: Maybe (StorageRuleType), "TimeZoneId" :: Maybe (TimeZoneIdType), "Locale" :: Maybe (LocaleType), "GrantPoweruserPrivileges" :: Maybe (BooleanEnumType) }
 ```
 
 ##### Instances
@@ -4513,7 +4513,7 @@ Constructs UpdateUserRequest from required parameters
 #### `newUpdateUserRequest'`
 
 ``` purescript
-newUpdateUserRequest' :: IdType -> ({ "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "UserId" :: IdType, "GivenName" :: NullOrUndefined (UserAttributeValueType), "Surname" :: NullOrUndefined (UserAttributeValueType), "Type" :: NullOrUndefined (UserType), "StorageRule" :: NullOrUndefined (StorageRuleType), "TimeZoneId" :: NullOrUndefined (TimeZoneIdType), "Locale" :: NullOrUndefined (LocaleType), "GrantPoweruserPrivileges" :: NullOrUndefined (BooleanEnumType) } -> { "AuthenticationToken" :: NullOrUndefined (AuthenticationHeaderType), "UserId" :: IdType, "GivenName" :: NullOrUndefined (UserAttributeValueType), "Surname" :: NullOrUndefined (UserAttributeValueType), "Type" :: NullOrUndefined (UserType), "StorageRule" :: NullOrUndefined (StorageRuleType), "TimeZoneId" :: NullOrUndefined (TimeZoneIdType), "Locale" :: NullOrUndefined (LocaleType), "GrantPoweruserPrivileges" :: NullOrUndefined (BooleanEnumType) }) -> UpdateUserRequest
+newUpdateUserRequest' :: IdType -> ({ "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "UserId" :: IdType, "GivenName" :: Maybe (UserAttributeValueType), "Surname" :: Maybe (UserAttributeValueType), "Type" :: Maybe (UserType), "StorageRule" :: Maybe (StorageRuleType), "TimeZoneId" :: Maybe (TimeZoneIdType), "Locale" :: Maybe (LocaleType), "GrantPoweruserPrivileges" :: Maybe (BooleanEnumType) } -> { "AuthenticationToken" :: Maybe (AuthenticationHeaderType), "UserId" :: IdType, "GivenName" :: Maybe (UserAttributeValueType), "Surname" :: Maybe (UserAttributeValueType), "Type" :: Maybe (UserType), "StorageRule" :: Maybe (StorageRuleType), "TimeZoneId" :: Maybe (TimeZoneIdType), "Locale" :: Maybe (LocaleType), "GrantPoweruserPrivileges" :: Maybe (BooleanEnumType) }) -> UpdateUserRequest
 ```
 
 Constructs UpdateUserRequest's fields from required parameters
@@ -4522,7 +4522,7 @@ Constructs UpdateUserRequest's fields from required parameters
 
 ``` purescript
 newtype UpdateUserResponse
-  = UpdateUserResponse { "User" :: NullOrUndefined (User) }
+  = UpdateUserResponse { "User" :: Maybe (User) }
 ```
 
 ##### Instances
@@ -4545,7 +4545,7 @@ Constructs UpdateUserResponse from required parameters
 #### `newUpdateUserResponse'`
 
 ``` purescript
-newUpdateUserResponse' :: ({ "User" :: NullOrUndefined (User) } -> { "User" :: NullOrUndefined (User) }) -> UpdateUserResponse
+newUpdateUserResponse' :: ({ "User" :: Maybe (User) } -> { "User" :: Maybe (User) }) -> UpdateUserResponse
 ```
 
 Constructs UpdateUserResponse's fields from required parameters
@@ -4554,7 +4554,7 @@ Constructs UpdateUserResponse's fields from required parameters
 
 ``` purescript
 newtype UploadMetadata
-  = UploadMetadata { "UploadUrl" :: NullOrUndefined (UrlType), "SignedHeaders" :: NullOrUndefined (SignedHeaderMap) }
+  = UploadMetadata { "UploadUrl" :: Maybe (UrlType), "SignedHeaders" :: Maybe (SignedHeaderMap) }
 ```
 
 <p>Describes the upload.</p>
@@ -4579,7 +4579,7 @@ Constructs UploadMetadata from required parameters
 #### `newUploadMetadata'`
 
 ``` purescript
-newUploadMetadata' :: ({ "UploadUrl" :: NullOrUndefined (UrlType), "SignedHeaders" :: NullOrUndefined (SignedHeaderMap) } -> { "UploadUrl" :: NullOrUndefined (UrlType), "SignedHeaders" :: NullOrUndefined (SignedHeaderMap) }) -> UploadMetadata
+newUploadMetadata' :: ({ "UploadUrl" :: Maybe (UrlType), "SignedHeaders" :: Maybe (SignedHeaderMap) } -> { "UploadUrl" :: Maybe (UrlType), "SignedHeaders" :: Maybe (SignedHeaderMap) }) -> UploadMetadata
 ```
 
 Constructs UploadMetadata's fields from required parameters
@@ -4604,7 +4604,7 @@ Encode UrlType
 
 ``` purescript
 newtype User
-  = User { "Id" :: NullOrUndefined (IdType), "Username" :: NullOrUndefined (UsernameType), "EmailAddress" :: NullOrUndefined (EmailAddressType), "GivenName" :: NullOrUndefined (UserAttributeValueType), "Surname" :: NullOrUndefined (UserAttributeValueType), "OrganizationId" :: NullOrUndefined (IdType), "RootFolderId" :: NullOrUndefined (ResourceIdType), "RecycleBinFolderId" :: NullOrUndefined (ResourceIdType), "Status" :: NullOrUndefined (UserStatusType), "Type" :: NullOrUndefined (UserType), "CreatedTimestamp" :: NullOrUndefined (TimestampType), "ModifiedTimestamp" :: NullOrUndefined (TimestampType), "TimeZoneId" :: NullOrUndefined (TimeZoneIdType), "Locale" :: NullOrUndefined (LocaleType), "Storage" :: NullOrUndefined (UserStorageMetadata) }
+  = User { "Id" :: Maybe (IdType), "Username" :: Maybe (UsernameType), "EmailAddress" :: Maybe (EmailAddressType), "GivenName" :: Maybe (UserAttributeValueType), "Surname" :: Maybe (UserAttributeValueType), "OrganizationId" :: Maybe (IdType), "RootFolderId" :: Maybe (ResourceIdType), "RecycleBinFolderId" :: Maybe (ResourceIdType), "Status" :: Maybe (UserStatusType), "Type" :: Maybe (UserType), "CreatedTimestamp" :: Maybe (TimestampType), "ModifiedTimestamp" :: Maybe (TimestampType), "TimeZoneId" :: Maybe (TimeZoneIdType), "Locale" :: Maybe (LocaleType), "Storage" :: Maybe (UserStorageMetadata) }
 ```
 
 <p>Describes a user.</p>
@@ -4629,7 +4629,7 @@ Constructs User from required parameters
 #### `newUser'`
 
 ``` purescript
-newUser' :: ({ "Id" :: NullOrUndefined (IdType), "Username" :: NullOrUndefined (UsernameType), "EmailAddress" :: NullOrUndefined (EmailAddressType), "GivenName" :: NullOrUndefined (UserAttributeValueType), "Surname" :: NullOrUndefined (UserAttributeValueType), "OrganizationId" :: NullOrUndefined (IdType), "RootFolderId" :: NullOrUndefined (ResourceIdType), "RecycleBinFolderId" :: NullOrUndefined (ResourceIdType), "Status" :: NullOrUndefined (UserStatusType), "Type" :: NullOrUndefined (UserType), "CreatedTimestamp" :: NullOrUndefined (TimestampType), "ModifiedTimestamp" :: NullOrUndefined (TimestampType), "TimeZoneId" :: NullOrUndefined (TimeZoneIdType), "Locale" :: NullOrUndefined (LocaleType), "Storage" :: NullOrUndefined (UserStorageMetadata) } -> { "Id" :: NullOrUndefined (IdType), "Username" :: NullOrUndefined (UsernameType), "EmailAddress" :: NullOrUndefined (EmailAddressType), "GivenName" :: NullOrUndefined (UserAttributeValueType), "Surname" :: NullOrUndefined (UserAttributeValueType), "OrganizationId" :: NullOrUndefined (IdType), "RootFolderId" :: NullOrUndefined (ResourceIdType), "RecycleBinFolderId" :: NullOrUndefined (ResourceIdType), "Status" :: NullOrUndefined (UserStatusType), "Type" :: NullOrUndefined (UserType), "CreatedTimestamp" :: NullOrUndefined (TimestampType), "ModifiedTimestamp" :: NullOrUndefined (TimestampType), "TimeZoneId" :: NullOrUndefined (TimeZoneIdType), "Locale" :: NullOrUndefined (LocaleType), "Storage" :: NullOrUndefined (UserStorageMetadata) }) -> User
+newUser' :: ({ "Id" :: Maybe (IdType), "Username" :: Maybe (UsernameType), "EmailAddress" :: Maybe (EmailAddressType), "GivenName" :: Maybe (UserAttributeValueType), "Surname" :: Maybe (UserAttributeValueType), "OrganizationId" :: Maybe (IdType), "RootFolderId" :: Maybe (ResourceIdType), "RecycleBinFolderId" :: Maybe (ResourceIdType), "Status" :: Maybe (UserStatusType), "Type" :: Maybe (UserType), "CreatedTimestamp" :: Maybe (TimestampType), "ModifiedTimestamp" :: Maybe (TimestampType), "TimeZoneId" :: Maybe (TimeZoneIdType), "Locale" :: Maybe (LocaleType), "Storage" :: Maybe (UserStorageMetadata) } -> { "Id" :: Maybe (IdType), "Username" :: Maybe (UsernameType), "EmailAddress" :: Maybe (EmailAddressType), "GivenName" :: Maybe (UserAttributeValueType), "Surname" :: Maybe (UserAttributeValueType), "OrganizationId" :: Maybe (IdType), "RootFolderId" :: Maybe (ResourceIdType), "RecycleBinFolderId" :: Maybe (ResourceIdType), "Status" :: Maybe (UserStatusType), "Type" :: Maybe (UserType), "CreatedTimestamp" :: Maybe (TimestampType), "ModifiedTimestamp" :: Maybe (TimestampType), "TimeZoneId" :: Maybe (TimeZoneIdType), "Locale" :: Maybe (LocaleType), "Storage" :: Maybe (UserStorageMetadata) }) -> User
 ```
 
 Constructs User's fields from required parameters
@@ -4702,7 +4702,7 @@ Encode UserIdsType
 
 ``` purescript
 newtype UserMetadata
-  = UserMetadata { "Id" :: NullOrUndefined (IdType), "Username" :: NullOrUndefined (UsernameType), "GivenName" :: NullOrUndefined (UserAttributeValueType), "Surname" :: NullOrUndefined (UserAttributeValueType), "EmailAddress" :: NullOrUndefined (EmailAddressType) }
+  = UserMetadata { "Id" :: Maybe (IdType), "Username" :: Maybe (UsernameType), "GivenName" :: Maybe (UserAttributeValueType), "Surname" :: Maybe (UserAttributeValueType), "EmailAddress" :: Maybe (EmailAddressType) }
 ```
 
 <p>Describes the metadata of the user.</p>
@@ -4727,7 +4727,7 @@ Constructs UserMetadata from required parameters
 #### `newUserMetadata'`
 
 ``` purescript
-newUserMetadata' :: ({ "Id" :: NullOrUndefined (IdType), "Username" :: NullOrUndefined (UsernameType), "GivenName" :: NullOrUndefined (UserAttributeValueType), "Surname" :: NullOrUndefined (UserAttributeValueType), "EmailAddress" :: NullOrUndefined (EmailAddressType) } -> { "Id" :: NullOrUndefined (IdType), "Username" :: NullOrUndefined (UsernameType), "GivenName" :: NullOrUndefined (UserAttributeValueType), "Surname" :: NullOrUndefined (UserAttributeValueType), "EmailAddress" :: NullOrUndefined (EmailAddressType) }) -> UserMetadata
+newUserMetadata' :: ({ "Id" :: Maybe (IdType), "Username" :: Maybe (UsernameType), "GivenName" :: Maybe (UserAttributeValueType), "Surname" :: Maybe (UserAttributeValueType), "EmailAddress" :: Maybe (EmailAddressType) } -> { "Id" :: Maybe (IdType), "Username" :: Maybe (UsernameType), "GivenName" :: Maybe (UserAttributeValueType), "Surname" :: Maybe (UserAttributeValueType), "EmailAddress" :: Maybe (EmailAddressType) }) -> UserMetadata
 ```
 
 Constructs UserMetadata's fields from required parameters
@@ -4784,7 +4784,7 @@ Encode UserStatusType
 
 ``` purescript
 newtype UserStorageMetadata
-  = UserStorageMetadata { "StorageUtilizedInBytes" :: NullOrUndefined (SizeType), "StorageRule" :: NullOrUndefined (StorageRuleType) }
+  = UserStorageMetadata { "StorageUtilizedInBytes" :: Maybe (SizeType), "StorageRule" :: Maybe (StorageRuleType) }
 ```
 
 <p>Describes the storage for a user.</p>
@@ -4809,7 +4809,7 @@ Constructs UserStorageMetadata from required parameters
 #### `newUserStorageMetadata'`
 
 ``` purescript
-newUserStorageMetadata' :: ({ "StorageUtilizedInBytes" :: NullOrUndefined (SizeType), "StorageRule" :: NullOrUndefined (StorageRuleType) } -> { "StorageUtilizedInBytes" :: NullOrUndefined (SizeType), "StorageRule" :: NullOrUndefined (StorageRuleType) }) -> UserStorageMetadata
+newUserStorageMetadata' :: ({ "StorageUtilizedInBytes" :: Maybe (SizeType), "StorageRule" :: Maybe (StorageRuleType) } -> { "StorageUtilizedInBytes" :: Maybe (SizeType), "StorageRule" :: Maybe (StorageRuleType) }) -> UserStorageMetadata
 ```
 
 Constructs UserStorageMetadata's fields from required parameters

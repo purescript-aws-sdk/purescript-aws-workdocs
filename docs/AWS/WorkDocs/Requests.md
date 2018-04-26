@@ -3,7 +3,7 @@
 #### `abortDocumentVersionUpload`
 
 ``` purescript
-abortDocumentVersionUpload :: forall eff. Service -> AbortDocumentVersionUploadRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+abortDocumentVersionUpload :: forall eff. Service -> AbortDocumentVersionUploadRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Aborts the upload of the specified document version that was previously initiated by <a>InitiateDocumentVersionUpload</a>. The client should make this call only when it no longer intends to upload the document version, or fails to do so.</p>
@@ -75,7 +75,7 @@ createUser :: forall eff. Service -> CreateUserRequest -> Aff (exception :: EXCE
 #### `deactivateUser`
 
 ``` purescript
-deactivateUser :: forall eff. Service -> DeactivateUserRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+deactivateUser :: forall eff. Service -> DeactivateUserRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Deactivates the specified user, which revokes the user's access to Amazon WorkDocs.</p>
@@ -83,7 +83,7 @@ deactivateUser :: forall eff. Service -> DeactivateUserRequest -> Aff (exception
 #### `deleteComment`
 
 ``` purescript
-deleteComment :: forall eff. Service -> DeleteCommentRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+deleteComment :: forall eff. Service -> DeleteCommentRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Deletes the specified comment from the document version.</p>
@@ -99,7 +99,7 @@ deleteCustomMetadata :: forall eff. Service -> DeleteCustomMetadataRequest -> Af
 #### `deleteDocument`
 
 ``` purescript
-deleteDocument :: forall eff. Service -> DeleteDocumentRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+deleteDocument :: forall eff. Service -> DeleteDocumentRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Permanently deletes the specified document and its associated metadata.</p>
@@ -107,7 +107,7 @@ deleteDocument :: forall eff. Service -> DeleteDocumentRequest -> Aff (exception
 #### `deleteFolder`
 
 ``` purescript
-deleteFolder :: forall eff. Service -> DeleteFolderRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+deleteFolder :: forall eff. Service -> DeleteFolderRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Permanently deletes the specified folder and its contents.</p>
@@ -115,7 +115,7 @@ deleteFolder :: forall eff. Service -> DeleteFolderRequest -> Aff (exception :: 
 #### `deleteFolderContents`
 
 ``` purescript
-deleteFolderContents :: forall eff. Service -> DeleteFolderContentsRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+deleteFolderContents :: forall eff. Service -> DeleteFolderContentsRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Deletes the contents of the specified folder.</p>
@@ -131,7 +131,7 @@ deleteLabels :: forall eff. Service -> DeleteLabelsRequest -> Aff (exception :: 
 #### `deleteNotificationSubscription`
 
 ``` purescript
-deleteNotificationSubscription :: forall eff. Service -> DeleteNotificationSubscriptionRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+deleteNotificationSubscription :: forall eff. Service -> DeleteNotificationSubscriptionRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Deletes the specified subscription from the specified organization.</p>
@@ -139,7 +139,7 @@ deleteNotificationSubscription :: forall eff. Service -> DeleteNotificationSubsc
 #### `deleteUser`
 
 ``` purescript
-deleteUser :: forall eff. Service -> DeleteUserRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+deleteUser :: forall eff. Service -> DeleteUserRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Deletes the specified user from a Simple AD or Microsoft AD directory.</p>
@@ -275,7 +275,7 @@ initiateDocumentVersionUpload :: forall eff. Service -> InitiateDocumentVersionU
 #### `removeAllResourcePermissions`
 
 ``` purescript
-removeAllResourcePermissions :: forall eff. Service -> RemoveAllResourcePermissionsRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+removeAllResourcePermissions :: forall eff. Service -> RemoveAllResourcePermissionsRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Removes all the permissions from the specified resource.</p>
@@ -283,7 +283,7 @@ removeAllResourcePermissions :: forall eff. Service -> RemoveAllResourcePermissi
 #### `removeResourcePermission`
 
 ``` purescript
-removeResourcePermission :: forall eff. Service -> RemoveResourcePermissionRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+removeResourcePermission :: forall eff. Service -> RemoveResourcePermissionRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Removes the permission for the specified principal from the specified resource.</p>
@@ -291,7 +291,7 @@ removeResourcePermission :: forall eff. Service -> RemoveResourcePermissionReque
 #### `updateDocument`
 
 ``` purescript
-updateDocument :: forall eff. Service -> UpdateDocumentRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+updateDocument :: forall eff. Service -> UpdateDocumentRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Updates the specified attributes of a document. The user must have access to both the document and its parent folder, if applicable.</p>
@@ -299,7 +299,7 @@ updateDocument :: forall eff. Service -> UpdateDocumentRequest -> Aff (exception
 #### `updateDocumentVersion`
 
 ``` purescript
-updateDocumentVersion :: forall eff. Service -> UpdateDocumentVersionRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+updateDocumentVersion :: forall eff. Service -> UpdateDocumentVersionRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Changes the status of the document version to ACTIVE. </p> <p>Amazon WorkDocs also sets its document container to ACTIVE. This is the last step in a document upload, after the client uploads the document to an S3-presigned URL returned by <a>InitiateDocumentVersionUpload</a>. </p>
@@ -307,7 +307,7 @@ updateDocumentVersion :: forall eff. Service -> UpdateDocumentVersionRequest -> 
 #### `updateFolder`
 
 ``` purescript
-updateFolder :: forall eff. Service -> UpdateFolderRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+updateFolder :: forall eff. Service -> UpdateFolderRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Updates the specified attributes of the specified folder. The user must have access to both the folder and its parent folder, if applicable.</p>
